@@ -427,6 +427,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Regroup()); // uncommon skill
         BaseMod.addCard(new Payback()); // uncommon skill
         BaseMod.addCard(new RiteoftheBlade()); // rare power
+        BaseMod.addCard(new Safeguard()); //
         BaseMod.addCard(new SerratedKnife()); // common attack
         BaseMod.addCard(new Slash()); // common attack
         BaseMod.addCard(new BloodthirstyStrike());
@@ -456,6 +457,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Regroup.ID);
         UnlockTracker.unlockCard(Payback.ID);
         UnlockTracker.unlockCard(RiteoftheBlade.ID);
+        UnlockTracker.unlockCard(Safeguard.ID);
         UnlockTracker.unlockCard(Slash.ID);
         UnlockTracker.unlockCard(BloodthirstyStrike.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);

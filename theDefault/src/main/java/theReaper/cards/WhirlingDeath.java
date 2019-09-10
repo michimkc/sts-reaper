@@ -31,7 +31,7 @@ public class WhirlingDeath extends AbstractCustomCard {
         magicNumber = baseMagicNumber = 3;
         damageUp = 1;
 
-        this.magicNumber2 = 1; // how much to increase the # of hits.
+        magicNumber2 = baseMagicNumber2 = 1; // how much to increase the # of hits.
 
     }
 

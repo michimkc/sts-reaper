@@ -25,8 +25,8 @@
   },
   "theReaper:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Draw !M! Cards. Gain !M2! thereaper:Vengeance. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Draw !M! Cards. Gain !theReaper:M2! thereaper:Vengeance."
+    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance."
   },
   "theReaper:Gluttony": {
     "NAME": "Gluttony",
@@ -67,6 +67,11 @@
   "theReaper:Payback": {
     "NAME": "Payback",
     "DESCRIPTION": "Gain !M! thereaper:Payback. NL Exhaust"
+  },
+  "theReaper:Safeguard": {
+    "NAME": "Safeguard",
+    "DESCRIPTION": "Gain !B! Block for each enemy in combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block for each enemy in combat +!M!. NL Exhaust."
   },
   "theReaper:Slash": {
     "NAME": "Slash",

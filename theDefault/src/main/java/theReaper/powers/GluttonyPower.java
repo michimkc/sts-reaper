@@ -49,7 +49,7 @@ public class GluttonyPower extends AbstractCustomPower implements CloneablePower
             int totalHeal = markAmount - m.currentHealth;
 
             // heal the player
-            this.owner.heal(totalHeal);
+            this.owner.heal(totalHeal*amount);
             // reduce the number of marks
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
         }
