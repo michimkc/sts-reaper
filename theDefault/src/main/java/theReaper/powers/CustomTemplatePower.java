@@ -17,7 +17,7 @@ public class CustomTemplatePower extends AbstractCustomPower implements Cloneabl
     public static final Logger logger = LogManager.getLogger(CustomTemplatePower.class.getName());
 
     // ==== MODIFY THESE =====
-    public static final String POWER_NAME = "CUSTOMPower";
+    public static final String POWER_NAME = "CustomPower";
     public static final PowerType POWER_TYPE = PowerType.BUFF;
     public static final boolean POWER_ISTURNBASED = false;
     // =======================
