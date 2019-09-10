@@ -1,0 +1,15 @@
+{
+  "theReaper:SoulBind": {
+    "NAME": "SoulBind",
+    "DESCRIPTIONS": ["If the target's remaining health is equal to or less than #y",
+      ", this rips the soul from the creature and binds it into servitude."]
+  },
+  "theReaper:PlaceholderSoul": {
+    "NAME": "Placeholder Soul",
+    "DESCRIPTIONS": ["OoooOOOOOooo Spooky!"]
+  },
+  "theReaper:LostSoul": {
+    "NAME": "Lost Soul",
+    "DESCRIPTIONS": ["A weak, frail soul with no place to return to."]
+  }
+}

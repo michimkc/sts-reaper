@@ -1,0 +1,66 @@
+[
+  {
+    "NAMES": [
+      "bleed",
+      "Bleed",
+      "bleeding",
+      "Bleeding"
+    ],
+    "DESCRIPTION": "Bleeding creatures lose HP at the start of their turn. Each turn, Bleed is reduced by #b1. NL #yNon-Lethal"
+  },
+  {
+    "NAMES": [
+      "bloodthirst",
+      "Bloodthirst"
+    ],
+    "DESCRIPTION": "Whenever you take unblocked attack damage, add that many marks to the enemy that dealt the damage."
+  },
+  {
+    "NAMES": [
+      "non-lethal",
+      "Non-Lethal"
+    ],
+    "DESCRIPTION": "Non-Lethal damage will not reduce the enemy below 1 health, unless the enemy is exactly at 1 health with no block."
+  },
+  {
+    "NAMES": [
+      "mark",
+      "marks",
+      "Marks",
+      "Mark"
+    ],
+    "DESCRIPTION": "Whenever this creature takes attack damage, the attacker gains that much health. Marks decrease by 5 or by half each turn, whichever is greater."
+  },
+  {
+    "NAMES": [
+      "revenge",
+      "Revenge"
+    ],
+    "DESCRIPTION": "When you take attack damage from an enemy, at end of turn deal the same damage in return to that enemy."
+  },
+  {
+    "NAMES": [
+      "soulbind",
+      "Soulbind"
+    ],
+    "DESCRIPTION": "Rips a soul from a creature and binds it into servitude."
+  },
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  }
+]

@@ -1,0 +1,135 @@
+{
+  "theReaper:BloodWard": {
+    "NAME": "Blood Ward",
+    "DESCRIPTION": "Gain !M! thereaper:Bleed. NL Gain !B! Plated Armor"
+  },
+  "theReaper:Bulwark": {
+    "NAME": "Bulwark",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
+  },
+  "theReaper:Cleanse": {
+    "NAME": "Cleanse",
+    "DESCRIPTION": "Remove all Debuffs. NL Exhaust"
+  },
+  "theReaper:CrimsonRush": {
+    "NAME": "Crimson Rush",
+    "DESCRIPTION": "Deal !D! Damage. If target is thereaper:bleeding deal !M! additional damage."
+  },
+  "theReaper:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theReaper:Frenzy": {
+    "NAME": "Frenzy",
+    "DESCRIPTION": "Gain !M! thereaper:Bloodthirst. NL Exhaust"
+  },
+  "theReaper:FuryStrike": {
+    "NAME": "Fury Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Bloodthirst."
+  },
+  "theReaper:Guillotine": {
+    "NAME": "Guillotine",
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind."
+  },
+  "theReaper:HastyGrab": {
+    "NAME": "HastyGrab",
+    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Bleed."
+  },
+  "theReaper:Hemorrhage": {
+    "NAME": "Hemorrhage",
+    "DESCRIPTION": "Apply !M! thereaper:Bleed."
+  },
+  "theReaper:Hunger": {
+    "NAME": "Hunger",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thereaper:Bloodthirst."
+  },
+  "theReaper:MaimingStrike": {
+    "NAME": "Maiming Strike",
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage."
+  },
+  "theReaper:MasterBall": {
+    "NAME": "Master Ball",
+    "DESCRIPTION": "NL thereaper:SoulBind !M!."
+  },
+  "theReaper:Reap": {
+    "NAME": "Reap",
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL [#ffff00]SoulBind[]."
+  },
+  "theReaper:Revenge": {
+    "NAME": "Revenge",
+    "DESCRIPTION": "Gain !M! thereaper:Revenge. NL Exhaust"
+  },
+  "theReaper:Slash": {
+    "NAME": "Slash",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theReaper:SavageForm": {
+    "NAME": "Savage Form",
+    "DESCRIPTION": "Attacks damage all enemies."
+  },
+  "theReaper:Transfusion": {
+    "NAME": "Transfusion",
+    "DESCRIPTION": "Double all healing you receive this turn. NL Exhaust"
+  },
+  "theReaper:WhirlingDeath": {
+    "NAME": "Whirling Death",
+    "DESCRIPTION": "Deal !D! Damage !M! times. NL Increase the number of hits by !M2! this combat."
+  },
+  "theReaper:Vampirism": {
+    "NAME": "Vampirism",
+    "DESCRIPTION": "Heal an extra !M! hp every time you gain health this combat."
+  },
+
+
+  "theReaper:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL theReaper:Multiword_Keyword."
+  },
+  "theReaper:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "theReaper:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! theReaper:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! theReaper:Keywords."
+  },
+  "theReaper:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theReaper:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "theReaper:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X theReaper:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 theReaper:Keywords."
+  },
+  "theReaper:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theReaper:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "theReaper:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "theReaper:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theReaper:ENERGY_DAMAGE! damage total.)"
+  },
+  "theReaper:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !theReaper:SecondMagic! poison to an enemy."
+  },
+  "theReaper:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  }
+}

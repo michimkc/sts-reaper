@@ -1,0 +1,40 @@
+{
+  "theReaper:BleedPower": {
+    "NAME": "Bleed",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b",
+      " HP, then reduce #yBleed by #b1. NL #yNon-Lethal (it will not reduce an enemy below #b1HP)",
+      "At the start of its turn, loses #b"
+    ]
+},
+  "theReaper:BloodthirstPower": {
+    "NAME": "Bloodthirst",
+    "DESCRIPTIONS": ["Whenever you take attack damage, the enemy that dealt the damage gains that many marks."]
+},
+"theReaper:MarkPower": {
+  "NAME": "Mark",
+  "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]
+},
+  "theReaper:RevengePower": {
+    "NAME": "Revenge",
+    "DESCRIPTIONS": ["When you take attack damage from an enemy, at end of turn deal the same damage in return to that enemy."]
+},
+  "theReaper:SavageFormPower": {
+    "NAME": "Savage Form",
+    "DESCRIPTIONS": ["Attacks damage all enemies."]
+  },
+  "theReaper:TransfusionPower": {
+    "NAME": "Transfusion",
+    "DESCRIPTIONS": ["All healing is doubled."]
+  },
+  "theReaper:VampirismPower": {
+    "NAME": "Vampirism",
+    "DESCRIPTIONS": ["Whenever you heal, heal an extra #b", " health."]
+  },
+
+
+  "theReaper:CommonPower": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+  }
+}

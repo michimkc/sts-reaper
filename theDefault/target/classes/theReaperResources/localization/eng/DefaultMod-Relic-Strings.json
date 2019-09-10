@@ -1,0 +1,49 @@
+{
+  "theReaper:OldCharmRelic": {
+    "NAME": "Old Charm Relic",
+    "FLAVOR": "A chipped stone carved into the shape of a beast. It emits warmth when wet by blood.",
+    "DESCRIPTIONS": [
+      "Once per combat, gain #b",
+      " max health whenever a non-minion enemy dies."
+    ]
+  },
+  "theReaper:PlaceholderRelic": {
+    "NAME": "Placeholder Energy Relic",
+    "FLAVOR": "The snake is a friend.",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] ."
+    ]
+  },
+  "theReaper:PlaceholderRelic2": {
+    "NAME": "Placeholder Relic 2",
+    "FLAVOR": "You feel stronger.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 #yStrength."
+    ]
+  },
+  "theReaper:DefaultClickableRelic": {
+    "NAME": "Right-Clicky Relic",
+    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+      "YOU ARE MINE!"
+    ]
+  },
+  "theReaper:HuntersLanternRelic": {
+    "NAME": "Hunter's Lantern",
+    "FLAVOR": "The spirit within guides the hunter towards her prey. It shimmers with a dim, spectral flame.",
+    "DESCRIPTIONS": [
+      "Reveals monsters"
+    ]
+  },
+  "theReaper:BottledPlaceholderRelic": {
+    "NAME": "Bottled Placeholder",
+    "FLAVOR": "What is this?",
+    "DESCRIPTIONS": [
+      "Choose a card. Whenever you take play any card, draw the chosen card.",
+      "Whenever you play a card, draw ",
+      ".",
+      "Select a card to bottle for "
+    ]
+  }
+}
