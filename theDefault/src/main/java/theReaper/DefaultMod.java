@@ -27,7 +27,6 @@ import theReaper.events.IdentityCrisisEvent;
 import theReaper.potions.PlaceholderPotion;
 import theReaper.relics.*;
 import theReaper.util.IDCheckDontTouchPls;
-import theReaper.util.SoulManager;
 import theReaper.util.SoulStrings;
 import theReaper.util.TextureLoader;
 import theReaper.variables.DefaultCustomVariable;
@@ -412,24 +411,25 @@ public class DefaultMod implements
         // when generating card rewards/shop screen items.
 
         BaseMod.addCard(new Bulwark());
-        BaseMod.addCard(new BloodWard()); // common skill
+        BaseMod.addCard(new SanguineArmour()); // common skill
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new CrimsonRush());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Frenzy());
-        BaseMod.addCard(new FuryStrike());
         BaseMod.addCard(new Gluttony());
         BaseMod.addCard(new Guillotine());
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
-        BaseMod.addCard(new Hunger());
+        BaseMod.addCard(new Hack());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new Reap());
-        BaseMod.addCard(new Revenge()); // uncommon skill
-        BaseMod.addCard(new SavageForm()); // rare power
+        BaseMod.addCard(new Regroup()); // uncommon skill
+        BaseMod.addCard(new Payback()); // uncommon skill
+        BaseMod.addCard(new RiteoftheBlade()); // rare power
         BaseMod.addCard(new SerratedKnife()); // common attack
         BaseMod.addCard(new Slash()); // common attack
+        BaseMod.addCard(new BloodthirstyStrike());
         BaseMod.addCard(new Transfusion());
         BaseMod.addCard(new WhirlingDeath());
         BaseMod.addCard(new Vampirism());
@@ -439,24 +439,25 @@ public class DefaultMod implements
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
-        UnlockTracker.unlockCard(BloodWard.ID);
+        UnlockTracker.unlockCard(SanguineArmour.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
-        UnlockTracker.unlockCard(FuryStrike.ID);
         UnlockTracker.unlockCard(Gluttony.ID);
         UnlockTracker.unlockCard(Guillotine.ID);
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
-        UnlockTracker.unlockCard(Hunger.ID);
+        UnlockTracker.unlockCard(Hack.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(Reap.ID);
-        UnlockTracker.unlockCard(Revenge.ID);
-        UnlockTracker.unlockCard(SavageForm.ID);
+        UnlockTracker.unlockCard(Regroup.ID);
+        UnlockTracker.unlockCard(Payback.ID);
+        UnlockTracker.unlockCard(RiteoftheBlade.ID);
         UnlockTracker.unlockCard(Slash.ID);
+        UnlockTracker.unlockCard(BloodthirstyStrike.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
         UnlockTracker.unlockCard(WhirlingDeath.ID);

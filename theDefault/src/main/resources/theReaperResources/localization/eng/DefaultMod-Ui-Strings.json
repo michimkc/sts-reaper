@@ -3,5 +3,10 @@
     "TEXT": [
       "YOU ARE MINE!"
     ]
+  },
+  "PutOnDeckChooseAction": {
+    "TEXT": [
+      "put on top of your draw pile"
+    ]
   }
 }

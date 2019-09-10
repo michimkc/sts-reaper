@@ -19,10 +19,6 @@ import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
 
-//When affected by bloodthirst, each damage taken adds a mark to the enemy that dealt it.
-//dealing damage to the enemy consumes a mark and heals 1 hp.
-//marks reduce by half the total, or 5, each turn, whichever is larger.
-
 public class VampirismPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
     public static final Logger logger = LogManager.getLogger(VampirismPower.class.getName());

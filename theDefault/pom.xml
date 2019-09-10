@@ -5,7 +5,7 @@
     <!--The author name(s) as they appear in MTS and any other comments are in your ModTheSpire.json-->
     <groupId>reaperMod</groupId>
     <artifactId>ReaperMod</artifactId>
-    <name>Reaper Mod</name>
+    <name>The Reaper</name>
     <version>0.0.2</version>
     <description>A Mod to add a Custom Playable Character called The Reaper.</description>
 

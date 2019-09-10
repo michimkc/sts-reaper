@@ -2,11 +2,9 @@ package theReaper.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
-import theReaper.actions.RaiseMaxHpAction;
 import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makeRelicOutlinePath;
@@ -46,7 +44,7 @@ public class OldCharmRelic extends CustomRelic {
     public void onMonsterDeath(AbstractMonster m) {
 
         if(!m.hasPower("Minion") && !usedThisCombat) {
-            AbstractDungeon.actionManager.addToBottom(new RaiseMaxHpAction(AbstractDungeon.player, HpRaiseAmount));
+            AbstractDungeon.player.increaseMaxHp(HpRaiseAmount, true);
             usedThisCombat = true;
             this.pulse = false;
             flash();

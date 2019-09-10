@@ -10,8 +10,8 @@
   },
   {
     "NAMES": [
-      "bloodthirst",
-      "Bloodthirst"
+      "vengeance",
+      "Vengeance"
     ],
     "DESCRIPTION": "Whenever you take unblocked attack damage, add that many marks to the enemy that dealt the damage."
   },
@@ -33,8 +33,8 @@
   },
   {
     "NAMES": [
-      "revenge",
-      "Revenge"
+      "payback",
+      "Payback"
     ],
     "DESCRIPTION": "When you take attack damage from an enemy, at end of turn deal the same damage in return to that enemy."
   },

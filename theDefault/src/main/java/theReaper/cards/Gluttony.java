@@ -1,14 +1,12 @@
 package theReaper.cards;
 
 import basemod.BaseMod;
-import basemod.helpers.BaseModCardTags;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.powers.GluttonyPower;
-import theReaper.powers.SavageFormPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,18 +19,18 @@ public class Gluttony extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("Gluttony");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     // Attacks hit all enemies.
     public Gluttony()
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        newCost = 2;
+        newCost = 1;
     }
 
     // Actions the card should do.

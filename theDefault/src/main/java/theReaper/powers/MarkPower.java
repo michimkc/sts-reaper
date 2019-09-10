@@ -18,7 +18,7 @@ import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
 
-//When affected by bloodthirst, each damage taken adds a mark to the enemy that dealt it.
+//When affected by vengeance, each damage taken adds a mark to the enemy that dealt it.
 //dealing damage to the enemy consumes a mark and heals 1 hp.
 //marks reduce by half the total, or 5, each turn, whichever is larger.
 

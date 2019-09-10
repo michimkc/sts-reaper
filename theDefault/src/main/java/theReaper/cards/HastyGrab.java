@@ -1,6 +1,5 @@
 package theReaper.cards;
 
-import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -8,10 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.powers.BleedPower;
-import theReaper.powers.BloodthirstPower;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HastyGrab extends AbstractCustomCard {
 

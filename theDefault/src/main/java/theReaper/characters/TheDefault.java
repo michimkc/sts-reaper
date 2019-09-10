@@ -167,7 +167,7 @@ public class TheDefault extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
 
-        retVal.add(Hunger.ID);
+        retVal.add(Hack.ID);
         retVal.add(Reap.ID);
         return retVal;
     }

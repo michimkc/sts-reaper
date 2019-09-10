@@ -1,19 +1,12 @@
 package theReaper.cards;
 
-import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.actions.SoulBindAction;
-import theReaper.powers.BloodthirstPower;
 import theReaper.util.SoulManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MasterBall extends AbstractCustomCard {

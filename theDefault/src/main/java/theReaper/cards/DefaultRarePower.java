@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.characters.TheDefault;
-import theReaper.powers.BloodthirstPower;
+import theReaper.powers.VengeancePower;
 
 import static theReaper.DefaultMod.makeCardPath;
 
@@ -55,7 +55,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new BloodthirstPower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p, p, new VengeancePower(p, p, magicNumber), magicNumber));
     }
 
     //Upgraded stats.

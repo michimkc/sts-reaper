@@ -1,7 +1,11 @@
 {
-  "theReaper:BloodWard": {
-    "NAME": "Blood Ward",
-    "DESCRIPTION": "Gain !M! thereaper:Bleed. NL Gain !B! Plated Armor"
+  "theReaper:BloodthirstyStrike": {
+    "NAME": "Bloodthirsty Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance."
+  },
+  "theReaper:SanguineArmour": {
+    "NAME": "SanguineArmour",
+    "DESCRIPTION": "Gain !B! Plated Armor. NL Gain !M! thereaper:Bleed."
   },
   "theReaper:Bulwark": {
     "NAME": "Bulwark",
@@ -21,11 +25,8 @@
   },
   "theReaper:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Gain !M! thereaper:Bloodthirst. NL Exhaust"
-  },
-  "theReaper:FuryStrike": {
-    "NAME": "Fury Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Bloodthirst."
+    "DESCRIPTION": "Draw !M! Cards. Gain !M2! thereaper:Vengeance. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. Gain !theReaper:M2! thereaper:Vengeance."
   },
   "theReaper:Gluttony": {
     "NAME": "Gluttony",
@@ -35,6 +36,10 @@
     "NAME": "Guillotine",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind."
   },
+  "theReaper:Hack": {
+    "NAME": "Hack",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance."
+  },
   "theReaper:HastyGrab": {
     "NAME": "HastyGrab",
     "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Bleed."
@@ -42,10 +47,6 @@
   "theReaper:Hemorrhage": {
     "NAME": "Hemorrhage",
     "DESCRIPTION": "Apply !M! thereaper:Bleed."
-  },
-  "theReaper:Hunger": {
-    "NAME": "Hunger",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thereaper:Bloodthirst."
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
@@ -59,21 +60,29 @@
     "NAME": "Reap",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL [#ffff00]SoulBind[]."
   },
-  "theReaper:Revenge": {
-    "NAME": "Revenge",
-    "DESCRIPTION": "Gain !M! thereaper:Revenge. NL Exhaust"
+  "theReaper:Regroup": {
+    "NAME": "Regroup",
+    "DESCRIPTION": "Draw !M! cards. You may put up to !theReaper:M2! cards on top of your draw pile."
+  },
+  "theReaper:Payback": {
+    "NAME": "Payback",
+    "DESCRIPTION": "Gain !M! thereaper:Payback. NL Exhaust"
   },
   "theReaper:Slash": {
     "NAME": "Slash",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theReaper:SavageForm": {
-    "NAME": "Savage Form",
-    "DESCRIPTION": "Attacks damage all enemies."
+  "theReaper:RiteoftheBlade": {
+    "NAME": "Rite of the Blade",
+    "DESCRIPTION": "Attacks deal damage to all enemies."
   },
   "theReaper:SerratedKnife": {
     "NAME": "SerratedKnife",
     "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thereaper:Bleed"
+  },
+  "theReaper:SwiftStrike": {
+    "NAME": "Swift Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL Draw !M! cards."
   },
   "theReaper:Transfusion": {
     "NAME": "Transfusion",
@@ -81,7 +90,7 @@
   },
   "theReaper:WhirlingDeath": {
     "NAME": "Whirling Death",
-    "DESCRIPTION": "Deal !D! Damage !M! times. NL Increase the number of hits by !M2! this combat."
+    "DESCRIPTION": "Deal !D! Damage !M! times. NL Increase the number of hits by !theReaper:M2! this combat."
   },
   "theReaper:Vampirism": {
     "NAME": "Vampirism",
