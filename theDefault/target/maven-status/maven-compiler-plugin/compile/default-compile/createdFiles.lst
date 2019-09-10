@@ -1,5 +1,6 @@
 theReaper\actions\SoulBindAction.class
 theReaper\cards\DefaultRarePower.class
+theReaper\patches\DamageActionPatch.class
 theReaper\actions\WhirlingDeathAction.class
 theReaper\souls\AbstractSoul.class
 theReaper\util\SoulManager.class

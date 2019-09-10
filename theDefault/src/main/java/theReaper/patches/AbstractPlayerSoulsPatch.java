@@ -1,9 +1,5 @@
 package theReaper.patches;
 
-// this file excluded from compile
-// File | Settings | Build, Execution, Deployment | Compiler | Excludes
-
-
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
