@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.MagicFlower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -376,9 +377,8 @@ public class DefaultMod implements
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new OldCharmRelic(), TheDefault.Enums.COLOR_GRAY);
 
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
+
+        BaseMod.addRelicToCustomPool(new MagicFlower(), TheDefault.Enums.COLOR_GRAY);
 
         
         // This adds a relic to the Shared pool. Every character can find this relic.
@@ -418,6 +418,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Frenzy());
         BaseMod.addCard(new FuryStrike());
+        BaseMod.addCard(new Gluttony());
         BaseMod.addCard(new Guillotine());
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
@@ -427,6 +428,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Reap());
         BaseMod.addCard(new Revenge()); // uncommon skill
         BaseMod.addCard(new SavageForm()); // rare power
+        BaseMod.addCard(new SerratedKnife()); // common attack
         BaseMod.addCard(new Slash()); // common attack
         BaseMod.addCard(new Transfusion());
         BaseMod.addCard(new WhirlingDeath());
@@ -444,6 +446,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(FuryStrike.ID);
+        UnlockTracker.unlockCard(Gluttony.ID);
         UnlockTracker.unlockCard(Guillotine.ID);
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
@@ -454,6 +457,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Revenge.ID);
         UnlockTracker.unlockCard(SavageForm.ID);
         UnlockTracker.unlockCard(Slash.ID);
+        UnlockTracker.unlockCard(SerratedKnife.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
         UnlockTracker.unlockCard(WhirlingDeath.ID);
         UnlockTracker.unlockCard(Vampirism.ID);

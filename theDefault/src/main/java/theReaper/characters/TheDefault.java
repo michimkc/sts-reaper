@@ -23,9 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.cards.*;
-import theReaper.relics.DefaultClickableRelic;
 import theReaper.relics.OldCharmRelic;
-import theReaper.relics.PlaceholderRelic;
 
 import java.util.ArrayList;
 
@@ -179,12 +177,8 @@ public class TheDefault extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         retVal.add(OldCharmRelic.ID);
-        //retVal.add(DefaultClickableRelic.ID);
 
         UnlockTracker.markRelicAsSeen(OldCharmRelic.ID);
-        //UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        //UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
-        //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;
     }

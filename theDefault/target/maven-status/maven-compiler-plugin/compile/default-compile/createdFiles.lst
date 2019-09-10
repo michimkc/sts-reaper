@@ -29,6 +29,7 @@ theReaper\relics\PlaceholderRelic2.class
 theReaper\cards\BloodWard.class
 theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
+theReaper\cards\SerratedKnife.class
 theReaper\powers\SavageFormPower.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
@@ -53,10 +54,12 @@ theReaper\cards\MaimingStrike.class
 theReaper\variables\DefaultSecondMagicNumber.class
 theReaper\cards\Hemorrhage.class
 theReaper\relics\DefaultClickableRelic.class
+theReaper\patches\AbstractMonsterPatch.class
 theReaper\cards\DefaultCommonAttack.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
 theReaper\powers\BloodthirstPower.class
 theReaper\actions\RaiseMaxHpAction.class
+theReaper\powers\GluttonyPower.class
 theReaper\cards\DefaultRareAttack.class
 theReaper\cards\SavageForm.class
 theReaper\variables\MagicNumber2Variable.class
@@ -66,11 +69,14 @@ theReaper\cards\DefaultUncommonAttack.class
 theReaper\cards\DefaultCommonPower.class
 theReaper\powers\TransfusionPower.class
 theReaper\cards\Transfusion.class
+theReaper\powers\AbstractCustomPower.class
 theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
 theReaper\cards\Reap.class
 theReaper\cards\Slash.class
 theReaper\orbs\DefaultOrb.class
+theReaper\cards\Gluttony.class
+theReaper\powers\CustomTemplatePower.class
 theReaper\patches\DefaultInsertPatch$Locator.class
 theReaper\powers\VampirismPower.class
 theReaper\relics\OldCharmRelic.class

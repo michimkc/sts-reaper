@@ -18,7 +18,6 @@ public class FuryStrike extends AbstractCustomCard {
 
     public static final String MARKSTITLE = BaseMod.getKeywordTitle("thereaper:marks"); // this isn't resolved but should be resolved at compile time when added by BaseMod.
     public static final String MARKSDESCRIPTION = BaseMod.getKeywordDescription("thereaper:marks");
-
     public ArrayList<TooltipInfo> tips = new ArrayList<TooltipInfo>();
 
     public static final String ID = DefaultMod.makeID("FuryStrike");

@@ -27,6 +27,10 @@
     "NAME": "Fury Strike",
     "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Bloodthirst."
   },
+  "theReaper:Gluttony": {
+    "NAME": "Gluttony",
+    "DESCRIPTION": "Whenever a creature dies, consume all their marks and heal for that amount."
+  },
   "theReaper:Guillotine": {
     "NAME": "Guillotine",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind."
@@ -66,6 +70,10 @@
   "theReaper:SavageForm": {
     "NAME": "Savage Form",
     "DESCRIPTION": "Attacks damage all enemies."
+  },
+  "theReaper:SerratedKnife": {
+    "NAME": "SerratedKnife",
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thereaper:Bleed"
   },
   "theReaper:Transfusion": {
     "NAME": "Transfusion",

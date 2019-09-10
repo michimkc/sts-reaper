@@ -11,6 +11,10 @@
     "NAME": "Bloodthirst",
     "DESCRIPTIONS": ["Whenever you take attack damage, the enemy that dealt the damage gains that many marks."]
 },
+  "theReaper:GluttonyPower": {
+    "NAME": "Gluttony",
+    "DESCRIPTIONS": ["Whenever a creature dies, consume all their marks and heal for that amount."]
+  },
 "theReaper:MarkPower": {
   "NAME": "Mark",
   "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]

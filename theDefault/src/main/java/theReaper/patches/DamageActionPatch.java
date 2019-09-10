@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -48,8 +49,8 @@ public class DamageActionPatch {// Don't worry about the "never used" warning - 
     )
     public class DamageActionPatch {
 
-        public static void Prefix(DamageAction da) {
-            if (AbstractDungeon.player.hasPower(DefaultMod.makeID("SavageFormPower"))){
+        public static SpireReturn Prefix(DamageAction da) {
+            if (da.source == AbstractDungeon.player && AbstractDungeon.player.hasPower(DefaultMod.makeID("SavageFormPower"))){
 
                 DamageInfo.DamageType dt = da.damageType;
                 ArrayList<AbstractMonster> m = (AbstractDungeon.getCurrRoom()).monsters.monsters;
@@ -64,9 +65,9 @@ public class DamageActionPatch {// Don't worry about the "never used" warning - 
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, dt, AbstractGameAction.AttackEffect.NONE));
                 da.isDone = true;
-                return;
+                return SpireReturn.Return(null);
             }
-
+            return SpireReturn.Continue();
         }
     }
 
