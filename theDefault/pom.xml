@@ -6,7 +6,7 @@
     <groupId>reaperMod</groupId>
     <artifactId>ReaperMod</artifactId>
     <name>Reaper Mod</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>A Mod to add a Custom Playable Character called The Reaper.</description>
 
     <properties>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>com.megacrit.cardcrawl</groupId>
             <artifactId>slaythespire</artifactId>
-            <version>${SlayTheSpire.version}</version>
+            <version>07-17-2019</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
             <!--<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>-->
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>modthespire</artifactId>
-            <version>${ModTheSpire.version}</version>
+            <version>3.11.0</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
             <!--<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>-->

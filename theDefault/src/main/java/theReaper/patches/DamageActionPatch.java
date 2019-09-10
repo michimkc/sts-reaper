@@ -64,7 +64,9 @@ public class DamageActionPatch {// Don't worry about the "never used" warning - 
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, dt, AbstractGameAction.AttackEffect.NONE));
                 da.isDone = true;
+                return;
             }
+
         }
     }
 

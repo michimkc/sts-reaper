@@ -63,21 +63,6 @@ public class SavageFormPower extends AbstractPower implements CloneablePowerInte
         updateDescription();
     }
 
-    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-
-        int temp = (AbstractDungeon.getCurrRoom()).monsters.monsters.size();
-        int[] amountArray = new int[temp];
-        for (int i = 0; i<temp; i++)
-        {
-            amountArray[i] = damageAmount;
-        }
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAllButOneEnemyAction
-                        (owner,target,amountArray,info.type,AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-    }
-
-
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
