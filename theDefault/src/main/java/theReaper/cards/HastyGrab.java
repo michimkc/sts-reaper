@@ -20,7 +20,7 @@ public class HastyGrab extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public HastyGrab() {
 

@@ -62,6 +62,7 @@ public abstract class AbstractCustomCard extends CustomCard {
             upgradeDamage(damageUp);
             upgradeBlock(blockUp);
             upgradeMagicNumber(magicNumberUp);
+            upgradeMagicNumber2(magicNumber2);
             if (newCost != -2) {
                 upgradeBaseCost(newCost);
             }

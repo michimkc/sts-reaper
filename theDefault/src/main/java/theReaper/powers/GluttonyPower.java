@@ -48,10 +48,16 @@ public class GluttonyPower extends AbstractCustomPower implements CloneablePower
             // the amount we heal is the number of stacks of the mark minus their current health
             int totalHeal = markAmount - m.currentHealth;
 
+            if (totalHeal <= 0)
+            {
+                return;
+            }
+
             // heal the player
-            this.owner.heal(totalHeal*amount);
+            this.owner.heal(totalHeal);
+            logger.info("Gluttony healing for " + totalHeal + ". Monster HP is : " + m.currentHealth + " and total Marks is : " + markAmount);
             // reduce the number of marks
-            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
+            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, m.getPower(DefaultMod.makeID("MarkPower")), totalHeal));
         }
     }
 

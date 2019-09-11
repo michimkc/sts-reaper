@@ -31,6 +31,7 @@ public class Gluttony extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         newCost = 1;
+        magicNumber = 1;
     }
 
     // Actions the card should do.

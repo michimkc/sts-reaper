@@ -1,5 +1,4 @@
 theReaper\actions\SoulBindAction.class
-theReaper\cards\DefaultRarePower.class
 theReaper\cards\SwiftStrike.class
 theReaper\patches\DamageActionPatch.class
 theReaper\actions\WhirlingDeathAction.class
@@ -10,7 +9,6 @@ theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerCombatUpdatePatch.class
 theReaper\patches\DefaultInsertPatch.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\Regroup.class
-theReaper\cards\DefaultAttackWithVariable.class
 theReaper\cards\AbstractDefaultCard.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\powers\BleedPower.class
@@ -21,7 +19,6 @@ theReaper\util\TextureLoader.class
 theReaper\actions\BleedLoseHpAction.class
 theReaper\characters\TheDefault$Enums.class
 theReaper\actions\SoulGemAction.class
-theReaper\cards\DefaultUncommonSkill.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\powers\RiteoftheBladePower.class
 theReaper\cards\Frenzy.class
@@ -32,7 +29,6 @@ theReaper\cards\SerratedKnife.class
 theReaper\cards\Hack.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
-theReaper\cards\DefaultUncommonPower.class
 theReaper\cards\WhirlingDeath.class
 theReaper\util\SoulStrings.class
 theReaper\cards\Cleanse.class
@@ -48,8 +44,6 @@ theReaper\potions\PlaceholderPotion.class
 theReaper\powers\CommonPower.class
 theReaper\cards\Bulwark.class
 theReaper\powers\MarkPower.class
-theReaper\cards\DefaultSecondMagicNumberSkill.class
-theReaper\cards\DefaultRareSkill.class
 theReaper\cards\MaimingStrike.class
 theReaper\cards\Payback.class
 theReaper\variables\DefaultSecondMagicNumber.class
@@ -57,18 +51,17 @@ theReaper\cards\Hemorrhage.class
 theReaper\powers\VengeancePower.class
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractMonsterPatch.class
-theReaper\cards\DefaultCommonAttack.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
+theReaper\cards\HurricaneSlash.class
 theReaper\powers\GluttonyPower.class
-theReaper\cards\DefaultRareAttack.class
 theReaper\variables\MagicNumber2Variable.class
 theReaper\events\IdentityCrisisEvent.class
 theReaper\cards\HastyGrab.class
-theReaper\cards\DefaultUncommonAttack.class
-theReaper\cards\DefaultCommonPower.class
 theReaper\actions\PutOnDeckChooseAction.class
+theReaper\cards\Devour.class
 theReaper\powers\TransfusionPower.class
 theReaper\cards\Transfusion.class
+theReaper\actions\DevourAction.class
 theReaper\powers\AbstractCustomPower.class
 theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
@@ -84,5 +77,4 @@ theReaper\powers\VampirismPower.class
 theReaper\relics\OldCharmRelic.class
 theReaper\actions\UncommonPowerAction.class
 theReaper\cards\AbstractDynamicCard.class
-theReaper\cards\DefaultCommonSkill.class
 theReaper\characters\TheDefault.class

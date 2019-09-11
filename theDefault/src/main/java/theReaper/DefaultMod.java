@@ -415,14 +415,16 @@ public class DefaultMod implements
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new CrimsonRush());
         BaseMod.addCard(new Defend());
+        BaseMod.addCard(new Devour());
         BaseMod.addCard(new Frenzy());
         BaseMod.addCard(new Gluttony());
         BaseMod.addCard(new Guillotine());
+        BaseMod.addCard(new Hack());
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
-        BaseMod.addCard(new Hack());
+        BaseMod.addCard(new HurricaneSlash());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
-        BaseMod.addCard(new MasterBall());
+        //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new Reap());
         BaseMod.addCard(new Regroup()); // uncommon skill
         BaseMod.addCard(new Payback()); // uncommon skill
@@ -445,12 +447,14 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
         UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(Gluttony.ID);
         UnlockTracker.unlockCard(Guillotine.ID);
+        UnlockTracker.unlockCard(Hack.ID);
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
-        UnlockTracker.unlockCard(Hack.ID);
+        UnlockTracker.unlockCard(HurricaneSlash.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(Reap.ID);

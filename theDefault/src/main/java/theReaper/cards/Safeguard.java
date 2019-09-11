@@ -33,11 +33,20 @@ public class Safeguard extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        int monstercount = AbstractDungeon.getCurrRoom().monsters.monsters.size();
+        int monstercount = 0;
+
+        for (int i = 0; i < (AbstractDungeon.getCurrRoom()).monsters.monsters.size(); i++) {
+            AbstractMonster target = (AbstractMonster) (AbstractDungeon.getCurrRoom()).monsters.monsters.get(i);
+            if (!target.isDying && target.currentHealth > 0 && !target.isEscaping) {
+                monstercount++;
+            }
+        }
+
         if(upgraded)
         {
             monstercount += magicNumber;
         }
+
         act(new GainBlockAction(p, p, block*monstercount));
 
     }

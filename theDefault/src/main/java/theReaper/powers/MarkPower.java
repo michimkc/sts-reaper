@@ -75,6 +75,7 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
             info.owner.heal(totalHeal);
             // reduce the number of marks
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
+            logger.info("Monster (" + owner.currentHealth + " current HP) attacked for " +damageAmount + ", healed for " + totalHeal);
         }
 
         return damageAmount;

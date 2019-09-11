@@ -1,4 +1,5 @@
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\DefaultUncommonSkill.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\HurricaneSlash.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\powers\TransfusionPower.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\PutOnDeckChooseAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\relics\OldCharmRelic.java
@@ -41,6 +42,7 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\SoulGemAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\souls\AbstractSoul.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\MasterBall.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Devour.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\events\IdentityCrisisEvent.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Defend.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Cleanse.java
@@ -73,6 +75,7 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\AbstractNonLethalCard.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\DefaultCommonPower.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Frenzy.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\DevourAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\WhirlingDeathAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\BloodthirstyStrike.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\AbstractCustomCard.java

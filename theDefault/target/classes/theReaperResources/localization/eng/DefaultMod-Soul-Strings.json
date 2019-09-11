@@ -11,5 +11,11 @@
   "theReaper:LostSoul": {
     "NAME": "Lost Soul",
     "DESCRIPTIONS": ["A weak, frail soul with no place to return to."]
+  },
+  "theReaper:HurricaneSlash": {
+    "NAME": "Hurricane Damage",
+    "DESCRIPTIONS": ["Deals Damage in the following sequence: ",
+                      " , ",
+                      "..."]
   }
 }
