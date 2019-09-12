@@ -40,8 +40,8 @@ public class Reap extends AbstractNonLethalCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        NonLethalDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false);
         act(new SoulBindAction(p,m));
 
     }

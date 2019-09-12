@@ -51,7 +51,7 @@ public abstract class AbstractCustomCard extends CustomCard {
         isMagicNumber2Modified = false;
     }
 
-    public void act(AbstractGameAction action) { 
+    public static void act(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);
     }
 

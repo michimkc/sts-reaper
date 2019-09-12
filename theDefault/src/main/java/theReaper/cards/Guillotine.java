@@ -31,9 +31,9 @@ public class Guillotine extends AbstractNonLethalCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseDamage = 15;
-        damageUp = 20;
-        newCost = 3;
+        baseDamage = 24;
+        damageUp = 8;
+
 
     }
 
@@ -41,9 +41,9 @@ public class Guillotine extends AbstractNonLethalCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+        NonLethalDamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SMASH,false);
 
-        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SMASH));
         act(new SoulBindAction(p,m));
 
     }

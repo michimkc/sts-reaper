@@ -48,7 +48,7 @@ public class BleedLoseHpAction extends AbstractGameAction {
                 this.target.tint.color = Color.CHARTREUSE.cpy();
                 this.target.tint.changeColor(Color.WHITE.cpy());
                 int finalAmount = this.amount;
-                if(this.amount > this.target.currentHealth)
+                if(this.amount >= this.target.currentHealth)
                 {
                     finalAmount = this.target.currentHealth - 1;
                 }

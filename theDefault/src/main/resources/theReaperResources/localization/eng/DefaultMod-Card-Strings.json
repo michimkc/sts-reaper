@@ -58,7 +58,7 @@
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
-    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage."
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL Apply !M! Vulnerable"
   },
   "theReaper:MasterBall": {
     "NAME": "Master Ball",
@@ -81,17 +81,22 @@
     "DESCRIPTION": "Gain !B! Block for each enemy in combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block, then Gain !B! Block for each enemy in combat. NL Exhaust."
   },
-  "theReaper:Slash": {
-    "NAME": "Slash",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
   "theReaper:RiteoftheBlade": {
     "NAME": "Rite of the Blade",
     "DESCRIPTION": "Attacks deal damage to all enemies."
   },
+  "theReaper:Slash": {
+    "NAME": "Slash",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
   "theReaper:SerratedKnife": {
     "NAME": "SerratedKnife",
     "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thereaper:Bleed"
+  },
+  "theReaper:ShieldWard": {
+    "NAME": "Shield Ward",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thereaper:Bleed. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! thereaper:Bleed. NL Innate NL Exhaust"
   },
   "theReaper:SwiftStrike": {
     "NAME": "Swift Strike",

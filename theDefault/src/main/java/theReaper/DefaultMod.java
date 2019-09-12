@@ -431,6 +431,7 @@ public class DefaultMod implements
         BaseMod.addCard(new RiteoftheBlade()); // rare power
         BaseMod.addCard(new Safeguard()); //
         BaseMod.addCard(new SerratedKnife()); // common attack
+        BaseMod.addCard(new ShieldWard()); //
         BaseMod.addCard(new Slash()); // common attack
         BaseMod.addCard(new BloodthirstyStrike());
         BaseMod.addCard(new Transfusion());
@@ -443,6 +444,7 @@ public class DefaultMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
         UnlockTracker.unlockCard(SanguineArmour.ID);
+        UnlockTracker.unlockCard(BloodthirstyStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
@@ -463,7 +465,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(RiteoftheBlade.ID);
         UnlockTracker.unlockCard(Safeguard.ID);
         UnlockTracker.unlockCard(Slash.ID);
-        UnlockTracker.unlockCard(BloodthirstyStrike.ID);
+        UnlockTracker.unlockCard(ShieldWard.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
         UnlockTracker.unlockCard(WhirlingDeath.ID);

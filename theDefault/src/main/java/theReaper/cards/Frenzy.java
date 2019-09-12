@@ -31,7 +31,8 @@ public class Frenzy extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
-        magicNumber2 = baseMagicNumber2 = 2;
+        magicNumber2 = baseMagicNumber2 = 1;
+        magicNumber2Up = 1;
         this.exhaust = true;
 
     }
@@ -46,21 +47,10 @@ public class Frenzy extends AbstractCustomCard {
     }
 
     public void upgrade() {
-        if (!this.upgraded) {
-            this.exhaust = false;
-            upgradeName();
-            upgradeDamage(damageUp);
-            upgradeBlock(blockUp);
-            upgradeMagicNumber(magicNumberUp);
-            if (newCost != -2) {
-                upgradeBaseCost(newCost);
-            }
+        super.upgrade();
 
-            if (this.upgradeDescription != "" && this.upgradeDescription != null) {
-                this.rawDescription = this.upgradeDescription;
-            }
-            initializeDescription();
-        }
+        this.exhaust = false;
+
     }
 
     @Override

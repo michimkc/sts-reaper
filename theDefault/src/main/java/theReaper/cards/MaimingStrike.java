@@ -2,10 +2,14 @@ package theReaper.cards;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import theReaper.DefaultMod;
 
 public class MaimingStrike extends AbstractNonLethalCard {
@@ -22,8 +26,11 @@ public class MaimingStrike extends AbstractNonLethalCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseDamage = 16;
-        damageUp = 4;
+        damage = baseDamage = 12;
+        damageUp = 3;
+
+        magicNumber = baseMagicNumber = 2;
+        magicNumberUp = 3;
 
         this.tags.add(CardTags.STRIKE);
     }
@@ -32,9 +39,9 @@ public class MaimingStrike extends AbstractNonLethalCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HEAVY));
-
+        NonLethalDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HEAVY);
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
     }
 
 
