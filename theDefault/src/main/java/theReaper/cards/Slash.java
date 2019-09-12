@@ -78,7 +78,7 @@ public class Slash extends CustomCard {
         baseDamage = DAMAGE;
 
         this.tags.add(BaseModCardTags.BASIC_STRIKE); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
-        this.tags.add(CardTags.STRIKE);
+
     }
 
     // Actions the card should do.

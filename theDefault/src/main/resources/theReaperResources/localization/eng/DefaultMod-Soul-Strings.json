@@ -12,8 +12,8 @@
     "NAME": "Lost Soul",
     "DESCRIPTIONS": ["A weak, frail soul with no place to return to."]
   },
-  "theReaper:HurricaneSlash": {
-    "NAME": "Hurricane Damage",
+  "theReaper:WhirlingDeath": {
+    "NAME": "Whirling Death Damage",
     "DESCRIPTIONS": ["Deals Damage in the following sequence: ",
                       " , ",
                       "..."]

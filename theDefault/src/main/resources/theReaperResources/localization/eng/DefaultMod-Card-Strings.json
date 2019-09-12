@@ -1,11 +1,7 @@
 {
   "theReaper:BloodthirstyStrike": {
     "NAME": "Bloodthirsty Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance."
-  },
-  "theReaper:SanguineArmour": {
-    "NAME": "SanguineArmour",
-    "DESCRIPTION": "Gain !B! Plated Armor. NL Gain !M! thereaper:Bleed."
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance"
   },
   "theReaper:Bulwark": {
     "NAME": "Bulwark",
@@ -21,7 +17,7 @@
   },
   "theReaper:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block"
   },
   "theReaper:Devour": {
     "NAME": "Devour",
@@ -30,7 +26,11 @@
   "theReaper:Frenzy": {
     "NAME": "Frenzy",
     "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance."
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance"
+  },
+  "theReaper:Glowfly": {
+    "NAME": "Glowfly",
+    "DESCRIPTION": "Obtain a small soul. NL Exhaust"
   },
   "theReaper:Gluttony": {
     "NAME": "Gluttony",
@@ -38,23 +38,23 @@
   },
   "theReaper:Guillotine": {
     "NAME": "Guillotine",
-    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind."
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
   },
   "theReaper:Hack": {
     "NAME": "Hack",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance."
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance"
   },
   "theReaper:HastyGrab": {
     "NAME": "HastyGrab",
-    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Bleed."
+    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Bleed"
   },
   "theReaper:Hemorrhage": {
     "NAME": "Hemorrhage",
-    "DESCRIPTION": "Apply !M! thereaper:Bleed."
+    "DESCRIPTION": "Apply !M! thereaper:Bleed"
   },
-  "theReaper:HurricaneSlash": {
-    "NAME": "Hurricane Slash",
-    "DESCRIPTION": "Deal damage to a random enemy, then continue, hitting all enemies once. Damage increases with each hit."
+  "theReaper:HurricaneStrike": {
+    "NAME": "Hurricane Strike",
+    "DESCRIPTION": "Deal !D! Damage !M! times. NL Increase the number of hits by !theReaper:M2! this combat."
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
@@ -62,11 +62,11 @@
   },
   "theReaper:MasterBall": {
     "NAME": "Master Ball",
-    "DESCRIPTION": "NL thereaper:SoulBind !M!."
+    "DESCRIPTION": "NL thereaper:SoulBind !M!"
   },
   "theReaper:Reap": {
     "NAME": "Reap",
-    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL [#ffff00]SoulBind[]."
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
   },
   "theReaper:Regroup": {
     "NAME": "Regroup",
@@ -76,14 +76,18 @@
     "NAME": "Payback",
     "DESCRIPTION": "Gain !M! thereaper:Payback. NL Exhaust"
   },
-  "theReaper:Safeguard": {
-    "NAME": "Safeguard",
-    "DESCRIPTION": "Gain !B! Block for each enemy in combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block, then Gain !B! Block for each enemy in combat. NL Exhaust."
-  },
   "theReaper:RiteoftheBlade": {
     "NAME": "Rite of the Blade",
     "DESCRIPTION": "Attacks deal damage to all enemies."
+  },
+  "theReaper:Safeguard": {
+    "NAME": "Safeguard",
+    "DESCRIPTION": "Gain !B! Block. NL (Base !theReaper:M2! Block for each enemy in combat) NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL (Base !theReaper:M2! Block, plus !theReaper:M2! Block for each enemy in combat) NL Exhaust"
+  },
+  "theReaper:SanguineArmour": {
+    "NAME": "SanguineArmour",
+    "DESCRIPTION": "Gain !B! Plated Armor. NL Gain !M! thereaper:Bleed"
   },
   "theReaper:Slash": {
     "NAME": "Slash",
@@ -102,13 +106,17 @@
     "NAME": "Swift Strike",
     "DESCRIPTION": "Deal !D! Damage. NL Draw !M! cards."
   },
+  "theReaper:SoulBlade": {
+    "NAME": "Soul Blade",
+    "DESCRIPTION": "Deal !D! Damage. NL ( Base !theReaper:M2! Damage, plus !M! Damage for each soul you possess.)"
+  },
   "theReaper:Transfusion": {
     "NAME": "Transfusion",
     "DESCRIPTION": "Double all healing you receive this turn. NL Exhaust"
   },
   "theReaper:WhirlingDeath": {
     "NAME": "Whirling Death",
-    "DESCRIPTION": "Deal !D! Damage !M! times. NL Increase the number of hits by !theReaper:M2! this combat."
+    "DESCRIPTION": "Deal [#ffff00]Damage[] to a random enemy, then continue, hitting all enemies once. Damage increases with each hit."
   },
   "theReaper:Vampirism": {
     "NAME": "Vampirism",

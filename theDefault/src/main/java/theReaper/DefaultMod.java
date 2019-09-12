@@ -410,6 +410,7 @@ public class DefaultMod implements
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
 
+        BaseMod.addCard(new BloodthirstyStrike());
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new SanguineArmour()); // common skill
         BaseMod.addCard(new Cleanse()); // uncommon skill
@@ -418,11 +419,12 @@ public class DefaultMod implements
         BaseMod.addCard(new Devour());
         BaseMod.addCard(new Frenzy());
         BaseMod.addCard(new Gluttony());
+        BaseMod.addCard(new Glowfly());
         BaseMod.addCard(new Guillotine());
         BaseMod.addCard(new Hack());
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
-        BaseMod.addCard(new HurricaneSlash());
+        BaseMod.addCard(new HurricaneStrike());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new Reap());
@@ -433,7 +435,7 @@ public class DefaultMod implements
         BaseMod.addCard(new SerratedKnife()); // common attack
         BaseMod.addCard(new ShieldWard()); //
         BaseMod.addCard(new Slash()); // common attack
-        BaseMod.addCard(new BloodthirstyStrike());
+        BaseMod.addCard(new SoulBlade()); //
         BaseMod.addCard(new Transfusion());
         BaseMod.addCard(new WhirlingDeath());
         BaseMod.addCard(new Vampirism());
@@ -452,11 +454,12 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(Gluttony.ID);
+        UnlockTracker.unlockCard(Glowfly.ID);
         UnlockTracker.unlockCard(Guillotine.ID);
         UnlockTracker.unlockCard(Hack.ID);
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
-        UnlockTracker.unlockCard(HurricaneSlash.ID);
+        UnlockTracker.unlockCard(HurricaneStrike.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(Reap.ID);
@@ -467,6 +470,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Slash.ID);
         UnlockTracker.unlockCard(ShieldWard.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);
+        UnlockTracker.unlockCard(SoulBlade.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
         UnlockTracker.unlockCard(WhirlingDeath.ID);
         UnlockTracker.unlockCard(Vampirism.ID);

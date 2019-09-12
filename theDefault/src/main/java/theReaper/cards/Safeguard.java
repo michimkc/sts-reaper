@@ -25,6 +25,8 @@ public class Safeguard extends AbstractCustomCard {
         baseBlock = 10;
 
         baseMagicNumber = magicNumber = 1;
+        baseMagicNumber2 = baseBlock;
+
         this.exhaust = true;
 
     }
@@ -33,23 +35,28 @@ public class Safeguard extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        int monstercount = 0;
+        act(new GainBlockAction(p, p, block));
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+
+        int monsterCount = 0;
 
         for (int i = 0; i < (AbstractDungeon.getCurrRoom()).monsters.monsters.size(); i++) {
             AbstractMonster target = (AbstractMonster) (AbstractDungeon.getCurrRoom()).monsters.monsters.get(i);
             if (!target.isDying && target.currentHealth > 0 && !target.isEscaping) {
-                monstercount++;
+                monsterCount++;
             }
         }
 
         if(upgraded)
         {
-            monstercount += magicNumber;
+            monsterCount += magicNumber;
         }
 
-        act(new GainBlockAction(p, p, block*monstercount));
-
+        this.block = block*monsterCount;
+        this.isBlockModified = true;
     }
-
 
 }

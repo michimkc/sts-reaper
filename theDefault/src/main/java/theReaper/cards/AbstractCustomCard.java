@@ -27,6 +27,7 @@ import theReaper.characters.TheDefault;
 import theReaper.patches.*;
 import theReaper.relics.*;
 import theReaper.orbs.*;
+import theReaper.souls.AbstractSoul;
 
 public abstract class AbstractCustomCard extends CustomCard {
 
@@ -62,7 +63,7 @@ public abstract class AbstractCustomCard extends CustomCard {
             upgradeDamage(damageUp);
             upgradeBlock(blockUp);
             upgradeMagicNumber(magicNumberUp);
-            upgradeMagicNumber2(magicNumber2);
+            upgradeMagicNumber2(magicNumber2Up);
             if (newCost != -2) {
                 upgradeBaseCost(newCost);
             }
@@ -86,5 +87,11 @@ public abstract class AbstractCustomCard extends CustomCard {
         magicNumber2 = baseMagicNumber2; // Set the number to be equal to the base value.
         upgradedMagicNumber2 = true; // Upgraded = true - which does what the above method does.
     }
+
+    public void onSoulAdded(AbstractSoul soul) {}
+
+    public void onSoulCountChanged(){}
+
+    public void onSoulUsed(AbstractSoul soul) {}
 
 }

@@ -26,11 +26,11 @@ public class MaimingStrike extends AbstractNonLethalCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        damage = baseDamage = 12;
+        damage = baseDamage = 9;
         damageUp = 3;
 
-        magicNumber = baseMagicNumber = 2;
-        magicNumberUp = 3;
+        magicNumber = baseMagicNumber = 1;
+        magicNumberUp = 2;
 
         this.tags.add(CardTags.STRIKE);
     }

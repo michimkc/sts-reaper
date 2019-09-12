@@ -38,6 +38,7 @@ theReaper\cards\MasterBall.class
 theReaper\patches\AbstractPlayerSoulsPatch.class
 theReaper\util\IDCheckDontTouchPls.class
 theReaper\cards\Guillotine.class
+theReaper\cards\SoulBlade.class
 theReaper\cards\BloodthirstyStrike.class
 theReaper\powers\PaybackPower.class
 theReaper\potions\PlaceholderPotion.class
@@ -52,7 +53,6 @@ theReaper\powers\VengeancePower.class
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractMonsterPatch.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
-theReaper\cards\HurricaneSlash.class
 theReaper\powers\GluttonyPower.class
 theReaper\variables\MagicNumber2Variable.class
 theReaper\events\IdentityCrisisEvent.class
@@ -63,6 +63,7 @@ theReaper\cards\Devour.class
 theReaper\powers\TransfusionPower.class
 theReaper\cards\Transfusion.class
 theReaper\actions\DevourAction.class
+theReaper\cards\HurricaneStrike.class
 theReaper\powers\AbstractCustomPower.class
 theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
@@ -70,6 +71,7 @@ theReaper\cards\Reap.class
 theReaper\cards\Slash.class
 theReaper\orbs\DefaultOrb.class
 theReaper\cards\Gluttony.class
+theReaper\cards\Glowfly.class
 theReaper\powers\CustomTemplatePower.class
 theReaper\cards\Safeguard.class
 theReaper\patches\DefaultInsertPatch$Locator.class

@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.vfx.BobEffect;
+import theReaper.cards.AbstractCustomCard;
 import theReaper.util.SoulManager;
 
 public abstract class AbstractSoul {
@@ -40,10 +42,10 @@ public abstract class AbstractSoul {
 
 
     public void update() {
-        this.hb.update(this.tX*Settings.scale+(textureWidth*0.5f)*Settings.scale, this.tY*Settings.scale+(textureWidth*0.5f)*Settings.scale); // 1.5 is to position per the center of the sprite.
+        this.hb.update((this.tX+textureWidth*0.1F)*Settings.scale, (this.tY+textureWidth*0.1F)*Settings.scale); // 1.5 is to position per the center of the sprite.
         this.hb.update();
         if (this.hb.hovered) {
-            TipHelper.renderGenericTip(this.tX + 15.0F * Settings.scale, this.tY + 5.0F * Settings.scale, this.name, this.description);
+            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 100.0F) * Settings.scale, this.name, this.description);
 
             if (InputHelper.justClickedLeft) {
                 InputHelper.justClickedLeft = false;
@@ -63,7 +65,14 @@ public abstract class AbstractSoul {
         }
     }
 
-    public abstract void UseSoul();
+    public void UseSoul() {
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if (c instanceof AbstractCustomCard) {
+                ((AbstractCustomCard) c).onSoulUsed(this);
+                ((AbstractCustomCard) c).onSoulCountChanged();
+            }
+        }
+    }
 
     public abstract void render(SpriteBatch paramSpriteBatch);
 
