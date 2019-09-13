@@ -20,7 +20,7 @@ public class SanguineArmour extends AbstractCustomCard {
     public SanguineArmour() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         baseBlock = block = 6;
         blockUp = 3;
 

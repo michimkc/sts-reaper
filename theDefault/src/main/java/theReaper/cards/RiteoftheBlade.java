@@ -19,7 +19,7 @@ public class RiteoftheBlade extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     // Attacks hit all enemies.
     public RiteoftheBlade()
@@ -27,7 +27,7 @@ public class RiteoftheBlade extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
-        newCost = 2;
+        newCost = 1;
         //this.tags.add(BaseModCardTags.FORM); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
 
     }

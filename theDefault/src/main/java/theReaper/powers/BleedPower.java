@@ -36,6 +36,7 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
         name = NAME;
         ID = POWER_ID;
 
+
         this.owner = owner;
         this.amount = amount;
         this.source = source;
@@ -56,8 +57,7 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
     }
 
     public void playApplyPowerSfx() { CardCrawlGame.sound.play("BLOOD_SWISH", 0.05F); }
-
-
+    
     public void atStartOfTurn() {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
                 !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
