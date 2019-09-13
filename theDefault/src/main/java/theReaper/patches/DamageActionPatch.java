@@ -50,7 +50,7 @@ public class DamageActionPatch {// Don't worry about the "never used" warning - 
     public class DamageActionPatch {
 
         public static SpireReturn Prefix(DamageAction da) {
-            if (da.source == AbstractDungeon.player && AbstractDungeon.player.hasPower(DefaultMod.makeID("SavageFormPower"))){
+            if (da.source == AbstractDungeon.player && AbstractDungeon.player.hasPower(DefaultMod.makeID("RiteoftheBladePower"))){
 
                 DamageInfo.DamageType dt = da.damageType;
                 ArrayList<AbstractMonster> m = (AbstractDungeon.getCurrRoom()).monsters.monsters;

@@ -15,6 +15,7 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\HastyGrab.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\relics\BottledPlaceholderRelic.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\patches\AbstractPlayerSoulsPatch.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\DeathsDance.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Guillotine.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\util\SoulStrings.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\orbs\DefaultOrb.java
@@ -25,6 +26,7 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Hack.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\UncommonPowerAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Glowfly.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\powers\BloodMoonPower.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\variables\DefaultCustomVariable.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\SoulBindAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\variables\DefaultSecondMagicNumber.java
@@ -34,6 +36,7 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\powers\CustomTemplatePower.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\relics\PlaceholderRelic.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\SoulBlade.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\BloodMoon.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\SoulGemAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\souls\AbstractSoul.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\MasterBall.java
@@ -57,6 +60,7 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\variables\MagicNumber2Variable.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\RiteoftheBlade.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\relics\PlaceholderRelic2.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Tantrum.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\potions\PlaceholderPotion.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Transfusion.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Bulwark.java
@@ -66,11 +70,12 @@ C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\relics\DefaultClickableRelic.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\AbstractNonLethalCard.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\Frenzy.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\RendingStrike.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\DevourAction.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\actions\WhirlingDeathAction.java
-C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\BloodthirstyStrike.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\AbstractCustomCard.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\cards\ShieldWard.java
+C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\powers\DeathsDancePower.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\souls\LostSoul.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\util\TextureLoader.java
 C:\Users\May\Documents\May\PROJECTS\PROGRAMMING\github\sts-reaper\theDefault\src\main\java\theReaper\util\SoulManager.java

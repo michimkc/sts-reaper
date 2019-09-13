@@ -1,7 +1,7 @@
 {
-  "theReaper:BloodthirstyStrike": {
-    "NAME": "Bloodthirsty Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance"
+  "theReaper:BloodMoon": {
+    "NAME": "Blood Moon",
+    "DESCRIPTION": "Double the amount of thereaper:Marks applied. NL Applies !theReaper:M2! thereaper:Vengeance if you don't already have it. NL thereaper:Waning"
   },
   "theReaper:Bulwark": {
     "NAME": "Bulwark",
@@ -14,6 +14,10 @@
   "theReaper:CrimsonRush": {
     "NAME": "Crimson Rush",
     "DESCRIPTION": "Deal !D! Damage. If target is thereaper:bleeding deal !M! additional damage."
+  },
+  "theReaper:DeathsDance": {
+    "NAME": "Death's Dance",
+    "DESCRIPTION": "Reduce the cost of all [#FFBF00]Strikes[] by !M!"
   },
   "theReaper:Defend": {
     "NAME": "Defend",
@@ -72,6 +76,10 @@
     "NAME": "Regroup",
     "DESCRIPTION": "Draw !M! cards. You may put up to !theReaper:M2! cards on top of your draw pile."
   },
+  "theReaper:RendingStrike": {
+    "NAME": "Rending Strike",
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
+  },
   "theReaper:Payback": {
     "NAME": "Payback",
     "DESCRIPTION": "Gain !M! thereaper:Payback. NL Exhaust"
@@ -110,13 +118,17 @@
     "NAME": "Soul Blade",
     "DESCRIPTION": "Deal !D! Damage. NL ( Base !theReaper:M2! Damage, plus !M! Damage for each soul you possess.)"
   },
+  "theReaper:Tantrum": {
+    "NAME": "Tantrum",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! thereaper:Vengeance"
+  },
   "theReaper:Transfusion": {
     "NAME": "Transfusion",
     "DESCRIPTION": "Double all healing you receive this turn. NL Exhaust"
   },
   "theReaper:WhirlingDeath": {
     "NAME": "Whirling Death",
-    "DESCRIPTION": "Deal [#ffff00]Damage[] to a random enemy, then continue, hitting all enemies once. Damage increases with each hit."
+    "DESCRIPTION": "Deal [#FFBF00]Damage[] to a random enemy, then continue, hitting all enemies once. Damage increases with each hit."
   },
   "theReaper:Vampirism": {
     "NAME": "Vampirism",

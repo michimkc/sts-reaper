@@ -22,7 +22,7 @@ public class Safeguard extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = 10;
+        baseBlock = 8;
 
         baseMagicNumber = magicNumber = 1;
         baseMagicNumber2 = baseBlock;

@@ -22,13 +22,14 @@ public abstract class AbstractCustomPower extends AbstractPower implements Clone
 
     public String[] DESCRIPTIONS;
 
-    public AbstractCustomPower(final AbstractCreature owner, final AbstractCreature source, String POWERNAME, PowerType type, boolean isTurnBased) {
+    public AbstractCustomPower(final AbstractCreature owner, final AbstractCreature source,int amount, String POWERNAME, PowerType type, boolean isTurnBased) {
 
         ID = DefaultMod.makeID(POWERNAME);
         PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
         name = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+        this.amount = amount;
         this.owner = owner;
         this.source = source;
 
@@ -46,4 +47,7 @@ public abstract class AbstractCustomPower extends AbstractPower implements Clone
 
     public void onMonsterDeath(AbstractMonster m) {}
 
+    public void onApplyMarks(AbstractCreature target, AbstractCreature source, int amount) {}
+
+    public void onPowerRemoved(AbstractCustomPower p) {}
 }

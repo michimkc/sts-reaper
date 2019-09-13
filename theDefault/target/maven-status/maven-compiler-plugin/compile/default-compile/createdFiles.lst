@@ -2,11 +2,13 @@ theReaper\actions\SoulBindAction.class
 theReaper\cards\SwiftStrike.class
 theReaper\patches\DamageActionPatch.class
 theReaper\actions\WhirlingDeathAction.class
+theReaper\powers\DeathsDancePower.class
 theReaper\souls\AbstractSoul.class
 theReaper\util\SoulManager.class
 theReaper\relics\PlaceholderRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerCombatUpdatePatch.class
 theReaper\patches\DefaultInsertPatch.class
+theReaper\cards\BloodMoon.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\Regroup.class
 theReaper\cards\AbstractDefaultCard.class
@@ -31,6 +33,7 @@ theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\cards\WhirlingDeath.class
 theReaper\util\SoulStrings.class
+theReaper\powers\BloodMoonPower.class
 theReaper\cards\Cleanse.class
 theReaper\cards\Defend.class
 theReaper\util\SoulStrings$1.class
@@ -39,7 +42,6 @@ theReaper\patches\AbstractPlayerSoulsPatch.class
 theReaper\util\IDCheckDontTouchPls.class
 theReaper\cards\Guillotine.class
 theReaper\cards\SoulBlade.class
-theReaper\cards\BloodthirstyStrike.class
 theReaper\powers\PaybackPower.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\powers\CommonPower.class
@@ -65,6 +67,7 @@ theReaper\cards\Transfusion.class
 theReaper\actions\DevourAction.class
 theReaper\cards\HurricaneStrike.class
 theReaper\powers\AbstractCustomPower.class
+theReaper\cards\RendingStrike.class
 theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
 theReaper\cards\Reap.class
@@ -77,7 +80,9 @@ theReaper\cards\Safeguard.class
 theReaper\patches\DefaultInsertPatch$Locator.class
 theReaper\cards\SanguineArmour.class
 theReaper\powers\VampirismPower.class
+theReaper\cards\DeathsDance.class
 theReaper\relics\OldCharmRelic.class
 theReaper\actions\UncommonPowerAction.class
 theReaper\cards\AbstractDynamicCard.class
+theReaper\cards\Tantrum.class
 theReaper\characters\TheDefault.class

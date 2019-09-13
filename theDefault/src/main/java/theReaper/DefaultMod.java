@@ -410,11 +410,11 @@ public class DefaultMod implements
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
 
-        BaseMod.addCard(new BloodthirstyStrike());
         BaseMod.addCard(new Bulwark());
-        BaseMod.addCard(new SanguineArmour()); // common skill
+        BaseMod.addCard(new BloodMoon());
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new CrimsonRush());
+        BaseMod.addCard(new DeathsDance());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Devour());
         BaseMod.addCard(new Frenzy());
@@ -428,14 +428,18 @@ public class DefaultMod implements
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new Reap());
+        BaseMod.addCard(new RendingStrike()); // uncommon skill
         BaseMod.addCard(new Regroup()); // uncommon skill
-        BaseMod.addCard(new Payback()); // uncommon skill
         BaseMod.addCard(new RiteoftheBlade()); // rare power
+        BaseMod.addCard(new Payback()); // uncommon skill
         BaseMod.addCard(new Safeguard()); //
+        BaseMod.addCard(new SanguineArmour()); // common skill
         BaseMod.addCard(new SerratedKnife()); // common attack
         BaseMod.addCard(new ShieldWard()); //
         BaseMod.addCard(new Slash()); // common attack
+        BaseMod.addCard(new SwiftStrike()); // common attack
         BaseMod.addCard(new SoulBlade()); //
+        BaseMod.addCard(new Tantrum());
         BaseMod.addCard(new Transfusion());
         BaseMod.addCard(new WhirlingDeath());
         BaseMod.addCard(new Vampirism());
@@ -445,11 +449,11 @@ public class DefaultMod implements
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
-        UnlockTracker.unlockCard(SanguineArmour.ID);
-        UnlockTracker.unlockCard(BloodthirstyStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
+        UnlockTracker.unlockCard(BloodMoon.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
+        UnlockTracker.unlockCard(DeathsDance.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
@@ -464,13 +468,17 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(Reap.ID);
         UnlockTracker.unlockCard(Regroup.ID);
-        UnlockTracker.unlockCard(Payback.ID);
+        UnlockTracker.unlockCard(RendingStrike.ID);
         UnlockTracker.unlockCard(RiteoftheBlade.ID);
+        UnlockTracker.unlockCard(Payback.ID);
         UnlockTracker.unlockCard(Safeguard.ID);
+        UnlockTracker.unlockCard(SanguineArmour.ID);
         UnlockTracker.unlockCard(Slash.ID);
         UnlockTracker.unlockCard(ShieldWard.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);
         UnlockTracker.unlockCard(SoulBlade.ID);
+        UnlockTracker.unlockCard(SwiftStrike.ID);
+        UnlockTracker.unlockCard(Tantrum.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
         UnlockTracker.unlockCard(WhirlingDeath.ID);
         UnlockTracker.unlockCard(Vampirism.ID);

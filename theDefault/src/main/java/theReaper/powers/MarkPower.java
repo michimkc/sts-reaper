@@ -3,6 +3,7 @@ package theReaper.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -95,6 +96,12 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, amountToReduce));
             }
 
+    }
+
+    public static void applyMarks(AbstractCreature target, AbstractCreature source, int amount)
+    {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source,
+                new MarkPower(target, source, amount), amount));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

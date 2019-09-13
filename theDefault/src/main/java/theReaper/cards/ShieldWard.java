@@ -23,7 +23,7 @@ public class ShieldWard extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = 40;
+        baseBlock = 24;
 
         baseMagicNumber = magicNumber = 2;
         this.exhaust = true;

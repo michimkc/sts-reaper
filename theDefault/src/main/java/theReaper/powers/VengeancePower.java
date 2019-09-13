@@ -25,38 +25,23 @@ import static theReaper.DefaultMod.makePowerPath;
 //dealing damage to the enemy consumes a mark and heals 1 hp.
 //marks reduce by half the total, or 5, each turn, whichever is larger.
 
-public class VengeancePower extends AbstractPower implements CloneablePowerInterface {
-    public AbstractCreature source;
+public class VengeancePower extends AbstractCustomPower implements CloneablePowerInterface {
+
     public static final Logger logger = LogManager.getLogger(VengeancePower.class.getName());
 
-    public static final String POWER_ID = DefaultMod.makeID("VengeancePower");
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String NAME = powerStrings.NAME;
-    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    // ==== MODIFY THESE =====
+    public static final String POWER_NAME = "VengeancePower";
+    public static final PowerType POWER_TYPE = PowerType.BUFF;
+    public static final boolean POWER_ISTURNBASED = true;
+    //public static final int POWER_AMOUNT = 1;
+    // =======================
 
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("vengeance_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("vengeance_power32.png"));
+    public VengeancePower(final AbstractCreature owner, final AbstractCreature source, int amount) {
 
-    public VengeancePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        super(owner,owner,amount,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
 
-        this.owner = owner;
-        this.amount = amount;
-        this.source = source;
-
-        type = PowerType.BUFF;
-        isTurnBased = true;
-
-        // We load those textures here.
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-
-        updateDescription();
     }
+
 
     public int onAttacked(DamageInfo info, int damageAmount)
     {
@@ -68,17 +53,42 @@ public class VengeancePower extends AbstractPower implements CloneablePowerInter
                 // Add marks to the enemy.
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, owner,
                     new MarkPower(info.owner, owner, damageAmount), damageAmount));
+                AbstractDungeon.player.powers.forEach((p)-> powerOnApplyMarks(p,info.owner, owner,damageAmount));
 
         }
         return damageAmount;
+    }
+
+    public void powerOnApplyMarks(AbstractPower p, AbstractCreature target, AbstractCreature source, int amount)
+    {
+        if(p instanceof AbstractCustomPower)
+        {
+            ((AbstractCustomPower)p).onApplyMarks(target, source,amount);
+        }
     }
 
     public void atStartOfTurn() {
 
         if (this.amount == 1) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+
         } else {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
+        }
+    }
+
+    public void onRemove()
+    {
+        super.onRemove();
+
+        AbstractDungeon.player.powers.forEach((p)-> powerOnPowerRemoved(p));
+
+    }
+    public void powerOnPowerRemoved(AbstractPower p)
+    {
+        if(p instanceof AbstractCustomPower)
+        {
+            ((AbstractCustomPower)p).onPowerRemoved(this);
         }
     }
 

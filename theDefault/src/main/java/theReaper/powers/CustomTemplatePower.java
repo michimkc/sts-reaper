@@ -20,11 +20,12 @@ public class CustomTemplatePower extends AbstractCustomPower implements Cloneabl
     public static final String POWER_NAME = "CustomPower";
     public static final PowerType POWER_TYPE = PowerType.BUFF;
     public static final boolean POWER_ISTURNBASED = false;
+    public static final int POWER_AMOUNT = 1;
     // =======================
 
     public CustomTemplatePower(final AbstractCreature owner, final AbstractCreature source) {
 
-        super(owner,source,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
+        super(owner,source,POWER_AMOUNT, POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
 
     }
 

@@ -23,15 +23,15 @@ public class SwiftStrike extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public SwiftStrike()
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 5;
-        baseMagicNumber = magicNumber = 1;
-        magicNumberUp = 2;
+        baseMagicNumber = magicNumber = 2;
+        magicNumberUp = 1;
 
         this.tags.add(CardTags.STRIKE);
     }

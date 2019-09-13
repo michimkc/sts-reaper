@@ -7,9 +7,19 @@
       "At the start of its turn, loses #b"
     ]
 },
+  "theReaper:BloodMoonPower": {
+    "NAME": "Blood Moon",
+    "DESCRIPTIONS": [
+      "Marks applied to enemies are doubled. When you have no more stacks of Vengeance, Blood Moon is removed."
+    ]
+  },
   "theReaper:GluttonyPower": {
     "NAME": "Gluttony",
     "DESCRIPTIONS": ["Whenever a creature dies, consume all their marks and heal for that amount."]
+  },
+  "theReaper:DeathsDancePower": {
+    "NAME": "Death's Dance",
+    "DESCRIPTIONS": ["Reduce the cost of all [#FFBF00]Strikes[] by "]
   },
 "theReaper:MarkPower": {
   "NAME": "Mark",

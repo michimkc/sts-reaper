@@ -29,10 +29,11 @@ public class GluttonyPower extends AbstractCustomPower implements CloneablePower
     public static final String POWER_NAME = "GluttonyPower";
     public static final PowerType POWER_TYPE = PowerType.BUFF;
     public static final boolean POWER_ISTURNBASED = false;
+    public static final int POWER_AMOUNT = 1;
 
     public GluttonyPower(final AbstractCreature owner, final AbstractCreature source) {
 
-        super(owner,source,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
+        super(owner,source,POWER_AMOUNT, POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
 
     }
 
