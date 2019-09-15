@@ -15,6 +15,11 @@
     "NAME": "Crimson Rush",
     "DESCRIPTION": "Deal !D! Damage. If target is thereaper:bleeding deal !M! additional damage."
   },
+  "theReaper:CrimsonTide": {
+    "NAME": "Crimson Tide",
+    "DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!.",
+    "UPGRADE_DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!. NL Innate"
+  },
   "theReaper:DeathsDance": {
     "NAME": "Death's Dance",
     "DESCRIPTION": "Reduce the cost of all [#FFBF00]Strikes[] by !M!"
@@ -26,6 +31,10 @@
   "theReaper:Devour": {
     "NAME": "Devour",
     "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, heal !M! percent of your max HP."
+  },
+  "theReaper:FiendForm": {
+    "NAME": "Fiend Form",
+    "DESCRIPTION": "Whenever you draw a card by playing a card or soul, draw an extra card."
   },
   "theReaper:Frenzy": {
     "NAME": "Frenzy",
@@ -50,11 +59,11 @@
   },
   "theReaper:HastyGrab": {
     "NAME": "HastyGrab",
-    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Bleed"
+    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:SB! thereaper:Bleed"
   },
   "theReaper:Hemorrhage": {
     "NAME": "Hemorrhage",
-    "DESCRIPTION": "Apply !M! thereaper:Bleed"
+    "DESCRIPTION": "Apply !theReaper:B2! thereaper:Bleed"
   },
   "theReaper:HurricaneStrike": {
     "NAME": "Hurricane Strike",
@@ -95,7 +104,7 @@
   },
   "theReaper:SanguineArmour": {
     "NAME": "SanguineArmour",
-    "DESCRIPTION": "Gain !B! Plated Armor. NL Gain !M! thereaper:Bleed"
+    "DESCRIPTION": "Gain !B! Plated Armor. NL Gain !theReaper:SB! thereaper:Bleed"
   },
   "theReaper:Slash": {
     "NAME": "Slash",
@@ -103,12 +112,12 @@
   },
   "theReaper:SerratedKnife": {
     "NAME": "SerratedKnife",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! thereaper:Bleed"
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !theReaper:B2! thereaper:Bleed"
   },
   "theReaper:ShieldWard": {
     "NAME": "Shield Ward",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thereaper:Bleed. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! thereaper:Bleed. NL Innate NL Exhaust"
+    "DESCRIPTION": "Gain !B! Block. NL Gain !theReaper:SB! thereaper:Bleed. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !theReaper:SB! thereaper:Bleed. NL Innate NL Exhaust"
   },
   "theReaper:SwiftStrike": {
     "NAME": "Swift Strike",

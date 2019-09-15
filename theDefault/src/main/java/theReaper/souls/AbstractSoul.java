@@ -11,14 +11,22 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.BobEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import theReaper.actions.AbstractSoulOnAfterUseAction;
 import theReaper.cards.AbstractCustomCard;
+import theReaper.powers.AbstractCustomPower;
+import theReaper.powers.FiendFormPower;
 import theReaper.util.SoulManager;
 
 public abstract class AbstractSoul {
     public String name;
     public String description;
     public String ID;
+
+    public static final Logger logger = LogManager.getLogger(AbstractSoul.class.getName());
 
     protected Color c = Settings.CREAM_COLOR.cpy();
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
@@ -36,7 +44,12 @@ public abstract class AbstractSoul {
 
     public abstract void updateDescription();
 
-    public abstract void onUse();
+    public void onUse()
+    {
+        AbstractDungeon.player.powers.forEach(p -> notifyOnUseSoul(p, this));
+        UseSoul();
+        AbstractDungeon.actionManager.addToBottom(new AbstractSoulOnAfterUseAction(this));
+    }
 
     public abstract AbstractSoul makeCopy();
 
@@ -58,7 +71,7 @@ public abstract class AbstractSoul {
                 this.hb.clicked = false;
 
                 //stuff happens here
-                UseSoul();
+                onUse();
                 used = true;
                 SoulManager.RemoveSoul(this);
             }
@@ -80,5 +93,24 @@ public abstract class AbstractSoul {
         AbstractDungeon.actionManager.addToBottom(action);
     }
 
+    public void notifyOnUseSoul(AbstractPower p, AbstractSoul s)
+    {
+        if (p instanceof AbstractCustomPower)
+        {
+            ((AbstractCustomPower)p).onUseSoul(s);
+        }
+    }
 
+    public static void notifyOnAfterUseSoul(AbstractSoul s)
+    {
+        AbstractDungeon.player.powers.forEach(p -> afterUseSoulHelper(s,p));
+    }
+
+    public static void afterUseSoulHelper(AbstractSoul s, AbstractPower p)
+    {
+        if (p instanceof AbstractCustomPower)
+        {
+            ((AbstractCustomPower)p).onAfterUseSoul(s);
+        }
+    }
 }

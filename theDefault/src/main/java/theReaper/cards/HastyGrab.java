@@ -28,7 +28,7 @@ public class HastyGrab extends AbstractCustomCard {
         magicNumber = baseMagicNumber = 3;
         magicNumberUp = 1;
 
-        baseMagicNumber2 = magicNumber2 = 2; // bleed
+        baseSelfBleedNumber = selfBleedNumber = 2; // bleed
 
     }
 
@@ -37,7 +37,7 @@ public class HastyGrab extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         act(new DrawCardAction(p,magicNumber)); // draw cards
-        act(new ApplyPowerAction(p,p,new BleedPower(p,p,magicNumber2), magicNumber2)); // self bleed
+        act(new ApplyPowerAction(p,p,new BleedPower(p,p,selfBleedNumber), selfBleedNumber)); // self bleed
     }
 
 

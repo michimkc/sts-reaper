@@ -13,6 +13,17 @@
       "Marks applied to enemies are doubled. When you have no more stacks of Vengeance, Blood Moon is removed."
     ]
   },
+  "theReaper:CrimsonTidePower": {
+    "NAME": "Crimson Tide",
+    "DESCRIPTIONS": [
+      "Every time you play a card with #yBleed increase #yBleed on all cards by ",
+      ". #yBleed is currently increased on all cards by "
+    ]
+  },
+  "theReaper:FiendFormPower": {
+    "NAME": "Fiend Form",
+    "DESCRIPTIONS": ["Whenever you draw a card by playing a card or soul, draw an extra card."]
+  },
   "theReaper:GluttonyPower": {
     "NAME": "Gluttony",
     "DESCRIPTIONS": ["Whenever a creature dies, consume all their marks and heal for that amount."]

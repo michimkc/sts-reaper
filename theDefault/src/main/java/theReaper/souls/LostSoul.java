@@ -44,12 +44,6 @@ public class LostSoul extends AbstractSoul {
     }
 
     @Override
-    public void onUse()
-    {
-
-    }
-
-    @Override
     public void UseSoul()
     {
 
@@ -58,6 +52,7 @@ public class LostSoul extends AbstractSoul {
 
         act(new DrawCardAction(AbstractDungeon.player,2));
 
+        super.UseSoul();
     }
 
     @Override

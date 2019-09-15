@@ -20,7 +20,7 @@ public class SanguineArmour extends AbstractCustomCard {
     public SanguineArmour() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        selfBleedNumber = baseSelfBleedNumber = 2;
         baseBlock = block = 6;
         blockUp = 3;
 
@@ -30,7 +30,7 @@ public class SanguineArmour extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new ApplyPowerAction(p, p, new BleedPower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new BleedPower(p, p, selfBleedNumber), selfBleedNumber));
         act(new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
 
     }

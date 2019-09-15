@@ -29,9 +29,8 @@ public class Hemorrhage extends AbstractCustomCard {
     public Hemorrhage() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 5;
-        magicNumberUp = 3;
-        this.exhaust = true;
+        bleedNumber = baseBleedNumber = 5;
+        bleedNumberUp = 3;
 
     }
 
@@ -39,7 +38,7 @@ public class Hemorrhage extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new ApplyPowerAction(m, p, new BleedPower(m, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(m, p, new BleedPower(m, p, bleedNumber), bleedNumber));
 
     }
 

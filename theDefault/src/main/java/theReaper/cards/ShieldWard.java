@@ -25,7 +25,7 @@ public class ShieldWard extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = 24;
 
-        baseMagicNumber = magicNumber = 2;
+        baseSelfBleedNumber = selfBleedNumber = 2;
         this.exhaust = true;
 
     }
@@ -35,7 +35,7 @@ public class ShieldWard extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         act(new GainBlockAction(p, p, block));
-        act(new ApplyPowerAction(p, p, new BleedPower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new BleedPower(p, p, selfBleedNumber), selfBleedNumber));
 
     }
 

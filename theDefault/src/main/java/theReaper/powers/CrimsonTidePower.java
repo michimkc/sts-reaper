@@ -1,18 +1,14 @@
 package theReaper.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theReaper.DefaultMod;
 
 //At end of enemy turn, returns all damage that enemies dealt to player.
 
-public class CrimsonTidePower extends AbstractCustomPower implements CloneablePowerInterface {
+public class CrimsonTidePower extends AbstractBleedPower implements CloneablePowerInterface {
 
     public static final Logger logger = LogManager.getLogger(CrimsonTidePower.class.getName());
 
@@ -22,10 +18,11 @@ public class CrimsonTidePower extends AbstractCustomPower implements CloneablePo
     public static final int POWER_AMOUNT = 0;
     public int raiseAmount;
 
-    public CrimsonTidePower(final AbstractCreature owner, final AbstractCreature source, int raiseAmount) {
+    public CrimsonTidePower(final AbstractCreature owner, final AbstractCreature source, int raiseAmt) {
 
         super(owner,source,POWER_AMOUNT,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
-
+        raiseAmount = raiseAmt;
+        updateDescription();
     }
 
     public void onApplyPower(AbstractPower p, AbstractCreature target, AbstractCreature source)
@@ -34,13 +31,20 @@ public class CrimsonTidePower extends AbstractCustomPower implements CloneablePo
         {
             flash();
             amount += raiseAmount;
+            updateDescription();
         }
     }
+
+    public int increaseBleed(int bleedAmount)
+    {
+        return amount;
+    }
+
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0];
+            description = DESCRIPTIONS[0] + raiseAmount + DESCRIPTIONS[1] + amount;
     }
 
     @Override

@@ -29,9 +29,7 @@ import theReaper.relics.*;
 import theReaper.util.IDCheckDontTouchPls;
 import theReaper.util.SoulStrings;
 import theReaper.util.TextureLoader;
-import theReaper.variables.DefaultCustomVariable;
-import theReaper.variables.DefaultSecondMagicNumber;
-import theReaper.variables.MagicNumber2Variable;
+import theReaper.variables.*;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -86,9 +84,9 @@ public class DefaultMod implements
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Default Mod";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String MODNAME = "Reaper Mod";
+    private static final String AUTHOR = "Rocket"; // And pretty soon - You!
+    private static final String DESCRIPTION = "Adds a new character to the game called The Reaper.";
     
     // =============== INPUT TEXTURE LOCATION =================
     
@@ -404,6 +402,8 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         BaseMod.addDynamicVariable(new MagicNumber2Variable());
+        BaseMod.addDynamicVariable(new BleedNumberVariable());
+        BaseMod.addDynamicVariable(new SelfBleedNumberVariable());
         
         logger.info("Adding cards");
         // Add the cards
@@ -413,6 +413,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new BloodMoon());
         BaseMod.addCard(new Cleanse()); // uncommon skill
+        BaseMod.addCard(new CrimsonTide());
         BaseMod.addCard(new CrimsonRush());
         BaseMod.addCard(new DeathsDance());
         BaseMod.addCard(new Defend());
@@ -425,6 +426,7 @@ public class DefaultMod implements
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
         BaseMod.addCard(new HurricaneStrike());
+        BaseMod.addCard(new FiendForm());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new Reap());
@@ -453,6 +455,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BloodMoon.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
+        UnlockTracker.unlockCard(CrimsonTide.ID);
         UnlockTracker.unlockCard(DeathsDance.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
@@ -464,6 +467,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
         UnlockTracker.unlockCard(HurricaneStrike.ID);
+        UnlockTracker.unlockCard(FiendForm.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(Reap.ID);

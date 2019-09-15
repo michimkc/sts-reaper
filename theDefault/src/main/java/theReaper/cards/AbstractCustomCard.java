@@ -25,6 +25,7 @@ import theReaper.DefaultMod;
 import theReaper.cards.*;
 import theReaper.characters.TheDefault;
 import theReaper.patches.*;
+import theReaper.powers.AbstractBleedPower;
 import theReaper.relics.*;
 import theReaper.orbs.*;
 import theReaper.souls.AbstractSoul;
@@ -36,6 +37,20 @@ public abstract class AbstractCustomCard extends CustomCard {
     public int magicNumber2Up = 0;
     public boolean isMagicNumber2Modified=false; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
     public boolean upgradedMagicNumber2 = false;
+
+    public static final int defaultBleed = -2;
+    public int bleedNumber = defaultBleed;
+    public int baseBleedNumber = 0;
+    public int bleedNumberUp = 0;
+    public boolean isBleedNumberModified = false;
+    public boolean upgradedBleedNumber = false;
+
+    public static final int defaultSelfBleed = -2;
+    public int selfBleedNumber = defaultSelfBleed;
+    public int baseSelfBleedNumber = 0;
+    public int selfBleedNumberUp = 0;
+    public boolean isSelfBleedNumberModified = false;
+    public boolean upgradedSelfBleedNumber = false;
 
     public int damageUp = 0;
     public int blockUp = 0;
@@ -50,6 +65,8 @@ public abstract class AbstractCustomCard extends CustomCard {
 
         this.upgradeDescription = CardCrawlGame.languagePack.getCardStrings(id).UPGRADE_DESCRIPTION;
         isMagicNumber2Modified = false;
+        isBleedNumberModified = false;
+        isSelfBleedNumberModified = false;
     }
 
     public static void act(AbstractGameAction action) {
@@ -64,6 +81,8 @@ public abstract class AbstractCustomCard extends CustomCard {
             upgradeBlock(blockUp);
             upgradeMagicNumber(magicNumberUp);
             upgradeMagicNumber2(magicNumber2Up);
+            upgradeBleedNumber(bleedNumberUp);
+            upgradeSelfBleedNumber(selfBleedNumberUp);
             if (newCost != -2) {
                 upgradeBaseCost(newCost);
             }
@@ -80,6 +99,10 @@ public abstract class AbstractCustomCard extends CustomCard {
             magicNumber2 = baseMagicNumber2; // Show how the number changes, as out of combat, the base number of a card is shown.
             isMagicNumber2Modified = true; // Modified = true, color it green to highlight that the number is being changed.
         }
+        if (upgradedBleedNumber) {
+            bleedNumber = baseBleedNumber;
+            isBleedNumberModified = true;
+        }
 
     }
     public void upgradeMagicNumber2(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and then this one is what you will usually use - change the integer by how much you want to upgrade.
@@ -88,10 +111,46 @@ public abstract class AbstractCustomCard extends CustomCard {
         upgradedMagicNumber2 = true; // Upgraded = true - which does what the above method does.
     }
 
+    public void upgradeBleedNumber(int amount) {
+        baseBleedNumber += amount;
+        bleedNumber = baseBleedNumber;
+        upgradedBleedNumber = true;
+    }
+
+    public void upgradeSelfBleedNumber(int amount) {
+        baseSelfBleedNumber += amount;
+        selfBleedNumber = baseSelfBleedNumber;
+        upgradedSelfBleedNumber = true;
+    }
     public void onSoulAdded(AbstractSoul soul) {}
 
     public void onSoulCountChanged(){}
 
     public void onSoulUsed(AbstractSoul soul) {}
 
+    public void applyPowers()
+    {
+        bleedNumber = baseBleedNumber;
+        AbstractDungeon.player.powers.forEach(p -> applyBleedPowers(p));
+        super.applyPowers();
+    }
+
+    public void resetAttributes()
+    {
+        super.resetAttributes();
+        this.bleedNumber = baseBleedNumber;
+        this.isBleedNumberModified = false;
+    }
+
+    public void applyBleedPowers(AbstractPower p)
+    {
+        if(p instanceof AbstractBleedPower)
+        {
+            int originalNumber = bleedNumber;
+            bleedNumber += ((AbstractBleedPower)p).increaseBleed(bleedNumber);
+            if(bleedNumber != originalNumber) {
+                isBleedNumberModified = true;
+            }
+        }
+    }
 }

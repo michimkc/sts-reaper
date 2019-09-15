@@ -25,8 +25,8 @@ public class SerratedKnife extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 6;
         damageUp = 2;
-        baseMagicNumber = magicNumber = 3;
-        magicNumberUp = 1;
+        baseBleedNumber = bleedNumber = 3;
+        bleedNumberUp = 1;
 
     }
 
@@ -36,7 +36,7 @@ public class SerratedKnife extends AbstractCustomCard {
 
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        act(new ApplyPowerAction(m, p, new BleedPower(m, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(m, p, new BleedPower(m, p, bleedNumber), bleedNumber));
 
     }
 

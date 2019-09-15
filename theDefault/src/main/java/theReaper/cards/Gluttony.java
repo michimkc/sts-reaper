@@ -25,7 +25,7 @@ public class Gluttony extends AbstractCustomCard {
 
     private static final int COST = 2;
 
-    // Attacks hit all enemies.
+
     public Gluttony()
     {
 

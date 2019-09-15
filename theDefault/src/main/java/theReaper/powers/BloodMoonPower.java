@@ -1,5 +1,6 @@
 package theReaper.powers;
 
+import basemod.CustomCharacterSelectScreen;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -16,6 +17,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
+import theReaper.cards.AbstractCustomCard;
+import theReaper.patches.AbstractPlayerSoulsPatch;
 
 import static theReaper.cards.AbstractCustomCard.act;
 

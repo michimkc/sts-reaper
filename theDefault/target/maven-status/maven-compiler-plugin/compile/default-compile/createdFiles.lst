@@ -28,9 +28,14 @@ theReaper\relics\PlaceholderRelic2.class
 theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
 theReaper\cards\SerratedKnife.class
+theReaper\variables\SelfBleedNumberVariable.class
+theReaper\cards\FiendForm.class
+theReaper\variables\BleedNumberVariable.class
+theReaper\powers\CrimsonTidePower.class
 theReaper\cards\Hack.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
+theReaper\actions\AbstractSoulOnAfterUseAction.class
 theReaper\cards\WhirlingDeath.class
 theReaper\util\SoulStrings.class
 theReaper\powers\BloodMoonPower.class
@@ -52,6 +57,8 @@ theReaper\cards\Payback.class
 theReaper\variables\DefaultSecondMagicNumber.class
 theReaper\cards\Hemorrhage.class
 theReaper\powers\VengeancePower.class
+theReaper\powers\FiendFormPower.class
+theReaper\cards\CrimsonTide.class
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractMonsterPatch.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
@@ -86,3 +93,4 @@ theReaper\actions\UncommonPowerAction.class
 theReaper\cards\AbstractDynamicCard.class
 theReaper\cards\Tantrum.class
 theReaper\characters\TheDefault.class
+theReaper\powers\AbstractBleedPower.class

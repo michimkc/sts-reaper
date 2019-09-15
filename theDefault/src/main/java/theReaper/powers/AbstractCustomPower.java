@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
+import theReaper.souls.AbstractSoul;
 import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
@@ -50,4 +51,9 @@ public abstract class AbstractCustomPower extends AbstractPower implements Clone
     public void onApplyMarks(AbstractCreature target, AbstractCreature source, int amount) {}
 
     public void onPowerRemoved(AbstractCustomPower p) {}
+
+    public void onUseSoul(AbstractSoul s) {}
+
+    public void onAfterUseSoul(AbstractSoul s) {}
+
 }
