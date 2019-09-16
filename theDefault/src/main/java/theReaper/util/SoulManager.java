@@ -29,8 +29,8 @@ public class SoulManager {
     public static final String[] SOULBIND_DESC = soulString.DESCRIPTIONS;
     // end soulbind tooltip
 
-    private static final SoulStrings soulManagerStrings = DefaultMod.SoulStringsMap.get("SoulManager");
-    public static final String[] MSG = soulString.DESCRIPTIONS;
+    private static final SoulStrings soulManagerStrings = DefaultMod.SoulStringsMap.get(DefaultMod.makeID("SoulManager"));
+    public static final String[] MSG = soulManagerStrings.DESCRIPTIONS;
 
     public static void addSoul(AbstractSoul soul)
     {

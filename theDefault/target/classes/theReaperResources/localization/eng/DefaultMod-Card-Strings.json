@@ -34,7 +34,7 @@
   },
   "theReaper:EnduringSpirit": {
     "NAME": "Enduring Spirit",
-    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !thereaper:M2! missing health"
+    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health"
   },
   "theReaper:FiendForm": {
     "NAME": "Fiend Form",
@@ -79,7 +79,11 @@
   },
   "theReaper:Hyper": {
     "NAME": "Hyper",
-    "DESCRIPTION": "Gain !M! Energy. NL Gain !theReaper:SB! thereaper:Bleed"
+    "DESCRIPTION": "Gain [B] [B] NL Gain !theReaper:SB! thereaper:Bleed"
+  },
+  "theReaper:Impatience": {
+    "NAME": "Impatience",
+    "DESCRIPTION": "Draw !M! random cards from your discard pile."
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
@@ -136,7 +140,7 @@
   },
   "theReaper:ShadowStep": {
     "NAME": "Shadow Step",
-    "DESCRIPTION": "Gain !B! Block each time you draw a card this turn."
+    "DESCRIPTION": "Gain !M! Block each time you draw a card this turn."
   },
   "theReaper:ShieldWard": {
     "NAME": "Shield Ward",

@@ -70,6 +70,7 @@ theReaper\powers\GluttonyPower.class
 theReaper\variables\MagicNumber2Variable.class
 theReaper\events\IdentityCrisisEvent.class
 theReaper\cards\ShieldWard.class
+theReaper\actions\DrawCardFromDiscardAction.class
 theReaper\cards\HastyGrab.class
 theReaper\actions\PutOnDeckChooseAction.class
 theReaper\cards\Devour.class
@@ -89,6 +90,7 @@ theReaper\cards\Glowfly.class
 theReaper\powers\CustomTemplatePower.class
 theReaper\cards\Safeguard.class
 theReaper\patches\DefaultInsertPatch$Locator.class
+theReaper\cards\Impatience.class
 theReaper\cards\SanguineArmour.class
 theReaper\powers\VampirismPower.class
 theReaper\cards\DeathsDance.class

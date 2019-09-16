@@ -60,7 +60,12 @@ public class PutOnDeckChooseAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(
-                        AbstractDungeon.player.drawPile,AbstractDungeon.handCardSelectScreen.selectedCards, d -> false));
+                        AbstractDungeon.player.drawPile,AbstractDungeon.handCardSelectScreen.selectedCards, d -> true, amount, null));
+                // d -> true : this line is a predicate which tests whether the cards selected are cards.
+                //             so theoretically (havent tested it), you'd use d -> AbstractCard to test whether the selected cards are of type AbstractCard
+                //             even in the stslib code itself, this is just auto-set to true since we are only ever taking cards from a card group
+                // amount : this is the amount of cards we are moving, so I guess it's the same # as the group size of selectedCards
+                // null : if we dont set this then for some reason a card select screen comes up after we choose the cards to discard. . .
                 //this.p.hand.moveToDeck(c, false);
             }
             AbstractDungeon.player.hand.refreshHandLayout();

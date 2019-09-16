@@ -48,6 +48,10 @@
     "NAME": "Rite of the Blade",
     "DESCRIPTIONS": ["Attacks deal damage to all enemies."]
   },
+  "theReaper:ShadowStepPower": {
+    "NAME": "Shadow Step",
+    "DESCRIPTIONS": ["Gain ", " Block whenever you draw a card when you play a card or soul."]
+  },
   "theReaper:TransfusionPower": {
     "NAME": "Transfusion",
     "DESCRIPTIONS": ["All healing is doubled."]

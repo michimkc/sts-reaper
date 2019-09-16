@@ -8,5 +8,10 @@
     "TEXT": [
       "put on top of your draw pile"
     ]
+  },
+  "DrawCardFromDiscardAction": {
+    "TEXT": [
+      "No cards in the discard pile to draw..."
+    ]
   }
 }

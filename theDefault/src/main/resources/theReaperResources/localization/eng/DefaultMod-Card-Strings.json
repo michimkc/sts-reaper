@@ -81,6 +81,11 @@
     "NAME": "Hyper",
     "DESCRIPTION": "Gain [B] [B] NL Gain !theReaper:SB! thereaper:Bleed"
   },
+  "theReaper:Impatience": {
+    "NAME": "Impatience",
+    "DESCRIPTION": "Draw !M! random card from your discard pile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! random cards from your discard pile."
+  },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL Apply !M! Vulnerable"
