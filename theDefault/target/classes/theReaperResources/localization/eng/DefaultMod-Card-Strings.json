@@ -30,11 +30,19 @@
   },
   "theReaper:Devour": {
     "NAME": "Devour",
-    "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, heal !M! percent of your max HP."
+    "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, heal !M! percent of your max HP. NL Exhaust"
+  },
+  "theReaper:EnduringSpirit": {
+    "NAME": "Enduring Spirit",
+    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !thereaper:M2! missing health"
   },
   "theReaper:FiendForm": {
     "NAME": "Fiend Form",
     "DESCRIPTION": "Whenever you draw a card by playing a card or soul, draw an extra card."
+  },
+  "theReaper:Fracture": {
+    "NAME": "Fracture",
+    "DESCRIPTION": "Remove all block from target creature. NL Deal !D! Damage"
   },
   "theReaper:Frenzy": {
     "NAME": "Frenzy",
@@ -69,6 +77,10 @@
     "NAME": "Hurricane Strike",
     "DESCRIPTION": "Deal !D! Damage !M! times. NL Increase the number of hits by !theReaper:M2! this combat."
   },
+  "theReaper:Hyper": {
+    "NAME": "Hyper",
+    "DESCRIPTION": "Gain !M! Energy. NL Gain !theReaper:SB! thereaper:Bleed"
+  },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL Apply !M! Vulnerable"
@@ -76,6 +88,10 @@
   "theReaper:MasterBall": {
     "NAME": "Master Ball",
     "DESCRIPTION": "NL thereaper:SoulBind !M!"
+  },
+  "theReaper:QuickStep": {
+    "NAME": "Quick Step",
+    "DESCRIPTION": "Gain !B! Block"
   },
   "theReaper:Reap": {
     "NAME": "Reap",
@@ -88,6 +104,10 @@
   "theReaper:RendingStrike": {
     "NAME": "Rending Strike",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
+  },
+  "theReaper:Papercut": {
+    "NAME": "Papercut",
+    "DESCRIPTION": "Deal !D! Damage to all enemies every time you draw a card by playing a card or soul"
   },
   "theReaper:Payback": {
     "NAME": "Payback",
@@ -113,6 +133,10 @@
   "theReaper:SerratedKnife": {
     "NAME": "SerratedKnife",
     "DESCRIPTION": "Deal !D! Damage. NL Apply !theReaper:B2! thereaper:Bleed"
+  },
+  "theReaper:ShadowStep": {
+    "NAME": "Shadow Step",
+    "DESCRIPTION": "Gain !B! Block each time you draw a card this turn."
   },
   "theReaper:ShieldWard": {
     "NAME": "Shield Ward",

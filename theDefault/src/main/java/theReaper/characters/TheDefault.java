@@ -65,7 +65,7 @@ public class TheDefault extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
 
-
+    public static final int SOUL_SLOTS = 5;
 
     // =============== /BASE STATS/ =================
 

@@ -36,6 +36,10 @@
   "NAME": "Mark",
   "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]
 },
+  "theReaper:PapercutPower": {
+    "NAME": "Papercut",
+    "DESCRIPTIONS": ["Deal ", " Damage to all enemies every time you draw a card by playing a card or soul"]
+  },
   "theReaper:PaybackPower": {
     "NAME": "Payback",
     "DESCRIPTIONS": ["When you take attack damage from an enemy, at end of turn deal the same damage in return to that enemy."]

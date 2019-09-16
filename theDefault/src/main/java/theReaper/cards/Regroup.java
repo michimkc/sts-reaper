@@ -28,7 +28,7 @@ public class Regroup extends AbstractCustomCard {
         newCost = 0;
 
         baseMagicNumber2 = magicNumber2 = 1;
-        magicNumber2Up = 2;
+        magicNumber2Up = 1;
 
     }
 

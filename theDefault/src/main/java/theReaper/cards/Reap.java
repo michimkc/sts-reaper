@@ -32,7 +32,7 @@ public class Reap extends AbstractNonLethalCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 4;
-        damageUp = 3;
+        newCost = 0;
 
     }
 

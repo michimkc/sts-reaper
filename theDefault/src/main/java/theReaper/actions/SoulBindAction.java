@@ -28,6 +28,7 @@ import theReaper.DefaultMod;
 import theReaper.characters.TheDefault;
 import theReaper.orbs.DefaultOrb;
 import theReaper.patches.AbstractPlayerSoulsPatch;
+import theReaper.souls.HollowSoul;
 import theReaper.souls.LostSoul;
 
 public class SoulBindAction extends AbstractGameAction {
@@ -74,7 +75,15 @@ public class SoulBindAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(this.target,p));
                 AbstractDungeon.actionManager.addToBottom(new SuicideAction((AbstractMonster)this.target));
 
-                AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+                if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.BOSS)
+                {
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
+                } else if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.ELITE)
+                {
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
+                } else {
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+                }
             } else if (this.target.currentHealth <= this.amount && this.target.hasPower("Minion"))
             {
                 // just kill the minion if we do enough damage.

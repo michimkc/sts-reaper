@@ -418,6 +418,9 @@ public class DefaultMod implements
         BaseMod.addCard(new DeathsDance());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Devour());
+        BaseMod.addCard(new EnduringSpirit());
+        BaseMod.addCard(new FiendForm());
+        BaseMod.addCard(new Fracture());
         BaseMod.addCard(new Frenzy());
         BaseMod.addCard(new Gluttony());
         BaseMod.addCard(new Glowfly());
@@ -426,17 +429,20 @@ public class DefaultMod implements
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
         BaseMod.addCard(new HurricaneStrike());
-        BaseMod.addCard(new FiendForm());
+        BaseMod.addCard(new Hyper());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         //BaseMod.addCard(new MasterBall());
+        BaseMod.addCard(new QuickStep());
         BaseMod.addCard(new Reap());
         BaseMod.addCard(new RendingStrike()); // uncommon skill
         BaseMod.addCard(new Regroup()); // uncommon skill
         BaseMod.addCard(new RiteoftheBlade()); // rare power
+        BaseMod.addCard(new Papercut()); // uncommon skill
         BaseMod.addCard(new Payback()); // uncommon skill
         BaseMod.addCard(new Safeguard()); //
         BaseMod.addCard(new SanguineArmour()); // common skill
         BaseMod.addCard(new SerratedKnife()); // common attack
+        BaseMod.addCard(new ShadowStep()); // common attack
         BaseMod.addCard(new ShieldWard()); //
         BaseMod.addCard(new Slash()); // common attack
         BaseMod.addCard(new SwiftStrike()); // common attack
@@ -459,6 +465,9 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(DeathsDance.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
+        UnlockTracker.unlockCard(EnduringSpirit.ID);
+        UnlockTracker.unlockCard(FiendForm.ID);
+        UnlockTracker.unlockCard(Fracture.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(Gluttony.ID);
         UnlockTracker.unlockCard(Glowfly.ID);
@@ -467,17 +476,20 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
         UnlockTracker.unlockCard(HurricaneStrike.ID);
-        UnlockTracker.unlockCard(FiendForm.ID);
+        UnlockTracker.unlockCard(Hyper.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
+        UnlockTracker.unlockCard(QuickStep.ID);
         UnlockTracker.unlockCard(Reap.ID);
         UnlockTracker.unlockCard(Regroup.ID);
         UnlockTracker.unlockCard(RendingStrike.ID);
         UnlockTracker.unlockCard(RiteoftheBlade.ID);
+        UnlockTracker.unlockCard(Papercut.ID);
         UnlockTracker.unlockCard(Payback.ID);
         UnlockTracker.unlockCard(Safeguard.ID);
         UnlockTracker.unlockCard(SanguineArmour.ID);
         UnlockTracker.unlockCard(Slash.ID);
+        UnlockTracker.unlockCard(ShadowStep.ID);
         UnlockTracker.unlockCard(ShieldWard.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);
         UnlockTracker.unlockCard(SoulBlade.ID);

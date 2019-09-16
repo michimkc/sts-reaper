@@ -4,11 +4,13 @@ import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.RemoveSoulAction;
 import theReaper.cards.AbstractCustomCard;
+import theReaper.characters.TheDefault;
 import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.souls.AbstractSoul;
 
@@ -27,9 +29,18 @@ public class SoulManager {
     public static final String[] SOULBIND_DESC = soulString.DESCRIPTIONS;
     // end soulbind tooltip
 
+    private static final SoulStrings soulManagerStrings = DefaultMod.SoulStringsMap.get("SoulManager");
+    public static final String[] MSG = soulString.DESCRIPTIONS;
+
     public static void addSoul(AbstractSoul soul)
     {
         // check if we've reached max number of souls
+        if (AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size() == TheDefault.SOUL_SLOTS)
+        {
+            AbstractPlayer p = AbstractDungeon.player;
+            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, MSG[0], true));
+            return;
+        }
 
         // add soul.
         AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(soul);

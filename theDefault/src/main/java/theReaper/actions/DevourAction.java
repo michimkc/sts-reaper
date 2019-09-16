@@ -16,14 +16,13 @@ public class DevourAction
         extends AbstractGameAction
 {
     private int healPercent;
-    private DamageInfo info;
     private static final float DURATION = 0.1F;
 
     public static final Logger logger = LogManager.getLogger(DevourAction.class.getName());
 
-    public DevourAction(AbstractCreature target, DamageInfo info, int healPercent) {
-        this.info = info;
-        setValues(target, info);
+    public DevourAction(AbstractCreature target, int healPercent) {
+
+        this.target = target;
         this.healPercent = healPercent;
         this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.duration = 0.1F;
@@ -34,7 +33,7 @@ public class DevourAction
         if (this.duration == 0.1F &&
                 this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.NONE));
-            this.target.damage(this.info);
+            //this.target.damage(this.info);
 
             logger.info("Heal percent: " + this.healPercent + ", maxHealth: " + AbstractDungeon.player.maxHealth);
             int totalHeal = MathUtils.floor(AbstractDungeon.player.maxHealth * this.healPercent/100);

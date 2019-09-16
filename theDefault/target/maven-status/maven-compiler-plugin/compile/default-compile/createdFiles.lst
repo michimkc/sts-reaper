@@ -1,6 +1,7 @@
 theReaper\actions\SoulBindAction.class
 theReaper\cards\SwiftStrike.class
 theReaper\patches\DamageActionPatch.class
+theReaper\cards\Papercut.class
 theReaper\actions\WhirlingDeathAction.class
 theReaper\powers\DeathsDancePower.class
 theReaper\souls\AbstractSoul.class
@@ -18,7 +19,9 @@ theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
 theReaper\variables\DefaultCustomVariable.class
 theReaper\util\TextureLoader.class
+theReaper\powers\PapercutPower.class
 theReaper\actions\BleedLoseHpAction.class
+theReaper\powers\ShadowStepPower.class
 theReaper\characters\TheDefault$Enums.class
 theReaper\actions\SoulGemAction.class
 theReaper\cards\AbstractCustomCard.class
@@ -48,6 +51,7 @@ theReaper\util\IDCheckDontTouchPls.class
 theReaper\cards\Guillotine.class
 theReaper\cards\SoulBlade.class
 theReaper\powers\PaybackPower.class
+theReaper\cards\ShadowStep.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\powers\CommonPower.class
 theReaper\cards\Bulwark.class

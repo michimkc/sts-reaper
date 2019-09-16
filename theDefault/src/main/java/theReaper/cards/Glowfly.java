@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theReaper.DefaultMod;
 import theReaper.actions.SoulGemAction;
+import theReaper.souls.HollowSoul;
 import theReaper.souls.LostSoul;
 import com.badlogic.gdx.graphics.Color;
 
@@ -15,7 +16,7 @@ public class Glowfly extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("Glowfly");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.SKILL;
 
@@ -25,7 +26,7 @@ public class Glowfly extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        newCost = 0;
+
         this.exhaust = true;
 
     }
@@ -34,7 +35,12 @@ public class Glowfly extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+        if(!upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+        } else
+        {
+            AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
+        }
         CardCrawlGame.sound.play("POWER_DEXTERITY", 0.05F);
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new VerticalAuraEffect(Color.GOLD, p.hb.cX, p.hb.cY), 0.0F));
     }

@@ -77,9 +77,15 @@ public abstract class AbstractCustomCard extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(damageUp);
-            upgradeBlock(blockUp);
-            upgradeMagicNumber(magicNumberUp);
+            if(damageUp != 0) {
+                upgradeDamage(damageUp);
+            }
+            if(blockUp != 0) {
+                upgradeBlock(blockUp);
+            }
+            if (magicNumberUp != 0) {
+                upgradeMagicNumber(magicNumberUp);
+            }
             upgradeMagicNumber2(magicNumber2Up);
             upgradeBleedNumber(bleedNumberUp);
             upgradeSelfBleedNumber(selfBleedNumberUp);

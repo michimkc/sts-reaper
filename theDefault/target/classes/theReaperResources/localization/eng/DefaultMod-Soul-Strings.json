@@ -12,6 +12,17 @@
     "NAME": "Lost Soul",
     "DESCRIPTIONS": ["A weak, frail soul with no place to return to."]
   },
+  "theReaper:HollowSoul": {
+    "NAME": "Hollow Soul",
+    "DESCRIPTIONS": ["A black, murky soul that smells of ash. It wails with anguish."]
+  },
+
+
+
+  "theReaper:SoulManager": {
+    "NAME": "SoulManager",
+    "DESCRIPTIONS": ["Can't hold any more souls..."]
+  },
   "theReaper:WhirlingDeath": {
     "NAME": "Whirling Death Damage",
     "DESCRIPTIONS": ["Deals Damage in the following sequence: ",

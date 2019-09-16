@@ -1,5 +1,6 @@
 package theReaper.actions;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -58,7 +59,9 @@ public class PutOnDeckChooseAction extends AbstractGameAction {
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                this.p.hand.moveToDeck(c, false);
+                AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(
+                        AbstractDungeon.player.drawPile,AbstractDungeon.handCardSelectScreen.selectedCards, d -> false));
+                //this.p.hand.moveToDeck(c, false);
             }
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

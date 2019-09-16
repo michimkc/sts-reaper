@@ -10,6 +10,8 @@ import theReaper.DefaultMod;
 import theReaper.actions.DevourAction;
 import theReaper.powers.BleedPower;
 
+import static theReaper.cards.AbstractNonLethalCard.NonLethalDamageAction;
+
 public class Devour extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("Devour");
@@ -27,14 +29,16 @@ public class Devour extends AbstractCustomCard {
         baseDamage = 12;
         damageUp = 3;
         baseMagicNumber = magicNumber = 10;
-
+        this.exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new DevourAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.magicNumber));
+        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        act(new DevourAction(m, this.magicNumber));
 
     }
 

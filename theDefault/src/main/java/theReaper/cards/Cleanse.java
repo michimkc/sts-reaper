@@ -17,7 +17,7 @@ public class Cleanse extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
 
     public Cleanse()
@@ -26,6 +26,7 @@ public class Cleanse extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
 
         this.exhaust = true;
+        newCost = 1;
 
     }
 
@@ -41,7 +42,6 @@ public class Cleanse extends AbstractCustomCard {
     public void upgrade()
     {
        super.upgrade();
-       this.exhaust = false;
     }
 
 
