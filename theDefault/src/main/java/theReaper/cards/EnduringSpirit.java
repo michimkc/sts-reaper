@@ -30,7 +30,7 @@ public class EnduringSpirit extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         int curHP = p.maxHealth - p.currentHealth;
-        int extraBlock = (int)Math.floor(curHP/magicNumber2)*magicNumber;
+        int extraBlock = (int)(curHP/magicNumber2)*magicNumber;
         block = baseBlock + extraBlock;
         act(new GainBlockAction(p, p, block));
 
