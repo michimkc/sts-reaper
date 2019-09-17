@@ -27,6 +27,7 @@ public abstract class AbstractSoul {
     public String ID;
 
     public static final Logger logger = LogManager.getLogger(AbstractSoul.class.getName());
+    public String soulName;
 
     protected Color c = Settings.CREAM_COLOR.cpy();
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);

@@ -83,7 +83,8 @@
   },
   "theReaper:Impatience": {
     "NAME": "Impatience",
-    "DESCRIPTION": "Draw !M! random cards from your discard pile."
+    "DESCRIPTION": "Draw !M! random card from your discard pile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! random cards from your discard pile."
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",

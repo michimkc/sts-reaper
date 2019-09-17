@@ -37,6 +37,8 @@ public class AbstractPlayerSoulsPatch {// Don't worry about the "never used" war
     public static final SpireField<Integer> soulBindAmount = new SpireField<Integer>(() -> defaultSoulBindAmount.getDefaultValue());
     public static final SpireField<Integer> baseSoulBindAmount = new SpireField<Integer>(() -> defaultSoulBindAmount.getDefaultValue());
 
+
+
     @SpirePatch(
             clz=AbstractPlayer.class,
             method="combatUpdate"

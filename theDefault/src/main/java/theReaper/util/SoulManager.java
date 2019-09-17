@@ -1,6 +1,8 @@
 package theReaper.util;
 
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.TooltipInfo;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,11 +15,13 @@ import theReaper.cards.AbstractCustomCard;
 import theReaper.characters.TheDefault;
 import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.souls.AbstractSoul;
+import theReaper.souls.HollowSoul;
+import theReaper.souls.LostSoul;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SoulManager {
+public class SoulManager implements CustomSavable<String> {
 
     public static final Logger logger = LogManager.getLogger(SoulManager.class.getName());
     public static float spacerWidth = 5f;
@@ -31,6 +35,8 @@ public class SoulManager {
 
     private static final SoulStrings soulManagerStrings = DefaultMod.SoulStringsMap.get(DefaultMod.makeID("SoulManager"));
     public static final String[] MSG = soulManagerStrings.DESCRIPTIONS;
+
+    public String soulsSaveList; // we will save this
 
     public static void addSoul(AbstractSoul soul)
     {
@@ -110,4 +116,71 @@ public class SoulManager {
         return tips;
     }
 
+
+    @Override
+    public String onSave()
+    {
+        return makeSoulsList();
+    }
+
+
+    public String makeSoulsList()
+    {
+        Gson gson = new Gson();
+        String saveString = null;
+        ArrayList<String> soulsList = new ArrayList<String>();
+
+        if(AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size() == 0)
+        {
+            // dont save anything?
+        } else
+        {
+            AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).forEach(s -> soulsList.add(s.soulName));
+            saveString = gson.toJson(soulsList);
+            logger.info("Printing Save String...");
+            logger.info(saveString);
+        }
+
+        return saveString;
+    }
+
+    public void onLoad(String saveString)
+    {
+        if(saveString == null)
+        {
+            return;
+        }
+
+        ArrayList<String> jsonArray = new Gson().fromJson(saveString, ArrayList.class);
+        SoulManager.loadSouls(jsonArray);
+    }
+
+    public static void loadSouls(ArrayList<String> list)
+    {
+        if(list != null)
+        {
+            list.forEach(s->SoulManager.addSoulToPlayerSouls(s));
+        }
+    }
+
+    public static void addSoulToPlayerSouls(String s)
+    {
+        logger.info("Loading Souls from Save...");
+        switch (s)
+        {
+            case LostSoul.soulName:
+                logger.info("Adding Lost Soul to Player Souls.");
+                AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(new LostSoul());
+                break;
+            case HollowSoul.soulName:
+                logger.info("Adding Hollow Soul to Player Souls");
+                AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(new HollowSoul());
+                break;
+            default:
+                logger.info("ERROR: Invalid Soul Name when Loading Souls");
+                AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(new LostSoul());
+                break;
+        }
+        logger.info("... Loading Complete.");
+    }
 }

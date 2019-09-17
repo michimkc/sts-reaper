@@ -27,6 +27,7 @@ import theReaper.events.IdentityCrisisEvent;
 import theReaper.potions.PlaceholderPotion;
 import theReaper.relics.*;
 import theReaper.util.IDCheckDontTouchPls;
+import theReaper.util.SoulManager;
 import theReaper.util.SoulStrings;
 import theReaper.util.TextureLoader;
 import theReaper.variables.*;
@@ -82,6 +83,9 @@ public class DefaultMod implements
     public static Properties theDefaultDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+
+    // The Reaper:  Soul Manager
+    public SoulManager soulManager;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Reaper Mod";
@@ -224,6 +228,7 @@ public class DefaultMod implements
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         logger.info("Done adding mod settings");
 
     }
@@ -554,6 +559,10 @@ public class DefaultMod implements
                 getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
         
         logger.info("Done edittting strings");
+
+        // Adding Save Stuff for Souls
+        soulManager = new SoulManager();
+        BaseMod.addSaveField("theReaperSoulSave", soulManager);
     }
     
     // ================ /LOAD THE TEXT/ ===================
