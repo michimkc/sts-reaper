@@ -26,10 +26,7 @@ import theReaper.characters.TheDefault;
 import theReaper.events.IdentityCrisisEvent;
 import theReaper.potions.PlaceholderPotion;
 import theReaper.relics.*;
-import theReaper.util.IDCheckDontTouchPls;
-import theReaper.util.SoulManager;
-import theReaper.util.SoulStrings;
-import theReaper.util.TextureLoader;
+import theReaper.util.*;
 import theReaper.variables.*;
 
 import java.io.InputStream;
@@ -560,9 +557,6 @@ public class DefaultMod implements
         
         logger.info("Done edittting strings");
 
-        // Adding Save Stuff for Souls
-        soulManager = new SoulManager();
-        BaseMod.addSaveField("theReaperSoulSave", soulManager);
     }
     
     // ================ /LOAD THE TEXT/ ===================
