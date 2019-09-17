@@ -34,6 +34,10 @@ public class HollowSoul extends AbstractSoul {
         this.tX = 0;
     }
 
+    public String getSoulName()
+    {
+        return this.soulName;
+    }
 
     @Override
     public void updateDescription(){

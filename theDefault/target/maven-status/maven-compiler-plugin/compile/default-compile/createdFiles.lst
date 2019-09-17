@@ -8,7 +8,9 @@ theReaper\souls\AbstractSoul.class
 theReaper\util\SoulManager.class
 theReaper\relics\PlaceholderRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerCombatUpdatePatch.class
+theReaper\util\SoulManager$1.class
 theReaper\patches\DefaultInsertPatch.class
+theReaper\cards\Fracture.class
 theReaper\cards\BloodMoon.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\Regroup.class
@@ -21,8 +23,10 @@ theReaper\variables\DefaultCustomVariable.class
 theReaper\util\TextureLoader.class
 theReaper\powers\PapercutPower.class
 theReaper\actions\BleedLoseHpAction.class
+theReaper\cards\QuickStep.class
 theReaper\powers\ShadowStepPower.class
 theReaper\characters\TheDefault$Enums.class
+theReaper\cards\Hyper.class
 theReaper\actions\SoulGemAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\powers\RiteoftheBladePower.class
@@ -30,6 +34,7 @@ theReaper\cards\Frenzy.class
 theReaper\relics\PlaceholderRelic2.class
 theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
+theReaper\souls\HollowSoul.class
 theReaper\cards\SerratedKnife.class
 theReaper\variables\SelfBleedNumberVariable.class
 theReaper\cards\FiendForm.class
@@ -96,6 +101,7 @@ theReaper\powers\VampirismPower.class
 theReaper\cards\DeathsDance.class
 theReaper\relics\OldCharmRelic.class
 theReaper\actions\UncommonPowerAction.class
+theReaper\cards\EnduringSpirit.class
 theReaper\cards\AbstractDynamicCard.class
 theReaper\cards\Tantrum.class
 theReaper\characters\TheDefault.class

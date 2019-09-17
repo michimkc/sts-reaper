@@ -3,6 +3,7 @@ package theReaper.util;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.TooltipInfo;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,6 +19,7 @@ import theReaper.souls.AbstractSoul;
 import theReaper.souls.HollowSoul;
 import theReaper.souls.LostSoul;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,8 +137,10 @@ public class SoulManager implements CustomSavable<String> {
             // dont save anything?
         } else
         {
-            AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).forEach(s -> soulsList.add(s.soulName));
-            saveString = gson.toJson(soulsList);
+            Type listType = new TypeToken<ArrayList<String>>() {}.getType();
+            AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).forEach(s -> soulsList.add(s.getSoulName()));
+            logger.info("Printing soul names...");
+            saveString = gson.toJson(soulsList, listType);
             logger.info("Printing Save String...");
             logger.info(saveString);
         }
@@ -178,15 +182,15 @@ public class SoulManager implements CustomSavable<String> {
         {
             case LostSoul.soulName:
                 logger.info("Adding Lost Soul to Player Souls.");
-                AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(new LostSoul());
+                addSoul(new LostSoul());
                 break;
             case HollowSoul.soulName:
                 logger.info("Adding Hollow Soul to Player Souls");
-                AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(new HollowSoul());
+                addSoul(new HollowSoul());
                 break;
             default:
                 logger.info("ERROR: Invalid Soul Name when Loading Souls");
-                AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(new LostSoul());
+                addSoul(new LostSoul());
                 break;
         }
         logger.info("... Loading Complete.");
