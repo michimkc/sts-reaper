@@ -151,6 +151,8 @@ public class SoulManager implements CustomSavable<String> {
             return;
         }
 
+        logger.info("Loaded Souls String: " + saveString);
+
         ArrayList<String> jsonArray = new Gson().fromJson(saveString, ArrayList.class);
         SoulManager.loadSouls(jsonArray);
     }
@@ -158,7 +160,7 @@ public class SoulManager implements CustomSavable<String> {
     public static void loadSouls(ArrayList<String> list)
     {
         if(list != null)
-        {
+            {
             list.forEach(s->SoulManager.addSoulToPlayerSouls(s));
         }
     }
@@ -166,6 +168,12 @@ public class SoulManager implements CustomSavable<String> {
     public static void addSoulToPlayerSouls(String s)
     {
         logger.info("Loading Souls from Save...");
+        if(s == null)
+        {
+            logger.info("Saved Soul was NULL. Could not add soul...");
+
+            return;
+        }
         switch (s)
         {
             case LostSoul.soulName:

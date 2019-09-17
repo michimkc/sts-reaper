@@ -26,6 +26,7 @@ import theReaper.characters.TheDefault;
 import theReaper.events.IdentityCrisisEvent;
 import theReaper.potions.PlaceholderPotion;
 import theReaper.relics.*;
+import theReaper.souls.AbstractSoul;
 import theReaper.util.IDCheckDontTouchPls;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulStrings;
@@ -35,6 +36,7 @@ import theReaper.variables.*;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 
