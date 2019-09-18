@@ -26,17 +26,15 @@ import theReaper.characters.TheDefault;
 import theReaper.events.IdentityCrisisEvent;
 import theReaper.potions.PlaceholderPotion;
 import theReaper.relics.*;
-import theReaper.souls.AbstractSoul;
 import theReaper.util.IDCheckDontTouchPls;
+import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
-import theReaper.util.SoulStrings;
 import theReaper.util.TextureLoader;
 import theReaper.variables.*;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 
@@ -172,8 +170,8 @@ public class DefaultMod implements
     
     // =============== SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE =================
 
-    // SoulStrings Localization
-    public static Map<String,SoulStrings> SoulStringsMap;
+    // ReaperStrings Localization
+    public static Map<String, ReaperStrings> ReaperStringsMap;
 
 
     public DefaultMod() {
@@ -426,6 +424,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Devour());
         BaseMod.addCard(new EnduringSpirit());
+        BaseMod.addCard(new FeverDream());
         BaseMod.addCard(new FiendForm());
         BaseMod.addCard(new Fracture());
         BaseMod.addCard(new Frenzy());
@@ -474,6 +473,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(EnduringSpirit.ID);
+        UnlockTracker.unlockCard(FeverDream.ID);
         UnlockTracker.unlockCard(FiendForm.ID);
         UnlockTracker.unlockCard(Fracture.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
@@ -526,7 +526,7 @@ public class DefaultMod implements
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
         // Souls / Action Strings
-        SoulStringsMap = SoulStrings.ImportSoulStrings();
+        ReaperStringsMap = ReaperStrings.importReaperStrings();
 
         // UI / Action Strings
         BaseMod.loadCustomStringsFile(UIStrings.class,

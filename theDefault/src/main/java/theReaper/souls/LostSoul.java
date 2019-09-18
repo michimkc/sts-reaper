@@ -3,7 +3,6 @@ package theReaper.souls;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.Settings;
@@ -12,9 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
-import theReaper.actions.RemoveSoulAction;
-import theReaper.actions.SoulGemAction;
-import theReaper.util.SoulStrings;
+import theReaper.util.ReaperStrings;
 
 public class LostSoul extends AbstractSoul {
 
@@ -22,8 +19,8 @@ public class LostSoul extends AbstractSoul {
     // Standard ID/Description
     public static final String soulName = "LostSoul";
     public static final String SOUL_ID = DefaultMod.makeID(soulName);
-    private static final SoulStrings soulString = DefaultMod.SoulStringsMap.get(SOUL_ID);
-    public static final String[] DESC = soulString.DESCRIPTIONS;
+    private static final ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(SOUL_ID);
+    public static final String[] DESC = reaperString.DESCRIPTIONS;
     public String imgURL = "theReaperResources/images/souls/" + soulName + ".png";
     public Texture img;
 
@@ -32,7 +29,7 @@ public class LostSoul extends AbstractSoul {
         // load the image
         this.img = ImageMaster.loadImage(imgURL);
         this.ID = SOUL_ID;
-        this.name = soulString.NAME;
+        this.name = reaperString.NAME;
         this.description = DESC[0];
         this.tX = 0;
     }
@@ -48,7 +45,7 @@ public class LostSoul extends AbstractSoul {
     }
 
     @Override
-    public void UseSoul()
+    public void useSoul()
     {
 
         // what happens when you click the soul
@@ -56,7 +53,7 @@ public class LostSoul extends AbstractSoul {
 
         act(new DrawCardAction(AbstractDungeon.player,2));
 
-        super.UseSoul();
+        super.useSoul();
     }
 
     @Override

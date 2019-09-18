@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
-import theReaper.util.SoulStrings;
+import theReaper.util.ReaperStrings;
 
 public class HollowSoul extends AbstractSoul {
 
@@ -19,8 +19,8 @@ public class HollowSoul extends AbstractSoul {
     // Standard ID/Description
     public static final String soulName = "HollowSoul";
     public static final String SOUL_ID = DefaultMod.makeID(soulName);
-    private static final SoulStrings soulString = DefaultMod.SoulStringsMap.get(SOUL_ID);
-    public static final String[] DESC = soulString.DESCRIPTIONS;
+    private static final ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(SOUL_ID);
+    public static final String[] DESC = reaperString.DESCRIPTIONS;
     public String imgURL = "theReaperResources/images/souls/" + soulName + ".png";
     public Texture img;
 
@@ -29,7 +29,7 @@ public class HollowSoul extends AbstractSoul {
         // load the image
         this.img = ImageMaster.loadImage(imgURL);
         this.ID = SOUL_ID;
-        this.name = soulString.NAME;
+        this.name = reaperString.NAME;
         this.description = DESC[0];
         this.tX = 0;
     }
@@ -45,7 +45,7 @@ public class HollowSoul extends AbstractSoul {
     }
 
     @Override
-    public void UseSoul()
+    public void useSoul()
     {
 
         // what happens when you click the soul
@@ -53,7 +53,7 @@ public class HollowSoul extends AbstractSoul {
 
         act(new DrawCardAction(AbstractDungeon.player,2));
 
-        super.UseSoul();
+        super.useSoul();
     }
 
     @Override

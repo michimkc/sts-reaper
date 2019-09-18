@@ -31,6 +31,7 @@ public class AbstractPlayerSoulsPatch {// Don't worry about the "never used" war
     // It's like a very fancy System.out.println();
 
     public static SpireField<ArrayList<AbstractSoul>> souls = new SpireField<>(() -> new ArrayList<>());
+    public static SpireField<Integer> soulUUIDCount = new SpireField<>(() -> 0);
 
     // amount is the minimum hp that a enemy must be before it can be soulbound
     public static final SpireField<Integer> defaultSoulBindAmount = new SpireField<Integer>(() -> 5); // default minimum HP

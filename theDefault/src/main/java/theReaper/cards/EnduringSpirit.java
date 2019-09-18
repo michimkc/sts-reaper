@@ -2,6 +2,7 @@ package theReaper.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 
@@ -34,6 +35,17 @@ public class EnduringSpirit extends AbstractCustomCard {
         block = baseBlock + extraBlock;
         act(new GainBlockAction(p, p, block));
 
+    }
+
+    public void update()
+    {
+        super.update();
+
+        int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+        int extraBlock = (int)(curHP/magicNumber2)*magicNumber;
+        block = baseBlock + extraBlock;
+
+        initializeDescription();
     }
 
     public void upgrade()

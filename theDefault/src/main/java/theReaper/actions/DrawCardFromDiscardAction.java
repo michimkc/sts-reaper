@@ -1,6 +1,5 @@
 package theReaper.actions;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,10 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theReaper.DefaultMod;
-import theReaper.cards.Slash;
 import theReaper.powers.AbstractCustomPower;
-import theReaper.util.SoulStrings;
 
 public class DrawCardFromDiscardAction extends AbstractGameAction {
 

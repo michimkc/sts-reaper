@@ -12,14 +12,14 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.BobEffect;
+import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.actions.AbstractSoulOnAfterUseAction;
 import theReaper.cards.AbstractCustomCard;
 import theReaper.powers.AbstractCustomPower;
-import theReaper.powers.FiendFormPower;
 import theReaper.util.SoulManager;
+import theReaper.util.SoulSelectScreen;
 
 public abstract class AbstractSoul {
     public String name;
@@ -38,17 +38,20 @@ public abstract class AbstractSoul {
     public float cY = 0.0F;
     public static float textureWidth = 150F;
     public int index; // the index of the soul in the player's soul ArrayList
+    public int uuid; // uniqueID assigned by SoulManager
 
     public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureWidth * Settings.scale);
 
     public boolean used = false;
+    public boolean inSelectionScreen = false;
+    public SoulSelectScreen currentSelectScreen;
 
     public abstract void updateDescription();
 
     public void onUse()
     {
         AbstractDungeon.player.powers.forEach(p -> notifyOnUseSoul(p, this));
-        UseSoul();
+        useSoul();
         AbstractDungeon.actionManager.addToBottom(new AbstractSoulOnAfterUseAction(this));
     }
 
@@ -72,20 +75,41 @@ public abstract class AbstractSoul {
                 this.hb.clicked = false;
 
                 //stuff happens here
-                onUse();
-                used = true;
-                SoulManager.RemoveSoul(this);
+                if(inSelectionScreen)
+                {
+                    // we were pressed but the mode is inSelectionScreen.
+                    if(currentSelectScreen == null)
+                    {
+                        logger.info("currentSelectScreen not set. Cancelling select screen mode for this soul.");
+                        inSelectionScreen = false;
+                    } else
+                    {
+                        // selectScreen is set.
+                        currentSelectScreen.soulClicked(this);
+                    }
+
+                } else {
+                    onUse();
+                    used = true;
+                    SoulManager.RemoveSoul(this);
+                }
             }
         }
     }
 
-    public void UseSoul() {
+    public void useSoul() {
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c instanceof AbstractCustomCard) {
                 ((AbstractCustomCard) c).onSoulUsed(this);
                 ((AbstractCustomCard) c).onSoulCountChanged();
             }
         }
+    }
+
+    public void consumeSoul()
+    {
+        AbstractDungeon.effectsQueue.add(new ExhaustEmberEffect(this.tX, this.tY));
+        SoulManager.RemoveSoul(this);
     }
 
     public abstract void render(SpriteBatch paramSpriteBatch);

@@ -4,7 +4,6 @@ import basemod.abstracts.CustomSavable;
 import basemod.helpers.TooltipInfo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
@@ -12,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.RemoveSoulAction;
-import theReaper.cards.AbstractCustomCard;
 import theReaper.characters.TheDefault;
 import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.souls.AbstractSoul;
@@ -27,15 +25,16 @@ public class SoulManager implements CustomSavable<String> {
 
     public static final Logger logger = LogManager.getLogger(SoulManager.class.getName());
     public static float spacerWidth = 5f;
+    public static float defaultHeight = 680f;
 
     // soulbind tooltip
     public static final String SOULBIND_NAME = "SoulBind";
     public static final String SOULBIND_ID = DefaultMod.makeID(SOULBIND_NAME);
-    private static final SoulStrings soulString = DefaultMod.SoulStringsMap.get(SOULBIND_ID);
-    public static final String[] SOULBIND_DESC = soulString.DESCRIPTIONS;
+    private static final ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(SOULBIND_ID);
+    public static final String[] SOULBIND_DESC = reaperString.DESCRIPTIONS;
     // end soulbind tooltip
 
-    private static final SoulStrings soulManagerStrings = DefaultMod.SoulStringsMap.get(DefaultMod.makeID("SoulManager"));
+    private static final ReaperStrings soulManagerStrings = DefaultMod.ReaperStringsMap.get(DefaultMod.makeID("SoulManager"));
     public static final String[] MSG = soulManagerStrings.DESCRIPTIONS;
 
     public String soulsSaveList; // we will save this
@@ -52,7 +51,11 @@ public class SoulManager implements CustomSavable<String> {
 
         // add soul.
         AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).add(soul);
-        soul.tY = 680;
+        soul.tY = defaultHeight;
+
+        int nextUUID = AbstractPlayerSoulsPatch.soulUUIDCount.get(AbstractDungeon.player);
+        soul.uuid = nextUUID;
+        AbstractPlayerSoulsPatch.soulUUIDCount.set(AbstractDungeon.player, nextUUID++); // increment the uuid.
 
         updateSoulIndices();
         printSoulList();
@@ -68,9 +71,9 @@ public class SoulManager implements CustomSavable<String> {
             for (int i = 0; i < AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size(); i++) {
                 AbstractSoul s = AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).get(i);
                 s.tX = SoulManager.xPosAtIndex(i);
+                s.tY = defaultHeight;
                 s.index = i;
             }
-            logger.info("Soul ArrayList Count: " + AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size());
         } else
         {
             logger.info("Soul ArrayList is Empty");
@@ -118,6 +121,14 @@ public class SoulManager implements CustomSavable<String> {
         return tips;
     }
 
+    public static void resetSelectionMode()
+    {
+        ArrayList<AbstractSoul> soulList = AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player);
+        if(soulList.size() > 0) {
+            soulList.forEach(s -> s.inSelectionScreen = false);
+            soulList.forEach(s -> s.currentSelectScreen = null);
+        }
+    }
 
     @Override
     public String onSave()

@@ -1,26 +1,17 @@
 package theReaper.cards;
 
-import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
-import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import theReaper.DefaultMod;
-import theReaper.powers.RiteoftheBladePower;
-import theReaper.util.SoulStrings;
+import theReaper.util.ReaperStrings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,9 +21,9 @@ public class WhirlingDeath extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("WhirlingDeath");
 
-    private static final SoulStrings soulString = DefaultMod.SoulStringsMap.get(ID);
-    public static final String TIPSTITLE = soulString.NAME;
-    public static final String[] TIPSDESCRIPTION = soulString.DESCRIPTIONS;
+    private static final ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(ID);
+    public static final String TIPSTITLE = reaperString.NAME;
+    public static final String[] TIPSDESCRIPTION = reaperString.DESCRIPTIONS;
 
     public ArrayList<TooltipInfo> tips = new ArrayList<TooltipInfo>();
 

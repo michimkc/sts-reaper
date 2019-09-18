@@ -1,0 +1,44 @@
+{
+  "theReaper:SoulBind": {
+    "NAME": "SoulBind",
+    "DESCRIPTIONS": ["If the target's remaining health is equal to or less than #y",
+      ", this rips the soul from the creature and binds it into servitude."]
+  },
+  "theReaper:PlaceholderSoul": {
+    "NAME": "Placeholder Soul",
+    "DESCRIPTIONS": ["OoooOOOOOooo Spooky!"]
+  },
+  "theReaper:LostSoul": {
+    "NAME": "Lost Soul",
+    "DESCRIPTIONS": ["A weak, frail soul with no place to return to."]
+  },
+  "theReaper:HollowSoul": {
+    "NAME": "Hollow Soul",
+    "DESCRIPTIONS": ["A black, murky soul that smells of ash. It wails with anguish."]
+  },
+
+
+
+  "theReaper:SoulManager": {
+    "NAME": "SoulManager",
+    "DESCRIPTIONS": ["Can't hold any more souls..."]
+  },
+  "theReaper:SoulSelectScreen": {
+    "NAME": "SoulSelectScreen",
+    "DESCRIPTIONS": [
+      "Confirm",
+      "Select 1 Soul.",
+      "Select 1 more soul",
+      "Select",
+      "more Souls",
+      "Select any number of Souls",
+      "Select at least 1 Soul.",
+    "Select Souls"]
+  },
+  "theReaper:WhirlingDeath": {
+    "NAME": "Whirling Death Damage",
+    "DESCRIPTIONS": ["Deals Damage in the following sequence: ",
+                      " , ",
+                      "..."]
+  }
+}
