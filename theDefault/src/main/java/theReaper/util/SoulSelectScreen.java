@@ -102,6 +102,7 @@ public class SoulSelectScreen {
                 return;
             }
         }
+
     }
 
     public void finished()
@@ -273,7 +274,7 @@ public class SoulSelectScreen {
         if(selectedSouls.size() > 0) {
 
             float totalWidth = ((selectedSouls.size()-1)*SoulManager.spacerWidth + (selectedSouls.size()*AbstractSoul.textureWidth)) * Settings.scale;
-            float xMod = totalWidth/2*Settings.scale;
+            float xMod = totalWidth/2;
 
             for (int i = 0; i < selectedSouls.size(); i++)
             {
@@ -285,7 +286,7 @@ public class SoulSelectScreen {
         if(unSelectedSouls.size() > 0) {
 
             float totalWidth = ((unSelectedSouls.size()-1)*SoulManager.spacerWidth + (unSelectedSouls.size()*AbstractSoul.textureWidth)) * Settings.scale;
-            float xMod = -totalWidth/2*Settings.scale;
+            float xMod = -totalWidth/2;
 
             for (int i = 0; i < unSelectedSouls.size(); i++)
             {
@@ -294,6 +295,7 @@ public class SoulSelectScreen {
             }
         }
     }
+
 
     private void updateControllerInput() {
         if(!Settings.isControllerMode) {

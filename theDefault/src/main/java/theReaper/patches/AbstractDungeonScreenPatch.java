@@ -6,8 +6,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
+import com.megacrit.cardcrawl.ui.buttons.DynamicBanner;
 import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,7 +40,7 @@ public class AbstractDungeonScreenPatch {
         public static void Postfix(AbstractDungeon __instance) {
 
             if(AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
-                logger.info("current screen is soul select screen. updating.");
+                //logger.info("current screen is soul select screen. updating.");
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).update();
             }
         }
@@ -91,7 +93,7 @@ public class AbstractDungeonScreenPatch {
             // reference the last relic you grabbed - etc. etc. The possibilities are endless. We're gonna do the following:
 
             if(AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
-                logger.info("current screen is soul select screen. rendering.");
+                //logger.info("current screen is soul select screen. rendering.");
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).render(sb);
             }
         }
@@ -100,7 +102,9 @@ public class AbstractDungeonScreenPatch {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
 
 
-                Matcher finalMatcher = new Matcher.MethodCallMatcher(OverlayMenu.class, "renderBlackScreen");
+                //Matcher finalMatcher = new Matcher.MethodCallMatcher(OverlayMenu.class, "renderBlackScreen");
+
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(DynamicBanner.class, "render");
 
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
 
