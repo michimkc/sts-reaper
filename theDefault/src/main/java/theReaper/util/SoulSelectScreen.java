@@ -81,6 +81,7 @@ public class SoulSelectScreen {
             return;
         }
 
+        this.soulList.forEach(s -> s.update());
         this.button.update();
         if (this.button.hb.clicked || CInputActionSet.proceed.isJustPressed() || InputActionSet.confirm.isJustPressed()) {
             CInputActionSet.proceed.unpress();
