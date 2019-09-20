@@ -34,7 +34,8 @@
   },
   "theReaper:EnduringSpirit": {
     "NAME": "Enduring Spirit",
-    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health"
+    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health NL Innate"
   },
   "theReaper:FeverDream": {
     "NAME": "Fever Dream",

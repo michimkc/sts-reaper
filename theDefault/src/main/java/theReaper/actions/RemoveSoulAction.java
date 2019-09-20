@@ -28,7 +28,7 @@ public class RemoveSoulAction extends AbstractGameAction {
     private AbstractPlayer p;
     private AbstractSoul soul;
     public static final Logger logger = LogManager.getLogger(RemoveSoulAction.class.getName());
-
+    public boolean noDuration = false;
 
     public RemoveSoulAction(final AbstractPlayer p, AbstractSoul s) {
         setValues(p, p, 0);
@@ -38,6 +38,17 @@ public class RemoveSoulAction extends AbstractGameAction {
         this.soul = s;
 
 
+    }
+
+    public RemoveSoulAction(final AbstractPlayer p, AbstractSoul s, boolean noDuration)
+    {
+        setValues(p, p, 0);
+
+        this.actionType = ActionType.SPECIAL;
+        this.duration = 0.5F;
+        this.soul = s;
+
+        this.noDuration = noDuration;
     }
 
     @Override
@@ -52,7 +63,10 @@ public class RemoveSoulAction extends AbstractGameAction {
             logger.info("Removing soul from player souls: " + soul.name);
             AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).remove(soul.index);
             SoulManager.updateSoulIndices();
-
+            if(noDuration = true)
+            {
+                this.isDone = true;
+            }
         }
 
         tickDuration();

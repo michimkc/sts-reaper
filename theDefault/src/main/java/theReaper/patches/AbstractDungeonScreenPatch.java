@@ -1,5 +1,6 @@
 package theReaper.patches;
 
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +16,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.util.SoulSelectScreen;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.overlayMenu;
 
 
 @SpirePatch(    // "Use the @SpirePatch annotation on the patch class."
@@ -46,6 +51,57 @@ public class AbstractDungeonScreenPatch {
         }
     }
 
+    @SpirePatch(clz = AbstractDungeon.class, method="closeCurrentScreen")
+    public static class CloseCurrentScreenPatch {
+        public static void Prefix() {
+
+            logger.info("closeCurrentScreen prefix patch called. Current screen is: " + AbstractDungeon.screen + ", Previous screen is: " + AbstractDungeon.previousScreen);
+
+            if(AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
+
+                logger.info("current screen is soul select screen. Closing.");
+
+                if(CardCrawlGame.dungeon.previousScreen == CardCrawlGame.dungeon.screen)
+                {
+                    CardCrawlGame.dungeon.previousScreen = null;
+                }
+
+                try {
+                    Method overlayReset = AbstractDungeon.class.getDeclaredMethod("genericScreenOverlayReset");
+                    overlayReset.setAccessible(true);
+                    overlayReset.invoke(AbstractDungeon.class);
+                } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+
+                    e.printStackTrace();
+                }
+                overlayMenu.hideBlackScreen();
+                AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).close();
+
+
+                if (CardCrawlGame.dungeon.previousScreen == null) {
+                    CardCrawlGame.dungeon.screen = AbstractDungeon.CurrentScreen.NONE;
+                }
+                else if (CardCrawlGame.dungeon.screenSwap) {
+                    CardCrawlGame.dungeon.screenSwap = false;
+                } else {
+
+                    CardCrawlGame.dungeon.screen = CardCrawlGame.dungeon.previousScreen;
+                    CardCrawlGame.dungeon.previousScreen = null;
+                    CardCrawlGame.dungeon.isScreenUp = true;
+                    try {
+                    Method openPreviousScreen = AbstractDungeon.class.getDeclaredMethod("openPreviousScreen", Screen.class);
+                    openPreviousScreen.setAccessible(true);
+                    openPreviousScreen.invoke(AbstractDungeon.class, CardCrawlGame.dungeon.screen);
+                    } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+
+                        e.printStackTrace();
+                    }
+                }
+
+                SpireReturn.Return(null);
+            }
+        }
+    }
 
     @SpirePatch(
             clz=AbstractDungeon.class,
@@ -56,14 +112,17 @@ public class AbstractDungeonScreenPatch {
     )
     public static class AbstractDungeonPreviousScreenPatch {
 
-        public static void Postfix(@ByRef AbstractDungeon.CurrentScreen[] s) {
+        public static void Prefix(@ByRef AbstractDungeon.CurrentScreen[] s) {
 
+            logger.info("Reopening Screen: " + s[0]);
             if(s[0] == SoulSelectEnum.SOULSELECTSCREEN) {
-                logger.info("current screen is soul select screen. Reopening.");
+                overlayMenu.hideBlackScreen();
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).reopen();
+                SpireReturn.Return(null);
             }
         }
     }
+
 
 
 

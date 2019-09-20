@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -12,7 +13,9 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.ExhaustBlurEffect;
 import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.actions.AbstractSoulOnAfterUseAction;
@@ -108,8 +111,14 @@ public abstract class AbstractSoul {
 
     public void consumeSoul()
     {
-        AbstractDungeon.effectsQueue.add(new ExhaustEmberEffect(this.tX, this.tY));
-        SoulManager.RemoveSoul(this);
+        CardCrawlGame.sound.play("CARD_EXHAUST", 0.2F);
+        for (int i = 0; i < 90; i++) {
+            AbstractDungeon.effectsQueue.add(new ExhaustBlurEffect(this.tX, this.tY));
+        }
+        for (int i = 0; i < 50; i++) {
+            AbstractDungeon.effectsQueue.add(new ExhaustEmberEffect(this.tX, this.tY));
+        }
+        SoulManager.RemoveSoul(this, true);
     }
 
     public abstract void render(SpriteBatch paramSpriteBatch);

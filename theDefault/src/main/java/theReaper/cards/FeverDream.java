@@ -23,7 +23,7 @@ public class FeverDream extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = 1;
-
+        magicNumberUp = 1;
 
     }
 

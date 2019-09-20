@@ -86,9 +86,15 @@ public abstract class AbstractCustomCard extends CustomCard {
             if (magicNumberUp != 0) {
                 upgradeMagicNumber(magicNumberUp);
             }
-            upgradeMagicNumber2(magicNumber2Up);
-            upgradeBleedNumber(bleedNumberUp);
-            upgradeSelfBleedNumber(selfBleedNumberUp);
+            if(magicNumber2Up != 0) {
+                upgradeMagicNumber2(magicNumber2Up);
+            }
+            if(bleedNumberUp != 0) {
+                upgradeBleedNumber(bleedNumberUp);
+            }
+            if(selfBleedNumberUp != 0) {
+                upgradeSelfBleedNumber(selfBleedNumberUp);
+            }
             if (newCost != -2) {
                 upgradeBaseCost(newCost);
             }

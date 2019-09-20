@@ -8,6 +8,7 @@ theReaper\souls\AbstractSoul.class
 theReaper\util\SoulManager.class
 theReaper\relics\PlaceholderRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerCombatUpdatePatch.class
+theReaper\patches\TopPanelPatch.class
 theReaper\util\SoulManager$1.class
 theReaper\patches\DefaultInsertPatch.class
 theReaper\cards\Fracture.class
@@ -21,6 +22,7 @@ theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
 theReaper\variables\DefaultCustomVariable.class
 theReaper\util\TextureLoader.class
+theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\powers\PapercutPower.class
 theReaper\actions\BleedLoseHpAction.class
 theReaper\cards\QuickStep.class
@@ -48,6 +50,7 @@ theReaper\DefaultMod.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
 theReaper\cards\WhirlingDeath.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch.class
+theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class
 theReaper\powers\BloodMoonPower.class
 theReaper\cards\Cleanse.class
 theReaper\cards\Defend.class

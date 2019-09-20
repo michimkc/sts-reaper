@@ -16,7 +16,7 @@ public class ShadowStep extends AbstractCustomCard {
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
 
@@ -26,7 +26,7 @@ public class ShadowStep extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 3;
-        newCost = 1;
+        newCost = 0;
     }
 
     // Actions the card should do.

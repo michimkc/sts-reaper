@@ -21,8 +21,9 @@ public class EnduringSpirit extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = 5;
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         magicNumber2 = baseMagicNumber2 = 5;
+
 
     }
 
@@ -44,6 +45,7 @@ public class EnduringSpirit extends AbstractCustomCard {
         int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
         int extraBlock = (int)(curHP/magicNumber2)*magicNumber;
         block = baseBlock + extraBlock;
+        isBlockModified = true;
 
         initializeDescription();
     }

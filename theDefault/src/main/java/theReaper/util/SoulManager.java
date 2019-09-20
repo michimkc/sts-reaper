@@ -5,6 +5,7 @@ import basemod.helpers.TooltipInfo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import org.apache.logging.log4j.LogManager;
@@ -24,7 +25,7 @@ import java.util.List;
 public class SoulManager implements CustomSavable<String> {
 
     public static final Logger logger = LogManager.getLogger(SoulManager.class.getName());
-    public static float spacerWidth = 5f;
+    public static float spacerWidth = 20f;
     public static float defaultHeight = 680f;
 
     // soulbind tooltip
@@ -55,7 +56,8 @@ public class SoulManager implements CustomSavable<String> {
 
         int nextUUID = AbstractPlayerSoulsPatch.soulUUIDCount.get(AbstractDungeon.player);
         soul.uuid = nextUUID;
-        AbstractPlayerSoulsPatch.soulUUIDCount.set(AbstractDungeon.player, nextUUID++); // increment the uuid.
+        nextUUID++;
+        AbstractPlayerSoulsPatch.soulUUIDCount.set(AbstractDungeon.player, nextUUID); // increment the uuid.
 
         updateSoulIndices();
         printSoulList();
@@ -63,7 +65,7 @@ public class SoulManager implements CustomSavable<String> {
 
     public static float xPosAtIndex(int index)
     {
-        return (40+(spacerWidth+AbstractSoul.textureWidth)*(index));
+        return (40+(spacerWidth+AbstractSoul.textureWidth)*(index))* Settings.scale;
     }
 
     public static void updateSoulIndices(){
@@ -83,6 +85,11 @@ public class SoulManager implements CustomSavable<String> {
     public static void RemoveSoul(AbstractSoul soul)
     {
         AbstractDungeon.actionManager.addToBottom(new RemoveSoulAction(AbstractDungeon.player,soul));
+    }
+
+    public static void RemoveSoul(AbstractSoul soul, boolean noDuration) // noDuration should be true to make the removal instant.
+    {
+        AbstractDungeon.actionManager.addToBottom(new RemoveSoulAction(AbstractDungeon.player,soul, noDuration));
     }
 
     public static void printSoulList()

@@ -3,6 +3,7 @@ package theReaper.util;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -43,7 +44,7 @@ public class SoulSelectScreen {
     public boolean anyNumber = true;
 
     public String message = "";
-    public ConfirmButton button = new ConfirmButton(DESC[0]);;
+    public CardSelectConfirmButton button = new CardSelectConfirmButton();;
 
 
     public boolean waitThenClose = false;
@@ -52,9 +53,9 @@ public class SoulSelectScreen {
     public ArrayList<AbstractSoul> soulList;
     public CustomGameAction sourceAction;
 
-    public static final float SOUL_UNSELECTED_Y_POSITION = 500.0F * Settings.scale;
-    public static final float SOUL_SELECTED_Y_POSITION = 800.0F * Settings.scale;
-    public static final float CENTER_SCREEN =Settings.WIDTH/2 * Settings.scale;
+    public static final float SOUL_UNSELECTED_Y_POSITION = 300.0F * Settings.scale;
+    public static final float SOUL_SELECTED_Y_POSITION = 650.0F * Settings.scale;
+    public static final float CENTER_SCREEN =Settings.WIDTH/2;
 
     public SoulSelectScreen()
     {
@@ -108,6 +109,7 @@ public class SoulSelectScreen {
 
     public void finished()
     {
+        logger.info("finished. running Finish script.");
         if(soulList.size() > 0) {
             soulList.forEach(s -> s.inSelectionScreen = false);
             soulList.forEach(s -> s.currentSelectScreen = null);
@@ -117,8 +119,15 @@ public class SoulSelectScreen {
         AbstractDungeon.closeCurrentScreen();
     }
 
+    public void close()
+    {
+        logger.info("closing SoulSelectScreen");
+        //this.button.hide();
+    }
+
     public void soulClicked(AbstractSoul s)
     {
+        logger.info("selected soul with uuid: " + s.uuid);
         if(selectedSouls.size() >= numSoulsToSelect && numSoulsToSelect != 0)
         {
             logger.info("Tried to select a soul, but our selected souls list is already at max specified number of " + numSoulsToSelect);
@@ -130,21 +139,28 @@ public class SoulSelectScreen {
             {
                 if (selectedSouls.get(i).uuid == s.uuid)
                 {
+                    logger.info("soul was in SELECTED group. Removing and putting it into unselected group.");
                     // we clicked on a soul that was selected. so unselect it.
                     unSelectedSouls.add(s);
                     selectedSouls.remove(s);
+                    logger.info("Current groups:");
+                    logger.info("Selected:");
+                    arrayPrint(selectedSouls);
+                    logger.info("Unselected:");
+                    arrayPrint(unSelectedSouls);
                     display();
                     return;
                 }
             }
         }
 
-        if(unSelectedSouls.size() > 0) { // this should always be true
+        if(unSelectedSouls.size() > 0) {
 
             for (int i = 0; i < unSelectedSouls.size(); i++)
             {
                 if(unSelectedSouls.get(i).uuid == s.uuid)
                 {
+                    logger.info("soul was in UNSELECTED group. Removing and putting it into selected group.");
                     if(numSoulsToSelect == 1)
                     {
                         // we only need to select one
@@ -153,6 +169,11 @@ public class SoulSelectScreen {
                     }
                     selectedSouls.add(s);
                     unSelectedSouls.remove(s);
+                    logger.info("Current groups:");
+                    logger.info("Selected:");
+                    arrayPrint(selectedSouls);
+                    logger.info("Unselected:");
+                    arrayPrint(unSelectedSouls);
                     display();
                     return;
                 }
@@ -163,8 +184,24 @@ public class SoulSelectScreen {
         logger.info("A soul was selected that wasn't in either the selectedSouls or the unselectedSoul list. this should never happen");
     }
 
+    public void arrayPrint(ArrayList<AbstractSoul> soulList)
+    {
+        logger.info("Array Size: " + soulList.size());
+        if(soulList.size() > 0)
+        {
+            soulList.forEach(s -> logger.info(  s.uuid + " | "));
+
+        } else
+        {
+            logger.info("List is empty.");
+        }
+
+    }
+
     public void open(CustomGameAction action, ArrayList<AbstractSoul> sl, String msg, int numberToSelect, boolean anyNumber, boolean canPickZero, boolean upTo)
     {
+        unSelectedSouls.clear();
+        selectedSouls.clear();
         this.sourceAction = action;
         this.soulList = sl;
         if(sl.size() > 0) {
@@ -187,10 +224,10 @@ public class SoulSelectScreen {
 
         if(canPickZero) {
             this.button.isDisabled = true;
-            this.button.show();
+            this.button.enable();
         } else {
             this.button.isDisabled = false;
-            this.button.hide();
+            this.button.disable();
         }
         this.button.hideInstantly();;
         this.button.show();
@@ -201,14 +238,21 @@ public class SoulSelectScreen {
     public void open(CustomGameAction action, ArrayList<AbstractSoul> sl, String msg, int numberToSelect, boolean anyNumber)
     { open(action, sl, msg, numberToSelect, anyNumber, true, true); }
 
-    public void reopen() { AbstractDungeon.overlayMenu.showBlackScreen(0.5F); }
+    public void reopen() {
+        logger.info("reopening...");
+        AbstractDungeon.overlayMenu.showBlackScreen(0.5F);
+        this.button.show();
+    }
 
     public void prep() {
         logger.info("prepping...");
         this.upTo = false;
         this.canPickZero = false;
-
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            c.unhover();
+        }
         AbstractDungeon.topPanel.unhoverHitboxes();
+        AbstractDungeon.actionManager.cleanCardQueue();
         AbstractDungeon.player.releaseCard();
         (AbstractDungeon.getMonsters()).hoveredMonster = null;
         this.waitThenClose = false;
@@ -218,7 +262,10 @@ public class SoulSelectScreen {
         AbstractDungeon.isScreenUp = true;
         AbstractDungeon.screen = SoulSelectEnum.SOULSELECTSCREEN;
         AbstractDungeon.player.hand.stopGlowing();
+        AbstractDungeon.player.hand.refreshHandLayout();
         AbstractDungeon.overlayMenu.showBlackScreen(0.5F);
+
+        logger.info("isScreenUp: " + AbstractDungeon.isScreenUp + " , and currentScreen is : " + AbstractDungeon.screen);
 
     }
 
@@ -248,50 +295,56 @@ public class SoulSelectScreen {
             this.button.render(sb);
         }
         this.soulList.forEach(s -> s.render(sb));
+
+        AbstractDungeon.overlayMenu.energyPanel.render(sb);
+        //AbstractDungeon.overlayMenu.combatDeckPanel.render(sb);
+        //AbstractDungeon.overlayMenu.discardPilePanel.render(sb);
+        //AbstractDungeon.overlayMenu.exhaustPanel.render(sb);
     }
 
 
     public void display()
     {
         if(this.upTo) {
-            this.button.show();
+            this.button.enable();
         } else if (this.selectedSouls.size() == this.numSoulsToSelect)
         {
-            this.button.show();
+            this.button.enable();
         } else if (this.selectedSouls.size() > 1 && this.anyNumber && !this.canPickZero)
         {
-            this.button.show();
+            this.button.enable();
         } else if (this.selectedSouls.size() != this.numSoulsToSelect && !this.anyNumber)
         {
-            this.button.hide();
+            this.button.disable();
         } else if (this.anyNumber && this.canPickZero)
         {
-            this.button.show();
+            this.button.enable();
         } else if (this.selectedSouls.isEmpty() && !this.canPickZero)
         {
-            this.button.show();
+            this.button.enable();
         }
 
         if(selectedSouls.size() > 0) {
 
-            float totalWidth = ((selectedSouls.size()-1)*SoulManager.spacerWidth + (selectedSouls.size()*AbstractSoul.textureWidth)) * Settings.scale;
-            float xMod = totalWidth/2;
-
             for (int i = 0; i < selectedSouls.size(); i++)
             {
-                selectedSouls.get(i).tX = i*(AbstractSoul.textureWidth + SoulManager.spacerWidth) - xMod + CENTER_SCREEN;
+                selectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth*Settings.scale)
+                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))*Settings.scale
+                        - (selectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2*Settings.scale;
                 selectedSouls.get(i).tY = SOUL_SELECTED_Y_POSITION;
             }
         }
 
         if(unSelectedSouls.size() > 0) {
 
-            float totalWidth = ((unSelectedSouls.size()-1)*SoulManager.spacerWidth + (unSelectedSouls.size()*AbstractSoul.textureWidth)) * Settings.scale;
-            float xMod = -totalWidth/2;
+            float totalWidth = ((unSelectedSouls.size()-1)*SoulManager.spacerWidth + (unSelectedSouls.size()*AbstractSoul.textureWidth)) ;
+            float xMod = totalWidth/2;
 
             for (int i = 0; i < unSelectedSouls.size(); i++)
             {
-                unSelectedSouls.get(i).tX = i*(AbstractSoul.textureWidth + SoulManager.spacerWidth) - xMod + CENTER_SCREEN;
+                unSelectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth*Settings.scale)
+                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))*Settings.scale
+                        - (unSelectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2*Settings.scale;
                 unSelectedSouls.get(i).tY = SOUL_UNSELECTED_Y_POSITION;
             }
         }
