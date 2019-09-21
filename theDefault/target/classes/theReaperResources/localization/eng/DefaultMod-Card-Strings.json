@@ -34,8 +34,8 @@
   },
   "theReaper:EnduringSpirit": {
     "NAME": "Enduring Spirit",
-    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health NL Innate"
+    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health NL Exhaust NL Innate"
   },
   "theReaper:FeverDream": {
     "NAME": "Fever Dream",
@@ -53,6 +53,10 @@
     "NAME": "Frenzy",
     "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance"
+  },
+  "theReaper:Gambit": {
+    "NAME": "Gambit",
+    "DESCRIPTION": "Deal !D! Damage. NL Reduce the cost of this card for each card drawn after turn start"
   },
   "theReaper:Glowfly": {
     "NAME": "Glowfly",

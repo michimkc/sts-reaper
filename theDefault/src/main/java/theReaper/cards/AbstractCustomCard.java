@@ -140,6 +140,8 @@ public abstract class AbstractCustomCard extends CustomCard {
 
     public void onSoulUsed(AbstractSoul soul) {}
 
+    public void onCardDraw() {}
+
     public void applyPowers()
     {
         bleedNumber = baseBleedNumber;

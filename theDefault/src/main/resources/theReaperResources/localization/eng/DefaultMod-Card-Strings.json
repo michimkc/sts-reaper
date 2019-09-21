@@ -54,6 +54,10 @@
     "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:M2! thereaper:Vengeance"
   },
+  "theReaper:Gambit": {
+    "NAME": "Gambit",
+    "DESCRIPTION": "Deal !D! Damage. NL Reduce the cost of this card for each card drawn after turn start"
+  },
   "theReaper:Glowfly": {
     "NAME": "Glowfly",
     "DESCRIPTION": "Obtain a small soul. NL Exhaust"

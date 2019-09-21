@@ -87,6 +87,9 @@ public class DefaultMod implements
     // The Reaper:  Soul Manager
     public SoulManager soulManager;
 
+    // card count
+    public static int cardsDrawnThisTurn = 0;
+
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Reaper Mod";
     private static final String AUTHOR = "Rocket"; // And pretty soon - You!
@@ -428,6 +431,7 @@ public class DefaultMod implements
         BaseMod.addCard(new FiendForm());
         BaseMod.addCard(new Fracture());
         BaseMod.addCard(new Frenzy());
+        BaseMod.addCard(new Gambit());
         BaseMod.addCard(new Gluttony());
         BaseMod.addCard(new Glowfly());
         BaseMod.addCard(new Guillotine());
@@ -477,6 +481,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(FiendForm.ID);
         UnlockTracker.unlockCard(Fracture.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
+        UnlockTracker.unlockCard(Gambit.ID);
         UnlockTracker.unlockCard(Gluttony.ID);
         UnlockTracker.unlockCard(Glowfly.ID);
         UnlockTracker.unlockCard(Guillotine.ID);

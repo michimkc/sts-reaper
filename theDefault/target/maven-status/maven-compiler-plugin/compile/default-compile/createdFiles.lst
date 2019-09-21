@@ -21,6 +21,7 @@ theReaper\powers\BleedPower.class
 theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
 theReaper\variables\DefaultCustomVariable.class
+theReaper\patches\AbstractPlayerCardDrawPatch$DrawInsertPatch.class
 theReaper\util\TextureLoader.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\powers\PapercutPower.class
@@ -35,6 +36,7 @@ theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
 theReaper\cards\Frenzy.class
 theReaper\relics\PlaceholderRelic2.class
+theReaper\patches\AbstractPlayerCardDrawPatch$DrawInsertPatch$UpdateLocator.class
 theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class
@@ -45,6 +47,7 @@ theReaper\patches\SoulSelectEnum.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\powers\CrimsonTidePower.class
 theReaper\cards\Hack.class
+theReaper\patches\AbstractPlayerCardDrawPatch.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
@@ -58,6 +61,7 @@ theReaper\cards\MasterBall.class
 theReaper\patches\AbstractPlayerSoulsPatch.class
 theReaper\util\IDCheckDontTouchPls.class
 theReaper\cards\Guillotine.class
+theReaper\patches\GameActionManagerPatch$clearPatch.class
 theReaper\cards\SoulBlade.class
 theReaper\powers\PaybackPower.class
 theReaper\cards\ShadowStep.class
@@ -75,6 +79,7 @@ theReaper\cards\Hemorrhage.class
 theReaper\powers\VengeancePower.class
 theReaper\powers\FiendFormPower.class
 theReaper\patches\AbstractDungeonScreenPatch.class
+theReaper\cards\Gambit.class
 theReaper\cards\CrimsonTide.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPostFixScreenUpdatePatch.class
 theReaper\relics\DefaultClickableRelic.class
@@ -98,6 +103,8 @@ theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
 theReaper\cards\Reap.class
 theReaper\cards\Slash.class
+theReaper\patches\GameActionManagerPatch.class
+theReaper\patches\GameActionManagerPatch$getNextActionPatch.class
 theReaper\orbs\DefaultOrb.class
 theReaper\cards\Gluttony.class
 theReaper\actions\FeverDreamAction.class
