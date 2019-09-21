@@ -21,17 +21,12 @@ public class HollowSoul extends AbstractSoul {
     public static final String SOUL_ID = DefaultMod.makeID(soulName);
     private static final ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(SOUL_ID);
     public static final String[] DESC = reaperString.DESCRIPTIONS;
-    public String imgURL = "theReaperResources/images/souls/" + soulName + ".png";
+    public static final String imgURL = "theReaperResources/images/souls/HollowSoul.png";
     public Texture img;
 
     public HollowSoul()
     {
-        // load the image
-        this.img = ImageMaster.loadImage(imgURL);
-        this.ID = SOUL_ID;
-        this.name = reaperString.NAME;
-        this.description = DESC[0];
-        this.tX = 0;
+        super(imgURL, SOUL_ID, reaperString.NAME, DESC[0]);
     }
 
     public String getSoulName()
@@ -54,16 +49,6 @@ public class HollowSoul extends AbstractSoul {
         act(new DrawCardAction(AbstractDungeon.player,2));
 
         super.useSoul();
-    }
-
-    @Override
-    public void render(SpriteBatch paramSpriteBatch) {
-
-        paramSpriteBatch.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
-        paramSpriteBatch.draw(this.img, this.tX*Settings.scale, this.tY*Settings.scale, textureWidth/2, textureWidth/2, textureWidth, textureWidth, Settings.scale, Settings.scale, 0, 0, 0, 200, 200, false, false);
-
-        //paramSpriteBatch.draw(this.img,Settings.WIDTH/2, Settings.HEIGHT/2);
-        hb.render(paramSpriteBatch);
     }
 
     @Override

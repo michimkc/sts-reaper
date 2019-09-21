@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
@@ -49,6 +50,15 @@ public abstract class AbstractSoul {
     public boolean inSelectionScreen = false;
     public SoulSelectScreen currentSelectScreen;
 
+    public AbstractSoul(String imgUrl, String soulID, String name, String description) {
+        this.img = ImageMaster.loadImage(imgUrl);
+        this.ID = soulID;
+        this.name = name;
+        this.description = description;
+        this.tX = 0;
+        this.tY = 0;
+    }
+
     public abstract void updateDescription();
 
     public void onUse()
@@ -62,7 +72,7 @@ public abstract class AbstractSoul {
 
 
     public void update() {
-        this.hb.update((this.tX+textureWidth*0.1F)*Settings.scale, (this.tY+textureWidth*0.1F)*Settings.scale); // 1.5 is to position per the center of the sprite.
+        this.hb.move(this.tX, this.tY);
         this.hb.update();
         if (this.hb.hovered) {
             TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 100.0F) * Settings.scale, this.name, this.description);
@@ -112,16 +122,19 @@ public abstract class AbstractSoul {
     public void consumeSoul()
     {
         CardCrawlGame.sound.play("CARD_EXHAUST", 0.2F);
-        for (int i = 0; i < 90; i++) {
-            AbstractDungeon.effectsQueue.add(new ExhaustBlurEffect(this.tX, this.tY));
-        }
         for (int i = 0; i < 50; i++) {
             AbstractDungeon.effectsQueue.add(new ExhaustEmberEffect(this.tX, this.tY));
         }
         SoulManager.RemoveSoul(this, true);
     }
 
-    public abstract void render(SpriteBatch paramSpriteBatch);
+    public void render(SpriteBatch paramSpriteBatch) {
+        paramSpriteBatch.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
+        paramSpriteBatch.draw(this.img, this.hb.x, this.hb.y, 0, 0, textureWidth, textureWidth, Settings.scale, Settings.scale, 0, 0, 0, 200, 200, false, false);
+
+        //paramSpriteBatch.draw(this.img,Settings.WIDTH/2, Settings.HEIGHT/2);
+        hb.render(paramSpriteBatch);
+    }
 
     public void act(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);

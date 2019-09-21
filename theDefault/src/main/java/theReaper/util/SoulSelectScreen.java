@@ -53,9 +53,9 @@ public class SoulSelectScreen {
     public ArrayList<AbstractSoul> soulList;
     public CustomGameAction sourceAction;
 
-    public static final float SOUL_UNSELECTED_Y_POSITION = 300.0F;
-    public static final float SOUL_SELECTED_Y_POSITION = 650.0F;
-    public static final float CENTER_SCREEN =Settings.WIDTH/2;
+    public static final float SOUL_UNSELECTED_Y_POSITION = 475.0F * Settings.scale - 150.0F * Settings.scale;
+    public static final float SOUL_SELECTED_Y_POSITION = 475.0F * Settings.scale + 225.0F * Settings.scale;
+    public static final float CENTER_SCREEN = Settings.WIDTH/2.0F;
 
     public SoulSelectScreen()
     {
@@ -324,27 +324,31 @@ public class SoulSelectScreen {
             this.button.enable();
         }
 
+        float texWidth = AbstractSoul.textureWidth*Settings.scale;
+
         if(selectedSouls.size() > 0) {
 
             for (int i = 0; i < selectedSouls.size(); i++)
             {
-                selectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth)
-                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))
-                        - (selectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2;
+                selectedSouls.get(i).tX = CENTER_SCREEN //- (0.5F*texWidth)
+                        + (i*(texWidth + SoulManager.spacerWidth))
+                        - ((selectedSouls.size()-1)*(texWidth + SoulManager.spacerWidth))/2.0F;
+                logger.info("Screen Size:   " + Settings.WIDTH);
+                logger.info("Screen Scale:  " + Settings.scale);
+                logger.info("Midpoint:      " + Settings.WIDTH/2.0F);
+                logger.info("Index Offset:  " + (i*(texWidth + SoulManager.spacerWidth)));
+                logger.info("Center Offset: " + ((selectedSouls.size()-1)*(texWidth + SoulManager.spacerWidth))/2.0F);
                 selectedSouls.get(i).tY = SOUL_SELECTED_Y_POSITION;
             }
         }
 
         if(unSelectedSouls.size() > 0) {
 
-            float totalWidth = ((unSelectedSouls.size()-1)*SoulManager.spacerWidth + (unSelectedSouls.size()*AbstractSoul.textureWidth)) ;
-            float xMod = totalWidth/2;
-
             for (int i = 0; i < unSelectedSouls.size(); i++)
             {
-                unSelectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth)
-                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))
-                        - (unSelectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2;
+                unSelectedSouls.get(i).tX = CENTER_SCREEN //- (0.5F*texWidth)
+                        + (i*(texWidth + SoulManager.spacerWidth))
+                        - ((unSelectedSouls.size()-1)*(texWidth + SoulManager.spacerWidth))/2;
                 unSelectedSouls.get(i).tY = SOUL_UNSELECTED_Y_POSITION;
             }
         }
