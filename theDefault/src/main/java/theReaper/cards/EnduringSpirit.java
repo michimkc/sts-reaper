@@ -23,6 +23,7 @@ public class EnduringSpirit extends AbstractCustomCard {
         baseBlock = block = 5;
         magicNumber = baseMagicNumber = 2;
         magicNumber2 = baseMagicNumber2 = 5;
+        this.exhaust = true;
 
 
     }
