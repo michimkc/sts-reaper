@@ -65,7 +65,7 @@ public class SoulManager implements CustomSavable<String> {
 
     public static float xPosAtIndex(int index)
     {
-        return (40+(spacerWidth+AbstractSoul.textureWidth)*(index))* Settings.scale;
+        return (40+(spacerWidth+AbstractSoul.textureWidth)*(index));
     }
 
     public static void updateSoulIndices(){
@@ -141,6 +141,10 @@ public class SoulManager implements CustomSavable<String> {
     public String onSave()
     {
         return makeSoulsList();
+    }
+
+    public Class<String> savedType() {
+        return String.class;
     }
 
 

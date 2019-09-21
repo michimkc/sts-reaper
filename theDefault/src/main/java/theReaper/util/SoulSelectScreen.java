@@ -53,8 +53,8 @@ public class SoulSelectScreen {
     public ArrayList<AbstractSoul> soulList;
     public CustomGameAction sourceAction;
 
-    public static final float SOUL_UNSELECTED_Y_POSITION = 300.0F * Settings.scale;
-    public static final float SOUL_SELECTED_Y_POSITION = 650.0F * Settings.scale;
+    public static final float SOUL_UNSELECTED_Y_POSITION = 300.0F;
+    public static final float SOUL_SELECTED_Y_POSITION = 650.0F;
     public static final float CENTER_SCREEN =Settings.WIDTH/2;
 
     public SoulSelectScreen()
@@ -328,9 +328,9 @@ public class SoulSelectScreen {
 
             for (int i = 0; i < selectedSouls.size(); i++)
             {
-                selectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth*Settings.scale)
-                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))*Settings.scale
-                        - (selectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2*Settings.scale;
+                selectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth)
+                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))
+                        - (selectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2;
                 selectedSouls.get(i).tY = SOUL_SELECTED_Y_POSITION;
             }
         }
@@ -342,9 +342,9 @@ public class SoulSelectScreen {
 
             for (int i = 0; i < unSelectedSouls.size(); i++)
             {
-                unSelectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth*Settings.scale)
-                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))*Settings.scale
-                        - (unSelectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2*Settings.scale;
+                unSelectedSouls.get(i).tX = CENTER_SCREEN + (0.5F*AbstractSoul.textureWidth)
+                        + (i*(AbstractSoul.textureWidth + SoulManager.spacerWidth))
+                        - (unSelectedSouls.size()-1)*(AbstractSoul.textureWidth + SoulManager.spacerWidth)/2;
                 unSelectedSouls.get(i).tY = SOUL_UNSELECTED_Y_POSITION;
             }
         }

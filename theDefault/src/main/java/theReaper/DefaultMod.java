@@ -565,6 +565,7 @@ public class DefaultMod implements
         // Adding Save Stuff for Souls
         soulManager = new SoulManager();
         BaseMod.addSaveField("theReaperSoulSave", soulManager);
+
     }
     
     // ================ /LOAD THE TEXT/ ===================
