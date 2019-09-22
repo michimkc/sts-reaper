@@ -442,6 +442,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Hyper());
         BaseMod.addCard(new Impatience());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
+        BaseMod.addCard(new Moonflower()); //
         //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new QuickStep());
         BaseMod.addCard(new Reap());
@@ -492,6 +493,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Hyper.ID);
         UnlockTracker.unlockCard(Impatience.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
+        UnlockTracker.unlockCard(Moonflower.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(QuickStep.ID);
         UnlockTracker.unlockCard(Reap.ID);

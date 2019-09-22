@@ -64,6 +64,7 @@ theReaper\powers\PaybackPower.class
 theReaper\cards\ShadowStep.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\powers\CommonPower.class
+theReaper\cards\Moonflower.class
 theReaper\cards\Bulwark.class
 theReaper\powers\MarkPower.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPreviousScreenPatch.class

@@ -48,7 +48,7 @@ public class Gambit extends AbstractCustomCard {
         cardsDrawn = -DefaultMod.cardsDrawnThisTurn + AbstractDungeon.player.gameHandSize;
         setCostForTurn(this.cost + cardsDrawn);
 
-        logger.info("onCardDraw. Cards drawn this turn: " + DefaultMod.cardsDrawnThisTurn + " , Cards Drawn: " + cardsDrawn + " , current Cost is : " + this.cost);
+        //logger.info("onCardDraw. Cards drawn this turn: " + DefaultMod.cardsDrawnThisTurn + " , Cards Drawn: " + cardsDrawn + " , current Cost is : " + this.cost);
     }
 
     // Actions the card should do.

@@ -103,6 +103,14 @@
     "NAME": "Master Ball",
     "DESCRIPTION": "NL thereaper:SoulBind !M!"
   },
+  "theReaper:Moonflower": {
+    "NAME": "Moonflower",
+    "DESCRIPTION": "Unplayable. NL Gain [B] if this card is drawn after turn start and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [B] [B] if this card is drawn after turn start and Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
   "theReaper:QuickStep": {
     "NAME": "Quick Step",
     "DESCRIPTION": "Gain !B! Block"
