@@ -161,12 +161,7 @@ public class SoulSelectScreen {
                 if(unSelectedSouls.get(i).uuid == s.uuid)
                 {
                     logger.info("soul was in UNSELECTED group. Removing and putting it into selected group.");
-                    if(numSoulsToSelect == 1)
-                    {
-                        // we only need to select one
-                        s.consumeSoul();
-                        return;
-                    }
+
                     selectedSouls.add(s);
                     unSelectedSouls.remove(s);
                     logger.info("Current groups:");
@@ -333,11 +328,11 @@ public class SoulSelectScreen {
                 selectedSouls.get(i).tX = CENTER_SCREEN //- (0.5F*texWidth)
                         + (i*(texWidth + SoulManager.spacerWidth))
                         - ((selectedSouls.size()-1)*(texWidth + SoulManager.spacerWidth))/2.0F;
-                logger.info("Screen Size:   " + Settings.WIDTH);
-                logger.info("Screen Scale:  " + Settings.scale);
-                logger.info("Midpoint:      " + Settings.WIDTH/2.0F);
-                logger.info("Index Offset:  " + (i*(texWidth + SoulManager.spacerWidth)));
-                logger.info("Center Offset: " + ((selectedSouls.size()-1)*(texWidth + SoulManager.spacerWidth))/2.0F);
+                //logger.info("Screen Size:   " + Settings.WIDTH);
+                //logger.info("Screen Scale:  " + Settings.scale);
+                //logger.info("Midpoint:      " + Settings.WIDTH/2.0F);
+                //logger.info("Index Offset:  " + (i*(texWidth + SoulManager.spacerWidth)));
+                //logger.info("Center Offset: " + ((selectedSouls.size()-1)*(texWidth + SoulManager.spacerWidth))/2.0F);
                 selectedSouls.get(i).tY = SOUL_SELECTED_Y_POSITION;
             }
         }

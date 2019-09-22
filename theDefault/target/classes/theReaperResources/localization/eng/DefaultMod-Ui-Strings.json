@@ -13,5 +13,28 @@
     "TEXT": [
       "No cards in the discard pile to draw..."
     ]
+  },
+  "EffigyAction": {
+    "TEXT": [
+      "Consume one soul. Add a copy of the next card you play into your hand.",
+      "Consume any number of souls. Add that many copies of the next card you play into your hand."
+    ]
+  },
+  "FeverDreamAction": {
+    "TEXT": [
+      "Gain Energy for Each Soul Selected"
+    ]
+  },
+  "InsultToInjuryAction": {
+    "TEXT": [
+      "Discard"
+    ]
+  },
+  "InsultToInjuryDisses": {
+    "TEXT": [
+      "@CAW!@ NL @CAAAW@",
+      "You couldn't Seek your way out of a paper bag!"
+    ]
   }
+
 }

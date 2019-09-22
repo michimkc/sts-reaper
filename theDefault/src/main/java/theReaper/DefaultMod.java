@@ -421,11 +421,14 @@ public class DefaultMod implements
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new BloodMoon());
         BaseMod.addCard(new Cleanse()); // uncommon skill
+        BaseMod.addCard(new ChainStrike());
         BaseMod.addCard(new CrimsonTide());
         BaseMod.addCard(new CrimsonRush());
         BaseMod.addCard(new DeathsDance());
+        BaseMod.addCard(new DeathRattle());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Devour());
+        BaseMod.addCard(new Effigy());
         BaseMod.addCard(new EnduringSpirit());
         BaseMod.addCard(new FeverDream());
         BaseMod.addCard(new FiendForm());
@@ -441,6 +444,7 @@ public class DefaultMod implements
         BaseMod.addCard(new HurricaneStrike());
         BaseMod.addCard(new Hyper());
         BaseMod.addCard(new Impatience());
+        BaseMod.addCard(new InsultToInjury());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         BaseMod.addCard(new Moonflower()); //
         //BaseMod.addCard(new MasterBall());
@@ -472,11 +476,14 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(BloodMoon.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
+        UnlockTracker.unlockCard(ChainStrike.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
         UnlockTracker.unlockCard(CrimsonTide.ID);
         UnlockTracker.unlockCard(DeathsDance.ID);
+        UnlockTracker.unlockCard(DeathRattle.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
+        UnlockTracker.unlockCard(Effigy.ID);
         UnlockTracker.unlockCard(EnduringSpirit.ID);
         UnlockTracker.unlockCard(FeverDream.ID);
         UnlockTracker.unlockCard(FiendForm.ID);
@@ -492,6 +499,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(HurricaneStrike.ID);
         UnlockTracker.unlockCard(Hyper.ID);
         UnlockTracker.unlockCard(Impatience.ID);
+        UnlockTracker.unlockCard(InsultToInjury.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         UnlockTracker.unlockCard(Moonflower.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);

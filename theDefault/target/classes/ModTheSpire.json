@@ -1,9 +1,10 @@
 {
   "modid": "ReaperMod",
   "name": "The Reaper",
-  "author_list": ["Gremious"],
+  "author_list": ["Rocket"],
   "description": "A Mod to add a Custom Playable Character called The Reaper.",
   "version": "0.0.2",
+  "credits": "Special Thanks to: \nChronometrics - for all his help and support throughout this project.",
   "sts_version": "07-17-2019",
   "mts_version": "3.11.0",
   "dependencies": ["basemod", "stslib"],

@@ -20,6 +20,10 @@
       ". #yBleed is currently increased on all cards by "
     ]
   },
+  "theReaper:EffigyPower": {
+    "NAME": "Effigy",
+    "DESCRIPTIONS": ["Add ", " copy of the next card you play into your hand.", " copies of the next card you play into your hand."]
+  },
   "theReaper:FiendFormPower": {
     "NAME": "Fiend Form",
     "DESCRIPTIONS": ["Whenever you draw a card by playing a card or soul, draw an extra card."]

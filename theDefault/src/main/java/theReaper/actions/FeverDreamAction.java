@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.patches.AbstractDungeonScreenPatch;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 
 public class FeverDreamAction extends CustomGameAction {
 
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FeverDreamAction");
+    private static final String[] TEXT = uiStrings.TEXT;
 
     public static final Logger logger = LogManager.getLogger(FeverDreamAction.class.getName());
     public int energyPerSoul = 0;
@@ -43,7 +46,7 @@ public class FeverDreamAction extends CustomGameAction {
             if(AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size() > 0) {
                 logger.info("Starting SoulSelectScreen.");
                 scr = AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon);
-                scr.open(this,AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player),"Gain Energy for Each Soul Selected",0,true,true,true);
+                scr.open(this,AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player),TEXT[0],0,true,true,true);
 
             } else
             {

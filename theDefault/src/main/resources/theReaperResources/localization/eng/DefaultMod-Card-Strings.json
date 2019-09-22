@@ -7,6 +7,10 @@
     "NAME": "Bulwark",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
   },
+  "theReaper:ChainStrike": {
+    "NAME": "Chain Strike",
+    "DESCRIPTION": "Deal !D! Damage NL ( !theReaper:M2! Damage, plus !M! Damage for every attack played this turn."
+  },
   "theReaper:Cleanse": {
     "NAME": "Cleanse",
     "DESCRIPTION": "Remove all Debuffs. NL Exhaust"
@@ -24,6 +28,10 @@
     "NAME": "Death's Dance",
     "DESCRIPTION": "Reduce the cost of all [#FFBF00]Strikes[] by !M!"
   },
+  "theReaper:DeathRattle": {
+    "NAME": "Death Rattle",
+    "DESCRIPTION": "Deal !D! Damage NL (5 Damage plus !M! Damage for every !theReaper:M2! missing health ) NL Exhaust"
+  },
   "theReaper:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block"
@@ -32,10 +40,18 @@
     "NAME": "Devour",
     "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, heal !M! percent of your max HP. NL Exhaust"
   },
+  "theReaper:Effigy": {
+    "NAME": "Effigy",
+    "DESCRIPTION": "Consume one soul. Add one copy of the next card you play into your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Consume any number of souls. Add that many copies of the next card you play into your hand. NL Exhaust",
+    "EXTENDED_DESCRIPTION": [
+      "I don't have any souls to play this card."
+    ]
+  },
   "theReaper:EnduringSpirit": {
     "NAME": "Enduring Spirit",
-    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health NL Exhaust NL Innate"
+    "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust NL Innate"
   },
   "theReaper:FeverDream": {
     "NAME": "Fever Dream",
@@ -89,6 +105,10 @@
   "theReaper:Hyper": {
     "NAME": "Hyper",
     "DESCRIPTION": "Gain [B] [B] NL Gain !theReaper:SB! thereaper:Bleed"
+  },
+  "theReaper:InsultToInjury": {
+    "NAME": "Insult To Injury",
+    "DESCRIPTION": "Retain NL Discard any number of cards, deal !M! Damage for each card discarded."
   },
   "theReaper:Impatience": {
     "NAME": "Impatience",

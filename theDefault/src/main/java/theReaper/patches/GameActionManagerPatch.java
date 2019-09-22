@@ -2,9 +2,12 @@
 package theReaper.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import org.apache.logging.log4j.LogManager;
@@ -47,6 +50,27 @@ public class GameActionManagerPatch {
         }
 
     }
+
+    /*
+    @SpirePatch(
+            clz=GameActionManager.class,
+            method="getNextAction"
+    )
+    public static class getNextActionInsertPatch {
+
+        @SpireInsertPatch(
+                rloc = 39
+        )
+        public static void Insert(GameActionManager __instance) {
+            AbstractCard nextCard = ((CardQueueItem)__instance.cardQueue.get(0)).card;
+            if(nextCard.type == AbstractCard.CardType.ATTACK)
+            {
+                DefaultMod.attacksPlayedThisTurn++;
+            }
+        }
+    }
+    */
+
 }
 
 

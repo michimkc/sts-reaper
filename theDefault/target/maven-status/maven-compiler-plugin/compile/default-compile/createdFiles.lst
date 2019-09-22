@@ -10,11 +10,13 @@ theReaper\relics\PlaceholderRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerCombatUpdatePatch.class
 theReaper\patches\TopPanelPatch.class
 theReaper\util\SoulManager$1.class
+theReaper\cards\Effigy.class
 theReaper\patches\DefaultInsertPatch.class
 theReaper\cards\Fracture.class
 theReaper\cards\BloodMoon.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\Regroup.class
+theReaper\powers\EffigyPower.class
 theReaper\cards\AbstractDefaultCard.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\powers\BleedPower.class
@@ -30,6 +32,7 @@ theReaper\powers\ShadowStepPower.class
 theReaper\characters\TheDefault$Enums.class
 theReaper\cards\Hyper.class
 theReaper\actions\SoulGemAction.class
+theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
@@ -68,6 +71,7 @@ theReaper\cards\Moonflower.class
 theReaper\cards\Bulwark.class
 theReaper\powers\MarkPower.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPreviousScreenPatch.class
+theReaper\cards\InsultToInjury.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch$UpdateLocator.class
 theReaper\cards\MaimingStrike.class
 theReaper\cards\Payback.class
@@ -83,6 +87,7 @@ theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPostFixScreenUpdateP
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractMonsterPatch.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
+theReaper\actions\EffigyAction.class
 theReaper\powers\GluttonyPower.class
 theReaper\variables\MagicNumber2Variable.class
 theReaper\events\IdentityCrisisEvent.class
@@ -100,6 +105,7 @@ theReaper\cards\RendingStrike.class
 theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
 theReaper\cards\Reap.class
+theReaper\cards\DeathRattle.class
 theReaper\cards\Slash.class
 theReaper\patches\GameActionManagerPatch.class
 theReaper\patches\GameActionManagerPatch$getNextActionPatch.class
@@ -108,6 +114,7 @@ theReaper\cards\Gluttony.class
 theReaper\actions\FeverDreamAction.class
 theReaper\cards\Glowfly.class
 theReaper\powers\CustomTemplatePower.class
+theReaper\cards\ChainStrike.class
 theReaper\cards\Safeguard.class
 theReaper\patches\DefaultInsertPatch$Locator.class
 theReaper\cards\Impatience.class
