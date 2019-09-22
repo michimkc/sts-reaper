@@ -8,10 +8,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theReaper.DefaultMod;
+import theReaper.cards.AbstractCustomCard;
+import theReaper.characters.TheDefault;
 import theReaper.powers.AbstractCustomPower;
+
+import static theReaper.DefaultMod.cardsDrawnThisTurn;
 
 public class DrawCardFromDiscardAction extends AbstractGameAction {
 
@@ -65,14 +71,27 @@ public class DrawCardFromDiscardAction extends AbstractGameAction {
 
     public void notifyOnDrawFromDiscard(AbstractCard c)
     {
-        AbstractDungeon.player.powers.forEach(p -> notifyPowers(p,c));
-    }
 
-    public void notifyPowers(AbstractPower p, AbstractCard c)
-    {
-        if(p instanceof AbstractCustomPower)
-        {
+        c.triggerWhenDrawn();
+
+        for (AbstractPower p : AbstractDungeon.player.powers) {
             p.onCardDraw(c);
         }
+
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            r.onCardDraw(c);
+        }
+
+        AbstractDungeon.player.onCardDrawOrDiscard();
+
+        DefaultMod.cardsDrawnThisTurn++;
+
+        for (AbstractCard card: AbstractDungeon.player.hand.group) {
+            if (card instanceof AbstractCustomCard) {
+                ((AbstractCustomCard) card).onCardDraw();
+            }
+        }
+
     }
+
 }

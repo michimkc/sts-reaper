@@ -288,14 +288,16 @@ public class TheDefault extends CustomPlayer {
         return TEXT[2];
     }
 
-    public void onCardDrawOrDiscard()
+    public void draw(int numCards)
     {
-        cardsDrawnThisTurn++;
-        logger.info("calling onCardDrawOrDiscard");
-        super.onCardDrawOrDiscard();
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof AbstractCustomCard) {
-                ((AbstractCustomCard) c).onCardDraw();
+        super.draw(numCards);
+        for (int i = 0; i < numCards; i++) {
+            cardsDrawnThisTurn++;
+            logger.info("calling onCardDrawd");
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c instanceof AbstractCustomCard) {
+                    ((AbstractCustomCard) c).onCardDraw();
+                }
             }
         }
     }

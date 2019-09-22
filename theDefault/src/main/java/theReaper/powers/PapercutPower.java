@@ -37,7 +37,7 @@ public class PapercutPower extends AbstractCustomPower implements CloneablePower
 
     public PapercutPower(final AbstractCreature owner, final AbstractCreature source, int damageAmt) {
 
-        super(owner,owner,POWER_AMOUNT,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
+        super(owner,owner,damageAmt,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
         damageAmount = damageAmt;
         enabled = false;
     }
@@ -45,7 +45,6 @@ public class PapercutPower extends AbstractCustomPower implements CloneablePower
 
     public void onCardDraw(AbstractCard c) {
         if (enabled) {
-            enabled = false;
             flash();
             AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
             if (Settings.FAST_MODE) {
@@ -54,7 +53,7 @@ public class PapercutPower extends AbstractCustomPower implements CloneablePower
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(this.owner, new CleaveEffect(), 0.2F));
             }
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner,
-                    DamageInfo.createDamageMatrix(damageAmount, true),
+                    DamageInfo.createDamageMatrix(this.amount, true),
                     DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
         }
     }
@@ -83,11 +82,11 @@ public class PapercutPower extends AbstractCustomPower implements CloneablePower
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + damageAmount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new PapercutPower(owner, source, damageAmount);
+        return new PapercutPower(owner, source, this.amount);
     }
 }

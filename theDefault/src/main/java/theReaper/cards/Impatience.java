@@ -21,12 +21,12 @@ public class Impatience extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public Impatience() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 2;
         magicNumberUp = 1;
 
     }

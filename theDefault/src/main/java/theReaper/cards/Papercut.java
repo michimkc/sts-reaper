@@ -31,7 +31,7 @@ public class Papercut extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         flash();
-        act(new ApplyPowerAction(p, p, new PapercutPower(p, p, magicNumber), 1));
+        act(new ApplyPowerAction(p, p, new PapercutPower(p, p, magicNumber), magicNumber));
 
     }
 

@@ -35,7 +35,7 @@ public class Moonflower extends AbstractCustomCard {
     public Moonflower() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 2;
         magicNumberUp = 1;
 
     }

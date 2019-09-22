@@ -108,7 +108,7 @@
   },
   "theReaper:InsultToInjury": {
     "NAME": "Insult To Injury",
-    "DESCRIPTION": "Retain NL Discard any number of cards, deal !M! Damage for each card discarded."
+    "DESCRIPTION": "Retain NL Discard any number of cards, deal !M! damage for each card discarded."
   },
   "theReaper:Impatience": {
     "NAME": "Impatience",

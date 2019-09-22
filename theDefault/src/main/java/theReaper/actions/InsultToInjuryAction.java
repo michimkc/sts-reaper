@@ -65,8 +65,8 @@ public class InsultToInjuryAction extends AbstractGameAction {
                 for(int i = 0; i < count; i++) {
 
                     AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(this.target.hb.cX, this.target.hb.cY)));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, amount, DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
                 }
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, amount*count, DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
 
 
                 for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {

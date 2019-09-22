@@ -34,8 +34,8 @@ public class InsultToInjury extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
-        magicNumberUp = 1;
+        damage = baseDamage = 2;
+        damageUp = 1;
         this.retain = true;
 
     }
@@ -44,7 +44,7 @@ public class InsultToInjury extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new InsultToInjuryAction(p, m, magicNumber, this));
+        act(new InsultToInjuryAction(p, m, damage, this));
 
     }
 

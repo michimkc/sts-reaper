@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -45,9 +46,8 @@ public class EffigyPower extends AbstractCustomPower implements CloneablePowerIn
     public void onPlayCard(AbstractCard card, AbstractMonster m)
     {
         flash();
-        for(int i = 0; i < amount; i++) {
-            AbstractDungeon.player.hand.addToHand(card.makeStatEquivalentCopy());
-        }
+
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(),amount));
 
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
 

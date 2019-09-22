@@ -34,8 +34,12 @@ public class Safeguard extends AbstractCustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        act(new GainBlockAction(p, p, block));
+        for (int i = 0; i < (AbstractDungeon.getCurrRoom()).monsters.monsters.size(); i++) {
+            AbstractMonster target = (AbstractMonster) (AbstractDungeon.getCurrRoom()).monsters.monsters.get(i);
+            if (!target.isDying && target.currentHealth > 0 && !target.isEscaping) {
+                act(new GainBlockAction(p, p, block));
+            }
+        }
     }
 
     public void applyPowers() {
