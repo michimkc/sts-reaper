@@ -27,7 +27,7 @@ public class GameActionManagerPatch {
     )
     public static class getNextActionPatch {
 
-        public static void Prefix (GameActionManager __instance){
+        public static void Postfix (GameActionManager __instance){
             if (__instance.turnHasEnded) {
                 DefaultMod.cardsDrawnThisTurn = 0;
             }
@@ -43,10 +43,7 @@ public class GameActionManagerPatch {
     public static class clearPatch {
 
         public static void Postfix (GameActionManager __instance){
-
                 DefaultMod.cardsDrawnThisTurn = 0;
-
-
         }
 
     }

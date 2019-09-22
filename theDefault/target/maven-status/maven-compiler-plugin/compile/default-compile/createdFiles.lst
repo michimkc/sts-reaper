@@ -21,7 +21,6 @@ theReaper\powers\BleedPower.class
 theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
 theReaper\variables\DefaultCustomVariable.class
-theReaper\patches\AbstractPlayerCardDrawPatch$DrawInsertPatch.class
 theReaper\util\TextureLoader.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\powers\PapercutPower.class
@@ -36,7 +35,6 @@ theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
 theReaper\cards\Frenzy.class
 theReaper\relics\PlaceholderRelic2.class
-theReaper\patches\AbstractPlayerCardDrawPatch$DrawInsertPatch$UpdateLocator.class
 theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class
@@ -47,7 +45,6 @@ theReaper\patches\SoulSelectEnum.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\powers\CrimsonTidePower.class
 theReaper\cards\Hack.class
-theReaper\patches\AbstractPlayerCardDrawPatch.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class

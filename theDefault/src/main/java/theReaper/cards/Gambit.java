@@ -9,10 +9,16 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
+import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.powers.BleedPower;
 
 public class Gambit extends AbstractCustomCard {
+
+
+    private static final Logger logger = LogManager.getLogger(Gambit.class.getName());
 
     public static final String ID = DefaultMod.makeID("Gambit");
 
@@ -22,23 +28,27 @@ public class Gambit extends AbstractCustomCard {
 
     private static final int COST = 4;
 
+    private int cardsDrawn = 0;
+
     public Gambit() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = 18;
         damageUp = 6;
-
+        cardsDrawn = 0;
     }
 
+    public void onDiscard()
+    {
+
+    }
 
     public void onCardDraw()
     {
-        setCostForTurn(this.cost -1);
-    }
+        cardsDrawn = -DefaultMod.cardsDrawnThisTurn + AbstractDungeon.player.gameHandSize;
+        setCostForTurn(this.cost + cardsDrawn);
 
-    public void triggerWhenDrawn() {
-        // reduce the cost by the number of cards we drew t his turn
-        setCostForTurn(this.cost - DefaultMod.cardsDrawnThisTurn + AbstractDungeon.player.gameHandSize);
+        logger.info("onCardDraw. Cards drawn this turn: " + DefaultMod.cardsDrawnThisTurn + " , Cards Drawn: " + cardsDrawn + " , current Cost is : " + this.cost);
     }
 
     // Actions the card should do.
