@@ -38,11 +38,5 @@
       "Select any number of Souls",
       "Select at least 1 Soul.",
     "Select Souls"]
-  },
-  "theReaper:WhirlingDeath": {
-    "NAME": "Whirling Death Damage",
-    "DESCRIPTIONS": ["Deals Damage in the following sequence: ",
-                      " , ",
-                      "..."]
   }
 }

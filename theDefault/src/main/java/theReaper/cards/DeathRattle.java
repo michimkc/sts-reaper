@@ -23,11 +23,11 @@ public class DeathRattle extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        damage = baseDamage = 5;
-        magicNumber = baseMagicNumber = 4;
+        damage = baseDamage = 4;
         magicNumber2 = baseMagicNumber2 = 8;
         magicNumber2Up = -1;
         this.exhaust = true;
+        magicNumber = baseMagicNumber = damage;
 
     }
 
@@ -35,22 +35,41 @@ public class DeathRattle extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        int curHP = p.maxHealth - p.currentHealth;
-        int extraDamage = (int)(curHP/magicNumber2)*magicNumber;
-        damage = baseDamage + extraDamage;
+        int orig = damage;
+        damage = getCardDamage(baseDamage);
+        initializeDescription();
         act(new DamageAction(m,new DamageInfo(p,damage, DamageInfo.DamageType.NORMAL),DamageAction.AttackEffect.SLASH_HEAVY));
-
+        damage = orig;
     }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        int orig = damage;
+        damage = getCardDamage(baseDamage);
+        if(damage != baseDamage) {
+            isDamageModified = true;
+        }
+        initializeDescription();
+        damage = orig;
+    }
+
+    public int getCardDamage(int d)
+    {
+
+        int cardDamage;
+        int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+        int extraDamage = (int)(curHP/magicNumber2)*d;
+        cardDamage = d + extraDamage;
+
+        return cardDamage;
+    }
+
 
     public void update()
     {
         super.update();
-
-        int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
-        int extraDamage = (int)(curHP/magicNumber2)*magicNumber;
-        damage = baseDamage + extraDamage;
+        damage = getCardDamage(baseDamage);
         isDamageModified = true;
-
         initializeDescription();
     }
 

@@ -24,13 +24,17 @@
     "DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!.",
     "UPGRADE_DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!. NL Innate"
   },
+  "theReaper:Cyclone": {
+    "NAME": "Cyclone",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your draw pile. NL Other Cyclones cost 0 this turn."
+  },
   "theReaper:DeathsDance": {
     "NAME": "Death's Dance",
     "DESCRIPTION": "Reduce the cost of all [#FFBF00]Strikes[] by !M!"
   },
   "theReaper:DeathRattle": {
     "NAME": "Death Rattle",
-    "DESCRIPTION": "Deal !D! Damage NL (5 Damage plus !M! Damage for every !theReaper:M2! missing health ) NL Exhaust"
+    "DESCRIPTION": "Deal !D! Damage NL ( !M! Damage, plus !M! Damage for every !theReaper:M2! missing health ) NL Exhaust"
   },
   "theReaper:Defend": {
     "NAME": "Defend",
@@ -205,10 +209,6 @@
   "theReaper:Transfusion": {
     "NAME": "Transfusion",
     "DESCRIPTION": "Double all healing you receive this turn. NL Exhaust"
-  },
-  "theReaper:WhirlingDeath": {
-    "NAME": "Whirling Death",
-    "DESCRIPTION": "Deal [#FFBF00]Damage[] to a random enemy, then continue, hitting all enemies once. Damage increases with each hit."
   },
   "theReaper:Vampirism": {
     "NAME": "Vampirism",

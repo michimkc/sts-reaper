@@ -24,6 +24,7 @@ theReaper\cards\Strike.class
 theReaper\powers\BleedPower.class
 theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
+theReaper\cards\Cyclone.class
 theReaper\variables\DefaultCustomVariable.class
 theReaper\util\TextureLoader.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
@@ -53,7 +54,6 @@ theReaper\cards\Hack.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
-theReaper\cards\WhirlingDeath.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch.class
 theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class
 theReaper\powers\BloodMoonPower.class

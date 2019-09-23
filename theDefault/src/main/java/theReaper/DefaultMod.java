@@ -424,6 +424,7 @@ public class DefaultMod implements
         BaseMod.addCard(new ChainStrike());
         BaseMod.addCard(new CrimsonTide());
         BaseMod.addCard(new CrimsonRush());
+        BaseMod.addCard(new Cyclone());
         BaseMod.addCard(new DeathsDance());
         BaseMod.addCard(new DeathRattle());
         BaseMod.addCard(new Defend());
@@ -466,7 +467,6 @@ public class DefaultMod implements
         BaseMod.addCard(new SoulBlade()); //
         BaseMod.addCard(new Tantrum());
         BaseMod.addCard(new Transfusion());
-        BaseMod.addCard(new WhirlingDeath());
         BaseMod.addCard(new Vampirism());
 
         
@@ -480,6 +480,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(ChainStrike.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
         UnlockTracker.unlockCard(CrimsonTide.ID);
+        UnlockTracker.unlockCard(Cyclone.ID);
         UnlockTracker.unlockCard(DeathsDance.ID);
         UnlockTracker.unlockCard(DeathRattle.ID);
         UnlockTracker.unlockCard(Defend.ID);
@@ -522,7 +523,6 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(SwiftStrike.ID);
         UnlockTracker.unlockCard(Tantrum.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
-        UnlockTracker.unlockCard(WhirlingDeath.ID);
         UnlockTracker.unlockCard(Vampirism.ID);
 
         logger.info("Done adding cards!");
