@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.actions.DrawCardFromDiscardAction;
-import theReaper.powers.BleedPower;
+
 
 import java.util.ArrayList;
 
@@ -28,6 +28,7 @@ public class Impatience extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
         magicNumberUp = 1;
+        this.exhaust = true;
 
     }
 

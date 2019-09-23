@@ -25,8 +25,8 @@ public class SerratedKnife extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 6;
         damageUp = 2;
-        baseBleedNumber = bleedNumber = 3;
-        bleedNumberUp = 1;
+        baseBleedNumber = bleedNumber = 5;
+        bleedNumberUp = 3;
 
     }
 

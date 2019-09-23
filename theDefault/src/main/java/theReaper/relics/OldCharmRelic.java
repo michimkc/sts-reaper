@@ -2,6 +2,7 @@ package theReaper.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
@@ -30,7 +31,7 @@ public class OldCharmRelic extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
-    public final int HpRaiseAmount = 1;
+    // The action for this relic is checked in CardGroup, patched with CardGroupOldCharmPatch
 
     @Override
     public void atBattleStart()
@@ -40,23 +41,12 @@ public class OldCharmRelic extends CustomRelic {
         beginPulse();
     }
 
-    @Override
-    public void onMonsterDeath(AbstractMonster m) {
-
-        if(!m.hasPower("Minion") && !usedThisCombat) {
-            AbstractDungeon.player.increaseMaxHp(HpRaiseAmount, true);
-            usedThisCombat = true;
-            this.pulse = false;
-            flash();
-        }
-    }
-
     public void onVictory() { this.pulse = false; }
 
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + HpRaiseAmount + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0];
     }
 
 }

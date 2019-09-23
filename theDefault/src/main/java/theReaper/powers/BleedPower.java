@@ -4,6 +4,8 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -57,7 +59,18 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
     }
 
     public void playApplyPowerSfx() { CardCrawlGame.sound.play("BLOOD_SWISH", 0.05F); }
-    
+
+    public void atStartOfTurn() {
+        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
+                !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            flashWithoutSound();
+            AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON));
+        }
+
+
+    }
+
+    /*
     public void atStartOfTurn() {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
                 !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
@@ -65,7 +78,7 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
             AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON));
         }
     }
-
+*/
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override

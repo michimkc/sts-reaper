@@ -3,8 +3,8 @@
     "NAME": "Bleed",
     "DESCRIPTIONS": [
       "At the start of your turn, lose #b",
-      " HP, then reduce #yBleed by #b1. NL #yNon-Lethal (it will not reduce an enemy below #b1HP)",
-      "At the start of its turn, loses #b"
+      " HP, then reduce #yBleed by half. NL #yNon-Lethal (it will not reduce an enemy below #b1HP)",
+      "At the start of its turn, loses #b. Bleed reduces by half each turn."
     ]
 },
   "theReaper:BloodMoonPower": {
@@ -36,9 +36,13 @@
     "NAME": "Death's Dance",
     "DESCRIPTIONS": ["Reduce the cost of all [#FFBF00]Strikes[] by "]
   },
+  "theReaper:LaceratePower": {
+    "NAME": "Lacerate",
+    "DESCRIPTIONS": ["Every time this creature is dealt damage by attacks this turn apply #b", " bleed."]
+  },
 "theReaper:MarkPower": {
   "NAME": "Mark",
-  "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]
+  "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked attack damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]
 },
   "theReaper:PapercutPower": {
     "NAME": "Papercut",

@@ -445,6 +445,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Hyper());
         BaseMod.addCard(new Impatience());
         BaseMod.addCard(new InsultToInjury());
+        BaseMod.addCard(new Lacerate());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         BaseMod.addCard(new Moonflower()); //
         //BaseMod.addCard(new MasterBall());
@@ -460,7 +461,7 @@ public class DefaultMod implements
         BaseMod.addCard(new SerratedKnife()); // common attack
         BaseMod.addCard(new ShadowStep()); // common attack
         BaseMod.addCard(new ShieldWard()); //
-        BaseMod.addCard(new Slash()); // common attack
+        BaseMod.addCard(new Strike()); // common attack
         BaseMod.addCard(new SwiftStrike()); // common attack
         BaseMod.addCard(new SoulBlade()); //
         BaseMod.addCard(new Tantrum());
@@ -500,6 +501,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Hyper.ID);
         UnlockTracker.unlockCard(Impatience.ID);
         UnlockTracker.unlockCard(InsultToInjury.ID);
+        UnlockTracker.unlockCard(Lacerate.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         UnlockTracker.unlockCard(Moonflower.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
@@ -512,7 +514,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Payback.ID);
         UnlockTracker.unlockCard(Safeguard.ID);
         UnlockTracker.unlockCard(SanguineArmour.ID);
-        UnlockTracker.unlockCard(Slash.ID);
+        UnlockTracker.unlockCard(Strike.ID);
         UnlockTracker.unlockCard(ShadowStep.ID);
         UnlockTracker.unlockCard(ShieldWard.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);

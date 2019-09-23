@@ -112,8 +112,12 @@
   },
   "theReaper:Impatience": {
     "NAME": "Impatience",
-    "DESCRIPTION": "Draw !M! random card from your discard pile.",
-    "UPGRADE_DESCRIPTION": "Draw !M! random cards from your discard pile."
+    "DESCRIPTION": "Draw !M! random cards from your discard pile. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw !M! random cards from your discard pile. NL Exhaust"
+  },
+  "theReaper:Lacerate": {
+    "NAME": "Lacerate",
+    "DESCRIPTION": "Deal !D! Damage. NL Damage from attacks on the same enemy this turn apply !theReaper:B2! thereaper:Bleed"
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
@@ -125,8 +129,8 @@
   },
   "theReaper:Moonflower": {
     "NAME": "Moonflower",
-    "DESCRIPTION": "Unplayable. NL Gain [B] if this card is drawn after turn start and Exhaust.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [B] [B] if this card is drawn after turn start and Exhaust.",
+    "DESCRIPTION": "Unplayable. NL Gain [B] [B] if this card is drawn after turn start and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [B] [B] [B] if this card is drawn after turn start and Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
@@ -137,11 +141,12 @@
   },
   "theReaper:Reap": {
     "NAME": "Reap",
-    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind NL Exhaust"
   },
   "theReaper:Regroup": {
     "NAME": "Regroup",
-    "DESCRIPTION": "Draw !M! cards. You may put up to !theReaper:M2! cards on top of your draw pile."
+    "DESCRIPTION": "Draw !M! card. You may put up to !theReaper:M2! card on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. You may put up to !theReaper:M2! cards on top of your draw pile."
   },
   "theReaper:RendingStrike": {
     "NAME": "Rending Strike",
@@ -168,8 +173,8 @@
     "NAME": "SanguineArmour",
     "DESCRIPTION": "Gain !B! Plated Armor. NL Gain !theReaper:SB! thereaper:Bleed"
   },
-  "theReaper:Slash": {
-    "NAME": "Slash",
+  "theReaper:Strike": {
+    "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
   "theReaper:SerratedKnife": {

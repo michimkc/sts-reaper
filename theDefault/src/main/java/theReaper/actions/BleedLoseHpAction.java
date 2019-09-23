@@ -3,6 +3,8 @@ package theReaper.actions;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,6 +19,8 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import theReaper.powers.CommonPower;
 
 public class BleedLoseHpAction extends AbstractGameAction {
+
+    private static final float PERCENTREDUCTION = 0.5f;
 
     public BleedLoseHpAction(final AbstractCreature target, final AbstractCreature source,
                              final int amount, AbstractGameAction.AttackEffect effect) {
@@ -60,11 +64,18 @@ public class BleedLoseHpAction extends AbstractGameAction {
 
             AbstractPower p = this.target.getPower("theReaper:BleedPower");
             if (p != null) {
-                p.amount--;
-                if (p.amount == 0) {
-                    this.target.powers.remove(p);
+                int bleed = p.amount;
+                // if we have fewer marks than the minimum amount that we reduce by, remove the buff.
+                if (bleed <= 1) {
+                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target,p));
                 } else {
-                    p.updateDescription();
+                    int percentAmount = Math.round(bleed * PERCENTREDUCTION);
+                    int amountToReduce = percentAmount;
+                    p.amount -= amountToReduce;
+                    if (bleed <= 1) {
+                        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target,p));
+                    }
+                    //AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.target, p, amountToReduce));
                 }
             }
 

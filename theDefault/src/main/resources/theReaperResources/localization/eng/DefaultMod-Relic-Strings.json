@@ -3,8 +3,7 @@
     "NAME": "Old Charm Relic",
     "FLAVOR": "A chipped stone carved into the shape of a beast. It emits warmth when wet by blood.",
     "DESCRIPTIONS": [
-      "Once per combat, gain #b",
-      " max health whenever a non-minion enemy dies."
+      "The first card that would be exhausted each combat is instead discarded."
     ]
   },
   "theReaper:PlaceholderRelic": {

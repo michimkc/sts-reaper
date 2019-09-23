@@ -27,6 +27,7 @@ public class Reap extends AbstractNonLethalCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 4;
         newCost = 0;
+        this.exhaust = true;
 
     }
 

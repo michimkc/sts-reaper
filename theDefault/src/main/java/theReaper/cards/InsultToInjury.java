@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import com.megacrit.cardcrawl.vfx.SpeechTextEffect;
 import theReaper.DefaultMod;
 import theReaper.actions.InsultToInjuryAction;
-import theReaper.powers.BleedPower;
 
 public class InsultToInjury extends AbstractCustomCard {
 

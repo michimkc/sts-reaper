@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.actions.SoulBindAction;
 import theReaper.powers.VengeancePower;
+import theReaper.util.SoulManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,4 +44,9 @@ public class RendingStrike extends AbstractNonLethalCard {
         act(new SoulBindAction(p,m));
     }
 
+    @Override
+    // SOUL BIND TOOLTIP
+    public List<TooltipInfo> getCustomTooltips() {
+        return SoulManager.getCustomTooltips();
+    }
 }

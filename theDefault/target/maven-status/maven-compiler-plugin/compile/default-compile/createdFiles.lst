@@ -3,6 +3,7 @@ theReaper\cards\SwiftStrike.class
 theReaper\patches\DamageActionPatch.class
 theReaper\cards\Papercut.class
 theReaper\actions\WhirlingDeathAction.class
+theReaper\patches\CardGroupOldCharmPatch.class
 theReaper\powers\DeathsDancePower.class
 theReaper\souls\AbstractSoul.class
 theReaper\util\SoulManager.class
@@ -19,6 +20,7 @@ theReaper\cards\Regroup.class
 theReaper\powers\EffigyPower.class
 theReaper\cards\AbstractDefaultCard.class
 theReaper\cards\RiteoftheBlade.class
+theReaper\cards\Strike.class
 theReaper\powers\BleedPower.class
 theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
@@ -57,6 +59,7 @@ theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class
 theReaper\powers\BloodMoonPower.class
 theReaper\cards\Cleanse.class
 theReaper\cards\Defend.class
+theReaper\cards\Lacerate.class
 theReaper\cards\MasterBall.class
 theReaper\patches\AbstractPlayerSoulsPatch.class
 theReaper\util\IDCheckDontTouchPls.class
@@ -69,6 +72,7 @@ theReaper\potions\PlaceholderPotion.class
 theReaper\powers\CommonPower.class
 theReaper\cards\Moonflower.class
 theReaper\cards\Bulwark.class
+theReaper\powers\LaceratePower.class
 theReaper\powers\MarkPower.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPreviousScreenPatch.class
 theReaper\cards\InsultToInjury.class
@@ -106,7 +110,6 @@ theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
 theReaper\cards\Reap.class
 theReaper\cards\DeathRattle.class
-theReaper\cards\Slash.class
 theReaper\patches\GameActionManagerPatch.class
 theReaper\patches\GameActionManagerPatch$getNextActionPatch.class
 theReaper\orbs\DefaultOrb.class

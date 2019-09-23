@@ -19,9 +19,11 @@ import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theReaper.DefaultMod;
 import theReaper.actions.AbstractSoulOnAfterUseAction;
 import theReaper.cards.AbstractCustomCard;
 import theReaper.powers.AbstractCustomPower;
+import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulSelectScreen;
 
@@ -44,6 +46,10 @@ public abstract class AbstractSoul {
     public int index; // the index of the soul in the player's soul ArrayList
     public int uuid; // uniqueID assigned by SoulManager
 
+    private static ReaperStrings reaperBaseString;
+    public static String[] BaseSoulDescription;
+    public static String BaseSoulTipName;
+
     public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureWidth * Settings.scale);
 
     public boolean used = false;
@@ -57,6 +63,10 @@ public abstract class AbstractSoul {
         this.description = description;
         this.tX = 0;
         this.tY = 0;
+
+        reaperBaseString = DefaultMod.ReaperStringsMap.get(DefaultMod.makeID("SoulAction"));
+        BaseSoulDescription = reaperBaseString.DESCRIPTIONS;
+        BaseSoulTipName = reaperBaseString.NAME;
     }
 
     public abstract void updateDescription();
@@ -76,6 +86,7 @@ public abstract class AbstractSoul {
         this.hb.update();
         if (this.hb.hovered) {
             TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 100.0F) * Settings.scale, this.name, this.description);
+           // TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY - 100.0F) * Settings.scale, this.BaseSoulTipName, this.BaseSoulDescription[0]);
 
             if (InputHelper.justClickedLeft) {
                 InputHelper.justClickedLeft = false;

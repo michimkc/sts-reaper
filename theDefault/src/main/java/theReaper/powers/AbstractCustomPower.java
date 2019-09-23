@@ -56,4 +56,6 @@ public abstract class AbstractCustomPower extends AbstractPower implements Clone
 
     public void onAfterUseSoul(AbstractSoul s) {}
 
+    public void onApplyBleed(int amount) {}
+
 }
