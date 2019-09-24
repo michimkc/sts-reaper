@@ -427,6 +427,7 @@ public class DefaultMod implements
         // when generating card rewards/shop screen items.
 
         BaseMod.addCard(new Bulwark());
+        BaseMod.addCard(new BloodAegis());
         BaseMod.addCard(new BloodMoon());
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new ChainStrike());
@@ -486,6 +487,7 @@ public class DefaultMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
         UnlockTracker.unlockCard(Bulwark.ID);
+        UnlockTracker.unlockCard(BloodAegis.ID);
         UnlockTracker.unlockCard(BloodMoon.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(ChainStrike.ID);

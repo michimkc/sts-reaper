@@ -1,4 +1,8 @@
 {
+  "theReaper:BloodAegis": {
+    "NAME": "Blood Aegis",
+    "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed. NL Exhaust"
+  },
   "theReaper:BloodMoon": {
     "NAME": "Blood Moon",
     "DESCRIPTION": "Double the amount of thereaper:Marks applied. NL Applies !theReaper:M2! thereaper:Vengeance if you don't already have it. NL thereaper:Waning"
