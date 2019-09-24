@@ -19,10 +19,9 @@
     "NAME": "Crimson Rush",
     "DESCRIPTION": "Deal !D! Damage. If target is thereaper:bleeding deal !M! additional damage."
   },
-  "theReaper:CrimsonTide": {
-    "NAME": "Crimson Tide",
-    "DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!.",
-    "UPGRADE_DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!. NL Innate"
+  "theReaper:CrystalRose": {
+    "NAME": "Crystal Rose",
+    "DESCRIPTION": "Gain !B! Block when this card is drawn. NL Play to put this card on top of your draw pile. NL Ethereal"
   },
   "theReaper:Cyclone": {
     "NAME": "Cyclone",
@@ -98,9 +97,19 @@
     "NAME": "HastyGrab",
     "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:SB! thereaper:Bleed"
   },
+  "theReaper:Hemoplague": {
+    "NAME": "Hemoplague",
+    "DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!.",
+    "UPGRADE_DESCRIPTION": "Every time you play a card with thereaper:Bleed increase thereaper:Bleed on all cards by !M!. NL Innate"
+  },
   "theReaper:Hemorrhage": {
     "NAME": "Hemorrhage",
     "DESCRIPTION": "Apply !theReaper:B2! thereaper:Bleed"
+  },
+  "theReaper:HiddenTalent": {
+    "NAME": "Hidden Talent",
+    "DESCRIPTION": "Draw the next Power in your Draw Pile. NL Exhaust NL Innate",
+    "UPGRADE_DESCRIPTION": "Draw the next two Powers in your Draw Pile. NL Exhaust NL Innate"
   },
   "theReaper:HurricaneStrike": {
     "NAME": "Hurricane Strike",
@@ -113,6 +122,11 @@
   "theReaper:InsultToInjury": {
     "NAME": "Insult To Injury",
     "DESCRIPTION": "Retain NL Discard any number of cards, deal !M! damage for each card discarded."
+  },
+  "theReaper:Invigorate": {
+    "NAME": "Invigorate",
+    "DESCRIPTION": "Draw !M! card from the Exhaust pile NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards from the Exhaust pile NL Exhaust"
   },
   "theReaper:Impatience": {
     "NAME": "Impatience",

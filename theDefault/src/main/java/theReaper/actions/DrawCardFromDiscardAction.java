@@ -43,6 +43,13 @@ public class DrawCardFromDiscardAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
+                if(AbstractDungeon.player.hand.group.size() == 10)
+                {
+                    AbstractDungeon.player.createHandIsFullDialog();
+                    this.isDone = true;
+                    return;
+                }
+
                 if(this.p.discardPile.group.size() == 0)
                 {
                     // discard pile is empty
@@ -55,18 +62,20 @@ public class DrawCardFromDiscardAction extends AbstractGameAction {
                     // we are trying to draw more cards than exists in discard pile.. just draw the number in the discard.
                     amount = this.p.discardPile.group.size();
                 }
-            if (this.amount + AbstractDungeon.player.hand.size() > 10) {
-                this.amount = 10 - AbstractDungeon.player.hand.size();
-                AbstractDungeon.player.createHandIsFullDialog();
-                return;
-            }
-            if(this.amount <= this.p.discardPile.group.size()) {
-                    for (int i = 0; i < this.amount; i++) {
-                        AbstractCard c = this.p.discardPile.getRandomCard(AbstractDungeon.cardRandomRng);
-                        this.p.discardPile.moveToHand(c, this.p.discardPile);
-                        notifyOnDrawFromDiscard(c);
+
+                for (int i = 0; i < this.amount; i++) {
+                    if(AbstractDungeon.player.hand.group.size() == 10)
+                    {
+                        AbstractDungeon.player.createHandIsFullDialog();
+                        this.isDone = true;
+                        return;
                     }
+
+                    AbstractCard c = this.p.discardPile.getRandomCard(AbstractDungeon.cardRandomRng);
+                    this.p.discardPile.moveToHand(c, this.p.discardPile);
+                    notifyOnDrawFromDiscard(c);
                 }
+
 
 
         }

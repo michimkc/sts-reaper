@@ -12,7 +12,9 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -341,6 +343,12 @@ public class DefaultMod implements
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
+        // ============== SOUNDS ==================
+
+        logger.info("Adding OLDCHARM sound");
+        BaseMod.addAudio("OLDCHARM",getModID() + "Resources/sounds/oldcharmbell.ogg");
+        BaseMod.publishAddAudio(CardCrawlGame.sound);
+
         
         // =============== EVENTS =================
         
@@ -378,7 +386,7 @@ public class DefaultMod implements
     @Override
     public void receiveEditRelics() {
         logger.info("Adding relics");
-        
+
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new OldCharmRelic(), TheDefault.Enums.COLOR_GRAY);
 
@@ -422,7 +430,8 @@ public class DefaultMod implements
         BaseMod.addCard(new BloodMoon());
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new ChainStrike());
-        BaseMod.addCard(new CrimsonTide());
+        BaseMod.addCard(new CrystalRose());
+        BaseMod.addCard(new Hemoplague());
         BaseMod.addCard(new CrimsonRush());
         BaseMod.addCard(new Cyclone());
         BaseMod.addCard(new DeathsDance());
@@ -442,9 +451,11 @@ public class DefaultMod implements
         BaseMod.addCard(new Hack());
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
+        BaseMod.addCard(new HiddenTalent());
         BaseMod.addCard(new HurricaneStrike());
         BaseMod.addCard(new Hyper());
         BaseMod.addCard(new Impatience());
+        BaseMod.addCard(new Invigorate());
         BaseMod.addCard(new InsultToInjury());
         BaseMod.addCard(new Lacerate());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
@@ -456,7 +467,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Regroup()); // uncommon skill
         BaseMod.addCard(new RiteoftheBlade()); // rare power
         BaseMod.addCard(new Papercut()); // uncommon skill
-        BaseMod.addCard(new Payback()); // uncommon skill
+        //BaseMod.addCard(new Payback()); // uncommon skill
         BaseMod.addCard(new Safeguard()); //
         BaseMod.addCard(new SanguineArmour()); // common skill
         BaseMod.addCard(new SerratedKnife()); // common attack
@@ -479,7 +490,8 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(ChainStrike.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
-        UnlockTracker.unlockCard(CrimsonTide.ID);
+        UnlockTracker.unlockCard(CrystalRose.ID);
+        UnlockTracker.unlockCard(Hemoplague.ID);
         UnlockTracker.unlockCard(Cyclone.ID);
         UnlockTracker.unlockCard(DeathsDance.ID);
         UnlockTracker.unlockCard(DeathRattle.ID);
@@ -498,9 +510,11 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Hack.ID);
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
+        UnlockTracker.unlockCard(HiddenTalent.ID);
         UnlockTracker.unlockCard(HurricaneStrike.ID);
         UnlockTracker.unlockCard(Hyper.ID);
         UnlockTracker.unlockCard(Impatience.ID);
+        UnlockTracker.unlockCard(Invigorate.ID);
         UnlockTracker.unlockCard(InsultToInjury.ID);
         UnlockTracker.unlockCard(Lacerate.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
@@ -512,7 +526,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(RendingStrike.ID);
         UnlockTracker.unlockCard(RiteoftheBlade.ID);
         UnlockTracker.unlockCard(Papercut.ID);
-        UnlockTracker.unlockCard(Payback.ID);
+        //UnlockTracker.unlockCard(Payback.ID);
         UnlockTracker.unlockCard(Safeguard.ID);
         UnlockTracker.unlockCard(SanguineArmour.ID);
         UnlockTracker.unlockCard(Strike.ID);

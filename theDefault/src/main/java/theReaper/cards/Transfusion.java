@@ -20,7 +20,7 @@ public class Transfusion extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
 
     public Transfusion()
@@ -28,7 +28,7 @@ public class Transfusion extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
-        newCost = 1;
+        newCost = 0;
         this.exhaust = true;
     }
 

@@ -13,13 +13,6 @@
       "Marks applied to enemies are doubled. When you have no more stacks of Vengeance, Blood Moon is removed."
     ]
   },
-  "theReaper:CrimsonTidePower": {
-    "NAME": "Crimson Tide",
-    "DESCRIPTIONS": [
-      "Every time you play a card with #yBleed increase #yBleed on all cards by ",
-      ". #yBleed is currently increased on all cards by "
-    ]
-  },
   "theReaper:EffigyPower": {
     "NAME": "Effigy",
     "DESCRIPTIONS": ["Add ", " copy of the next card you play into your hand.", " copies of the next card you play into your hand."]
@@ -32,6 +25,13 @@
     "NAME": "Gluttony",
     "DESCRIPTIONS": ["Whenever a creature dies, consume all their marks and heal for that amount."]
   },
+  "theReaper:HemoplaguePower": {
+    "NAME": "Hemoplague",
+    "DESCRIPTIONS": [
+      "Every time you play a card with #yBleed increase #yBleed on all cards by ",
+      ". #yBleed is currently increased on all cards by "
+    ]
+  },
   "theReaper:DeathsDancePower": {
     "NAME": "Death's Dance",
     "DESCRIPTIONS": ["Reduce the cost of all [#FFBF00]Strikes[] by "]
@@ -40,10 +40,10 @@
     "NAME": "Lacerate",
     "DESCRIPTIONS": ["Every time this creature is dealt damage by attacks this turn apply #b", " bleed."]
   },
-"theReaper:MarkPower": {
-  "NAME": "Mark",
-  "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked attack damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]
-},
+  "theReaper:MarkPower": {
+    "NAME": "Mark",
+    "DESCRIPTIONS": ["Heal your HP up to #b", " unblocked attack damage dealt to this enemy and consume that many marks. At the start of this creature's turn, remaining marks reduce by half the total amount, or ",", whichever is greater."]
+  },
   "theReaper:PapercutPower": {
     "NAME": "Papercut",
     "DESCRIPTIONS": ["Deal ", " Damage to all enemies every time you draw a card by playing a card or soul"]

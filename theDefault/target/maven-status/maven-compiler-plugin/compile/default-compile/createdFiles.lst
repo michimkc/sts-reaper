@@ -11,6 +11,7 @@ theReaper\relics\PlaceholderRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerCombatUpdatePatch.class
 theReaper\patches\TopPanelPatch.class
 theReaper\util\SoulManager$1.class
+theReaper\actions\DrawCardFromExhaustAction.class
 theReaper\cards\Effigy.class
 theReaper\patches\DefaultInsertPatch.class
 theReaper\cards\Fracture.class
@@ -22,9 +23,11 @@ theReaper\cards\AbstractDefaultCard.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\cards\Strike.class
 theReaper\powers\BleedPower.class
+theReaper\actions\MoveCardToTopOfDeckAction.class
 theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\relics\BottledPlaceholderRelic.class
 theReaper\cards\Cyclone.class
+theReaper\cards\Invigorate.class
 theReaper\variables\DefaultCustomVariable.class
 theReaper\util\TextureLoader.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
@@ -35,6 +38,7 @@ theReaper\powers\ShadowStepPower.class
 theReaper\characters\TheDefault$Enums.class
 theReaper\cards\Hyper.class
 theReaper\actions\SoulGemAction.class
+theReaper\powers\HemoplaguePower.class
 theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\FeverDream.class
@@ -45,11 +49,11 @@ theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class
 theReaper\cards\SerratedKnife.class
+theReaper\actions\DrawNextPowerAction.class
 theReaper\variables\SelfBleedNumberVariable.class
 theReaper\cards\FiendForm.class
 theReaper\patches\SoulSelectEnum.class
 theReaper\variables\BleedNumberVariable.class
-theReaper\powers\CrimsonTidePower.class
 theReaper\cards\Hack.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
@@ -61,6 +65,7 @@ theReaper\cards\Cleanse.class
 theReaper\cards\Defend.class
 theReaper\cards\Lacerate.class
 theReaper\cards\MasterBall.class
+theReaper\cards\Hemoplague.class
 theReaper\patches\AbstractPlayerSoulsPatch.class
 theReaper\util\IDCheckDontTouchPls.class
 theReaper\cards\Guillotine.class
@@ -73,6 +78,7 @@ theReaper\powers\CommonPower.class
 theReaper\cards\Moonflower.class
 theReaper\cards\Bulwark.class
 theReaper\powers\LaceratePower.class
+theReaper\cards\HiddenTalent.class
 theReaper\powers\MarkPower.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPreviousScreenPatch.class
 theReaper\cards\InsultToInjury.class
@@ -86,7 +92,6 @@ theReaper\powers\VengeancePower.class
 theReaper\powers\FiendFormPower.class
 theReaper\patches\AbstractDungeonScreenPatch.class
 theReaper\cards\Gambit.class
-theReaper\cards\CrimsonTide.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPostFixScreenUpdatePatch.class
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractMonsterPatch.class
@@ -112,6 +117,7 @@ theReaper\cards\Reap.class
 theReaper\cards\DeathRattle.class
 theReaper\patches\GameActionManagerPatch.class
 theReaper\patches\GameActionManagerPatch$getNextActionPatch.class
+theReaper\cards\CrystalRose.class
 theReaper\orbs\DefaultOrb.class
 theReaper\cards\Gluttony.class
 theReaper\actions\FeverDreamAction.class

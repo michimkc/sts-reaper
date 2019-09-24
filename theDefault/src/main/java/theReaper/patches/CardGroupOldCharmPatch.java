@@ -34,6 +34,7 @@ import java.util.ArrayList;
                     // if we haven't used it this combat
                     oldCharmRelic.usedThisCombat = true;
                     oldCharmRelic.flash();
+                    AbstractDungeon.actionManager.addToBottom(new SFXAction("OLDCHARM")); // play a Jingle Sound.
                     oldCharmRelic.stopPulse();
 
                     AbstractDungeon.player.hand.moveToDiscardPile(c[0]);

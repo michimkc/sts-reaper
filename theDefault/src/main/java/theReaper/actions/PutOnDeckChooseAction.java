@@ -19,7 +19,7 @@ public class PutOnDeckChooseAction extends AbstractGameAction {
     private boolean isRandom;
     public static int numPlaced;
     public boolean canChoose;
-    public static final Logger logger = LogManager.getLogger(SoulBindAction.class.getName());
+    public static final Logger logger = LogManager.getLogger(PutOnDeckChooseAction.class.getName());
 
     public PutOnDeckChooseAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean canChoose) {
         this.target = target;

@@ -14,6 +14,17 @@
       "No cards in the discard pile to draw..."
     ]
   },
+  "DrawCardFromExhaustAction": {
+    "TEXT": [
+      "No cards in the exhaust pile to draw..."
+    ]
+  },
+  "DrawNextPowerAction": {
+    "TEXT": [
+      "My draw pile is empty...",
+      "No powers in the draw pile to draw..."
+    ]
+  },
   "EffigyAction": {
     "TEXT": [
       "Consume one soul. Add a copy of the next card you play into your hand.",
