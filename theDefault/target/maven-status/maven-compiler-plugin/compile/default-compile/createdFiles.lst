@@ -15,16 +15,19 @@ theReaper\relics\BottledPlaceholderRelic.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\actions\BleedLoseHpAction.class
 theReaper\powers\ShadowStepPower.class
+theReaper\powers\ContagionPower.class
 theReaper\actions\SoulGemAction.class
 theReaper\powers\HemoplaguePower.class
 theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
+theReaper\cards\DeepCuts.class
 theReaper\relics\PlaceholderRelic2.class
 theReaper\cards\FiendForm.class
 theReaper\patches\SoulSelectEnum.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\cards\Hack.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
+theReaper\cards\Contagion.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch.class
 theReaper\cards\Defend.class
 theReaper\cards\Hemoplague.class
@@ -55,6 +58,7 @@ theReaper\cards\Transfusion.class
 theReaper\cards\HurricaneStrike.class
 theReaper\cards\RendingStrike.class
 theReaper\cards\Reap.class
+theReaper\powers\DeepCutsPower.class
 theReaper\cards\CrystalRose.class
 theReaper\cards\ChainStrike.class
 theReaper\cards\Safeguard.class
@@ -74,6 +78,7 @@ theReaper\powers\DeathsDancePower.class
 theReaper\cards\Effigy.class
 theReaper\cards\Fracture.class
 theReaper\cards\Regroup.class
+theReaper\cards\ArcStrike.class
 theReaper\powers\EffigyPower.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\cards\Strike.class
@@ -90,6 +95,7 @@ theReaper\cards\Hyper.class
 theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
 theReaper\cards\Frenzy.class
+theReaper\actions\ArcStrikeAction.class
 theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class

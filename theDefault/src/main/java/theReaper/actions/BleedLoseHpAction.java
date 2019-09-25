@@ -16,7 +16,9 @@ import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import theReaper.DefaultMod;
 import theReaper.powers.CommonPower;
+import theReaper.powers.DeepCutsPower;
 
 public class BleedLoseHpAction extends AbstractGameAction {
 
@@ -66,7 +68,12 @@ public class BleedLoseHpAction extends AbstractGameAction {
             if (p != null) {
                 int bleed = p.amount;
                 // if we have fewer marks than the minimum amount that we reduce by, remove the buff.
-                if (bleed <= 1) {
+                if (this.target.hasPower(DefaultMod.makeID(DeepCutsPower.POWER_NAME)))
+                {
+                    // deep cuts makes it so that the bleed doesn't reduce.
+                    this.target.getPower(DefaultMod.makeID(DeepCutsPower.POWER_NAME)).flash();
+                }
+                else if (bleed <= 1) {
                     AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target,p));
                 } else {
                     int percentAmount = Math.round(bleed * PERCENTREDUCTION);

@@ -92,6 +92,8 @@ public class DefaultMod implements
     // card count
     public static int cardsDrawnThisTurn = 0;
 
+
+
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Reaper Mod";
     private static final String AUTHOR = "Rocket"; // And pretty soon - You!
@@ -426,17 +428,20 @@ public class DefaultMod implements
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
 
+        BaseMod.addCard(new ArcStrike());
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new BloodAegis());
         BaseMod.addCard(new BloodMoon());
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new ChainStrike());
+        BaseMod.addCard(new Contagion());
         BaseMod.addCard(new CrystalRose());
         BaseMod.addCard(new Hemoplague());
         BaseMod.addCard(new CrimsonRush());
         BaseMod.addCard(new Cyclone());
         BaseMod.addCard(new DeathsDance());
         BaseMod.addCard(new DeathRattle());
+        BaseMod.addCard(new DeepCuts());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Devour());
         BaseMod.addCard(new Effigy());
@@ -486,17 +491,20 @@ public class DefaultMod implements
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
+        UnlockTracker.unlockCard(ArcStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(BloodAegis.ID);
         UnlockTracker.unlockCard(BloodMoon.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(ChainStrike.ID);
+        UnlockTracker.unlockCard(Contagion.ID);
         UnlockTracker.unlockCard(CrimsonRush.ID);
         UnlockTracker.unlockCard(CrystalRose.ID);
         UnlockTracker.unlockCard(Hemoplague.ID);
         UnlockTracker.unlockCard(Cyclone.ID);
         UnlockTracker.unlockCard(DeathsDance.ID);
         UnlockTracker.unlockCard(DeathRattle.ID);
+        UnlockTracker.unlockCard(DeepCuts.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(Effigy.ID);

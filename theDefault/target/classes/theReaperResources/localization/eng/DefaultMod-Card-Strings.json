@@ -1,4 +1,9 @@
 {
+  "theReaper:ArcStrike": {
+    "NAME": "Arc Strike",
+    "DESCRIPTION": "Deal !D! Damage. For every mark consumed deal that amount as additional damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. For every mark consumed deal [#FFBF00]twice[] that amount as additional damage."
+  },
   "theReaper:BloodAegis": {
     "NAME": "Blood Aegis",
     "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed. NL Exhaust"
@@ -19,6 +24,10 @@
     "NAME": "Cleanse",
     "DESCRIPTION": "Remove all Debuffs. NL Exhaust"
   },
+  "theReaper:Contagion": {
+    "NAME": "Contagion",
+    "DESCRIPTION": "Deal !M! Damage every time you apply a debuff to an enemy"
+  },
   "theReaper:CrimsonRush": {
     "NAME": "Crimson Rush",
     "DESCRIPTION": "Deal !D! Damage. If target is thereaper:bleeding deal !M! additional damage."
@@ -38,6 +47,10 @@
   "theReaper:DeathRattle": {
     "NAME": "Death Rattle",
     "DESCRIPTION": "Deal !D! Damage NL ( !M! Damage, plus !M! Damage for every !theReaper:M2! missing health ) NL Exhaust"
+  },
+  "theReaper:DeepCuts": {
+    "NAME": "Deep Cuts",
+    "DESCRIPTION": "Deal !D! Damage NL Bleed on the attacked creature does not decrease this turn."
   },
   "theReaper:Defend": {
     "NAME": "Defend",

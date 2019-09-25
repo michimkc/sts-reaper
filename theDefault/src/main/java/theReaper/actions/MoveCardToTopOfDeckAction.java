@@ -2,6 +2,7 @@ package theReaper.actions;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -28,11 +29,23 @@ public class MoveCardToTopOfDeckAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
+            for(AbstractGameAction a :AbstractDungeon.actionManager.actions)
+            {
+                if(a instanceof UseCardAction)
+                {
+                    if(((UseCardAction) a).reboundCard = true);
+                    this.isDone = true;
+                    break;
 
+                }
+            }
+/*
             for(AbstractCard c : AbstractDungeon.player.limbo.group)
             {
                 if(c.uuid == card.uuid)
                 {
+                    logger.info("moving from limbo to deck");
+                    AbstractDungeon.actionManager.removeFromQueue(c);
                     AbstractDungeon.player.limbo.moveToDeck(card, false);
                     this.isDone = true;
                     tickDuration();
@@ -44,6 +57,8 @@ public class MoveCardToTopOfDeckAction extends AbstractGameAction {
             {
                 if(c.uuid == card.uuid)
                 {
+                    logger.info("moving from hand to deck");
+                    AbstractDungeon.actionManager.removeFromQueue(c);
                     AbstractDungeon.player.hand.moveToDeck(card, false);
                     this.isDone = true;
                     tickDuration();
@@ -56,6 +71,8 @@ public class MoveCardToTopOfDeckAction extends AbstractGameAction {
             {
                 if(c.uuid == card.uuid)
                 {
+                    logger.info("moving from exhaust to deck");
+                    AbstractDungeon.actionManager.removeFromQueue(c);
                     AbstractDungeon.player.exhaustPile.moveToDeck(card, false);
                     card.unfadeOut();
                     this.isDone = true;
@@ -68,16 +85,16 @@ public class MoveCardToTopOfDeckAction extends AbstractGameAction {
             {
                 if(c.uuid == card.uuid)
                 {
+                    logger.info("moving from discard to deck");
+                    AbstractDungeon.actionManager.removeFromQueue(c);
                     AbstractDungeon.player.discardPile.moveToDeck(card, false);
                     this.isDone = true;
                     tickDuration();
                     return;
                 }
-            }
+            }*/
 
-            // we should never reach here
-            logger.info("we reached a spot we shouldn't reach. The card we want to put in the deck isn't in limbo, hand, exhaust or discard.");
-            logger.info("Card is: " + card.name);
+            logger.info("none");
         }
 
         tickDuration();

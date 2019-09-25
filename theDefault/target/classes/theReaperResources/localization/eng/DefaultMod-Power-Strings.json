@@ -13,6 +13,13 @@
       "Marks applied to enemies are doubled. When you have no more stacks of Vengeance, Blood Moon is removed."
     ]
   },
+  "theReaper:ContagionPower": {
+    "NAME": "Contagion",
+    "DESCRIPTIONS": [
+      "Deal #y",
+      ". Damage every time you apply a #yDebuff to an enemy."
+    ]
+  },
   "theReaper:EffigyPower": {
     "NAME": "Effigy",
     "DESCRIPTIONS": ["Add ", " copy of the next card you play into your hand.", " copies of the next card you play into your hand."]
@@ -31,6 +38,10 @@
       "Every time you play a card with #yBleed increase #yBleed on all cards by ",
       ". #yBleed is currently increased on all cards by "
     ]
+  },
+  "theReaper:DeepCutsPower": {
+    "NAME": "Deep Cuts",
+    "DESCRIPTIONS": ["Bleed does not reduce on this creature."]
   },
   "theReaper:DeathsDancePower": {
     "NAME": "Death's Dance",

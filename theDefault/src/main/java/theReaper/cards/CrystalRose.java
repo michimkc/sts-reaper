@@ -27,7 +27,6 @@ public class CrystalRose extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-
     public CrystalRose() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -44,9 +43,11 @@ public class CrystalRose extends AbstractCustomCard {
         act(new GainBlockAction(p,p,block));
     }
 
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
         act(new MoveCardToTopOfDeckAction(this));
     }
 
