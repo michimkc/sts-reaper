@@ -39,6 +39,11 @@ public class InsultToInjury extends AbstractCustomCard {
 
     }
 
+    @Override
+    public void atTurnStart() {
+        this.retain = true;
+    }
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

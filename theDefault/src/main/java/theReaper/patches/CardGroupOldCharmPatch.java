@@ -31,9 +31,11 @@ import java.util.ArrayList;
             if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("OldCharmRelic"))) {
                 OldCharmRelic oldCharmRelic = ((OldCharmRelic) AbstractDungeon.player.getRelic(DefaultMod.makeID("OldCharmRelic")));
                 if (!oldCharmRelic.usedThisCombat) {
+
                     // if we haven't used it this combat
                     oldCharmRelic.usedThisCombat = true;
                     oldCharmRelic.flash();
+                    oldCharmRelic.recordUse(c[0]);
                     AbstractDungeon.actionManager.addToBottom(new SFXAction("OLDCHARM")); // play a Jingle Sound.
                     oldCharmRelic.stopPulse();
 

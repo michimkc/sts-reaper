@@ -18,7 +18,7 @@ public class ShadowStep extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
 
     public ShadowStep()
@@ -26,7 +26,7 @@ public class ShadowStep extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 3;
-        newCost = 0;
+        this.exhaust = true;
     }
 
     // Actions the card should do.
@@ -38,4 +38,10 @@ public class ShadowStep extends AbstractCustomCard {
 
     }
 
+    public void upgrade() {
+        super.upgrade();
+
+        this.exhaust = false;
+
+    }
 }

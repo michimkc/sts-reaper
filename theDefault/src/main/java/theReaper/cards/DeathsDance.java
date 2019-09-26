@@ -49,17 +49,8 @@ public class DeathsDance extends AbstractCustomCard {
 
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new BorderLongFlashEffect(Color.PURPLE), 0.0F, true));
 
-        boolean powerExists = false;
-        for (AbstractPower pow : p.powers) {
-            if (pow.ID.equals("DeathsDancePower")) {
-                powerExists = true;
+        act(new ApplyPowerAction(p, p, new DeathsDancePower(p, magicNumber), magicNumber));
 
-                break;
-            }
-        }
-        if (!powerExists) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DeathsDancePower(p)));
-        }
     }
 
 

@@ -31,9 +31,9 @@ public class DeathsDancePower extends AbstractCustomPower implements CloneablePo
     public static final int POWER_AMOUNT = 1;
     // =======================
 
-    public DeathsDancePower(final AbstractCreature owner) {
+    public DeathsDancePower(final AbstractCreature owner, int amount) {
 
-        super(owner,owner,POWER_AMOUNT,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
+        super(owner,owner,amount,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
 
     }
 
@@ -49,18 +49,18 @@ public class DeathsDancePower extends AbstractCustomPower implements CloneablePo
     public void ChangeCostIfStrike(AbstractCard card)
     {
         if (card.hasTag(AbstractCard.CardTags.STRIKE)) {
-            card.setCostForTurn(card.cost - 1);
+            card.setCostForTurn(card.cost - this.amount);
         }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0];
+            description = DESCRIPTIONS[0] + this.amount;
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new DeathsDancePower(owner);
+        return new DeathsDancePower(owner, this.amount);
     }
 }

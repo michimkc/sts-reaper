@@ -1,7 +1,10 @@
 package theReaper.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
@@ -21,9 +24,7 @@ public class Hyper extends AbstractCustomCard {
     public Hyper() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        selfBleedNumber = baseSelfBleedNumber = 3;
         magicNumber = baseMagicNumber = 2;
-        selfBleedNumberUp = -1;
 
     }
 
@@ -32,7 +33,7 @@ public class Hyper extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         act(new GainEnergyAction(magicNumber));
-        act(new ApplyPowerAction(p, p, new BleedPower(p, p, selfBleedNumber), selfBleedNumber));
+        act(new MakeTempCardInDiscardAction(new Wound(),1));
 
 
     }
