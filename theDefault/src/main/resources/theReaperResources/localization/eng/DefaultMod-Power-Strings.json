@@ -28,6 +28,10 @@
     "NAME": "Fiend Form",
     "DESCRIPTIONS": ["Whenever you draw a card by playing a card or soul, draw an extra card."]
   },
+  "theReaper:FeralInstinctsPower": {
+    "NAME": "Feral Instincts",
+    "DESCRIPTIONS": ["Deal ", " times damage when you are at or below 25% max health."]
+  },
   "theReaper:GluttonyPower": {
     "NAME": "Gluttony",
     "DESCRIPTIONS": ["Whenever a creature dies, consume all their marks and heal for that amount."]

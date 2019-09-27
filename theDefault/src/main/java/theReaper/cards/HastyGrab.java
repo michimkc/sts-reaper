@@ -25,7 +25,7 @@ public class HastyGrab extends AbstractCustomCard {
     public HastyGrab() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         magicNumberUp = 1;
 
         baseSelfBleedNumber = selfBleedNumber = 2; // bleed

@@ -31,7 +31,7 @@ public class SwiftStrike extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 5;
         baseMagicNumber = magicNumber = 2;
-        magicNumberUp = 1;
+        damageUp = 3;
 
         this.tags.add(CardTags.STRIKE);
     }

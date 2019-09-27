@@ -9,6 +9,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -18,12 +19,14 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.cards.*;
+import theReaper.powers.AbstractCustomPower;
 import theReaper.relics.OldCharmRelic;
 
 import java.util.ArrayList;
@@ -298,6 +301,41 @@ public class TheDefault extends CustomPlayer {
                 if (c instanceof AbstractCustomCard) {
                     ((AbstractCustomCard) c).onCardDraw();
                 }
+            }
+        }
+    }
+
+    public void preBattlePrep()
+    {
+        super.preBattlePrep();
+        for(AbstractPower p : this.powers)
+        {
+            if(p instanceof AbstractCustomPower)
+            {
+                ((AbstractCustomPower)p).onChangedHP();
+            }
+        }
+    }
+
+    public void damage(DamageInfo info) {
+        super.damage(info);
+        for(AbstractPower p : this.powers)
+        {
+            if(p instanceof AbstractCustomPower)
+            {
+                ((AbstractCustomPower)p).onChangedHP();
+            }
+        }
+    }
+
+    public void heal(int healAmount) {
+        super.heal(healAmount);
+
+        for(AbstractPower p : this.powers)
+        {
+            if(p instanceof AbstractCustomPower)
+            {
+                ((AbstractCustomPower)p).onChangedHP();
             }
         }
     }

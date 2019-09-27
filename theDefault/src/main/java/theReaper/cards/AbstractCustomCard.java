@@ -67,6 +67,7 @@ public abstract class AbstractCustomCard extends CustomCard {
         isMagicNumber2Modified = false;
         isBleedNumberModified = false;
         isSelfBleedNumberModified = false;
+
     }
 
     public static void act(AbstractGameAction action) {
@@ -134,6 +135,7 @@ public abstract class AbstractCustomCard extends CustomCard {
         selfBleedNumber = baseSelfBleedNumber;
         upgradedSelfBleedNumber = true;
     }
+
     public void onSoulAdded(AbstractSoul soul) {}
 
     public void onSoulCountChanged(){}
@@ -141,6 +143,8 @@ public abstract class AbstractCustomCard extends CustomCard {
     public void onSoulUsed(AbstractSoul soul) {}
 
     public void onCardDraw() {}
+
+    public void onShuffle() {}
 
     public void applyPowers()
     {

@@ -73,6 +73,10 @@
     "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust",
     "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust NL Innate"
   },
+  "theReaper:FeralInstincts": {
+    "NAME": "Feral Instincts",
+    "DESCRIPTION": "Deal double damage when you are at or below 25% Max Health."
+  },
   "theReaper:FeverDream": {
     "NAME": "Fever Dream",
     "DESCRIPTION": "Choose any number of souls to consume. Gain !M! energy for each soul consumed. "
@@ -134,7 +138,8 @@
   },
   "theReaper:Hyper": {
     "NAME": "Hyper",
-    "DESCRIPTION": "Gain [B] [B] NL Add a Wound to your Discard."
+    "DESCRIPTION": "Gain [B] [B] NL Add a Wound to your Discard. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain [B] [B] NL Add a Wound to your Discard."
   },
   "theReaper:InsultToInjury": {
     "NAME": "Insult To Injury",
@@ -176,7 +181,8 @@
   },
   "theReaper:Reap": {
     "NAME": "Reap",
-    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind NL Exhaust"
+    "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
   },
   "theReaper:Regroup": {
     "NAME": "Regroup",

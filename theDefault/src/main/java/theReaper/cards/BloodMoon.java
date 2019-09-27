@@ -31,7 +31,7 @@ public class BloodMoon extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 3;
         newCost = 1;
         baseMagicNumber2 = magicNumber2 = 1;
 

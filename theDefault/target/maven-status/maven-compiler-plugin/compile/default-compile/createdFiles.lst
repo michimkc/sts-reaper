@@ -26,6 +26,7 @@ theReaper\cards\FiendForm.class
 theReaper\patches\SoulSelectEnum.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\cards\Hack.class
+theReaper\powers\FeralInstinctsPower.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
 theReaper\cards\Contagion.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch.class
@@ -101,6 +102,7 @@ theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class
 theReaper\cards\SerratedKnife.class
 theReaper\actions\DrawNextPowerAction.class
+theReaper\cards\FeralInstincts.class
 theReaper\cards\BloodAegis.class
 theReaper\variables\SelfBleedNumberVariable.class
 theReaper\cards\CrimsonRush.class

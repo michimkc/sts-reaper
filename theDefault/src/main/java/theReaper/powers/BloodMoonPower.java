@@ -41,10 +41,10 @@ public class BloodMoonPower extends AbstractCustomPower implements CloneablePowe
 
     }
 
-    public void onApplyMarks(AbstractCreature target, AbstractCreature source, int amount)
+    public void onApplyMarks(AbstractCreature target, AbstractCreature source, int totalAmount)
     {
         flash();
-        MarkPower.applyMarks(target,source,amount);
+        MarkPower.applyMarks(target,source,this.amount);
     }
 
     public void onInitialApplication()

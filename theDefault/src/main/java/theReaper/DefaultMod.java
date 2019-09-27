@@ -375,7 +375,7 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
         
         logger.info("Done editing potions");
     }
@@ -446,6 +446,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Devour());
         BaseMod.addCard(new Effigy());
         BaseMod.addCard(new EnduringSpirit());
+        BaseMod.addCard(new FeralInstincts());
         BaseMod.addCard(new FeverDream());
         BaseMod.addCard(new FiendForm());
         BaseMod.addCard(new Fracture());
@@ -509,6 +510,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(Effigy.ID);
         UnlockTracker.unlockCard(EnduringSpirit.ID);
+        UnlockTracker.unlockCard(FeralInstincts.ID);
         UnlockTracker.unlockCard(FeverDream.ID);
         UnlockTracker.unlockCard(FiendForm.ID);
         UnlockTracker.unlockCard(Fracture.ID);

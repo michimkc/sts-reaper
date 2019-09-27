@@ -26,7 +26,6 @@ public class Reap extends AbstractNonLethalCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 4;
-        newCost = 0;
         this.exhaust = true;
 
     }
@@ -39,6 +38,12 @@ public class Reap extends AbstractNonLethalCard {
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false);
         act(new SoulBindAction(p,m));
 
+    }
+
+    public void upgrade()
+    {
+        super.upgrade();
+        this.exhaust = false;
     }
 
     @Override

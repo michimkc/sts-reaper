@@ -22,7 +22,7 @@ public class Papercut extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
         magicNumberUp = 1;
     }
 

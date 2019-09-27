@@ -25,7 +25,7 @@ public class Hyper extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
-
+        this.exhaust = true;
     }
 
     // Actions the card should do.
@@ -38,5 +38,9 @@ public class Hyper extends AbstractCustomCard {
 
     }
 
-
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        this.exhaust = false;
+    }
 }
