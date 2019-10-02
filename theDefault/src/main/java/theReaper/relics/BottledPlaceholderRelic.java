@@ -1,3 +1,4 @@
+/*
 package theReaper.relics;
 
 import basemod.BaseMod;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theReaper.DefaultMod;
-import theReaper.patches.relics.BottledPlaceholderField;
+//import theReaper.patches.relics.BottledPlaceholderField;
 import theReaper.util.TextureLoader;
 
 import java.util.Iterator;
@@ -36,7 +37,7 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
 
     // BasemodWiki Says: "When you need to store a value on a card or relic between runs that isn't a relic's counter value
     // or a card's misc value, you use a custom savable to save and load it between runs."
-
+/*
     private static AbstractCard card;  // The field value we wish to save in this case is the card that's going to be in our bottle.
     private boolean cardSelected = true; // A boolean to indicate whether or not we selected a card for bottling.
     // (It's set to false on Equip)
@@ -183,3 +184,4 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
         return DESCRIPTIONS[0];
     }
 }
+*/

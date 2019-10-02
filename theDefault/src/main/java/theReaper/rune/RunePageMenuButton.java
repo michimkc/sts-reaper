@@ -17,7 +17,7 @@ import theReaper.DefaultMod;
 import theReaper.util.ReaperStrings;
 import theReaper.util.SoulSelectScreen;
 
-public abstract class RunePageMenuButton {
+public class RunePageMenuButton {
 
     public String name = "Runes";
     public String description = "Make this a ui strings";
@@ -60,15 +60,10 @@ public abstract class RunePageMenuButton {
         //BaseSoulTipName = reaperBaseString.NAME;
     }
 
-    public abstract void updateDescription();
-
     public void onClick()
     {
        //open menu
     }
-
-    public abstract RunePageMenuButton makeCopy();
-
 
     public void update() {
         this.hb.move(this.tX, this.tY);

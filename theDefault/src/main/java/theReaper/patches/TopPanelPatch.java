@@ -13,20 +13,38 @@ import com.megacrit.cardcrawl.ui.panels.TopPanel;
 import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theReaper.characters.TheDefault;
+import theReaper.rune.RunePageMenuButton;
 import theReaper.util.SoulSelectScreen;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
+
 @SpirePatch(    // "Use the @SpirePatch annotation on the patch class."
         clz = TopPanel.class, // This is the class where the method we will be patching is.
-        method = "updateSettingsButtonLogic" // This is the name of the method we will be patching.
+        method = SpirePatch.CLASS // This is the name of the method we will be patching.
 
 )
 public class TopPanelPatch {
 
     private static final Logger logger = LogManager.getLogger(TopPanelPatch.class.getName());
+
+    public static SpireField<RunePageMenuButton> runeButton = new SpireField<>(() -> new RunePageMenuButton());
+
+    /*
+    @SpirePatch(
+            clz=TopPanel.class,
+            method=SpirePatch.CONSTRUCTOR
+    )
+    public static class constructorPatch {
+
+        public static void Postfix(TopPanel __instance)
+        {
+
+        }
+    }*/
 
     @SpirePatch(
             clz=TopPanel.class,
@@ -38,6 +56,24 @@ public class TopPanelPatch {
 
             if (AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
                AbstractDungeon.previousScreen = SoulSelectEnum.SOULSELECTSCREEN;
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz=TopPanel.class,
+            method="render"
+    )
+    public static class renderPatch {
+
+        public static void Postfix(TopPanel __instance, @ByRef SpriteBatch[] sb) {
+
+            if (AbstractDungeon.player instanceof TheDefault)
+            {
+                if(TopPanelPatch.runeButton.get(AbstractDungeon.topPanel) != null)
+                {
+                    TopPanelPatch.runeButton.get(AbstractDungeon.topPanel).render(sb[0]);
+                }
             }
         }
     }

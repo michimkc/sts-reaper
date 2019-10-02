@@ -10,7 +10,7 @@
   },
   "theReaper:BloodMoon": {
     "NAME": "Blood Moon",
-    "DESCRIPTION": "Double the amount of thereaper:Marks applied. NL Applies !theReaper:M2! thereaper:Vengeance if you don't already have it. NL thereaper:Waning"
+    "DESCRIPTION": "Whenever you apply thereaper:Marks apply !M! additional marks. NL Applies !theReaper:M2! thereaper:Vengeance if you don't already have it. NL thereaper:Waning"
   },
   "theReaper:Bulwark": {
     "NAME": "Bulwark",
@@ -38,7 +38,8 @@
   },
   "theReaper:Cyclone": {
     "NAME": "Cyclone",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your draw pile. NL Other Cyclones cost 0 this turn."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your discard pile. NL Other Cyclones cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your [#00ff00]draw[] pile. NL Other Cyclones cost 0 this turn."
   },
   "theReaper:DeathsDance": {
     "NAME": "Death's Dance",

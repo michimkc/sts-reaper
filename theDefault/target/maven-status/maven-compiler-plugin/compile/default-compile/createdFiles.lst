@@ -11,9 +11,9 @@ theReaper\cards\BloodMoon.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\AbstractDefaultCard.class
 theReaper\actions\MoveCardToTopOfDeckAction.class
-theReaper\relics\BottledPlaceholderRelic.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\actions\BleedLoseHpAction.class
+theReaper\patches\TopPanelPatch$renderPatch.class
 theReaper\powers\ShadowStepPower.class
 theReaper\powers\ContagionPower.class
 theReaper\actions\SoulGemAction.class
@@ -34,6 +34,7 @@ theReaper\cards\Defend.class
 theReaper\cards\Hemoplague.class
 theReaper\patches\AbstractPlayerSoulsPatch.class
 theReaper\util\IDCheckDontTouchPls.class
+theReaper\rune\RunePageMenuButton.class
 theReaper\cards\Guillotine.class
 theReaper\patches\GameActionManagerPatch$clearPatch.class
 theReaper\powers\PaybackPower.class
@@ -84,7 +85,6 @@ theReaper\powers\EffigyPower.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\cards\Strike.class
 theReaper\powers\BleedPower.class
-theReaper\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theReaper\cards\Cyclone.class
 theReaper\cards\Invigorate.class
 theReaper\variables\DefaultCustomVariable.class
@@ -97,7 +97,6 @@ theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
 theReaper\cards\Frenzy.class
 theReaper\actions\ArcStrikeAction.class
-theReaper\patches\relics\BottledPlaceholderField.class
 theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class
 theReaper\cards\SerratedKnife.class
@@ -105,7 +104,6 @@ theReaper\actions\DrawNextPowerAction.class
 theReaper\cards\FeralInstincts.class
 theReaper\cards\BloodAegis.class
 theReaper\variables\SelfBleedNumberVariable.class
-theReaper\levelup\LevelUpMenuButton.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class

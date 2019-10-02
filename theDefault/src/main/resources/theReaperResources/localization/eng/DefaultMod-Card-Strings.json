@@ -38,7 +38,8 @@
   },
   "theReaper:Cyclone": {
     "NAME": "Cyclone",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your draw pile. NL Other Cyclones cost 0 this turn."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your discard pile. NL Other Cyclones cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your [#00ff00]draw[] pile. NL Other Cyclones cost 0 this turn."
   },
   "theReaper:DeathsDance": {
     "NAME": "Death's Dance",

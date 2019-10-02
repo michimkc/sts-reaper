@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -40,7 +41,6 @@ public class Cyclone extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         damage = baseDamage = 7;
-        damageUp = 2;
         isMultiDamage = true;
 
     }
@@ -74,8 +74,15 @@ public class Cyclone extends AbstractCustomCard {
         actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
         actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
-        actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Cyclone(),1,true,true));
+        if(upgraded) {
+            actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Cyclone(), 1, true, true));
+        }
+        else
+        {
+            actionManager.addToBottom(new MakeTempCardInDiscardAction(new Cyclone(), 1));
+        }
 
     }
+
 
 }
