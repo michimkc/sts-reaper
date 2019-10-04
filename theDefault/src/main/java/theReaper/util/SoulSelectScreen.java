@@ -2,7 +2,6 @@ package theReaper.util;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,14 +10,12 @@ import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.ui.buttons.CardSelectConfirmButton;
-import com.megacrit.cardcrawl.ui.buttons.ConfirmButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.CustomGameAction;
-import theReaper.patches.SoulSelectEnum;
+import theReaper.patches.ReaperEnums;
 import theReaper.souls.AbstractSoul;
-import com.badlogic.gdx.Screen;
 
 import java.util.ArrayList;
 
@@ -255,7 +252,7 @@ public class SoulSelectScreen {
         this.selectedSouls.clear();
         this.wereSoulsRetrieved = false;
         AbstractDungeon.isScreenUp = true;
-        AbstractDungeon.screen = SoulSelectEnum.SOULSELECTSCREEN;
+        AbstractDungeon.screen = ReaperEnums.SOULSELECTSCREEN;
         AbstractDungeon.player.hand.stopGlowing();
         AbstractDungeon.player.hand.refreshHandLayout();
         AbstractDungeon.overlayMenu.showBlackScreen(0.5F);

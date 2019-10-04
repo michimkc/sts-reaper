@@ -23,7 +23,6 @@ theReaper\cards\AbstractCustomCard.class
 theReaper\cards\DeepCuts.class
 theReaper\relics\PlaceholderRelic2.class
 theReaper\cards\FiendForm.class
-theReaper\patches\SoulSelectEnum.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\cards\Hack.class
 theReaper\powers\FeralInstinctsPower.class
@@ -79,9 +78,11 @@ theReaper\patches\CardGroupOldCharmPatch.class
 theReaper\powers\DeathsDancePower.class
 theReaper\cards\Effigy.class
 theReaper\cards\Fracture.class
+theReaper\patches\ReaperEnums.class
 theReaper\cards\Regroup.class
 theReaper\cards\ArcStrike.class
 theReaper\powers\EffigyPower.class
+theReaper\util\SoulShopScreen.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\cards\Strike.class
 theReaper\powers\BleedPower.class
@@ -104,6 +105,7 @@ theReaper\actions\DrawNextPowerAction.class
 theReaper\cards\FeralInstincts.class
 theReaper\cards\BloodAegis.class
 theReaper\variables\SelfBleedNumberVariable.class
+theReaper\patches\TopPanelPatch$updatePatch.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class

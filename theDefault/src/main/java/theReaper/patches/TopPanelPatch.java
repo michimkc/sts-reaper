@@ -1,25 +1,13 @@
 package theReaper.patches;
 
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.controller.CInputAction;
-import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
-import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.ui.buttons.DynamicBanner;
 import com.megacrit.cardcrawl.ui.panels.TopPanel;
-import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.characters.TheDefault;
 import theReaper.rune.RunePageMenuButton;
-import theReaper.util.SoulSelectScreen;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 
 
 @SpirePatch(    // "Use the @SpirePatch annotation on the patch class."
@@ -54,8 +42,26 @@ public class TopPanelPatch {
 
         public static void Prefix(TopPanel __instance) {
 
-            if (AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
-               AbstractDungeon.previousScreen = SoulSelectEnum.SOULSELECTSCREEN;
+            if (AbstractDungeon.screen == ReaperEnums.SOULSELECTSCREEN) {
+               AbstractDungeon.previousScreen = ReaperEnums.SOULSELECTSCREEN;
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz=TopPanel.class,
+            method="update"
+    )
+    public static class updatePatch {
+
+        public static void Postfix(TopPanel __instance) {
+
+            if (AbstractDungeon.player instanceof TheDefault)
+            {
+                if(TopPanelPatch.runeButton.get(AbstractDungeon.topPanel) != null)
+                {
+                    TopPanelPatch.runeButton.get(AbstractDungeon.topPanel).update();
+                }
             }
         }
     }

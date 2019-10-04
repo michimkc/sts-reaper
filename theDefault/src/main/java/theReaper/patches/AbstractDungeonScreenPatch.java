@@ -4,17 +4,16 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.buttons.DynamicBanner;
 import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.util.SoulSelectScreen;
+import theReaper.util.SoulShopScreen;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.overlayMenu;
 
@@ -29,6 +28,7 @@ public class AbstractDungeonScreenPatch {
     private static final Logger logger = LogManager.getLogger(AbstractDungeonScreenPatch.class.getName());
 
     public static SpireField<SoulSelectScreen> soulSelectScreen = new SpireField<>(() -> new SoulSelectScreen());
+    public static SpireField<SoulShopScreen> soulShopScreen = new SpireField<>(() -> new SoulShopScreen());
 
 
 
@@ -40,9 +40,13 @@ public class AbstractDungeonScreenPatch {
 
         public static void Postfix(AbstractDungeon __instance) {
 
-            if(AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
+            if(AbstractDungeon.screen == ReaperEnums.SOULSELECTSCREEN) {
                 //logger.info("current screen is soul select screen. updating.");
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).update();
+            }
+            if(AbstractDungeon.screen == ReaperEnums.SOULSHOPSCREEN) {
+                //logger.info("current screen is soul select screen. updating.");
+                AbstractDungeonScreenPatch.soulShopScreen.get(CardCrawlGame.dungeon).update();
             }
         }
     }
@@ -53,7 +57,8 @@ public class AbstractDungeonScreenPatch {
 
             logger.info("closeCurrentScreen prefix patch called. Current screen is: " + AbstractDungeon.screen + ", Previous screen is: " + AbstractDungeon.previousScreen);
 
-            if(AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
+            AbstractDungeon.CurrentScreen curScreen = AbstractDungeon.screen;
+            if(AbstractDungeon.screen == ReaperEnums.SOULSELECTSCREEN || AbstractDungeon.screen == ReaperEnums.SOULSHOPSCREEN) {
 
                 logger.info("current screen is soul select screen. Closing.");
 
@@ -71,7 +76,12 @@ public class AbstractDungeonScreenPatch {
                     e.printStackTrace();
                 }
                 overlayMenu.hideBlackScreen();
-                AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).close();
+                if(curScreen == ReaperEnums.SOULSELECTSCREEN) {
+                    AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).close();
+                } else if (curScreen == ReaperEnums.SOULSHOPSCREEN)
+                {
+                    AbstractDungeonScreenPatch.soulShopScreen.get(CardCrawlGame.dungeon).close();
+                }
 
 
                 if (CardCrawlGame.dungeon.previousScreen == null) {
@@ -111,9 +121,14 @@ public class AbstractDungeonScreenPatch {
         public static void Prefix(@ByRef AbstractDungeon.CurrentScreen[] s) {
 
             logger.info("Reopening Screen: " + s[0]);
-            if(s[0] == SoulSelectEnum.SOULSELECTSCREEN) {
+            if(s[0] == ReaperEnums.SOULSELECTSCREEN) {
                 overlayMenu.hideBlackScreen();
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).reopen();
+                SpireReturn.Return(null);
+            }
+            if(s[0] == ReaperEnums.SOULSHOPSCREEN) {
+                overlayMenu.hideBlackScreen();
+                AbstractDungeonScreenPatch.soulShopScreen.get(CardCrawlGame.dungeon).reopen();
                 SpireReturn.Return(null);
             }
         }
@@ -147,9 +162,13 @@ public class AbstractDungeonScreenPatch {
             // You can execute any other static method you have, you can save retVal to your personal public static variable to always be able to
             // reference the last relic you grabbed - etc. etc. The possibilities are endless. We're gonna do the following:
 
-            if(AbstractDungeon.screen == SoulSelectEnum.SOULSELECTSCREEN) {
+            if(AbstractDungeon.screen == ReaperEnums.SOULSELECTSCREEN) {
                 //logger.info("current screen is soul select screen. rendering.");
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).render(sb);
+            }
+            if(AbstractDungeon.screen == ReaperEnums.SOULSHOPSCREEN) {
+                //logger.info("current screen is soul select screen. rendering.");
+                AbstractDungeonScreenPatch.soulShopScreen.get(CardCrawlGame.dungeon).render(sb);
             }
         }
         private static class UpdateLocator extends SpireInsertLocator {

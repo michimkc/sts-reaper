@@ -15,7 +15,7 @@ public class Regroup extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("Regroup");
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
@@ -25,7 +25,6 @@ public class Regroup extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
-        newCost = 0;
 
         baseMagicNumber2 = magicNumber2 = 1;
         magicNumber2Up = 1;

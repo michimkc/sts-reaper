@@ -25,7 +25,7 @@ import java.util.List;
 public class SoulManager implements CustomSavable<String> {
 
     public static final Logger logger = LogManager.getLogger(SoulManager.class.getName());
-    public static float spacerWidth = 20f * Settings.scale;
+    public static float spacerWidth = 20f;
     public static float defaultHeight = Settings.HEIGHT/2.0F + 160.0F * Settings.scale;
 
     // soulbind tooltip
