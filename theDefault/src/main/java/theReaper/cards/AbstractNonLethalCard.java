@@ -2,13 +2,19 @@ package theReaper.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import theReaper.actions.SetBootEnabledAction;
+import theReaper.patches.BootNonLethalPatch;
 
 public abstract class AbstractNonLethalCard extends AbstractCustomCard {
 
+    public static final Logger logger = LogManager.getLogger(AbstractNonLethalCard.class.getName());
 
     public AbstractNonLethalCard(final String id, final int cost,
                              final CardType type, final CardRarity rarity, final CardTarget target)
@@ -61,9 +67,36 @@ public abstract class AbstractNonLethalCard extends AbstractCustomCard {
             damageFinal = m.currentHealth + m.currentBlock - 1;
         }
 
+        boolean disabledBoot = false;
+        if(AbstractDungeon.player.hasRelic("Boot"))
+        {
+            if(damageFinal < 5) { // boot will activate
+                logger.info("Boot will activate.");
+                if (m.currentHealth + m.currentBlock - 5 <= 0) { // boot is going to up the damage to 5.
+                    //check if this will kill the enemy.
+                    logger.info("Boot will activate and kill enemy. Set damage to leave enemy at 1 hp.");
+                    act(new SetBootEnabledAction(false));
+                    disabledBoot = true;
+                    int damageSemiFinal = m.currentHealth + m.currentBlock - 1; // we will set the monster HP to 1 then.
+                    if(damageSemiFinal != damageFinal)
+                    {
+                        logger.info("Boot has changed the damage from " + damageFinal + " to " + damageSemiFinal + ". Monster HP is " + m.currentHealth);
+                        damageFinal = damageSemiFinal;
+                        AbstractDungeon.player.getRelic("Boot").flash();
+                        act(new RelicAboveCreatureAction(AbstractDungeon.player, AbstractDungeon.player.getRelic("Boot")));
+                    }
+                }
+            }
+
+        }
+
         DamageInfo finalInfo = new DamageInfo(AbstractDungeon.player,damageFinal,info.type);
 
         act(new DamageAction(m, finalInfo, effect));
+        if(disabledBoot)
+        {
+            act(new SetBootEnabledAction(true));
+        }
 
     }
     /*
@@ -82,6 +115,7 @@ public abstract class AbstractNonLethalCard extends AbstractCustomCard {
             damage = mo.currentHealth + mo.currentBlock - 1;
             this.isDamageModified = true;
         }
+
 
     }
 

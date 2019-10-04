@@ -61,10 +61,12 @@ theReaper\cards\RendingStrike.class
 theReaper\cards\Reap.class
 theReaper\powers\DeepCutsPower.class
 theReaper\cards\CrystalRose.class
+theReaper\patches\BootNonLethalPatch.class
 theReaper\cards\ChainStrike.class
 theReaper\cards\Safeguard.class
 theReaper\cards\SanguineArmour.class
 theReaper\util\SoulSelectScreen.class
+theReaper\patches\BootNonLethalPatch$BootOnAttackToChangeDamagePatch.class
 theReaper\actions\CustomGameAction.class
 theReaper\cards\AbstractDynamicCard.class
 theReaper\cards\Tantrum.class
@@ -130,6 +132,7 @@ theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
 theReaper\actions\EffigyAction.class
 theReaper\powers\GluttonyPower.class
+theReaper\actions\SetBootEnabledAction.class
 theReaper\cards\ShieldWard.class
 theReaper\actions\DevourAction.class
 theReaper\powers\AbstractCustomPower.class
