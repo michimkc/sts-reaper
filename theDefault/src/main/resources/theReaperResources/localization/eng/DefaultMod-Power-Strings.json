@@ -3,7 +3,7 @@
     "NAME": "Bleed",
     "DESCRIPTIONS": [
       "At the start of your turn, increase bleed stacks by #b",
-      " (+10% each turn) NL When attacked, consume all bleed stacks and take that much damage as #yNon-Lethal damage.",
+      " (+10% each turn) NL When damaged by an attack, consume all bleed stacks and take that much damage as #yNon-Lethal damage.",
       "At the start of its turn, increase bleed stacks by #b"
     ]
 },
@@ -16,8 +16,7 @@
   "theReaper:ContagionPower": {
     "NAME": "Contagion",
     "DESCRIPTIONS": [
-      "Deal #y",
-      ". Damage every time you apply a #yDebuff to an enemy."
+      "Every time you apply a #yDebuff to this enemy, apply that debuff to all other enemies."
     ]
   },
   "theReaper:EffigyPower": {

@@ -18,6 +18,7 @@ theReaper\powers\ShadowStepPower.class
 theReaper\powers\ContagionPower.class
 theReaper\actions\SoulGemAction.class
 theReaper\powers\HemoplaguePower.class
+theReaper\patches\OnApplyPowerPatch.class
 theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\DeepCuts.class
@@ -128,6 +129,7 @@ theReaper\cards\MaimingStrike.class
 theReaper\cards\Payback.class
 theReaper\util\ReaperStrings.class
 theReaper\variables\DefaultSecondMagicNumber.class
+theReaper\actions\SetContagionEnabledAction.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPostFixScreenUpdatePatch.class
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class

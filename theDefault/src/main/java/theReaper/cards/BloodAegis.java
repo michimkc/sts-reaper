@@ -27,7 +27,6 @@ public class BloodAegis extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         newCost = 1;
-        this.exhaust = true;
 
     }
 

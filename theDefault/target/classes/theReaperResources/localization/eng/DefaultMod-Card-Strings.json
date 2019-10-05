@@ -26,7 +26,7 @@
   },
   "theReaper:Contagion": {
     "NAME": "Contagion",
-    "DESCRIPTION": "Deal !M! Damage every time you apply a debuff to an enemy"
+    "DESCRIPTION": "Every time you apply a debuff to the targeted enemy, apply that debuff to all other enemies."
   },
   "theReaper:CrimsonRush": {
     "NAME": "Crimson Rush",

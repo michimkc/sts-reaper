@@ -58,6 +58,8 @@ public abstract class AbstractCustomPower extends AbstractPower implements Clone
 
     public void onChangedHP() {}
 
+    public void onPowerApplied(AbstractPower power, AbstractCreature target, AbstractCreature source) {}
+
     public void onApplyBleed(int amount) {}
 
 }

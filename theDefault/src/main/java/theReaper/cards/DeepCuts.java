@@ -22,7 +22,6 @@ public class DeepCuts extends AbstractCustomCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    public float multiplier;
 
     public DeepCuts()
     {
@@ -32,7 +31,8 @@ public class DeepCuts extends AbstractCustomCard {
         //damageUp = 3;
         //baseMagicNumber = magicNumber = 1;
         this.exhaust = true;
-        this.multiplier = 1.5F;
+        magicNumber = baseMagicNumber = 2;
+        magicNumberUp = 1;
     }
 
     // Actions the card should do.
@@ -45,9 +45,5 @@ public class DeepCuts extends AbstractCustomCard {
         act(new DeepCutsAction(m, this.multiplier));
     }
 
-    public void upgrade(){
-        super.upgrade();
-        this.multiplier = 2.0F;
-    }
 
 }

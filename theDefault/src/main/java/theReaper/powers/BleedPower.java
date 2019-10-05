@@ -78,7 +78,7 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
         if(this.owner.hasPower(DefaultMod.makeID("LaceratePower")))
         {
             // do nothing. LaceratePower will increase the bleed stacks.
-        } else {
+        } else if (damageAmount > 0){
             logger.info("Info type: " + info.type);
             if(info.type == DamageInfo.DamageType.NORMAL) {
                 AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON, true));

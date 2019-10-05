@@ -17,18 +17,17 @@ public class Contagion extends AbstractCustomCard {
     public static final String ID = DefaultMod.makeID("Contagion");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
-    // Attacks hit all enemies.
+
     public Contagion()
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
-        newCost = 2;
+        newCost = 1;
 
     }
 
@@ -36,7 +35,7 @@ public class Contagion extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new ApplyPowerAction(p, p, new ContagionPower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(m, p, new ContagionPower(m, p, magicNumber), magicNumber));
 
 
     }

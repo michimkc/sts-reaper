@@ -1,6 +1,7 @@
 package theReaper.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import theReaper.DefaultMod;
+import theReaper.powers.BleedPower;
 
 public class DeepCutsAction extends AbstractGameAction {
 
@@ -36,7 +38,8 @@ public class DeepCutsAction extends AbstractGameAction {
 
         if(m.hasPower(bp))
         {
-            m.getPower(bp).amount = (int)(m.getPower(bp).amount*mult);
+            int stacksToAdd = (int)(m.getPower(bp).amount*mult);
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,AbstractDungeon.player,new BleedPower(m,AbstractDungeon.player,stacksToAdd),stacksToAdd));
         }
 
         this.isDone = true;
