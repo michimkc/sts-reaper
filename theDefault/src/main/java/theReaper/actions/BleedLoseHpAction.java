@@ -23,14 +23,17 @@ import theReaper.powers.DeepCutsPower;
 public class BleedLoseHpAction extends AbstractGameAction {
 
     private static final float PERCENTREDUCTION = 0.5f;
+    public boolean consumePower = true; // do we consume the power upon dealing damage?
 
     public BleedLoseHpAction(final AbstractCreature target, final AbstractCreature source,
-                             final int amount, AbstractGameAction.AttackEffect effect) {
+                             final int amount, AbstractGameAction.AttackEffect effect, boolean consumePower) {
         setValues(target, source, amount);
         this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.attackEffect = effect;
         this.duration = 0.33F;
+        this.consumePower = consumePower;
     }
+
     
     @Override
     public void update() {
@@ -66,23 +69,24 @@ public class BleedLoseHpAction extends AbstractGameAction {
 
             AbstractPower p = this.target.getPower("theReaper:BleedPower");
             if (p != null) {
-                int bleed = p.amount;
-                // if we have fewer marks than the minimum amount that we reduce by, remove the buff.
+
                 if (this.target.hasPower(DefaultMod.makeID(DeepCutsPower.POWER_NAME)))
                 {
                     // deep cuts makes it so that the bleed doesn't reduce.
                     this.target.getPower(DefaultMod.makeID(DeepCutsPower.POWER_NAME)).flash();
                 }
-                else if (bleed <= 1) {
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target,p));
-                } else {
-                    int percentAmount = Math.round(bleed * PERCENTREDUCTION);
-                    int amountToReduce = percentAmount;
-                    p.amount -= amountToReduce;
-                    if (bleed <= 1) {
+                //else if (bleed <= 1) {
+                //    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target,p));
+                //}
+                else if(this.consumePower == true) {
+                    //int percentAmount = Math.round(bleed * PERCENTREDUCTION);
+                    //int amountToReduce = percentAmount;
+                    //p.amount -= amountToReduce;
+                    //if (bleed <= 1) {
+
                         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target,p));
-                    }
-                    //AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.target, this.target, p, amountToReduce));
+                    //}
+
                 }
             }
 

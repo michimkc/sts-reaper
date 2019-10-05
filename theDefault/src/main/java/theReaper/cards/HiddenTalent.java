@@ -14,7 +14,7 @@ public class HiddenTalent extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public HiddenTalent() {
 

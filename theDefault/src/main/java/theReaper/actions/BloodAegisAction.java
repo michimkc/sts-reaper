@@ -55,6 +55,8 @@ public class BloodAegisAction extends AbstractGameAction {
 
         if(totalBlock > 0) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, totalBlock));
+        } else
+        {
             AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, DESCRIPTIONS[0], true));
         }
 

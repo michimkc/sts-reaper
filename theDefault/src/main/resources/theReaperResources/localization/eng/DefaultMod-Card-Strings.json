@@ -8,8 +8,8 @@
     "NAME": "Blood Aegis",
     "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed. NL Exhaust"
   },
-  "theReaper:BloodMoon": {
-    "NAME": "Blood Moon",
+  "theReaper:HuntersToll": {
+    "NAME": "Hunter's Toll",
     "DESCRIPTION": "Whenever you apply thereaper:Marks apply !M! additional marks. NL Applies !theReaper:M2! thereaper:Vengeance if you don't already have it. NL thereaper:Waning"
   },
   "theReaper:Bulwark": {
@@ -51,7 +51,8 @@
   },
   "theReaper:DeepCuts": {
     "NAME": "Deep Cuts",
-    "DESCRIPTION": "Deal !D! Damage NL Bleed on the attacked creature does not decrease this turn."
+    "DESCRIPTION": "Increase the enemy's bleed by 1.5 times. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Double the enemy's bleed. NL Exhaust"
   },
   "theReaper:Defend": {
     "NAME": "Defend",
@@ -126,7 +127,8 @@
   },
   "theReaper:Hemorrhage": {
     "NAME": "Hemorrhage",
-    "DESCRIPTION": "Apply !theReaper:B2! thereaper:Bleed"
+    "DESCRIPTION": "Deal damage equal to the target's current thereaper:Bleed NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the target's current thereaper:Bleed"
   },
   "theReaper:HiddenTalent": {
     "NAME": "Hidden Talent",
@@ -158,7 +160,7 @@
   },
   "theReaper:Lacerate": {
     "NAME": "Lacerate",
-    "DESCRIPTION": "Deal !D! Damage. NL Damage from attacks on the same enemy this turn apply !theReaper:B2! thereaper:Bleed"
+    "DESCRIPTION": "Deal !D! Damage. NL Damage from attacks on the same enemy this turn apply !theReaper:B2! thereaper:Bleed instead of consuming the bleed."
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",
@@ -221,7 +223,7 @@
   },
   "theReaper:SerratedKnife": {
     "NAME": "SerratedKnife",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !theReaper:B2! thereaper:Bleed"
+    "DESCRIPTION": "Apply !theReaper:B2! thereaper:Bleed. If target is bleeding apply an additional !theReaper:B2! thereaper:Bleed."
   },
   "theReaper:ShadowStep": {
     "NAME": "Shadow Step",

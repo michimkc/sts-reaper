@@ -15,7 +15,7 @@ public class SerratedKnife extends AbstractCustomCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
 
@@ -23,10 +23,10 @@ public class SerratedKnife extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseDamage = 6;
-        damageUp = 2;
+        //baseDamage = 6;
+        //damageUp = 2;
         baseBleedNumber = bleedNumber = 5;
-        bleedNumberUp = 3;
+        bleedNumberUp = 2;
 
     }
 
@@ -34,9 +34,13 @@ public class SerratedKnife extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        //act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+        //        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         act(new ApplyPowerAction(m, p, new BleedPower(m, p, bleedNumber), bleedNumber));
+        if(m.hasPower(DefaultMod.makeID("BleedPower")))
+        {
+            act(new ApplyPowerAction(m,p, new BleedPower(m,p,bleedNumber),bleedNumber));
+        }
 
     }
 

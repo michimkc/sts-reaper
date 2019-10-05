@@ -6,7 +6,7 @@
       "bleeding",
       "Bleeding"
     ],
-    "DESCRIPTION": "Bleeding creatures lose HP at the start of their turn. Each turn, Bleed is reduced by #b1. NL #yNon-Lethal"
+    "DESCRIPTION": "When a bleeding creature is attacked, all stacks of bleed are consumed and the creature takes that amount in #yNon-Lethal damage. Each turn, Bleed increases by #b10%."
   },
   {
     "NAMES": [

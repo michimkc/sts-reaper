@@ -1,4 +1,5 @@
 theReaper\cards\Papercut.class
+theReaper\actions\DeepCutsAction.class
 theReaper\souls\AbstractSoul.class
 theReaper\util\SoulManager.class
 theReaper\relics\PlaceholderRelic.class
@@ -7,7 +8,6 @@ theReaper\patches\TopPanelPatch.class
 theReaper\util\SoulManager$1.class
 theReaper\actions\DrawCardFromExhaustAction.class
 theReaper\patches\DefaultInsertPatch.class
-theReaper\cards\BloodMoon.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\AbstractDefaultCard.class
 theReaper\actions\MoveCardToTopOfDeckAction.class
@@ -22,6 +22,7 @@ theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\DeepCuts.class
 theReaper\relics\PlaceholderRelic2.class
+theReaper\cards\HuntersToll.class
 theReaper\cards\FiendForm.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\cards\Hack.class
@@ -39,6 +40,7 @@ theReaper\patches\GameActionManagerPatch$clearPatch.class
 theReaper\powers\PaybackPower.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\cards\Moonflower.class
+theReaper\powers\HuntersTollPower.class
 theReaper\powers\MarkPower.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch$UpdateLocator.class
 theReaper\cards\Hemorrhage.class
@@ -111,7 +113,6 @@ theReaper\patches\TopPanelPatch$updatePatch.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class
-theReaper\powers\BloodMoonPower.class
 theReaper\cards\Cleanse.class
 theReaper\cards\Lacerate.class
 theReaper\cards\MasterBall.class

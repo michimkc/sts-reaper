@@ -2,13 +2,13 @@
   "theReaper:BleedPower": {
     "NAME": "Bleed",
     "DESCRIPTIONS": [
-      "At the start of your turn, lose #b",
-      " HP, then reduce #yBleed by half. NL #yNon-Lethal (it will not reduce an enemy below #b1HP)",
-      "At the start of its turn, loses #b. Bleed reduces by half each turn."
+      "At the start of your turn, increase bleed stacks by #b",
+      " (+10% each turn) NL When attacked, consume all bleed stacks and take that much damage as #yNon-Lethal damage.",
+      "At the start of its turn, increase bleed stacks by #b"
     ]
 },
-  "theReaper:BloodMoonPower": {
-    "NAME": "Blood Moon",
+  "theReaper:HuntersTollPower": {
+    "NAME": "Hunter's Toll",
     "DESCRIPTIONS": [
       "Marks applied to enemies are doubled. When you have no more stacks of Vengeance, Blood Moon is removed."
     ]

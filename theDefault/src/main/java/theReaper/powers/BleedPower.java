@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -64,10 +65,26 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
                 !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON));
+            //AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON));
+            this.amount += Math.max(1,this.amount*0.1F);
         }
 
 
+    }
+
+    @Override
+    public int onAttacked(DamageInfo info, int damageAmount) {
+
+        if(this.owner.hasPower(DefaultMod.makeID("LaceratePower")))
+        {
+            // do nothing. LaceratePower will increase the bleed stacks.
+        } else {
+            logger.info("Info type: " + info.type);
+            if(info.type == DamageInfo.DamageType.NORMAL) {
+                AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON, true));
+            }
+        }
+        return damageAmount;
     }
 
     /*
@@ -84,9 +101,9 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void updateDescription() {
         if (this.owner == null || this.owner.isPlayer) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0] + this.amount*.1F + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[2] + this.amount*.1F + DESCRIPTIONS[1];
         }
     }
 

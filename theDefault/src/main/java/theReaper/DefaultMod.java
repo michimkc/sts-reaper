@@ -14,7 +14,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -26,7 +25,6 @@ import org.apache.logging.log4j.Logger;
 import theReaper.cards.*;
 import theReaper.characters.TheDefault;
 import theReaper.events.IdentityCrisisEvent;
-import theReaper.potions.PlaceholderPotion;
 import theReaper.relics.*;
 import theReaper.util.IDCheckDontTouchPls;
 import theReaper.util.ReaperStrings;
@@ -431,7 +429,7 @@ public class DefaultMod implements
         BaseMod.addCard(new ArcStrike());
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new BloodAegis());
-        BaseMod.addCard(new BloodMoon());
+        BaseMod.addCard(new HuntersToll());
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new ChainStrike());
         BaseMod.addCard(new Contagion());
@@ -495,7 +493,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(ArcStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(BloodAegis.ID);
-        UnlockTracker.unlockCard(BloodMoon.ID);
+        UnlockTracker.unlockCard(HuntersToll.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(ChainStrike.ID);
         UnlockTracker.unlockCard(Contagion.ID);

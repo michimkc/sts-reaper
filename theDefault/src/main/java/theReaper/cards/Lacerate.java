@@ -36,10 +36,10 @@ public class Lacerate extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 
+        act(new ApplyPowerAction(m, p, new LaceratePower(m, p, 1, bleedNumber), 1));
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        act(new ApplyPowerAction(m, p, new LaceratePower(m, p, 1, bleedNumber), 1));
 
     }
 

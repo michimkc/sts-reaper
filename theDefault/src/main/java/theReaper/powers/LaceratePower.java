@@ -27,14 +27,14 @@ public class LaceratePower extends AbstractCustomPower implements CloneablePower
     public LaceratePower(final AbstractCreature owner, final AbstractCreature source, int POWER_AMOUNT, int bleed) {
 
         super(owner,source,POWER_AMOUNT, POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
-        bleedAmount = bleed;
+        this.bleedAmount = bleed;
     }
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.type != DamageInfo.DamageType.HP_LOSS) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new BleedPower(owner, source, bleedAmount), bleedAmount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new BleedPower(owner, source, this.bleedAmount), this.bleedAmount));
         }
         return damageAmount;
     }
@@ -51,11 +51,11 @@ public class LaceratePower extends AbstractCustomPower implements CloneablePower
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + bleedAmount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + this.bleedAmount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new LaceratePower(owner, source, amount, bleedAmount);
+        return new LaceratePower(owner, source, amount, this.bleedAmount);
     }
 }
