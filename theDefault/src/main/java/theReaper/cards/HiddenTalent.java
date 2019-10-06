@@ -23,6 +23,7 @@ public class HiddenTalent extends AbstractCustomCard {
         magicNumber = baseMagicNumber = 1;
         magicNumberUp = 1;
         this.isInnate = true;
+        this.exhaust = true;
     }
 
     // Actions the card should do.
