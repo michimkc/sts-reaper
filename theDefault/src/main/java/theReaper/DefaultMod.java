@@ -26,6 +26,8 @@ import theReaper.cards.*;
 import theReaper.characters.TheDefault;
 import theReaper.events.IdentityCrisisEvent;
 import theReaper.relics.*;
+import theReaper.rune.AbstractSoulShiftRune;
+import theReaper.souls.SoulTip;
 import theReaper.util.IDCheckDontTouchPls;
 import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
@@ -86,6 +88,9 @@ public class DefaultMod implements
 
     // The Reaper:  Soul Manager
     public SoulManager soulManager;
+    public static AbstractSoulShiftRune currentRune = null;
+    public static SoulTip soulTip;
+
 
     // card count
     public static int cardsDrawnThisTurn = 0;

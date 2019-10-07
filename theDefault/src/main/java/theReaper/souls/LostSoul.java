@@ -42,16 +42,7 @@ public class LostSoul extends AbstractSoul {
     @Override
     public void useSoul() {
 
-        // what happens when you click the soul
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA")); // play a Jingle Sound.
-
-        if(AbstractDungeon.player.hand.size() < 10) {
-            act(new DrawCardAction(AbstractDungeon.player, 2));
-            super.useSoul();
-        } else
-        {
-            AbstractDungeon.player.createHandIsFullDialog();
-        }
+        super.useSoul();
 
     }
 

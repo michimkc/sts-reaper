@@ -42,7 +42,7 @@ public class DeepCuts extends AbstractCustomCard {
         //act(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
         //                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         //act(new ApplyPowerAction(m, p, new DeepCutsPower(m, p, magicNumber), magicNumber));
-        act(new DeepCutsAction(m, this.multiplier));
+        act(new DeepCutsAction(m, this.magicNumber));
     }
 
 

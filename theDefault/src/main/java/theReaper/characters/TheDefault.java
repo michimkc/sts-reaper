@@ -296,7 +296,7 @@ public class TheDefault extends CustomPlayer {
         super.draw(numCards);
         for (int i = 0; i < numCards; i++) {
             cardsDrawnThisTurn++;
-            logger.info("calling onCardDrawd");
+            //logger.info("calling onCardDraw");
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c instanceof AbstractCustomCard) {
                     ((AbstractCustomCard) c).onCardDraw();

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.souls.AbstractSoul;
+import theReaper.util.SoulManager;
 
 import java.util.ArrayList;
 
@@ -66,6 +67,7 @@ public class AbstractPlayerSoulsPatch {// Don't worry about the "never used" war
                     AbstractDungeon.getCurrRoom() instanceof com.megacrit.cardcrawl.rooms.MonsterRoom) && !AbstractDungeon.player.isDead) {
 
                 if (!AbstractPlayerSoulsPatch.souls.get(__instance).isEmpty()) {
+                    SoulManager.renderSoulTip(sb);
                     for (AbstractSoul s : AbstractPlayerSoulsPatch.souls.get(__instance)) {
                         s.render(sb);
                     }

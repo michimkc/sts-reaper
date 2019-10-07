@@ -1,28 +1,60 @@
 {
   "theReaper:SoulBind": {
     "NAME": "SoulBind",
-    "DESCRIPTIONS": ["If the target's remaining health is equal to or less than #y",
-      ", this rips the soul from the creature and binds it into servitude."]
+    "DESCRIPTIONS": [
+      "If the target's remaining health is equal to or less than #y",
+      ", this rips the soul from the creature and binds it into servitude."
+    ]
   },
   "theReaper:PlaceholderSoul": {
     "NAME": "Placeholder Soul",
-    "DESCRIPTIONS": ["OoooOOOOOooo Spooky!"]
+    "DESCRIPTIONS": [
+      "OoooOOOOOooo Spooky!"
+    ]
   },
   "theReaper:LostSoul": {
     "NAME": "Lost Soul",
-    "DESCRIPTIONS": ["A weak, frail soul with no place to return to."]
+    "DESCRIPTIONS": [
+      "A weak, frail soul with no place to return to."
+    ]
   },
   "theReaper:HollowSoul": {
     "NAME": "Hollow Soul",
-    "DESCRIPTIONS": ["A black, murky soul that smells of ash. It wails with anguish."]
+    "DESCRIPTIONS": [
+      "A black, murky soul that smells of ash. It wails with anguish."
+    ]
   },
   "theReaper:SoulAction": {
     "NAME": "Click to Consume",
-    "DESCRIPTIONS": ["Consume this soul to Draw #y2 cards."]
+    "DESCRIPTIONS": [
+      "Consume this soul to Draw #y2 cards."
+    ]
   },
-
-
-
+  "theReaper:AbstractSoulShiftRune": {
+    "NAME": "Essence",
+    "DESCRIPTIONS": [
+      "The primal essence of a soul."
+    ]
+  },
+  "theReaper:SoulShiftDrawRune": {
+    "NAME": "Spark",
+    "DESCRIPTIONS": [
+      "Draw ",
+      " Cards."
+    ]
+  },
+  "theReaper:SoulShiftEnergyRune": {
+    "NAME": "Vitality",
+    "DESCRIPTIONS": [
+      "Gain ",
+      " Energy."
+    ]
+  },
+  "theReaper:SoulTip":
+  {
+    "NAME": "Essence: ",
+    "DESCRIPTIONS": [ "The primal essence of a soul." ]
+  },
   "theReaper:SoulManager": {
     "NAME": "SoulManager",
     "DESCRIPTIONS": ["Can't hold any more souls..."]

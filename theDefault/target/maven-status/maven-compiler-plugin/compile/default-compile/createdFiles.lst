@@ -76,11 +76,13 @@ theReaper\cards\Tantrum.class
 theReaper\characters\TheDefault.class
 theReaper\powers\AbstractBleedPower.class
 theReaper\actions\SoulBindAction.class
+theReaper\rune\SoulShiftDrawRune.class
 theReaper\cards\SwiftStrike.class
 theReaper\patches\DamageActionPatch.class
 theReaper\actions\WhirlingDeathAction.class
 theReaper\patches\CardGroupOldCharmPatch.class
 theReaper\powers\DeathsDancePower.class
+theReaper\rune\AbstractSoulShiftRune.class
 theReaper\cards\Effigy.class
 theReaper\cards\Fracture.class
 theReaper\patches\ReaperEnums.class
@@ -97,8 +99,10 @@ theReaper\variables\DefaultCustomVariable.class
 theReaper\util\TextureLoader.class
 theReaper\powers\PapercutPower.class
 theReaper\cards\QuickStep.class
+theReaper\rune\SoulShiftEnergyRune.class
 theReaper\characters\TheDefault$Enums.class
 theReaper\cards\Hyper.class
+theReaper\rune\AbstractRune.class
 theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
 theReaper\cards\Frenzy.class
@@ -133,6 +137,7 @@ theReaper\actions\SetContagionEnabledAction.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPostFixScreenUpdatePatch.class
 theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
+theReaper\souls\SoulTip.class
 theReaper\actions\EffigyAction.class
 theReaper\powers\GluttonyPower.class
 theReaper\actions\SetBootEnabledAction.class

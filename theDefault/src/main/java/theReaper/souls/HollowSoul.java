@@ -12,6 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.util.ReaperStrings;
+import theReaper.util.SoulManager;
 
 public class HollowSoul extends AbstractSoul {
 
@@ -44,15 +45,9 @@ public class HollowSoul extends AbstractSoul {
     {
 
         // what happens when you click the soul
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA")); // play a Jingle Sound.
 
-        if(AbstractDungeon.player.hand.size() < 10) {
-            act(new DrawCardAction(AbstractDungeon.player, 2));
-            super.useSoul();
-        } else
-        {
-            AbstractDungeon.player.createHandIsFullDialog();
-        }
+        super.useSoul();
+
     }
 
     @Override

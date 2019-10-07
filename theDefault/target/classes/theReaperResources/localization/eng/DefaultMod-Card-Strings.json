@@ -6,7 +6,7 @@
   },
   "theReaper:BloodAegis": {
     "NAME": "Blood Aegis",
-    "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed. NL Exhaust"
+    "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed"
   },
   "theReaper:HuntersToll": {
     "NAME": "Hunter's Toll",
@@ -51,8 +51,7 @@
   },
   "theReaper:DeepCuts": {
     "NAME": "Deep Cuts",
-    "DESCRIPTION": "Increase the enemy's bleed by 1.5 times. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Double the enemy's bleed. NL Exhaust"
+    "DESCRIPTION": "Increase the enemy's bleed by !M! times. NL Exhaust"
   },
   "theReaper:Defend": {
     "NAME": "Defend",

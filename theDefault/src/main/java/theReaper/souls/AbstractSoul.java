@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -14,15 +15,14 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.ExhaustBlurEffect;
 import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.AbstractSoulOnAfterUseAction;
 import theReaper.cards.AbstractCustomCard;
 import theReaper.powers.AbstractCustomPower;
+import theReaper.rune.SoulShiftDrawRune;
 import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulSelectScreen;
@@ -67,6 +67,16 @@ public abstract class AbstractSoul {
         reaperBaseString = DefaultMod.ReaperStringsMap.get(DefaultMod.makeID("SoulAction"));
         BaseSoulDescription = reaperBaseString.DESCRIPTIONS;
         BaseSoulTipName = reaperBaseString.NAME;
+
+        LoadSoulShiftRune();
+    }
+
+    public void LoadSoulShiftRune()
+    {
+        if(DefaultMod.currentRune == null)
+        {
+            DefaultMod.currentRune = new SoulShiftDrawRune(2);
+        }
     }
 
     public abstract void updateDescription();
@@ -85,7 +95,7 @@ public abstract class AbstractSoul {
         this.hb.move(this.tX, this.tY);
         this.hb.update();
         if (this.hb.hovered) {
-            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 100.0F) * Settings.scale, this.name, this.description);
+            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 300.0F) * Settings.scale, this.name, this.description);
            // TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY - 100.0F) * Settings.scale, this.BaseSoulTipName, this.BaseSoulDescription[0]);
 
             if (InputHelper.justClickedLeft) {
@@ -122,6 +132,9 @@ public abstract class AbstractSoul {
     }
 
     public void useSoul() {
+
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA")); // play a Jingle Sound.
+        SoulManager.useSoul();
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c instanceof AbstractCustomCard) {
                 ((AbstractCustomCard) c).onSoulUsed(this);

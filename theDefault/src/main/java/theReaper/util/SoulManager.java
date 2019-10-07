@@ -2,6 +2,7 @@ package theReaper.util;
 
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,9 +15,11 @@ import theReaper.DefaultMod;
 import theReaper.actions.RemoveSoulAction;
 import theReaper.characters.TheDefault;
 import theReaper.patches.AbstractPlayerSoulsPatch;
+import theReaper.rune.AbstractSoulShiftRune;
 import theReaper.souls.AbstractSoul;
 import theReaper.souls.HollowSoul;
 import theReaper.souls.LostSoul;
+import theReaper.souls.SoulTip;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -39,6 +42,11 @@ public class SoulManager implements CustomSavable<String> {
     public static final String[] MSG = soulManagerStrings.DESCRIPTIONS;
 
     public String soulsSaveList; // we will save this
+
+    public static void useSoul()
+    {
+        DefaultMod.currentRune.onUse();
+    }
 
     public static void addSoul(AbstractSoul soul)
     {
@@ -90,6 +98,20 @@ public class SoulManager implements CustomSavable<String> {
     public static void RemoveSoul(AbstractSoul soul, boolean noDuration) // noDuration should be true to make the removal instant.
     {
         AbstractDungeon.actionManager.addToBottom(new RemoveSoulAction(AbstractDungeon.player,soul, noDuration));
+    }
+
+    public static void soulShift(AbstractSoulShiftRune rune)
+    {
+        DefaultMod.currentRune = rune;
+        DefaultMod.soulTip.LoadSoulShiftRune();
+    }
+    public static void renderSoulTip(SpriteBatch sb)
+    {
+        if (DefaultMod.soulTip == null)
+        {
+            DefaultMod.soulTip = new SoulTip();
+        }
+        DefaultMod.soulTip.render(sb);
     }
 
     public static void printSoulList()

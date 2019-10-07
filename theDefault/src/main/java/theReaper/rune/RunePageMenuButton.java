@@ -20,6 +20,7 @@ import theReaper.DefaultMod;
 import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.ReaperEnums;
 import theReaper.util.ReaperStrings;
+import theReaper.util.SoulManager;
 import theReaper.util.SoulSelectScreen;
 import theReaper.util.SoulShopScreen;
 
@@ -78,6 +79,13 @@ public class RunePageMenuButton {
     {
        //open menu
         logger.info("Clicked the button. Open the menu then.");
+        if(DefaultMod.currentRune instanceof SoulShiftDrawRune)
+        {
+            SoulManager.soulShift(new SoulShiftEnergyRune(3));
+        } else
+        {
+            SoulManager.soulShift(new SoulShiftDrawRune(2));
+        }
     }
 
     public void update() {
@@ -221,7 +229,7 @@ public class RunePageMenuButton {
         } else {
             paramSpriteBatch.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 1.0f));
         }
-        paramSpriteBatch.draw(this.img, this.hb.x, this.hb.y, 32.0F, 32.0F, textureWidth, textureWidth, Settings.scale, Settings.scale, this.runeAngle, 0, 0, 300, 300, false, false);
+        paramSpriteBatch.draw(this.img, this.hb.x, this.hb.y, 32.0F, 32.0F, textureWidth, textureWidth, 1, 1, this.runeAngle, 0, 0, 300, 300, false, false);
 
         //paramSpriteBatch.draw(this.img,Settings.WIDTH/2, Settings.HEIGHT/2);
         hb.render(paramSpriteBatch);
