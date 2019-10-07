@@ -80,7 +80,7 @@
   },
   "theReaper:FeverDream": {
     "NAME": "Fever Dream",
-    "DESCRIPTION": "Choose any number of souls to consume. Gain !M! energy for each soul consumed. "
+    "DESCRIPTION": "Choose any number of souls to consume. Gain !M! energy and draw !M! cards for each soul consumed. NL Exhaust"
   },
   "theReaper:FiendForm": {
     "NAME": "Fiend Form",
@@ -101,7 +101,8 @@
   },
   "theReaper:Glowfly": {
     "NAME": "Glowfly",
-    "DESCRIPTION": "Obtain a small soul. NL Exhaust"
+    "DESCRIPTION": "Obtain a lost soul. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Obtain a hollow soul. NL Exhaust"
   },
   "theReaper:Gluttony": {
     "NAME": "Gluttony",
@@ -160,6 +161,11 @@
   "theReaper:Lacerate": {
     "NAME": "Lacerate",
     "DESCRIPTION": "Deal !D! Damage. NL Damage from attacks on the same enemy this turn apply !theReaper:B2! thereaper:Bleed instead of consuming the bleed."
+  },
+  "theReaper:LastBreath": {
+    "NAME": "Last Breath",
+    "DESCRIPTION": "Gain !M! thereaper:Undying",
+    "UPGRADE_DESCRIPTION": "Gain !M! thereaper:Undying NL Innate"
   },
   "theReaper:MaimingStrike": {
     "NAME": "Maiming Strike",

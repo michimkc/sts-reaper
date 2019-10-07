@@ -24,6 +24,7 @@ public class FeverDream extends AbstractCustomCard {
 
         magicNumber = baseMagicNumber = 2;
         magicNumberUp = 1;
+        this.exhaust = true;
 
     }
 

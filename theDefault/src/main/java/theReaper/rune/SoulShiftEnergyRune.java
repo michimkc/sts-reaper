@@ -27,6 +27,11 @@ public class SoulShiftEnergyRune extends AbstractSoulShiftRune{
         this.amount = energyCount;
     }
 
+    public SoulShiftEnergyRune()
+    {
+        this.amount = 2;
+    }
+
     public String getName()
     {
         return name;

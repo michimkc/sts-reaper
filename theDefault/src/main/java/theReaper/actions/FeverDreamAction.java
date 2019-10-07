@@ -1,6 +1,7 @@
 package theReaper.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,15 +23,15 @@ public class FeverDreamAction extends CustomGameAction {
     private static final String[] TEXT = uiStrings.TEXT;
 
     public static final Logger logger = LogManager.getLogger(FeverDreamAction.class.getName());
-    public int energyPerSoul = 0;
+    public int amount = 0;
     SoulSelectScreen scr;
 
-    public FeverDreamAction(final AbstractPlayer p, int energyPerSoul) {
+    public FeverDreamAction(final AbstractPlayer p, int amount) {
         setValues(p, p, 0);
 
         this.actionType = ActionType.SPECIAL;
         this.duration = 0.5F;
-        this.energyPerSoul = energyPerSoul;
+        this.amount = amount;
 
     }
 
@@ -66,7 +67,8 @@ public class FeverDreamAction extends CustomGameAction {
         if(soulList.size() > 0)
         {
             logger.info("Gaining " + soulList.size() + "energy. Consuming that many souls.");
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(soulList.size()));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(soulList.size()*amount));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player,soulList.size()*amount));
             soulList.forEach(s -> s.consumeSoul());
         }
         logger.info("Finishing up.");

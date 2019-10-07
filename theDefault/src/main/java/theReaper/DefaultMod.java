@@ -468,6 +468,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Invigorate());
         BaseMod.addCard(new InsultToInjury());
         BaseMod.addCard(new Lacerate());
+        BaseMod.addCard(new LastBreath());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
         BaseMod.addCard(new Moonflower()); //
         //BaseMod.addCard(new MasterBall());
@@ -532,6 +533,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Invigorate.ID);
         UnlockTracker.unlockCard(InsultToInjury.ID);
         UnlockTracker.unlockCard(Lacerate.ID);
+        UnlockTracker.unlockCard(LastBreath.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
         UnlockTracker.unlockCard(Moonflower.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);

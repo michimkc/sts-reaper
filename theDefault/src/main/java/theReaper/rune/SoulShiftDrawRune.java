@@ -27,6 +27,11 @@ public class SoulShiftDrawRune extends AbstractSoulShiftRune{
         logger.info("Name: " + name + " DESC: " + getDescription());
     }
 
+    public SoulShiftDrawRune()
+    {
+        this.draw = 2;
+    }
+
     public String getName()
     {
         return name;

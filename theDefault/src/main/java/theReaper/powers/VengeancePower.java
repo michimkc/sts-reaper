@@ -77,14 +77,14 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
         }
     }
 
-    public void onRemove()
+    public void onRemove() // for the Waning feature of Hunters Toll
     {
         super.onRemove();
 
         AbstractDungeon.player.powers.forEach((p)-> powerOnPowerRemoved(p));
 
     }
-    public void powerOnPowerRemoved(AbstractPower p)
+    public void powerOnPowerRemoved(AbstractPower p) // for the Waning feature of Hunters Toll
     {
         if(p instanceof AbstractCustomPower)
         {

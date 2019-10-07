@@ -47,6 +47,14 @@
   },
   {
     "NAMES": [
+      "Undying",
+      "undying"
+    ],
+    "DESCRIPTION": "If you would take lethal damage from an attack, consume this power and reduce damage from all attacks to 0 for the remainder of the turn."
+
+  },
+  {
+    "NAMES": [
       "waning",
       "Waning"
     ],

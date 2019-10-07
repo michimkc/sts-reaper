@@ -36,6 +36,13 @@
       "The primal essence of a soul."
     ]
   },
+  "theReaper:SoulShiftBlockRune": {
+    "NAME": "Guardian",
+    "DESCRIPTIONS": [
+      "Gain ",
+      " Block."
+    ]
+  },
   "theReaper:SoulShiftDrawRune": {
     "NAME": "Spark",
     "DESCRIPTIONS": [
@@ -48,6 +55,13 @@
     "DESCRIPTIONS": [
       "Gain ",
       " Energy."
+    ]
+  },
+  "theReaper:SoulShiftThornsRune": {
+    "NAME": "Spike",
+    "DESCRIPTIONS": [
+      "Gain ",
+      " Thorns."
     ]
   },
   "theReaper:SoulTip":

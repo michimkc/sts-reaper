@@ -10,6 +10,7 @@ theReaper\actions\DrawCardFromExhaustAction.class
 theReaper\patches\DefaultInsertPatch.class
 theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\AbstractDefaultCard.class
+theReaper\powers\UndyingPower.class
 theReaper\actions\MoveCardToTopOfDeckAction.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\actions\BleedLoseHpAction.class
@@ -27,6 +28,7 @@ theReaper\cards\HuntersToll.class
 theReaper\cards\FiendForm.class
 theReaper\variables\BleedNumberVariable.class
 theReaper\cards\Hack.class
+theReaper\rune\SoulShiftBlockRune.class
 theReaper\powers\FeralInstinctsPower.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
 theReaper\cards\Contagion.class
@@ -60,6 +62,7 @@ theReaper\actions\BloodAegisAction.class
 theReaper\powers\TransfusionPower.class
 theReaper\cards\Transfusion.class
 theReaper\cards\HurricaneStrike.class
+theReaper\rune\SoulShiftThornsRune.class
 theReaper\cards\RendingStrike.class
 theReaper\cards\Reap.class
 theReaper\powers\DeepCutsPower.class
@@ -117,6 +120,7 @@ theReaper\variables\SelfBleedNumberVariable.class
 theReaper\patches\TopPanelPatch$updatePatch.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
+theReaper\cards\LastBreath.class
 theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class
 theReaper\cards\Cleanse.class
 theReaper\cards\Lacerate.class
