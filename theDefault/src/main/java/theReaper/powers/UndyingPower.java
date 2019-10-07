@@ -68,7 +68,7 @@ public class UndyingPower extends AbstractCustomPower implements CloneablePowerI
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfRound() {
         if(usedPower)
         {
 
