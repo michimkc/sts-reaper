@@ -47,6 +47,7 @@ public class GameActionManagerPatch {
 
         public static void Postfix (GameActionManager __instance){
                 DefaultMod.cardsDrawnThisTurn = 0;
+                DefaultMod.totalMarksConsumedThisCombat = 0;
         }
 
     }

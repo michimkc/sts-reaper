@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -46,7 +47,7 @@ public class UndyingPower extends AbstractCustomPower implements CloneablePowerI
         if( damage >= totalHP ) {
 
             CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
-            AbstractDungeon.effectList.add(new DamageNumberEffect(this.owner, this.owner.hb_x, this.owner.hb_y, (int)damage));
+            AbstractDungeon.effectList.add(new DamageNumberEffect(this.owner, this.owner.hb_x* Settings.scale, this.owner.hb_y*Settings.scale, (int)damage));
             flash();
 
             damage = totalHP - 1; // reduce the player to 1 hp.
@@ -56,10 +57,10 @@ public class UndyingPower extends AbstractCustomPower implements CloneablePowerI
             // totalDamage = 10
             // negativeDamage = 10 - 4 = 6
             // so we apply 6 marks.
-
             if(owner.hasPower(DefaultMod.makeID("VengeancePower")))
             {
-                ((VengeancePower)owner.getPower(DefaultMod.makeID("VengeancePower"))).onAttacked(info,negativeDamage);
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, owner,
+                        new MarkPower(info.owner, owner, negativeDamage), negativeDamage));
             }
             usedPower = true;
 

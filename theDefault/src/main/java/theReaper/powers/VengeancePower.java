@@ -46,7 +46,7 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
     public int onAttacked(DamageInfo info, int damageAmount)
     {
 
-        if(info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) // if we were hit by something
+        if(info.owner != null && info.owner != owner && damageAmount > 0) // if we were hit by something
         {
 
                 flash();

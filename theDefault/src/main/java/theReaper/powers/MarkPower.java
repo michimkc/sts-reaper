@@ -18,6 +18,7 @@ import theReaper.DefaultMod;
 import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
+import static theReaper.DefaultMod.totalMarksConsumedThisCombat;
 
 //When affected by vengeance, each damage taken adds a mark to the enemy that dealt it.
 //dealing damage to the enemy consumes a mark and heals 1 hp.
@@ -41,6 +42,7 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
     private static final float PERCENTREDUCTION = 0.5f;
     private static final int CONSTANTREDUCTION = 5;
 
+    public int marksAddedThisTurn;
 
     public MarkPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -57,9 +59,12 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
+        marksAddedThisTurn = amount;
+        logger.info("created marks. Marks added this turn : " + marksAddedThisTurn);
 
         updateDescription();
     }
+
 
     public int onAttacked(DamageInfo info, int damageAmount)
     {
@@ -77,6 +82,9 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
             // reduce the number of marks
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
             logger.info("Monster (" + owner.currentHealth + " current HP) attacked for " +damageAmount + ", healed for " + totalHeal);
+            DefaultMod.totalMarksConsumedThisCombat += totalHeal;
+
+            logger.info("total marks consumed this combat: " + totalMarksConsumedThisCombat);
         }
 
         return damageAmount;
@@ -84,24 +92,51 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
 
     public void atStartOfTurn() {
 
-            // at the start of the monster's, reduce the marks by PERCENTREDUCTION, CONSTANTREDUCTION whichever is greater.
-
-            // if we have fewer marks than the minimum amount that we reduce by, remove the buff.
-            if (CONSTANTREDUCTION >= amount) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-            } else {
-                int percentAmount = Math.round(amount * PERCENTREDUCTION);
-                int amountToReduce = Math.max(percentAmount, CONSTANTREDUCTION);
-
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, amountToReduce));
+        // at the start of the monster's, reduce the marks by PERCENTREDUCTION, CONSTANTREDUCTION whichever is greater.
+logger.info("start of turn amount: " + amount + " , marks added this turn : " + marksAddedThisTurn);
+        // if we have fewer marks than the minimum amount that we reduce by, remove the buff.
+        if (CONSTANTREDUCTION >= amount && marksAddedThisTurn == 0) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        } else {
+            int percentAmount = Math.round((amount-marksAddedThisTurn) * PERCENTREDUCTION);
+            int amountToReduce;
+            if(marksAddedThisTurn == 0) {
+                amountToReduce = Math.max(percentAmount, CONSTANTREDUCTION);
+            } else
+            {
+                amountToReduce = (amount-marksAddedThisTurn) - Math.max(percentAmount,CONSTANTREDUCTION);
+                if(amountToReduce < 0)
+                {
+                    amountToReduce = 0;
+                }
             }
 
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, amountToReduce));
+        }
+
+
+    }
+
+    public void atEndOfRound()
+    {
+        marksAddedThisTurn = 0;
+
+        logger.info("end of round reset, marks added this turn : " + marksAddedThisTurn);
+    }
+
+    public void stackPower(int amount)
+    {
+        super.stackPower(amount);
+        marksAddedThisTurn += amount;
+
+        logger.info("Stacking Power by: " + amount + " , marks added this turn : " + marksAddedThisTurn);
     }
 
     public static void applyMarks(AbstractCreature target, AbstractCreature source, int amount)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source,
                 new MarkPower(target, source, amount), amount));
+
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

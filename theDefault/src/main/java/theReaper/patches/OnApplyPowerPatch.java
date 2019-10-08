@@ -14,9 +14,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import sun.reflect.Reflection;
-import theReaper.DefaultMod;
 import theReaper.powers.AbstractCustomPower;
 import basemod.ReflectionHacks;
 

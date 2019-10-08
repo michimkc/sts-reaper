@@ -95,6 +95,8 @@ public class DefaultMod implements
     // card count
     public static int cardsDrawnThisTurn = 0;
 
+    // marks
+    public static int totalMarksConsumedThisCombat = 0;
 
 
     //This is for the in-game mod settings panel.
@@ -447,7 +449,7 @@ public class DefaultMod implements
         BaseMod.addCard(new DeepCuts());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Devour());
-        BaseMod.addCard(new Effigy());
+        //BaseMod.addCard(new Effigy());
         BaseMod.addCard(new EnduringSpirit());
         BaseMod.addCard(new FeralInstincts());
         BaseMod.addCard(new FeverDream());
@@ -512,7 +514,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(DeepCuts.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Devour.ID);
-        UnlockTracker.unlockCard(Effigy.ID);
+        //UnlockTracker.unlockCard(Effigy.ID);
         UnlockTracker.unlockCard(EnduringSpirit.ID);
         UnlockTracker.unlockCard(FeralInstincts.ID);
         UnlockTracker.unlockCard(FeverDream.ID);
