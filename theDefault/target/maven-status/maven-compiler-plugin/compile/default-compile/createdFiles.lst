@@ -43,6 +43,7 @@ theReaper\patches\GameActionManagerPatch$clearPatch.class
 theReaper\powers\PaybackPower.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\cards\Moonflower.class
+theReaper\cards\AdaptiveStrike.class
 theReaper\powers\HuntersTollPower.class
 theReaper\powers\MarkPower.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch$UpdateLocator.class

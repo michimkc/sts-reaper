@@ -434,6 +434,7 @@ public class DefaultMod implements
         // when generating card rewards/shop screen items.
 
         BaseMod.addCard(new ArcStrike());
+        BaseMod.addCard(new AdaptiveStrike());
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new BloodAegis());
         BaseMod.addCard(new HuntersToll());
@@ -499,6 +500,7 @@ public class DefaultMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
         UnlockTracker.unlockCard(ArcStrike.ID);
+        UnlockTracker.unlockCard(AdaptiveStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(BloodAegis.ID);
         UnlockTracker.unlockCard(HuntersToll.ID);
