@@ -11,9 +11,9 @@ import theReaper.actions.ArcStrikeAction;
 import theReaper.powers.MarkPower;
 import theReaper.powers.VengeancePower;
 
-public class AdaptiveStrike extends AbstractCustomCard {
+public class HoningSteel extends AbstractCustomCard {
 
-    public static final String ID = DefaultMod.makeID("AdaptiveStrike");
+    public static final String ID = DefaultMod.makeID("HoningSteel");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -21,20 +21,18 @@ public class AdaptiveStrike extends AbstractCustomCard {
 
     private static final int COST = 2;
 
-    public AdaptiveStrike()
+    public HoningSteel()
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         damage = baseDamage = 0;
         newCost = 1;
 
-        this.tags.add(CardTags.STRIKE);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        damage = DefaultMod.totalMarksConsumedThisCombat;
         AbstractGameAction.AttackEffect effect = AbstractGameAction.AttackEffect.BLUNT_LIGHT;
         if(damage > 15)
         {
@@ -48,13 +46,20 @@ public class AdaptiveStrike extends AbstractCustomCard {
     }
 
     public void calculateCardDamage(AbstractMonster m) {
-        baseDamage = DefaultMod.totalMarksConsumedThisCombat;
+        damage = baseDamage = DefaultMod.totalMarksConsumedThisCombat;
         super.calculateCardDamage(m);
 
         isDamageModified = true;
-        baseDamage = 0;
 
     }
+
+    public void onConsumeMarks(int numConsumed)
+    {
+        damage = baseDamage = DefaultMod.totalMarksConsumedThisCombat;
+        isDamageModified = true;
+        initializeDescription();
+    }
+
 
 
 }

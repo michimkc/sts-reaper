@@ -14,7 +14,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -24,7 +23,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.cards.*;
 import theReaper.characters.TheDefault;
-import theReaper.events.IdentityCrisisEvent;
 import theReaper.relics.*;
 import theReaper.rune.AbstractSoulShiftRune;
 import theReaper.souls.SoulTip;
@@ -434,7 +432,6 @@ public class DefaultMod implements
         // when generating card rewards/shop screen items.
 
         BaseMod.addCard(new ArcStrike());
-        BaseMod.addCard(new AdaptiveStrike());
         BaseMod.addCard(new Bulwark());
         BaseMod.addCard(new BloodAegis());
         BaseMod.addCard(new HuntersToll());
@@ -465,6 +462,7 @@ public class DefaultMod implements
         BaseMod.addCard(new HastyGrab());
         BaseMod.addCard(new Hemorrhage());
         BaseMod.addCard(new HiddenTalent());
+        BaseMod.addCard(new HoningSteel());
         BaseMod.addCard(new HurricaneStrike());
         BaseMod.addCard(new Hyper());
         BaseMod.addCard(new Impatience());
@@ -500,7 +498,6 @@ public class DefaultMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
         UnlockTracker.unlockCard(ArcStrike.ID);
-        UnlockTracker.unlockCard(AdaptiveStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
         UnlockTracker.unlockCard(BloodAegis.ID);
         UnlockTracker.unlockCard(HuntersToll.ID);
@@ -531,6 +528,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(HastyGrab.ID);
         UnlockTracker.unlockCard(Hemorrhage.ID);
         UnlockTracker.unlockCard(HiddenTalent.ID);
+        UnlockTracker.unlockCard(HoningSteel.ID);
         UnlockTracker.unlockCard(HurricaneStrike.ID);
         UnlockTracker.unlockCard(Hyper.ID);
         UnlockTracker.unlockCard(Impatience.ID);

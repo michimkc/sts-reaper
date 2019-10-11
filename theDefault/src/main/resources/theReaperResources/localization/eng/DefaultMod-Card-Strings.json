@@ -4,10 +4,6 @@
     "DESCRIPTION": "Deal !D! Damage. For every mark consumed deal that amount as additional damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. For every mark consumed deal [#FFBF00]twice[] that amount as additional damage."
   },
-  "theReaper:AdaptiveStrike": {
-    "NAME": "Adaptive Strike",
-    "DESCRIPTION": "Deal !D! Damage. Damage is equal to the total number of marks consumed this combat.",
-  },
   "theReaper:BloodAegis": {
     "NAME": "Blood Aegis",
     "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed"
@@ -138,6 +134,10 @@
     "NAME": "Hidden Talent",
     "DESCRIPTION": "Draw the next Power in your Draw Pile. NL Exhaust NL Innate",
     "UPGRADE_DESCRIPTION": "Draw the next two Powers in your Draw Pile. NL Exhaust NL Innate"
+  },
+  "theReaper:HoningSteel": {
+    "NAME": "Honing Steel",
+    "DESCRIPTION": "Deal !D! Damage. Damage is equal to the total number of marks consumed this combat."
   },
   "theReaper:HurricaneStrike": {
     "NAME": "Hurricane Strike",

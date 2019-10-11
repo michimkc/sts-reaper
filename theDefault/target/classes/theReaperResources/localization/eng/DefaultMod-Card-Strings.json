@@ -4,9 +4,9 @@
     "DESCRIPTION": "Deal !D! Damage. For every mark consumed deal that amount as additional damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. For every mark consumed deal [#FFBF00]twice[] that amount as additional damage."
   },
-  "theReaper:AdaptiveStrike": {
-    "NAME": "Adaptive Strike",
-    "DESCRIPTION": "Deal !D! Damage. Damage is equal to the total number of marks consumed this combat.",
+  "theReaper:HoningBlade": {
+    "NAME": "Honing Blade",
+    "DESCRIPTION": "Deal !D! Damage. Damage is equal to the total number of marks consumed this combat."
   },
   "theReaper:BloodAegis": {
     "NAME": "Blood Aegis",

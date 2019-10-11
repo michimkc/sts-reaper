@@ -146,6 +146,8 @@ public abstract class AbstractCustomCard extends CustomCard {
 
     public void onShuffle() {}
 
+    public void onConsumeMarks(int numConsumed){}
+
     public void applyPowers()
     {
         bleedNumber = baseBleedNumber;

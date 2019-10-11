@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
+import theReaper.cards.AbstractCustomCard;
 import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
@@ -85,9 +87,19 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
             DefaultMod.totalMarksConsumedThisCombat += totalHeal;
 
             logger.info("total marks consumed this combat: " + totalMarksConsumedThisCombat);
+            final int finalTotalHeal = totalHeal;
+            AbstractDungeon.player.hand.group.forEach( c -> sendConsume(c,finalTotalHeal));
         }
 
         return damageAmount;
+    }
+
+    public void sendConsume(AbstractCard c,int totalHeal)
+    {
+        if (c instanceof AbstractCustomCard)
+        {
+            ((AbstractCustomCard)c).onConsumeMarks(totalHeal);
+        }
     }
 
     public void atStartOfTurn() {
