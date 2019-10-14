@@ -37,6 +37,7 @@ public class ChainStrike extends AbstractCustomCard {
         magicNumberUp = 1;
 
         magicNumber2 = baseMagicNumber2 = damage;
+        newCost = 0;
 
         this.tags.add(CardTags.STRIKE);
     }

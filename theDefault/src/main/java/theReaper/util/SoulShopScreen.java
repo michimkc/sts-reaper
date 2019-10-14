@@ -10,10 +10,12 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.ui.buttons.CardSelectConfirmButton;
+import com.megacrit.cardcrawl.ui.buttons.ConfirmButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.CustomGameAction;
+import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.ReaperEnums;
 import theReaper.souls.AbstractSoul;
 
@@ -29,14 +31,13 @@ public class SoulShopScreen {
     //public static final String[] DESC = reaperString.DESCRIPTIONS;
 
     public String message = "";
-    public CardSelectConfirmButton button = new CardSelectConfirmButton();;
 
+
+    public ConfirmButton confirmButton = new ConfirmButton();
 
     public boolean waitThenClose = false;
     public float waitToCloseTimer = 0.0F;
 
-    public ArrayList<AbstractSoul> soulList;
-    public CustomGameAction sourceAction;
 
     public SoulShopScreen()
     {
@@ -53,11 +54,12 @@ public class SoulShopScreen {
             }
         }
 
-        this.button.update();
-        if (this.button.hb.clicked || CInputActionSet.proceed.isJustPressed() || InputActionSet.confirm.isJustPressed()) {
+        this.confirmButton.update();
+        if (this.confirmButton.hb.clicked || CInputActionSet.proceed.isJustPressed() || InputActionSet.confirm.isJustPressed()) {
             CInputActionSet.proceed.unpress();
-            this.button.hb.clicked = false;
-
+            this.confirmButton.hb.clicked = false;
+            this.waitThenClose = true;
+            logger.info("Confirm Button Clicked");
         }
 
     }
@@ -72,25 +74,43 @@ public class SoulShopScreen {
     public void close()
     {
         logger.info("closing SoulShopScreen");
-        //this.button.hide();
+        this.confirmButton.hide();
     }
 
     public void open()
     {
-
+        prep();
     }
 
+    public void prep() {
+        logger.info("prepping...");
+
+        this.waitThenClose = false;
+        this.waitToCloseTimer = 0.0F;
+        AbstractDungeon.isScreenUp = true;
+        AbstractDungeon.screen = ReaperEnums.SOULSHOPSCREEN;
+        AbstractDungeon.player.hand.stopGlowing();
+        AbstractDungeon.player.hand.refreshHandLayout();
+        AbstractDungeon.overlayMenu.showBlackScreen(0.8F);
+
+        this.confirmButton.hideInstantly();;
+        this.confirmButton.show();
+        this.confirmButton.isDisabled = false;
+
+        logger.info("isScreenUp: " + AbstractDungeon.isScreenUp + " , and currentScreen is : " + AbstractDungeon.screen);
+
+    }
     public void reopen() {
         logger.info("reopening...");
         AbstractDungeon.overlayMenu.showBlackScreen(0.5F);
-        this.button.show();
+        this.confirmButton.show();
     }
 
 
     public void render(SpriteBatch sb) {
         FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.message, (Settings.WIDTH / 2), Settings.HEIGHT - 180.0F * Settings.scale, Settings.CREAM_COLOR);
 
-        this.button.render(sb);
+        this.confirmButton.render(sb);
 
     }
 

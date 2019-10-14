@@ -158,7 +158,6 @@ theReaper\cards\Gluttony.class
 theReaper\actions\FeverDreamAction.class
 theReaper\cards\Glowfly.class
 theReaper\powers\CustomTemplatePower.class
-theReaper\cards\HoningBlade.class
 theReaper\patches\DefaultInsertPatch$Locator.class
 theReaper\cards\Impatience.class
 theReaper\util\ReaperStrings$1.class
@@ -167,3 +166,4 @@ theReaper\cards\DeathsDance.class
 theReaper\relics\OldCharmRelic.class
 theReaper\actions\UncommonPowerAction.class
 theReaper\cards\EnduringSpirit.class
+theReaper\cards\HoningSteel.class

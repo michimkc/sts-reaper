@@ -29,7 +29,7 @@ public class SoulBlade extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         damage = baseDamage = actualBaseDamage;
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 6;
         magicNumberUp = 2;
 
         baseMagicNumber2 = magicNumber2 = actualBaseDamage;

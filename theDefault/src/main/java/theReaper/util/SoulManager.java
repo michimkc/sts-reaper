@@ -103,6 +103,10 @@ public class SoulManager implements CustomSavable<String> {
     public static void soulShift(AbstractSoulShiftRune rune)
     {
         DefaultMod.currentRune = rune;
+        if (DefaultMod.soulTip == null)
+        {
+            DefaultMod.soulTip = new SoulTip();
+        }
         DefaultMod.soulTip.LoadSoulShiftRune();
     }
     public static void renderSoulTip(SpriteBatch sb)

@@ -30,7 +30,7 @@ public class MaimingStrike extends AbstractNonLethalCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        damage = baseDamage = 9;
+        damage = baseDamage = 15;
         damageUp = 3;
 
         magicNumber = baseMagicNumber = 1;

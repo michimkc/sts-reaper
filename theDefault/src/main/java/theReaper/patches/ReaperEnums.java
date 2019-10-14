@@ -8,5 +8,7 @@ public class ReaperEnums
 {
     @SpireEnum
     public static AbstractDungeon.CurrentScreen SOULSELECTSCREEN;
+
+    @SpireEnum
     public static AbstractDungeon.CurrentScreen SOULSHOPSCREEN;
 }

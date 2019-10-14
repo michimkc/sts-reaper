@@ -49,7 +49,7 @@ public class RunePageMenuButton {
 
     public boolean used = false;
     public boolean inLevelUpScreen = false;
-    public SoulSelectScreen currentSelectScreen;
+    public SoulShopScreen currentSelectScreen;
     public static final String imgURL = "theReaperResources/images/ui/menu-runemenuicon.png";
 
     public float runeAngle = 0.0F;
@@ -195,6 +195,9 @@ public class RunePageMenuButton {
                     {
                         // selectScreen is set.
                         logger.info("Menu is opened and we clicked the button. Close?");
+
+                        SoulShopScreen scr = AbstractDungeonScreenPatch.soulShopScreen.get(CardCrawlGame.dungeon);
+                        scr.finished();
                     }
 
                 } else {
@@ -215,7 +218,8 @@ public class RunePageMenuButton {
             this.runeAngle = MathHelper.angleLerpSnap(this.runeAngle, 0.0F);
         }
 
-        if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.NONE || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SETTINGS || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.INPUT_SETTINGS || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DEATH || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.VICTORY || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.BOSS_REWARD) {
+        if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.NONE || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SETTINGS || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.INPUT_SETTINGS || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DEATH || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.VICTORY || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.BOSS_REWARD
+        || AbstractDungeon.screen == ReaperEnums.SOULSHOPSCREEN) {
             this.ButtonDisabled = false;
         } else {
             this.ButtonDisabled = true;
