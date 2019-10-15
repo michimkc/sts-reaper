@@ -27,7 +27,7 @@ public class Fracture extends AbstractCustomCard {
         damage = baseDamage = 7;
         damageUp = 3;
 
-        this.tags.add(CardTags.STRIKE);
+        //this.tags.add(CardTags.STRIKE);
     }
 
     // Actions the card should do.

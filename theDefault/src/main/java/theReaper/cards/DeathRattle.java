@@ -35,22 +35,23 @@ public class DeathRattle extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        int orig = damage;
-        damage = getCardDamage(baseDamage);
-        initializeDescription();
+        // orig = baseDamage;
+        //damage = baseDamage = getCardDamage(baseDamage);
+        //initializeDescription();
         act(new DamageAction(m,new DamageInfo(p,damage, DamageInfo.DamageType.NORMAL),DamageAction.AttackEffect.SLASH_HEAVY));
-        damage = orig;
+        //baseDamage = orig;
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-        int orig = damage;
-        damage = getCardDamage(baseDamage);
+
+        int orig = baseDamage;
+        baseDamage = getCardDamage(baseDamage);
         if(damage != baseDamage) {
             isDamageModified = true;
         }
+        super.calculateCardDamage(mo);
         initializeDescription();
-        damage = orig;
+        baseDamage = orig;
     }
 
     public int getCardDamage(int d)

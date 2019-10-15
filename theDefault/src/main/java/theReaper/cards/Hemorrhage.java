@@ -4,6 +4,8 @@ import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
@@ -44,7 +46,9 @@ public class Hemorrhage extends AbstractCustomCard {
         //act(new ApplyPowerAction(m, p, new BleedPower(m, p, bleedNumber), bleedNumber));
         if(m.hasPower(DefaultMod.makeID("BleedPower")))
         {
-            act(new BleedLoseHpAction(m,p,m.getPower(DefaultMod.makeID("BleedPower")).amount, AbstractGameAction.AttackEffect.POISON, false));
+            act(new BleedLoseHpAction(m,p,m.getPower(DefaultMod.makeID("BleedPower")).amount, AbstractGameAction.AttackEffect.POISON, false, false));
+            //act(new DamageAction(m, new DamageInfo(p, m.getPower(DefaultMod.makeID("BleedPower")).amount, DamageInfo.DamageType.HP_LOSS),
+                    //AbstractGameAction.AttackEffect.POISON));
         }
     }
 

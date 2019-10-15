@@ -21,41 +21,35 @@ public class LaceratePower extends AbstractCustomPower implements CloneablePower
     public static final String POWER_NAME = "LaceratePower";
     public static final PowerType POWER_TYPE = PowerType.DEBUFF;
     public static final boolean POWER_ISTURNBASED = true;
-    public int bleedAmount = 0;
     // =======================
 
-    public LaceratePower(final AbstractCreature owner, final AbstractCreature source, int POWER_AMOUNT, int bleed) {
+    public LaceratePower(final AbstractCreature owner, final AbstractCreature source, int POWER_AMOUNT) {
 
         super(owner,source,POWER_AMOUNT, POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
-        this.bleedAmount = bleed;
     }
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.type != DamageInfo.DamageType.HP_LOSS) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new BleedPower(owner, source, this.bleedAmount), this.bleedAmount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new BleedPower(owner, source, amount), amount));
         }
         return damageAmount;
     }
 
     public void atEndOfRound() {
 
-        if (this.amount == 1) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
 
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
-        }
     }
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + this.bleedAmount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new LaceratePower(owner, source, amount, this.bleedAmount);
+        return new LaceratePower(owner, source, amount);
     }
 }

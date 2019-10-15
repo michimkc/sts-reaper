@@ -24,14 +24,16 @@ public class BleedLoseHpAction extends AbstractGameAction {
 
     private static final float PERCENTREDUCTION = 0.5f;
     public boolean consumePower = true; // do we consume the power upon dealing damage?
+    public boolean nonLethal = true; // is the damage nonLethal?
 
     public BleedLoseHpAction(final AbstractCreature target, final AbstractCreature source,
-                             final int amount, AbstractGameAction.AttackEffect effect, boolean consumePower) {
+                             final int amount, AbstractGameAction.AttackEffect effect, boolean consumePower, boolean nonLethal) {
         setValues(target, source, amount);
         this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.attackEffect = effect;
         this.duration = 0.33F;
         this.consumePower = consumePower;
+        this.nonLethal = nonLethal;
     }
 
     
@@ -57,7 +59,7 @@ public class BleedLoseHpAction extends AbstractGameAction {
                 this.target.tint.color = Color.CHARTREUSE.cpy();
                 this.target.tint.changeColor(Color.WHITE.cpy());
                 int finalAmount = this.amount;
-                if(this.amount >= this.target.currentHealth)
+                if(this.amount >= this.target.currentHealth && this.nonLethal)
                 {
                     finalAmount = this.target.currentHealth - 1;
                 }

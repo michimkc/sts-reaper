@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 
-public class EnduringSpirit extends AbstractCustomCard {
+public class  EnduringSpirit extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("EnduringSpirit");
 
@@ -54,7 +54,7 @@ public class EnduringSpirit extends AbstractCustomCard {
     public void upgrade()
     {
         super.upgrade();
-        this.isInnate = true;
+        this.exhaust = false;
     }
 
 }

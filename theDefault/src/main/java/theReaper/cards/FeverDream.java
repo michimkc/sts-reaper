@@ -3,9 +3,11 @@ package theReaper.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
 import theReaper.actions.FeverDreamAction;
+import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.powers.BleedPower;
 
 public class FeverDream extends AbstractCustomCard {
@@ -21,8 +23,6 @@ public class FeverDream extends AbstractCustomCard {
     public FeverDream() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-
-        magicNumber = baseMagicNumber = 2;
         magicNumberUp = 1;
         this.exhaust = true;
 
@@ -32,7 +32,12 @@ public class FeverDream extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        act(new FeverDreamAction(p,magicNumber));
+        int energyAdd = AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size();
+        if(upgraded)
+        {
+            energyAdd++;
+        }
+        act(new GainEnergyAction(energyAdd));
 
 
     }

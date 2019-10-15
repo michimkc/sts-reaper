@@ -14,7 +14,7 @@
   },
   "theReaper:Bulwark": {
     "NAME": "Bulwark",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact."
   },
   "theReaper:ChainStrike": {
     "NAME": "Chain Strike",
@@ -72,7 +72,7 @@
   "theReaper:EnduringSpirit": {
     "NAME": "Enduring Spirit",
     "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust NL Innate"
+    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health )"
   },
   "theReaper:FeralInstincts": {
     "NAME": "Feral Instincts",
@@ -80,7 +80,8 @@
   },
   "theReaper:FeverDream": {
     "NAME": "Fever Dream",
-    "DESCRIPTION": "Choose any number of souls to consume. Gain !M! energy and draw !M! cards for each soul consumed. NL Exhaust"
+    "DESCRIPTION": "Gain [B] for each soul you currently hold. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain [B] for each soul you currently hold, plus one additional [B]. NL Exhaust"
   },
   "theReaper:FiendForm": {
     "NAME": "Fiend Form",

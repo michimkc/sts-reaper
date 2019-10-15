@@ -81,7 +81,7 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
         } else if (damageAmount > 0){
             logger.info("Info type: " + info.type);
             if(info.type == DamageInfo.DamageType.NORMAL) {
-                AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON, true));
+                AbstractDungeon.actionManager.addToBottom(new BleedLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON, true, true));
             }
         }
         return damageAmount;

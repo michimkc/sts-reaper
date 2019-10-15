@@ -25,7 +25,6 @@ public class Bulwark extends AbstractCustomCard {
         baseBlock = 15;
         blockUp = 3;
         baseMagicNumber = magicNumber = 1;
-        this.exhaust = true;
 
     }
 

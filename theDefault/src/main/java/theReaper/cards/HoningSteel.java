@@ -3,6 +3,7 @@ package theReaper.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -52,6 +53,14 @@ public class HoningSteel extends AbstractCustomCard {
         isDamageModified = true;
 
     }
+
+    @Override
+    public void onCardDraw() {
+        damage = baseDamage = DefaultMod.totalMarksConsumedThisCombat;
+        isDamageModified = true;
+        initializeDescription();
+    }
+
 
     public void onConsumeMarks(int numConsumed)
     {

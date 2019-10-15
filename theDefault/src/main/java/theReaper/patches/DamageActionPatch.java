@@ -61,9 +61,9 @@ public class DamageActionPatch {// Don't worry about the "never used" warning - 
                     multiDamage[i] = da.amount;
                 }
                 // usurp the damage call.
-                AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, dt, AbstractGameAction.AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToTop(new SFXAction("ATTACK_HEAVY"));
+                AbstractDungeon.actionManager.addToTop(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
+                AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, dt, AbstractGameAction.AttackEffect.NONE));
                 da.isDone = true;
                 return SpireReturn.Return(null);
             }
