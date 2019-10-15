@@ -22,14 +22,14 @@ public class SoulBlade extends AbstractCustomCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private int actualBaseDamage = 5;
+    private int actualBaseDamage = 8;
 
     public SoulBlade()
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         damage = baseDamage = actualBaseDamage;
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 4;
         magicNumberUp = 2;
 
         baseMagicNumber2 = magicNumber2 = actualBaseDamage;

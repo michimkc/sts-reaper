@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
@@ -57,12 +58,16 @@ public class DeathRattle extends AbstractCustomCard {
     public int getCardDamage(int d)
     {
 
-        int cardDamage;
-        int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
-        int extraDamage = (int)(curHP/magicNumber2)*d;
-        cardDamage = d + extraDamage;
+        if(CardCrawlGame.isInARun()) {
+            int cardDamage;
+            int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+            int extraDamage = (int) (curHP / magicNumber2) * d;
+            cardDamage = d + extraDamage;
 
-        return cardDamage;
+            return cardDamage;
+        }
+        else
+            return d;
     }
 
 

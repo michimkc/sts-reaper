@@ -14,7 +14,7 @@ public class SoulShiftBlockRune extends AbstractSoulShiftRune{
 
     public static final Logger logger = LogManager.getLogger(SoulShiftBlockRune.class.getName());
 
-    public String ID = DefaultMod.makeID("SoulShiftBlockRune");
+    public static String ID = DefaultMod.makeID("SoulShiftBlockRune");
 
     private ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(ID);
     public String[] DESC = reaperString.DESCRIPTIONS;
@@ -30,6 +30,11 @@ public class SoulShiftBlockRune extends AbstractSoulShiftRune{
     public SoulShiftBlockRune()
     {
         this.amount = 12;
+    }
+
+    public String getID()
+    {
+        return ID;
     }
 
     public String getName()

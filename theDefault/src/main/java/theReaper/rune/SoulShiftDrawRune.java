@@ -13,7 +13,7 @@ public class SoulShiftDrawRune extends AbstractSoulShiftRune{
 
     public static final Logger logger = LogManager.getLogger(SoulShiftDrawRune.class.getName());
 
-    public String ID = DefaultMod.makeID("SoulShiftDrawRune");
+    public static String ID = DefaultMod.makeID("SoulShiftDrawRune");
 
     private ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(ID);
     public String[] DESC = reaperString.DESCRIPTIONS;
@@ -30,6 +30,11 @@ public class SoulShiftDrawRune extends AbstractSoulShiftRune{
     public SoulShiftDrawRune()
     {
         this.draw = 2;
+    }
+
+    public String getID()
+    {
+        return ID;
     }
 
     public String getName()

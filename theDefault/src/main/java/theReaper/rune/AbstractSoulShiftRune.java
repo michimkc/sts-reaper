@@ -32,6 +32,8 @@ public abstract class AbstractSoulShiftRune {
 
     }
 
+    public abstract String getID();
+
     public abstract String getName();
 
     public abstract String getDescription();
