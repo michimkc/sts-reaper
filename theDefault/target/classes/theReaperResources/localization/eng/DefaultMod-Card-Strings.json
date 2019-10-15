@@ -14,7 +14,7 @@
   },
   "theReaper:Bulwark": {
     "NAME": "Bulwark",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact."
   },
   "theReaper:ChainStrike": {
     "NAME": "Chain Strike",
@@ -38,8 +38,8 @@
   },
   "theReaper:Cyclone": {
     "NAME": "Cyclone",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your discard pile. NL Other Cyclones cost 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your [#00ff00]draw[] pile. NL Other Cyclones cost 0 this turn."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone into your draw pile. NL Other Cyclones cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. NL Shuffle a Cyclone+ into your draw pile. NL Other Cyclones cost 0 this turn."
   },
   "theReaper:DeathsDance": {
     "NAME": "Death's Dance",
@@ -72,7 +72,7 @@
   "theReaper:EnduringSpirit": {
     "NAME": "Enduring Spirit",
     "DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health ) NL Exhaust NL Innate"
+    "UPGRADE_DESCRIPTION": "Gain !B! Block NL ( 5 Block, plus !M! Block for every !theReaper:M2! missing health )"
   },
   "theReaper:FeralInstincts": {
     "NAME": "Feral Instincts",
@@ -176,6 +176,11 @@
     "NAME": "Maiming Strike",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL Apply !M! Vulnerable"
   },
+  "theReaper:Masochism": {
+    "NAME": "Masochism",
+    "DESCRIPTION": "Whenever you receive a debuff, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Whenever you receive a debuff, draw !M! cards."
+  },
   "theReaper:MasterBall": {
     "NAME": "Master Ball",
     "DESCRIPTION": "NL thereaper:SoulBind !M!"
@@ -187,6 +192,10 @@
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
+  },
+  "theReaper:NimbleStrike": {
+    "NAME": "Nimble Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL Draw !M! cards."
   },
   "theReaper:QuickStep": {
     "NAME": "Quick Step",
@@ -244,10 +253,6 @@
     "NAME": "Shield Ward",
     "DESCRIPTION": "Gain !B! Block. NL Gain !theReaper:SB! thereaper:Bleed. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !theReaper:SB! thereaper:Bleed. NL Innate NL Exhaust"
-  },
-  "theReaper:SwiftStrike": {
-    "NAME": "Swift Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL Draw !M! cards."
   },
   "theReaper:SoulBlade": {
     "NAME": "Soul Blade",

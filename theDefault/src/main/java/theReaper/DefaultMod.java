@@ -449,7 +449,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Devour());
         //BaseMod.addCard(new Effigy());
         BaseMod.addCard(new EnduringSpirit());
-        BaseMod.addCard(new FeralInstincts());
+        //BaseMod.addCard(new FeralInstincts());
         BaseMod.addCard(new FeverDream());
         BaseMod.addCard(new FiendForm());
         BaseMod.addCard(new Fracture());
@@ -471,6 +471,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Lacerate());
         BaseMod.addCard(new LastBreath());
         BaseMod.addCard(new MaimingStrike()); // uncommon attack
+        BaseMod.addCard(new Masochism()); //
         BaseMod.addCard(new Moonflower()); //
         //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new QuickStep());
@@ -486,7 +487,7 @@ public class DefaultMod implements
         BaseMod.addCard(new ShadowStep()); // common attack
         BaseMod.addCard(new ShieldWard()); //
         BaseMod.addCard(new Strike()); // common attack
-        BaseMod.addCard(new SwiftStrike()); // common attack
+        BaseMod.addCard(new NimbleStrike()); // common attack
         BaseMod.addCard(new SoulBlade()); //
         BaseMod.addCard(new Tantrum());
         BaseMod.addCard(new Transfusion());
@@ -515,7 +516,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Devour.ID);
         //UnlockTracker.unlockCard(Effigy.ID);
         UnlockTracker.unlockCard(EnduringSpirit.ID);
-        UnlockTracker.unlockCard(FeralInstincts.ID);
+        //UnlockTracker.unlockCard(FeralInstincts.ID);
         UnlockTracker.unlockCard(FeverDream.ID);
         UnlockTracker.unlockCard(FiendForm.ID);
         UnlockTracker.unlockCard(Fracture.ID);
@@ -537,6 +538,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Lacerate.ID);
         UnlockTracker.unlockCard(LastBreath.ID);
         UnlockTracker.unlockCard(MaimingStrike.ID);
+        UnlockTracker.unlockCard(Masochism.ID);
         UnlockTracker.unlockCard(Moonflower.ID);
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(QuickStep.ID);
@@ -553,7 +555,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(ShieldWard.ID);
         UnlockTracker.unlockCard(SerratedKnife.ID);
         UnlockTracker.unlockCard(SoulBlade.ID);
-        UnlockTracker.unlockCard(SwiftStrike.ID);
+        UnlockTracker.unlockCard(NimbleStrike.ID);
         UnlockTracker.unlockCard(Tantrum.ID);
         UnlockTracker.unlockCard(Transfusion.ID);
         UnlockTracker.unlockCard(Vampirism.ID);

@@ -28,7 +28,7 @@ public class HurricaneStrike extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = 4;
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 4;
         damageUp = 1;
 
         magicNumber2 = baseMagicNumber2 = 1; // how much to increase the # of hits.

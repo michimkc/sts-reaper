@@ -46,6 +46,7 @@ theReaper\potions\PlaceholderPotion.class
 theReaper\cards\Moonflower.class
 theReaper\powers\HuntersTollPower.class
 theReaper\powers\MarkPower.class
+theReaper\powers\MasochismPower.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch$UpdateLocator.class
 theReaper\cards\Hemorrhage.class
 theReaper\powers\VengeancePower.class
@@ -81,10 +82,10 @@ theReaper\characters\TheDefault.class
 theReaper\powers\AbstractBleedPower.class
 theReaper\actions\SoulBindAction.class
 theReaper\rune\SoulShiftDrawRune.class
-theReaper\cards\SwiftStrike.class
 theReaper\patches\DamageActionPatch.class
 theReaper\actions\WhirlingDeathAction.class
 theReaper\patches\CardGroupOldCharmPatch.class
+theReaper\cards\NimbleStrike.class
 theReaper\powers\DeathsDancePower.class
 theReaper\rune\AbstractSoulShiftRune.class
 theReaper\cards\Effigy.class
@@ -134,6 +135,7 @@ theReaper\powers\LaceratePower.class
 theReaper\cards\HiddenTalent.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPreviousScreenPatch.class
 theReaper\cards\InsultToInjury.class
+theReaper\cards\Masochism.class
 theReaper\cards\MaimingStrike.class
 theReaper\cards\Payback.class
 theReaper\util\ReaperStrings.class

@@ -21,7 +21,7 @@ public class DeepCuts extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public DeepCuts()
     {
