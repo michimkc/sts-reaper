@@ -2,6 +2,7 @@ package theReaper.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theReaper.DefaultMod;
@@ -32,7 +33,13 @@ public class EnduringSpirit extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        int curHP = p.maxHealth - p.currentHealth;
+        int curHP;
+        if(CardCrawlGame.isInARun()) {
+            curHP = p.maxHealth - p.currentHealth;
+        } else {
+            curHP = 0;
+        }
+
         int extraBlock = (int)(curHP/magicNumber2)*magicNumber;
         block = baseBlock + extraBlock;
         act(new GainBlockAction(p, p, block));
@@ -43,7 +50,13 @@ public class EnduringSpirit extends AbstractCustomCard {
     {
         super.update();
 
-        int curHP = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+        int curHP;
+        if(CardCrawlGame.isInARun()) {
+            AbstractPlayer p = AbstractDungeon.player;
+            curHP = p.maxHealth - p.currentHealth;
+        } else {
+            curHP = 0;
+        }
         int extraBlock = (int)(curHP/magicNumber2)*magicNumber;
         block = baseBlock + extraBlock;
         isBlockModified = true;

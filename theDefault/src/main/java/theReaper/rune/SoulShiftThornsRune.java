@@ -17,7 +17,7 @@ public class SoulShiftThornsRune extends AbstractSoulShiftRune{
 
     public static final Logger logger = LogManager.getLogger(SoulShiftThornsRune.class.getName());
 
-    public String ID = DefaultMod.makeID("SoulShiftThornsRune");
+    public static String ID = DefaultMod.makeID("SoulShiftThornsRune");
 
     private ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(ID);
     public String[] DESC = reaperString.DESCRIPTIONS;
@@ -33,6 +33,11 @@ public class SoulShiftThornsRune extends AbstractSoulShiftRune{
     public SoulShiftThornsRune()
     {
         this.amount = 3;
+    }
+
+    public String getID()
+    {
+        return ID;
     }
 
     public String getName()

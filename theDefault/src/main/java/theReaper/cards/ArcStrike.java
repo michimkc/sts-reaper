@@ -25,7 +25,7 @@ public class ArcStrike extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        damage = baseDamage = 6;
+        damage = baseDamage = 8;
         baseMagicNumber = magicNumber = 1;
         magicNumberUp = 1;
 

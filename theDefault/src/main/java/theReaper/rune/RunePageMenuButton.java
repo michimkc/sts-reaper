@@ -79,13 +79,7 @@ public class RunePageMenuButton {
     {
        //open menu
         logger.info("Clicked the button. Open the menu then.");
-        if(DefaultMod.currentRune instanceof SoulShiftDrawRune)
-        {
-            SoulManager.soulShift(new SoulShiftEnergyRune());
-        } else
-        {
-            SoulManager.soulShift(new SoulShiftDrawRune());
-        }
+
     }
 
     public void update() {

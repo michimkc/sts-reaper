@@ -14,7 +14,7 @@ public class SoulShiftEnergyRune extends AbstractSoulShiftRune{
 
     public static final Logger logger = LogManager.getLogger(SoulShiftEnergyRune.class.getName());
 
-    public String ID = DefaultMod.makeID("SoulShiftEnergyRune");
+    public static String ID = DefaultMod.makeID("SoulShiftEnergyRune");
 
     private ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(ID);
     public String[] DESC = reaperString.DESCRIPTIONS;
@@ -30,6 +30,11 @@ public class SoulShiftEnergyRune extends AbstractSoulShiftRune{
     public SoulShiftEnergyRune()
     {
         this.amount = 2;
+    }
+
+    public String getID()
+    {
+        return ID;
     }
 
     public String getName()

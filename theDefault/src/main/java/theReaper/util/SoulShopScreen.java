@@ -17,6 +17,7 @@ import theReaper.DefaultMod;
 import theReaper.actions.CustomGameAction;
 import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.ReaperEnums;
+import theReaper.rune.*;
 import theReaper.souls.AbstractSoul;
 
 import java.util.ArrayList;
@@ -38,10 +39,35 @@ public class SoulShopScreen {
     public boolean waitThenClose = false;
     public float waitToCloseTimer = 0.0F;
 
+    public ArrayList<SoulShiftBaseButton> soulShiftButtonList;
+
+
+    public static float defaultHeight = Settings.HEIGHT/2.0F + 160.0F * Settings.scale;
+    public static float heightSpacer =( SoulShiftBaseButton.textureHeight + 20F )* Settings.scale;
+    public static float defaultWidth = 150*Settings.scale;
 
     public SoulShopScreen()
     {
         logger.info("making soul shop screen");
+        soulShiftButtonList = new ArrayList<>();
+        makeSoulShiftButtons();
+    }
+
+    public void makeSoulShiftButtons()
+    {
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftDrawRune()));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftEnergyRune()));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftBlockRune()));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftThornsRune()));
+
+
+        for (int i = 0; i < soulShiftButtonList.size(); i++)
+        {
+            soulShiftButtonList.get(i).tX = defaultWidth;
+            soulShiftButtonList.get(i).tY = defaultHeight - heightSpacer*i;
+            soulShiftButtonList.get(i).deActivate();
+        }
+        soulShiftButtonList.get(0).onUse();
     }
 
     public void update(){
@@ -53,6 +79,8 @@ public class SoulShopScreen {
                 finished();
             }
         }
+
+        soulShiftButtonList.forEach(s -> s.update());
 
         this.confirmButton.update();
         if (this.confirmButton.hb.clicked || CInputActionSet.proceed.isJustPressed() || InputActionSet.confirm.isJustPressed()) {
@@ -110,6 +138,10 @@ public class SoulShopScreen {
     public void render(SpriteBatch sb) {
         FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.message, (Settings.WIDTH / 2), Settings.HEIGHT - 180.0F * Settings.scale, Settings.CREAM_COLOR);
 
+        for (int i = 0; i < soulShiftButtonList.size(); i++)
+        {
+            soulShiftButtonList.get(i).render(sb);
+        }
         this.confirmButton.render(sb);
 
     }

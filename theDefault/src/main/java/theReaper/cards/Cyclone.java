@@ -41,6 +41,7 @@ public class Cyclone extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         damage = baseDamage = 7;
+        damageUp = 3;
         isMultiDamage = true;
 
     }
@@ -73,14 +74,13 @@ public class Cyclone extends AbstractCustomCard {
         actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
         actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-
-        if(upgraded) {
-            actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Cyclone(), 1, true, true));
-        }
-        else
+        AbstractCard cycloneCard = new Cyclone();
+        if(upgraded)
         {
-            actionManager.addToBottom(new MakeTempCardInDiscardAction(new Cyclone(), 1));
+            cycloneCard.upgrade();
         }
+        actionManager.addToBottom(new MakeTempCardInDrawPileAction(cycloneCard, 1, true, true));
+        //actionManager.addToBottom(new MakeTempCardInDiscardAction(new Cyclone(), 1));
 
     }
 

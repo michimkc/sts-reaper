@@ -32,6 +32,7 @@ theReaper\rune\SoulShiftBlockRune.class
 theReaper\powers\FeralInstinctsPower.class
 theReaper\actions\AbstractSoulOnAfterUseAction.class
 theReaper\cards\Contagion.class
+theReaper\rune\SoulShiftBaseButton.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch.class
 theReaper\cards\Defend.class
 theReaper\cards\Hemoplague.class
