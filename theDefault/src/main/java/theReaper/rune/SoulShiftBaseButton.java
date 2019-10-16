@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -102,7 +103,8 @@ public class SoulShiftBaseButton {
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
         sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, textureWidth, textureHeight, Settings.scale, Settings.scale, 0, 0, 0, 299, 156, false, false);
 
-
+        Color tmpColor = Settings.LIGHT_YELLOW_COLOR;
+        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.name, this.tX, this.tY, tmpColor);
         hb.render(sb);
     }
 
