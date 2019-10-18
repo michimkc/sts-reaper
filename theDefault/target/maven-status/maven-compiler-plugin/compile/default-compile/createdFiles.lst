@@ -73,6 +73,7 @@ theReaper\patches\BootNonLethalPatch.class
 theReaper\cards\ChainStrike.class
 theReaper\cards\Safeguard.class
 theReaper\cards\SanguineArmour.class
+theReaper\rune\AbstractSoulShopButton.class
 theReaper\util\SoulSelectScreen.class
 theReaper\patches\BootNonLethalPatch$BootOnAttackToChangeDamagePatch.class
 theReaper\actions\CustomGameAction.class

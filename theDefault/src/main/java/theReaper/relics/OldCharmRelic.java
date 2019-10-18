@@ -16,11 +16,6 @@ import static theReaper.DefaultMod.makeRelicPath;
 
 public class OldCharmRelic extends CustomRelic {
 
-    /*
-     * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
-     *
-     * When you kill an enemy, gain 1 hp
-     */
 
     // ID, images, text.
     public static final String ID = DefaultMod.makeID("OldCharmRelic");

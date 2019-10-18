@@ -119,7 +119,8 @@
   },
   "theReaper:HastyGrab": {
     "NAME": "HastyGrab",
-    "DESCRIPTION": "Draw !M! Cards. NL Gain !theReaper:SB! thereaper:Bleed"
+    "DESCRIPTION": "Draw !M! Card, Gain [B] NL Gain !theReaper:SB! thereaper:Bleed NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards, Gain [B] NL Gain !theReaper:SB! thereaper:Bleed NL Exhaust"
   },
   "theReaper:Hemoplague": {
     "NAME": "Hemoplague",
