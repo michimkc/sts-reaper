@@ -476,6 +476,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new MasterBall());
         BaseMod.addCard(new QuickStep());
         BaseMod.addCard(new Reap());
+        BaseMod.addCard(new RecklessSwing());
         BaseMod.addCard(new RendingStrike()); // uncommon skill
         BaseMod.addCard(new Regroup()); // uncommon skill
         BaseMod.addCard(new RiteoftheBlade()); // rare power
@@ -543,6 +544,7 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(MasterBall.ID);
         UnlockTracker.unlockCard(QuickStep.ID);
         UnlockTracker.unlockCard(Reap.ID);
+        UnlockTracker.unlockCard(RecklessSwing.ID);
         UnlockTracker.unlockCard(Regroup.ID);
         UnlockTracker.unlockCard(RendingStrike.ID);
         UnlockTracker.unlockCard(RiteoftheBlade.ID);

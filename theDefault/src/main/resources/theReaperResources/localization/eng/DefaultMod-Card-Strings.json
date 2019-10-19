@@ -18,11 +18,12 @@
   },
   "theReaper:ChainStrike": {
     "NAME": "Chain Strike",
-    "DESCRIPTION": "Deal !D! Damage NL ( !theReaper:M2! Damage, plus !M! Damage for every attack played this turn."
+    "DESCRIPTION": "Deal !D! Damage for each attack played this turn."
   },
   "theReaper:Cleanse": {
     "NAME": "Cleanse",
-    "DESCRIPTION": "Remove all Debuffs. NL Exhaust"
+    "DESCRIPTION": "Remove all Debuffs. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Remove all Debuffs."
   },
   "theReaper:Contagion": {
     "NAME": "Contagion",
@@ -206,6 +207,10 @@
     "NAME": "Reap",
     "DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind NL Exhaust",
     "UPGRADE_DESCRIPTION": "Deal !D! thereaper:Non-Lethal Damage. NL thereaper:SoulBind"
+  },
+  "theReaper:RecklessSwing": {
+    "NAME": "Reckless Swing",
+    "DESCRIPTION": "Deal !D! Damage NL Gain !theReaper:SB! thereaper:Bleed"
   },
   "theReaper:Regroup": {
     "NAME": "Regroup",

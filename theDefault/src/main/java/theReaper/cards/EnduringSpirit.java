@@ -64,6 +64,7 @@ public class  EnduringSpirit extends AbstractCustomCard {
         initializeDescription();
     }
 
+
     public void upgrade()
     {
         super.upgrade();

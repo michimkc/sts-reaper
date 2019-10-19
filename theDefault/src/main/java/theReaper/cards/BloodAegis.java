@@ -26,14 +26,17 @@ public class BloodAegis extends AbstractCustomCard {
     public BloodAegis() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        newCost = 1;
+
 
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new BloodAegisAction());
+
+        act(new BloodAegisAction()
+
+        );
     }
 
 }

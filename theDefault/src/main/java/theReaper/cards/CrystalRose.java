@@ -38,11 +38,10 @@ public class CrystalRose extends AbstractCustomCard {
 
     @Override
     public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
+
         AbstractPlayer p = AbstractDungeon.player;
         act(new GainBlockAction(p,p,block));
     }
-
 
     // Actions the card should do.
     @Override

@@ -34,10 +34,6 @@ public class ChainStrike extends AbstractCustomCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         damage = baseDamage = 5;
         damageUp = 2;
-        baseMagicNumber = magicNumber = 5;
-        magicNumberUp = 2;
-
-        magicNumber2 = baseMagicNumber2 = damage;
 
         this.tags.add(CardTags.STRIKE);
     }
@@ -46,47 +42,14 @@ public class ChainStrike extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        int attacksPlayedThisTurn = getAttacksPlayedThisTurn() - 1; // dont count this card
-        int bonus = magicNumber * attacksPlayedThisTurn;
-        damage = baseDamage + bonus;
-        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-    }
-
-    public void update()
-    {
-        super.update();
-
-        damage = getCardDamage();
-        if(damage != baseDamage) {
-            isDamageModified = true;
+        int attacksPlayedThisTurn = getAttacksPlayedThisTurn(); // dont count this card
+        for(int i = 0; i < attacksPlayedThisTurn; i++) {
+            act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
-        initializeDescription();
-
-    }
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-
-        damage = getCardDamage();
-        if(damage != baseDamage) {
-            isDamageModified = true;
-        }
-        initializeDescription();
 
     }
 
-    public int getCardDamage()
-    {
-
-        int attacksPlayedThisTurn = getAttacksPlayedThisTurn();
-        int bonus = magicNumber * attacksPlayedThisTurn;
-
-        int tempDamage = baseDamage+bonus;
-
-
-        return tempDamage;
-    }
     public int getAttacksPlayedThisTurn()
     {
         int attacksPlayedThisTurn = 0;

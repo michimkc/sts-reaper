@@ -15,7 +15,7 @@ public class ArcStrike extends AbstractCustomCard {
 
     public static final String ID = DefaultMod.makeID("ArcStrike");
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
