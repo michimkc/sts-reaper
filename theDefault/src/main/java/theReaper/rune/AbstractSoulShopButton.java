@@ -23,6 +23,10 @@ public abstract class AbstractSoulShopButton {
 
     public static final Logger logger = LogManager.getLogger(AbstractSoulShopButton.class.getName());
 
+    public enum ShopButtonType {
+        SOULSHIFT,
+        POWER
+    }
 
     protected Color c = Settings.CREAM_COLOR.cpy();
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);

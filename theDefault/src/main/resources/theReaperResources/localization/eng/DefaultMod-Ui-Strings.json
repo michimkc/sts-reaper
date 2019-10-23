@@ -1,7 +1,7 @@
 {
-  "BloodAegisAction": {
+  "AegisAction": {
     "TEXT": [
-      "No one is bleeding..."
+      "No debuffs in play..."
     ]
   },
   "SoulBindAction": {

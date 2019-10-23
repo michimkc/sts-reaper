@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
+import theReaper.actions.MoveCardToTopOfDeckAction;
 import theReaper.patches.AbstractDungeonScreenPatch;
 
 public class Moonflower extends AbstractCustomCard {
@@ -24,7 +25,6 @@ public class Moonflower extends AbstractCustomCard {
     private static final Logger logger = LogManager.getLogger(Moonflower.class.getName());
 
     public static final String ID = DefaultMod.makeID("Moonflower");
-    public static final String[] EXTENDED_DESCRIPTION = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -65,12 +65,7 @@ public class Moonflower extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-
+        act(new MoveCardToTopOfDeckAction(this));
     }
 
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
-        return false;
-    }
 }

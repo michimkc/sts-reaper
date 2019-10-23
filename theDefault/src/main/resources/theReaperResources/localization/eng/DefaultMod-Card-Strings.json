@@ -4,9 +4,10 @@
     "DESCRIPTION": "Deal !D! Damage. For every mark consumed deal that amount as additional damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. For every mark consumed deal [#FFBF00]twice[] that amount as additional damage."
   },
-  "theReaper:BloodAegis": {
-    "NAME": "Blood Aegis",
-    "DESCRIPTION": "Remove all stacks of bleed from all creatures in the room. Gain block for each stack removed"
+  "theReaper:Aegis": {
+    "NAME": "Aegis",
+    "DESCRIPTION": "Remove all debuff stacks from all creatures in the room. Gain block for each stack removed NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Remove all debuff stacks from all creatures in the room. Gain block for each stack removed. "
   },
   "theReaper:HuntersToll": {
     "NAME": "Hunter's Toll",
@@ -60,7 +61,7 @@
   },
   "theReaper:Devour": {
     "NAME": "Devour",
-    "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, heal !M! percent of your max HP. NL Exhaust"
+    "DESCRIPTION": "Deal !D! Damage. If the targeted enemy dies this turn, heal !M! percent of your max HP. NL Exhaust"
   },
   "theReaper:Effigy": {
     "NAME": "Effigy",
@@ -189,11 +190,8 @@
   },
   "theReaper:Moonflower": {
     "NAME": "Moonflower",
-    "DESCRIPTION": "Unplayable. NL Gain [B] [B] if this card is drawn after turn start and Exhaust.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [B] [B] [B] if this card is drawn after turn start and Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "I can't play this card."
-    ]
+    "DESCRIPTION": "Play to place Moonflower on top of your draw pile. NL Gain [B] [B] if this card is drawn after turn start and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play to place Moonflower on top of your draw pile. NL Gain [B] [B] [B] if this card is drawn after turn start and Exhaust."
   },
   "theReaper:NimbleStrike": {
     "NAME": "Nimble Strike",

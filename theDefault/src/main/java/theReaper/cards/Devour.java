@@ -38,7 +38,7 @@ public class Devour extends AbstractCustomCard {
 
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        act(new DevourAction(m, this.magicNumber));
+        act(new DevourAction(m, this.magicNumber, true));
 
     }
 

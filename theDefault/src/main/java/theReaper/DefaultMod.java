@@ -433,7 +433,7 @@ public class DefaultMod implements
 
         BaseMod.addCard(new ArcStrike());
         BaseMod.addCard(new Bulwark());
-        BaseMod.addCard(new BloodAegis());
+        BaseMod.addCard(new Aegis());
         BaseMod.addCard(new HuntersToll());
         BaseMod.addCard(new Cleanse()); // uncommon skill
         BaseMod.addCard(new ChainStrike());
@@ -501,7 +501,7 @@ public class DefaultMod implements
         // before playing your mod.
         UnlockTracker.unlockCard(ArcStrike.ID);
         UnlockTracker.unlockCard(Bulwark.ID);
-        UnlockTracker.unlockCard(BloodAegis.ID);
+        UnlockTracker.unlockCard(Aegis.ID);
         UnlockTracker.unlockCard(HuntersToll.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(ChainStrike.ID);
