@@ -29,6 +29,7 @@ import theReaper.characters.TheDefault;
 import theReaper.orbs.DefaultOrb;
 import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.souls.HollowSoul;
+import theReaper.souls.KingSoul;
 import theReaper.souls.LostSoul;
 
 public class SoulBindAction extends AbstractGameAction {
@@ -77,7 +78,7 @@ public class SoulBindAction extends AbstractGameAction {
 
                 if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.BOSS)
                 {
-                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new KingSoul()));
                 } else if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.ELITE)
                 {
                     AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));

@@ -45,6 +45,7 @@ theReaper\rune\RunePageMenuButton.class
 theReaper\cards\Guillotine.class
 theReaper\patches\GameActionManagerPatch$clearPatch.class
 theReaper\powers\PaybackPower.class
+theReaper\rune\RelicEggSlicerRune.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\cards\Moonflower.class
 theReaper\powers\HuntersTollPower.class
@@ -80,6 +81,7 @@ theReaper\rune\AbstractSoulShopButton.class
 theReaper\util\SoulSelectScreen.class
 theReaper\patches\BootNonLethalPatch$BootOnAttackToChangeDamagePatch.class
 theReaper\actions\CustomGameAction.class
+theReaper\souls\KingSoul.class
 theReaper\cards\AbstractDynamicCard.class
 theReaper\cards\Tantrum.class
 theReaper\characters\TheDefault.class
@@ -153,6 +155,7 @@ theReaper\relics\DefaultClickableRelic.class
 theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
 theReaper\souls\SoulTip.class
 theReaper\actions\EffigyAction.class
+theReaper\relics\EggSlicerRelic.class
 theReaper\powers\GluttonyPower.class
 theReaper\actions\SetBootEnabledAction.class
 theReaper\cards\ShieldWard.class

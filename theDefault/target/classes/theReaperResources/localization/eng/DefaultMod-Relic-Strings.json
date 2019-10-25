@@ -1,16 +1,23 @@
 {
+  "theReaper:EggSlicerRelic": {
+    "NAME": "Egg Slicer",
+    "FLAVOR": "Luxury breakfast at your fingertips",
+    "DESCRIPTIONS": [
+      "In battle, using a King soul creates two Hollow souls. Using a Hollow soul creates two Lost souls."
+    ]
+  },
   "theReaper:OldCharmRelic": {
-    "NAME": "Old Charm Relic",
+    "NAME": "Old Charm",
     "FLAVOR": "A chipped stone carved into the shape of a beast. It emits warmth when wet by blood.",
     "DESCRIPTIONS": [
       "The first card that would be exhausted each combat is instead discarded."
     ]
   },
   "theReaper:SoulShifterRelic": {
-    "NAME": "Soulshifter Relic",
+    "NAME": "Soul Shifter",
     "FLAVOR": "The souls bend to her whims.",
     "DESCRIPTIONS": [
-      "The essence of a soul can be changed during battle for #b1 [E]."
+      "The essence of a soul can be changed during battle for #b1 energy."
     ]
   },
   "theReaper:PlaceholderRelic": {

@@ -394,6 +394,7 @@ public class DefaultMod implements
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new OldCharmRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new EggSlicerRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SoulShifterRelic(), TheDefault.Enums.COLOR_GRAY);
 
 

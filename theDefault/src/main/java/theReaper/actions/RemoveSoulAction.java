@@ -18,7 +18,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.patches.AbstractPlayerSoulsPatch;
+import theReaper.relics.EggSlicerRelic;
 import theReaper.souls.AbstractSoul;
+import theReaper.souls.HollowSoul;
+import theReaper.souls.KingSoul;
 import theReaper.souls.LostSoul;
 import theReaper.util.SoulManager;
 
@@ -61,11 +64,25 @@ public class RemoveSoulAction extends AbstractGameAction {
 
         if (this.duration == 0.5F) {
             logger.info("Removing soul from player souls: " + soul.name);
+            String soulName = soul.getSoulName();
             AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).remove(soul.index);
             SoulManager.updateSoulIndices();
             if(noDuration = true)
             {
                 this.isDone = true;
+            }
+
+            if(AbstractDungeon.player.hasRelic(EggSlicerRelic.ID))
+            {
+                if (soulName == KingSoul.soulName) {
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+                } else if (soulName == HollowSoul.soulName)
+                {
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+
+                }
             }
         }
 

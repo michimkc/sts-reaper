@@ -70,6 +70,7 @@ public class SoulShopScreen {
     public void makeRelicButtons()
     {
         relicButtonList.add(new RelicBaseButton(new RelicSoulShiftRune(), this));
+        relicButtonList.add(new RelicBaseButton(new RelicEggSlicerRune(), this));
 
         for (int i = 0; i < relicButtonList.size(); i++)
         {

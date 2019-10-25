@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
+import theReaper.actions.SoulGemAction;
+import theReaper.relics.EggSlicerRelic;
 import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
 

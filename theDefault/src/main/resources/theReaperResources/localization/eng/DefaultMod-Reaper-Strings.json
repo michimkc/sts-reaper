@@ -24,6 +24,12 @@
       "A black, murky soul that smells of ash. It wails with anguish."
     ]
   },
+  "theReaper:KingSoul": {
+    "NAME": "King Soul",
+    "DESCRIPTIONS": [
+      "A vibrant soul radiant with power."
+    ]
+  },
   "theReaper:SoulAction": {
     "NAME": "Click to Consume",
     "DESCRIPTIONS": [
@@ -34,6 +40,12 @@
     "NAME": "Essence",
     "DESCRIPTIONS": [
       "The primal essence of a soul."
+    ]
+  },
+  "theReaper:RelicEggSlicerRune": {
+    "NAME": "Egg Slicer",
+    "DESCRIPTIONS": [
+      "In battle, using a King soul creates one Hollow Soul and one Lost Soul. Using a Hollow Soul creates two Lost Souls."
     ]
   },
   "theReaper:RelicSoulShiftRune": {

@@ -14,9 +14,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.RemoveSoulAction;
+import theReaper.actions.SoulGemAction;
 import theReaper.characters.TheDefault;
 import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.AbstractPlayerSoulsPatch;
+import theReaper.relics.EggSlicerRelic;
 import theReaper.rune.AbstractSoulShiftRune;
 import theReaper.souls.AbstractSoul;
 import theReaper.souls.HollowSoul;
@@ -95,6 +97,7 @@ public class SoulManager implements CustomSavable<String> {
     public static void RemoveSoul(AbstractSoul soul)
     {
         AbstractDungeon.actionManager.addToBottom(new RemoveSoulAction(AbstractDungeon.player,soul));
+
     }
 
     public static void RemoveSoul(AbstractSoul soul, boolean noDuration) // noDuration should be true to make the removal instant.
