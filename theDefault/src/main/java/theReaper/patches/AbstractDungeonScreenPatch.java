@@ -60,7 +60,7 @@ public class AbstractDungeonScreenPatch {
             AbstractDungeon.CurrentScreen curScreen = AbstractDungeon.screen;
             if(AbstractDungeon.screen == ReaperEnums.SOULSELECTSCREEN || AbstractDungeon.screen == ReaperEnums.SOULSHOPSCREEN) {
 
-                logger.info("current screen is soul select screen. Closing.");
+                logger.info("current screen is " + AbstractDungeon.screen + ". Closing.");
 
                 if(CardCrawlGame.dungeon.previousScreen == CardCrawlGame.dungeon.screen)
                 {
@@ -95,9 +95,11 @@ public class AbstractDungeonScreenPatch {
                     CardCrawlGame.dungeon.previousScreen = null;
                     CardCrawlGame.dungeon.isScreenUp = true;
                     try {
-                    Method openPreviousScreen = AbstractDungeon.class.getDeclaredMethod("openPreviousScreen", Screen.class);
-                    openPreviousScreen.setAccessible(true);
-                    openPreviousScreen.invoke(AbstractDungeon.class, CardCrawlGame.dungeon.screen);
+                        Class[] arg = new Class[1];
+                        arg[0] = AbstractDungeon.CurrentScreen.class;
+                        Method openPreviousScreen = AbstractDungeon.class.getDeclaredMethod("openPreviousScreen", arg);
+                        openPreviousScreen.setAccessible(true);
+                        openPreviousScreen.invoke(AbstractDungeon.class, CardCrawlGame.dungeon.screen);
                     } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 
                         e.printStackTrace();
@@ -123,14 +125,17 @@ public class AbstractDungeonScreenPatch {
             logger.info("Reopening Screen: " + s[0]);
             if(s[0] == ReaperEnums.SOULSELECTSCREEN) {
                 overlayMenu.hideBlackScreen();
+                logger.info("Reopening Soul Select Screen");
                 AbstractDungeonScreenPatch.soulSelectScreen.get(CardCrawlGame.dungeon).reopen();
                 SpireReturn.Return(null);
             }
             if(s[0] == ReaperEnums.SOULSHOPSCREEN) {
                 overlayMenu.hideBlackScreen();
+                logger.info("Reopening Soul Shop Screen");
                 AbstractDungeonScreenPatch.soulShopScreen.get(CardCrawlGame.dungeon).reopen();
                 SpireReturn.Return(null);
             }
+            SpireReturn.Continue();
         }
     }
 

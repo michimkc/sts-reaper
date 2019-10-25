@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.util.ReaperStrings;
 
-public abstract class AbstractSoulShiftRune {
+public abstract class AbstractSoulShiftRune extends AbstractRune {
 
 
     public static final Logger logger = LogManager.getLogger(AbstractSoulShiftRune.class.getName());
@@ -28,15 +28,9 @@ public abstract class AbstractSoulShiftRune {
     public String name;
 
     public AbstractSoulShiftRune() {
-
-
+        super();
     }
 
-    public abstract String getID();
-
-    public abstract String getName();
-
-    public abstract String getDescription();
 
     public void onUse()
     {

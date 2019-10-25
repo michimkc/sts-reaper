@@ -19,16 +19,17 @@ public class SoulShiftBlockRune extends AbstractSoulShiftRune{
     private ReaperStrings reaperString = DefaultMod.ReaperStringsMap.get(ID);
     public String[] DESC = reaperString.DESCRIPTIONS;
     public String name = reaperString.NAME;
+    public static final String imgURL = "theReaperResources/images/ui/greyrunebutton.png";
 
     public int amount;
 
     public SoulShiftBlockRune(int amount) {
-
+        super();
         this.amount = amount;
     }
 
-    public SoulShiftBlockRune()
-    {
+    public SoulShiftBlockRune() {
+        super();
         this.amount = 12;
     }
 
@@ -54,7 +55,7 @@ public class SoulShiftBlockRune extends AbstractSoulShiftRune{
 
     public SoulShiftBlockRune makeCopy()
     {
-        return new SoulShiftBlockRune(this.amount);
+        return new SoulShiftBlockRune();
     }
 
     public void act(AbstractGameAction action) {

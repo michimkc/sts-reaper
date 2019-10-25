@@ -40,32 +40,62 @@ public class SoulShopScreen {
     public float waitToCloseTimer = 0.0F;
 
     public ArrayList<SoulShiftBaseButton> soulShiftButtonList;
+    public ArrayList<RelicBaseButton> relicButtonList;
 
 
-    public static float defaultHeight = Settings.HEIGHT/2.0F + 160.0F * Settings.scale;
+    public static float defaultHeight = Settings.HEIGHT - (300.0F * Settings.scale);
     public static float heightSpacer =( SoulShiftBaseButton.textureHeight + 20F )* Settings.scale;
     public static float defaultWidth = 150*Settings.scale;
+    public static float widthSpacer = (SoulShiftBaseButton.textureWidth + 20F ) * Settings.scale;
 
     public SoulShopScreen()
     {
         logger.info("making soul shop screen");
         soulShiftButtonList = new ArrayList<>();
         makeSoulShiftButtons();
+        relicButtonList = new ArrayList<>();
+        makeRelicButtons();
+    }
+
+    public void activateAllSoulShiftButtons(boolean activate)
+    {
+        soulShiftButtonList.forEach(s -> s.runeActivated = activate);
+    }
+
+    public void enableAllSoulShiftButtons(boolean enable)
+    {
+        soulShiftButtonList.forEach(s -> s.buttonEnabled = enable);
+    }
+
+    public void makeRelicButtons()
+    {
+        relicButtonList.add(new RelicBaseButton(new RelicSoulShiftRune(), this));
+
+        for (int i = 0; i < relicButtonList.size(); i++)
+        {
+            RelicBaseButton b = relicButtonList.get(i);
+            b.tX = defaultWidth + defaultWidth + widthSpacer;
+            b.tY = defaultHeight - heightSpacer*i;
+            b.buttonEnabled = true;
+            logger.info("making button : " + b.name + " at coords ( " + b.tX + ", " + b.tY + " )");
+        }
     }
 
     public void makeSoulShiftButtons()
     {
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftDrawRune()));
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftEnergyRune()));
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftBlockRune()));
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftThornsRune()));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftDrawRune(), this));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftEnergyRune(), this));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftBlockRune(), this));
+        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftThornsRune(), this));
 
 
         for (int i = 0; i < soulShiftButtonList.size(); i++)
         {
-            soulShiftButtonList.get(i).tX = defaultWidth;
-            soulShiftButtonList.get(i).tY = defaultHeight - heightSpacer*i;
-            soulShiftButtonList.get(i).deActivate();
+            SoulShiftBaseButton b = soulShiftButtonList.get(i);
+            b.tX = defaultWidth;
+            b.tY = defaultHeight - heightSpacer*i;
+            b.buttonEnabled = true;
+            logger.info("making button : " + b.name + " at coords ( " + b.tX + ", " + b.tY + " )");
         }
         soulShiftButtonList.get(0).onUse();
     }
@@ -81,6 +111,7 @@ public class SoulShopScreen {
         }
 
         soulShiftButtonList.forEach(s -> s.update());
+        relicButtonList.forEach(s -> s.update());
 
         this.confirmButton.update();
         if (this.confirmButton.hb.clicked || CInputActionSet.proceed.isJustPressed() || InputActionSet.confirm.isJustPressed()) {
@@ -95,6 +126,8 @@ public class SoulShopScreen {
     public void finished()
     {
         logger.info("finished. running Finish script.");
+
+        logger.info("currentScreen is : " + AbstractDungeon.screen + ", previous screen is: " + AbstractDungeon.previousScreen);
 
         AbstractDungeon.closeCurrentScreen();
     }
@@ -116,6 +149,7 @@ public class SoulShopScreen {
         this.waitThenClose = false;
         this.waitToCloseTimer = 0.0F;
         AbstractDungeon.isScreenUp = true;
+        //AbstractDungeon.previousScreen = AbstractDungeon.screen;
         AbstractDungeon.screen = ReaperEnums.SOULSHOPSCREEN;
         AbstractDungeon.player.hand.stopGlowing();
         AbstractDungeon.player.hand.refreshHandLayout();
@@ -125,7 +159,7 @@ public class SoulShopScreen {
         this.confirmButton.show();
         this.confirmButton.isDisabled = false;
 
-        logger.info("isScreenUp: " + AbstractDungeon.isScreenUp + " , and currentScreen is : " + AbstractDungeon.screen);
+        logger.info("isScreenUp: " + AbstractDungeon.isScreenUp + " , currentScreen is : " + AbstractDungeon.screen + ", previous screen is: " + AbstractDungeon.previousScreen);
 
     }
     public void reopen() {
@@ -141,6 +175,10 @@ public class SoulShopScreen {
         for (int i = 0; i < soulShiftButtonList.size(); i++)
         {
             soulShiftButtonList.get(i).render(sb);
+        }
+        for( int i = 0; i < relicButtonList.size(); i++)
+        {
+            relicButtonList.get(i).render(sb);
         }
         this.confirmButton.render(sb);
 

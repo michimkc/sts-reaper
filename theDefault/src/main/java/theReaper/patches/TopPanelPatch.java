@@ -45,9 +45,6 @@ public class TopPanelPatch {
             if (AbstractDungeon.screen == ReaperEnums.SOULSELECTSCREEN) {
                AbstractDungeon.previousScreen = ReaperEnums.SOULSELECTSCREEN;
             }
-            if (AbstractDungeon.screen == ReaperEnums.SOULSHOPSCREEN) {
-                AbstractDungeon.previousScreen = ReaperEnums.SOULSHOPSCREEN;
-            }
         }
     }
 

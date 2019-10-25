@@ -32,7 +32,7 @@
   },
   "theReaper:CrimsonRush": {
     "NAME": "Crimson Rush",
-    "DESCRIPTION": "Deal !D! Damage. If target is thereaper:bleeding deal !M! additional damage."
+    "DESCRIPTION": "Deal !D! Damage twice. NL If target is thereaper:bleeding apply !M! Weak"
   },
   "theReaper:CrystalRose": {
     "NAME": "Crystal Rose",

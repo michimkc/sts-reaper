@@ -47,22 +47,23 @@ public abstract class AbstractRune {
 
     public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureWidth * Settings.scale);
 
-    public AbstractRune(String imgUrl, String runeID, String name, String description) {
-        this.img = ImageMaster.loadImage(imgUrl);
-        this.ID = runeID;
-        this.name = name;
-        this.description = description;
+    public AbstractRune() {
+
         this.tX = 0;
         this.tY = 0;
 
     }
 
-    public abstract void updateDescription();
-
     public void onUse()
     {
 
     }
+
+    public abstract String getID();
+
+    public abstract String getName();
+
+    public abstract String getDescription();
 
     public abstract AbstractRune makeCopy();
 

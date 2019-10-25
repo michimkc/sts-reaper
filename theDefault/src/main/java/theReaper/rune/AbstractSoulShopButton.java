@@ -4,17 +4,16 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.TipHelper;
-import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
-import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.util.SoulManager;
+import theReaper.util.SoulShopScreen;
 
 public abstract class AbstractSoulShopButton {
     public String name;
@@ -22,11 +21,6 @@ public abstract class AbstractSoulShopButton {
     public String ID;
 
     public static final Logger logger = LogManager.getLogger(AbstractSoulShopButton.class.getName());
-
-    public enum ShopButtonType {
-        SOULSHIFT,
-        POWER
-    }
 
     protected Color c = Settings.CREAM_COLOR.cpy();
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
@@ -38,15 +32,16 @@ public abstract class AbstractSoulShopButton {
     public static float textureWidth = 299F;
     public static float textureHeight = 156F;
 
-    public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureWidth * Settings.scale);
+    public Hitbox hb;
 
     public static final String imgURL = "theReaperResources/images/ui/greyrunebutton.png";
-    public boolean used = false;
+    public boolean runeActivated = false;
 
-    public AbstractSoulShiftRune rune;
-    public boolean activated = false;
+    public AbstractRune rune;
+    public boolean buttonEnabled = false;
+    public SoulShopScreen parentScreen;
 
-    public AbstractSoulShopButton(AbstractSoulShiftRune rune) {
+    public AbstractSoulShopButton(AbstractRune rune, SoulShopScreen scr) {
         this.img = ImageMaster.loadImage(imgURL);
         this.ID = rune.getID();
         this.name = rune.getName();
@@ -54,49 +49,32 @@ public abstract class AbstractSoulShopButton {
         this.tX = 0;
         this.tY = 0;
         this.rune = rune;
+        this.hb = new Hitbox(textureWidth * Settings.scale, textureHeight * Settings.scale);
+        this.parentScreen = scr;
     }
 
 
-    public abstract void onUse();
+    public void onUse() {
 
-    public void deActivate()
-    {
-        this.activated = false;
-        logger.info("DEACTIVATED");
-    }
+        if(this.rune instanceof AbstractSoulShiftRune) {
+            SoulManager.soulShift((AbstractSoulShiftRune) this.rune);
 
+            parentScreen.activateAllSoulShiftButtons(false);
+            parentScreen.enableAllSoulShiftButtons(true);
+            this.buttonEnabled = false;
+            this.runeActivated = true;
 
-    public void update() {
-        this.hb.move(this.tX, this.tY);
-        this.hb.update();
-        if (this.hb.hovered) {
-            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 300.0F) * Settings.scale, this.name, this.description);
-
-            if (InputHelper.justClickedLeft) {
-                InputHelper.justClickedLeft = false;
-                this.hb.clickStarted = true;
-            }
-        }
-        if (!used) {
-            if (this.hb.clicked || CInputActionSet.select.isJustPressed()) {
-                CInputActionSet.select.unpress();
-                this.hb.clicked = false;
-
-                onUse();
-                activated = true;
-                used = true;
-            }
+        } else if (this.rune instanceof AbstractRelicRune)
+        {
+            this.rune.onUse();
+            this.buttonEnabled = false;
+            this.runeActivated = true;
         }
     }
 
-    public void render(SpriteBatch sb) {
-        sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
-        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, textureWidth, textureHeight, Settings.scale, Settings.scale, 0, 0, 0, 299, 156, false, false);
+    public abstract void update();
 
-        Color tmpColor = Settings.LIGHT_YELLOW_COLOR;
-        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.name, this.tX, this.tY, tmpColor);
-        hb.render(sb);
-    }
+    public abstract void render(SpriteBatch sb);
 
     public void act(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);

@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.RemoveSoulAction;
 import theReaper.characters.TheDefault;
+import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.rune.AbstractSoulShiftRune;
 import theReaper.souls.AbstractSoul;
@@ -109,6 +111,8 @@ public class SoulManager implements CustomSavable<String> {
         }
         DefaultMod.soulTip.LoadSoulShiftRune();
     }
+
+
     public static void renderSoulTip(SpriteBatch sb)
     {
         if (DefaultMod.soulTip == null)

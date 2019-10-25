@@ -24,8 +24,9 @@ import theReaper.powers.AbstractCustomPower;
 import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulSelectScreen;
+import theReaper.util.SoulShopScreen;
 
-public class SoulShiftBaseButton {
+public class SoulShiftBaseButton extends AbstractSoulShopButton {
     public String name;
     public String description;
     public String ID;
@@ -43,15 +44,15 @@ public class SoulShiftBaseButton {
     public static float textureWidth = 299F;
     public static float textureHeight = 156F;
 
-    public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureWidth * Settings.scale);
+    public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureHeight * Settings.scale);
 
     public static final String imgURL = "theReaperResources/images/ui/greyrunebutton.png";
     public boolean used = false;
 
     public AbstractSoulShiftRune rune;
-    public boolean activated = false;
 
-    public SoulShiftBaseButton(AbstractSoulShiftRune rune) {
+    public SoulShiftBaseButton(AbstractSoulShiftRune rune, SoulShopScreen scr) {
+        super(rune, scr);
         this.img = ImageMaster.loadImage(imgURL);
         this.ID = rune.getID();
         this.name = rune.getName();
@@ -61,55 +62,41 @@ public class SoulShiftBaseButton {
         this.rune = rune;
     }
 
-
-    public void onUse()
-    {
-        SoulManager.soulShift(rune);
-        this.activated = true;
-        logger.info("ACTIVATED");
+    public void act(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
     }
-
-    public void deActivate()
-    {
-        this.activated = false;
-        logger.info("DEACTIVATED");
-    }
-
 
     public void update() {
         this.hb.move(this.tX, this.tY);
         this.hb.update();
         if (this.hb.hovered) {
-            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 300.0F) * Settings.scale, this.name, this.description);
+            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 50.0F) * Settings.scale, this.name, this.description);
 
             if (InputHelper.justClickedLeft) {
                 InputHelper.justClickedLeft = false;
                 this.hb.clickStarted = true;
             }
         }
-        if (!used) {
+        if (!runeActivated && buttonEnabled) {
             if (this.hb.clicked || CInputActionSet.select.isJustPressed()) {
                 CInputActionSet.select.unpress();
                 this.hb.clicked = false;
 
                 onUse();
-                activated = true;
-                used = true;
             }
         }
     }
 
     public void render(SpriteBatch sb) {
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
-        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, textureWidth, textureHeight, Settings.scale, Settings.scale, 0, 0, 0, 299, 156, false, false);
+        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, this.textureWidth, this.textureHeight, Settings.scale, Settings.scale, 0, 0, 0, (int)this.textureWidth, (int)this.textureHeight, false, false);
 
-        Color tmpColor = Settings.LIGHT_YELLOW_COLOR;
+        Color tmpColor = Settings.CREAM_COLOR;
+        if(this.buttonEnabled)
+        {
+            tmpColor = Settings.GOLD_COLOR;
+        }
         FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.name, this.tX, this.tY, tmpColor);
-        hb.render(sb);
+        this.hb.render(sb);
     }
-
-    public void act(AbstractGameAction action) {
-        AbstractDungeon.actionManager.addToBottom(action);
-    }
-
 }

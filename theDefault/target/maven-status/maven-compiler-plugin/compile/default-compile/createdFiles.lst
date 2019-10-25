@@ -35,6 +35,7 @@ theReaper\actions\AbstractSoulOnAfterUseAction.class
 theReaper\cards\Contagion.class
 theReaper\rune\SoulShiftBaseButton.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch.class
+theReaper\relics\AbstractSoulRelic$ImgType.class
 theReaper\cards\Defend.class
 theReaper\cards\RecklessSwing.class
 theReaper\cards\Hemoplague.class
@@ -64,6 +65,7 @@ theReaper\actions\PutOnDeckChooseAction.class
 theReaper\cards\Devour.class
 theReaper\powers\TransfusionPower.class
 theReaper\cards\Transfusion.class
+theReaper\rune\AbstractRelicRune.class
 theReaper\cards\HurricaneStrike.class
 theReaper\rune\SoulShiftThornsRune.class
 theReaper\cards\RendingStrike.class
@@ -113,6 +115,7 @@ theReaper\cards\Hyper.class
 theReaper\rune\AbstractRune.class
 theReaper\cards\FeverDream.class
 theReaper\powers\RiteoftheBladePower.class
+theReaper\rune\RelicBaseButton.class
 theReaper\cards\Frenzy.class
 theReaper\actions\ArcStrikeAction.class
 theReaper\cards\Vampirism.class
@@ -125,6 +128,7 @@ theReaper\patches\TopPanelPatch$updatePatch.class
 theReaper\cards\CrimsonRush.class
 theReaper\DefaultMod.class
 theReaper\cards\LastBreath.class
+theReaper\relics\AbstractSoulRelic.class
 theReaper\patches\TopPanelPatch$updateSettingsButtonLogicPatch.class
 theReaper\powers\DevourPower.class
 theReaper\cards\Cleanse.class
@@ -164,7 +168,7 @@ theReaper\cards\Gluttony.class
 theReaper\actions\FeverDreamAction.class
 theReaper\cards\Glowfly.class
 theReaper\powers\CustomTemplatePower.class
-theReaper\rune\AbstractSoulShopButton$ShopButtonType.class
+theReaper\rune\RelicSoulShiftRune.class
 theReaper\patches\DefaultInsertPatch$Locator.class
 theReaper\cards\Impatience.class
 theReaper\util\ReaperStrings$1.class
@@ -174,3 +178,4 @@ theReaper\relics\OldCharmRelic.class
 theReaper\actions\UncommonPowerAction.class
 theReaper\cards\EnduringSpirit.class
 theReaper\cards\HoningSteel.class
+theReaper\relics\SoulShifterRelic.class

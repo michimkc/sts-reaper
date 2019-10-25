@@ -36,6 +36,12 @@
       "The primal essence of a soul."
     ]
   },
+  "theReaper:RelicSoulShiftRune": {
+    "NAME": "Soul Shifter",
+    "DESCRIPTIONS": [
+      "The essence of your souls can be changed during battle for #b1 [E]."
+    ]
+  },
   "theReaper:SoulShiftBlockRune": {
     "NAME": "Guardian",
     "DESCRIPTIONS": [

@@ -6,6 +6,13 @@
       "The first card that would be exhausted each combat is instead discarded."
     ]
   },
+  "theReaper:SoulShifterRelic": {
+    "NAME": "Soulshifter Relic",
+    "FLAVOR": "The souls bend to her whims.",
+    "DESCRIPTIONS": [
+      "The essence of a soul can be changed during battle for #b1 [E]."
+    ]
+  },
   "theReaper:PlaceholderRelic": {
     "NAME": "Placeholder Energy Relic",
     "FLAVOR": "The snake is a friend.",
