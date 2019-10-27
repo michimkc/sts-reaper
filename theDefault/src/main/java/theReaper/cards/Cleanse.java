@@ -17,7 +17,7 @@ public class Cleanse extends AbstractCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
 
     public Cleanse()
@@ -25,6 +25,7 @@ public class Cleanse extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
 
+        newCost = 1;
         this.exhaust = true;
 
     }
@@ -35,12 +36,6 @@ public class Cleanse extends AbstractCustomCard {
 
         act(new RemoveDebuffsAction(p));
 
-    }
-
-    @Override
-    public void upgrade()
-    {
-       this.exhaust = false;
     }
 
 

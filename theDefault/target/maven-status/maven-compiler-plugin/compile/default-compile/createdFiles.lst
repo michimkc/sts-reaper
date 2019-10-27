@@ -25,6 +25,7 @@ theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\DeepCuts.class
 theReaper\relics\PlaceholderRelic2.class
+theReaper\actions\DieAction.class
 theReaper\cards\HuntersToll.class
 theReaper\cards\FiendForm.class
 theReaper\variables\BleedNumberVariable.class

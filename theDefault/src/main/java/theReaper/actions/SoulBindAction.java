@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
+import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.combat.EntangleEffect;
@@ -69,21 +71,42 @@ public class SoulBindAction extends AbstractGameAction {
 
             if (this.target.currentHealth <= this.amount && !this.target.hasPower("Minion")) {
 
-                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, DESCRIPTIONS[0], 4.0f, 2.0f)); // Player speech bubble saying "YOU ARE MINE!" (See relic strings)
-                AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF")); // Sound Effect Action of The Collector Nails
-                AbstractDungeon.actionManager.addToBottom(new VFXAction( // Visual Effect Action of the nails applies on a random monster's position.
-                        new InflameEffect(this.target)));
-                AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(this.target,p));
-                AbstractDungeon.actionManager.addToBottom(new SuicideAction((AbstractMonster)this.target));
+                boolean bindSoul = true;
 
-                if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.BOSS)
+                if(this.target instanceof Darkling)
                 {
-                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new KingSoul()));
-                } else if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.ELITE)
-                {
-                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
-                } else {
-                    AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+                    this.target.damage(new DamageInfo(AbstractDungeon.player, 1));
+                    this.target.halfDead = true;
+                    this.target.currentHealth = 0;
+
+                    for(int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); i++)
+                    {
+                        AbstractMonster monster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+                        if(monster.id.equals("Darkling") && !monster.halfDead)
+                        {
+                            bindSoul = false;
+                        }
+                    }
+                }
+
+                AbstractDungeon.actionManager.addToBottom(new DieAction((AbstractMonster)this.target));
+
+
+                if(bindSoul) {
+
+                    AbstractDungeon.actionManager.addToBottom(new TalkAction(true, DESCRIPTIONS[0], 4.0f, 2.0f)); // Player speech bubble saying "YOU ARE MINE!" (See relic strings)
+                    AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF")); // Sound Effect Action of The Collector Nails
+                    AbstractDungeon.actionManager.addToBottom(new VFXAction( // Visual Effect Action of the nails applies on a random monster's position.
+                            new InflameEffect(this.target)));
+                    AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(this.target,p));
+
+                    if (((AbstractMonster) this.target).type == AbstractMonster.EnemyType.BOSS) {
+                        AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new KingSoul()));
+                    } else if (((AbstractMonster) this.target).type == AbstractMonster.EnemyType.ELITE) {
+                        AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new HollowSoul()));
+                    } else {
+                        AbstractDungeon.actionManager.addToBottom(new SoulGemAction(new LostSoul()));
+                    }
                 }
             } else if (this.target.currentHealth <= this.amount && this.target.hasPower("Minion"))
             {
@@ -97,4 +120,5 @@ public class SoulBindAction extends AbstractGameAction {
         tickDuration();
 
     }
+
 }

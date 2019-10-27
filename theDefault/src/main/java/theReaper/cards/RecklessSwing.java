@@ -31,7 +31,7 @@ public class RecklessSwing extends AbstractCustomCard {
     public RecklessSwing() {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        damage = 16;
+        baseDamage = damage = 16;
         damageUp = 4;
         isMultiDamage = true;
 

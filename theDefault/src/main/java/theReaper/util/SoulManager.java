@@ -20,10 +20,7 @@ import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.AbstractPlayerSoulsPatch;
 import theReaper.relics.EggSlicerRelic;
 import theReaper.rune.AbstractSoulShiftRune;
-import theReaper.souls.AbstractSoul;
-import theReaper.souls.HollowSoul;
-import theReaper.souls.LostSoul;
-import theReaper.souls.SoulTip;
+import theReaper.souls.*;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -242,6 +239,10 @@ public class SoulManager implements CustomSavable<String> {
             case HollowSoul.soulName:
                 logger.info("Adding Hollow Soul to Player Souls");
                 addSoul(new HollowSoul());
+                break;
+            case KingSoul.soulName:
+                logger.info("Adding King Soul to Player Souls");
+                addSoul(new KingSoul());
                 break;
             default:
                 logger.info("ERROR: Invalid Soul Name when Loading Souls");
