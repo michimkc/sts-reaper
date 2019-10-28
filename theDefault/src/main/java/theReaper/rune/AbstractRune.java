@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +22,7 @@ import theReaper.DefaultMod;
 import theReaper.actions.AbstractSoulOnAfterUseAction;
 import theReaper.cards.AbstractCustomCard;
 import theReaper.powers.AbstractCustomPower;
+import theReaper.relics.AbstractSoulRelic;
 import theReaper.util.ReaperStrings;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulSelectScreen;
@@ -46,6 +48,8 @@ public abstract class AbstractRune {
     public static String BaseSoulTipName;
 
     public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureWidth * Settings.scale);
+
+    public AbstractRelic relic;
 
     public AbstractRune() {
 

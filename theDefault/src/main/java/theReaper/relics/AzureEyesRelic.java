@@ -2,6 +2,7 @@ package theReaper.relics;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +21,7 @@ public class AzureEyesRelic extends AbstractSoulRelic {
     }
 
     @Override
-    public void onConsumeMarks(int totalHeal) {
+    public void onConsumeMarks(AbstractMonster m, int totalHeal) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,bonusBlock));
         flash();
     }

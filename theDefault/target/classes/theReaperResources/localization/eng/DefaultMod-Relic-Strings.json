@@ -15,9 +15,16 @@
   },
   "theReaper:EggSlicerRelic": {
     "NAME": "Egg Slicer",
-    "FLAVOR": "Luxury breakfast at your fingertips",
+    "FLAVOR": "Safe, luxury breakfast preparation at your fingertips",
     "DESCRIPTIONS": [
       "In battle, using a King soul creates one Hollow Soul and one Lost Soul. Using a Hollow Soul creates two Lost Souls."
+    ]
+  },
+  "theReaper:MandolinRelic": {
+    "NAME": "Mandolin",
+    "FLAVOR": "S-S-S-SHARP!!!",
+    "DESCRIPTIONS": [
+      "SoulBind cards deal an extra ", " damage."
     ]
   },
   "theReaper:OldCharmRelic": {
@@ -39,6 +46,13 @@
     "FLAVOR": "A string of pure silver blessed by the occult",
     "DESCRIPTIONS": [
       "SoulBind also applies ", " Vulnerable on creatures."
+    ]
+  },
+  "theReaper:SmilingCatRelic": {
+    "NAME": "Smiling Cat Statue",
+    "FLAVOR": "An aura of insatiable malice surrounds this small trinket.",
+    "DESCRIPTIONS": [
+      "Gain ", " Energy when you consume all the marks on a creature."
     ]
   },
   "theReaper:SpiritChainsRelic": {

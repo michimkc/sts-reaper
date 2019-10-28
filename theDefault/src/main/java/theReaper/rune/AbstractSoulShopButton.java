@@ -2,15 +2,18 @@ package theReaper.rune;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theReaper.DefaultMod;
 import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulShopScreen;
@@ -62,7 +65,7 @@ public abstract class AbstractSoulShopButton {
 
     public void onUse() {
 
-        if(this.rune instanceof AbstractSoulShiftRune) {
+        if (this.rune instanceof AbstractSoulShiftRune) {
             SoulManager.soulShift((AbstractSoulShiftRune) this.rune);
 
             parentScreen.activateAllSoulShiftButtons(false);
@@ -70,8 +73,7 @@ public abstract class AbstractSoulShopButton {
             this.buttonEnabled = false;
             this.runeActivated = true;
 
-        } else if (this.rune instanceof AbstractRelicRune)
-        {
+        } else if (this.rune instanceof AbstractRelicRune) {
             this.rune.onUse();
             this.buttonEnabled = false;
             this.runeActivated = true;
@@ -80,7 +82,39 @@ public abstract class AbstractSoulShopButton {
 
     public abstract void update();
 
-    public abstract void render(SpriteBatch sb);
+    public void render(SpriteBatch sb) {
+        Color tmpColor = Settings.SHADOW_COLOR;
+        if (this.buttonEnabled) {
+            tmpColor = Settings.HALF_TRANSPARENT_WHITE_COLOR;
+        }
+
+        sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
+        if (this.rune != null) {
+            if (this.rune.relic != null) {
+                if (AbstractDungeon.player.hasRelic(rune.relic.relicId)) {
+                    this.img = this.activatedImg;
+                    tmpColor = Settings.GOLD_COLOR;
+                }
+            } else {
+                this.img = this.unactivatedImg;
+            }
+
+            if (this.rune instanceof AbstractSoulShiftRune) {
+                if (this.rune.name == DefaultMod.currentShiftRune.name) {
+                    this.img = this.activatedImg;
+                    tmpColor = Settings.GOLD_COLOR;
+                } else {
+                    this.img = this.unactivatedImg;
+                }
+            }
+        }
+
+        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, this.textureWidth, this.textureHeight, Settings.scale, Settings.scale, 0, 0, 0, (int) this.textureWidth, (int) this.textureHeight, false, false);
+
+
+        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.name, this.tX, this.tY, tmpColor);
+        this.hb.render(sb);
+    }
 
     public void act(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);

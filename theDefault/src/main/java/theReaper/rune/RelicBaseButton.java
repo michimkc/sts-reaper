@@ -30,12 +30,9 @@ public class RelicBaseButton extends AbstractSoulShopButton {
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
 
 
-    public Hitbox hb;
-
     //public static final String imgURL = "theReaperResources/images/ui/runebutton-off.png";
     public boolean used = false;
 
-    public AbstractRune rune;
     public boolean activated = false;
 
     public RelicBaseButton(AbstractRelicRune rune, SoulShopScreen scr) {
@@ -46,8 +43,6 @@ public class RelicBaseButton extends AbstractSoulShopButton {
         this.description = rune.getDescription();
         this.tX = 0;
         this.tY = 0;
-        this.rune = rune;
-        this.hb = new Hitbox(textureWidth * Settings.scale, textureHeight * Settings.scale);
         if(AbstractDungeon.player.hasRelic(rune.relic.relicId))
         {
             this.runeActivated = true;
@@ -79,44 +74,5 @@ public class RelicBaseButton extends AbstractSoulShopButton {
         }
     }
 
-    public void render(SpriteBatch sb) {
 
-        Color tmpColor = Settings.SHADOW_COLOR;
-        if(this.buttonEnabled)
-        {
-            tmpColor = Settings.HALF_TRANSPARENT_WHITE_COLOR;
-        }
-
-        sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
-        if(this.rune != null)
-        {
-            if(this.rune instanceof AbstractRelicRune)
-            {
-                if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(this.rune.name)))
-                {
-                    this.img = this.activatedImg;
-                    tmpColor = Settings.GOLD_COLOR;
-                }
-            } else
-            {
-                this.img = this.unactivatedImg;
-            }
-            if(this.rune instanceof AbstractSoulShiftRune)
-            {
-                if(this.rune.name == DefaultMod.currentShiftRune.name)
-                {
-                    this.img = this.activatedImg;
-                    tmpColor = Settings.GOLD_COLOR;
-                } else
-                {
-                    this.img = this.unactivatedImg;
-                }
-            }
-        }
-        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, this.textureWidth, this.textureHeight, Settings.scale, Settings.scale, 0, 0, 0, (int)this.textureWidth, (int)this.textureHeight, false, false);
-
-
-        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.name, this.tX, this.tY, tmpColor);
-        this.hb.render(sb);
-    }
 }

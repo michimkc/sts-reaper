@@ -18,6 +18,7 @@ theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\actions\BleedLoseHpAction.class
 theReaper\patches\TopPanelPatch$renderPatch.class
 theReaper\powers\ShadowStepPower.class
+theReaper\rune\RelicSmilingCatRune.class
 theReaper\powers\ContagionPower.class
 theReaper\actions\SoulGemAction.class
 theReaper\powers\HemoplaguePower.class
@@ -25,6 +26,8 @@ theReaper\patches\OnApplyPowerPatch.class
 theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\DeepCuts.class
+theReaper\relics\MandolinRelic.class
+theReaper\rune\RelicMandolinRune.class
 theReaper\relics\PlaceholderRelic2.class
 theReaper\actions\DieAction.class
 theReaper\cards\HuntersToll.class
@@ -119,6 +122,7 @@ theReaper\powers\PapercutPower.class
 theReaper\cards\QuickStep.class
 theReaper\rune\SoulShiftEnergyRune.class
 theReaper\characters\TheDefault$Enums.class
+theReaper\relics\SmilingCatRelic.class
 theReaper\cards\Hyper.class
 theReaper\rune\AbstractRune.class
 theReaper\cards\FeverDream.class

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import org.apache.logging.log4j.LogManager;
@@ -47,6 +48,7 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
     private static final int CONSTANTREDUCTION = 5;
 
     public int marksAddedThisTurn;
+    public boolean expired = false;
 
     public MarkPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -67,6 +69,7 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
         logger.info("created marks. Marks added this turn : " + marksAddedThisTurn);
 
         updateDescription();
+        this.expired = false;
     }
 
 
@@ -83,6 +86,7 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
 
             // heal the player
             info.owner.heal(totalHeal);
+
             // reduce the number of marks
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
             logger.info("Monster (" + owner.currentHealth + " current HP) attacked for " +damageAmount + ", healed for " + totalHeal);
@@ -91,21 +95,38 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
             logger.info("total marks consumed this combat: " + totalMarksConsumedThisCombat);
             final int finalTotalHeal = totalHeal;
             AbstractDungeon.player.hand.group.forEach( c -> sendConsume(c,finalTotalHeal));
-            AbstractDungeon.player.relics.forEach( r -> sendRelicConsume(r, finalTotalHeal));
+            AbstractDungeon.player.relics.forEach( r -> sendRelicConsume(r,(AbstractMonster)this.owner, finalTotalHeal));
         }
 
         return damageAmount;
     }
 
-    public void sendRelicConsume(AbstractRelic r, int totalHeal)
+    public void sendRelicConsume(AbstractRelic r, AbstractMonster m, int totalHeal)
     {
         if(r instanceof AbstractSoulRelic)
         {
-            ((AbstractSoulRelic)r).onConsumeMarks(totalHeal);
+            ((AbstractSoulRelic)r).onConsumeMarks(m, totalHeal);
         }
     }
 
-    public void sendConsume(AbstractCard c,int totalHeal)
+    @Override
+    public void onRemove() {
+
+        AbstractDungeon.player.relics.forEach( r -> sendRelicRemove(r,(AbstractMonster)this.owner));
+
+    }
+
+    public void sendRelicRemove(AbstractRelic r, AbstractMonster m)
+    {
+        if(r instanceof AbstractSoulRelic)
+        {
+            ((AbstractSoulRelic)r).onRemoveMarks(m, this.expired);
+        }
+
+
+    }
+
+    public void sendConsume(AbstractCard c, int totalHeal)
     {
         if (c instanceof AbstractCustomCard)
         {
@@ -120,6 +141,7 @@ logger.info("start of turn amount: " + amount + " , marks added this turn : " + 
         // if we have fewer marks than the minimum amount that we reduce by, remove the buff.
         if (CONSTANTREDUCTION >= amount && marksAddedThisTurn == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+            this.expired = true;
         } else {
             int percentAmount = Math.round((amount-marksAddedThisTurn) * PERCENTREDUCTION);
             int amountToReduce;
@@ -151,6 +173,7 @@ logger.info("start of turn amount: " + amount + " , marks added this turn : " + 
     {
         super.stackPower(amount);
         marksAddedThisTurn += amount;
+        this.expired = false;
 
         logger.info("Stacking Power by: " + amount + " , marks added this turn : " + marksAddedThisTurn);
     }

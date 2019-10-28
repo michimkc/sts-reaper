@@ -47,7 +47,7 @@ public class SoulShopScreen {
         public int column;
         public int row;
 
-        public ButtonInfo(AbstractSoulShopButton b, int row, int column)
+        public ButtonInfo(AbstractSoulShopButton b, int column, int row)
         {
             this.button = b;
             this.row = row;
@@ -76,15 +76,18 @@ public class SoulShopScreen {
 
     public void makeRelicButtons()
     {
-        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSoulShiftRune(), this),0, 1));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSoulShiftRune(), this),1, 0));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicMandolinRune(), this),1, 1));
 
-        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicEggSlicerRune(), this),3, 1));
-        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSpiritChainsRune(), this), 4,1));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicEggSlicerRune(), this),1, 3));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSpiritChainsRune(), this), 1,4));
 
-        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSilverBeadsRune(), this), 6,1));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSilverBeadsRune(), this), 1,6));
 
-        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicCrimsonEyesRune(), this),0, 2));
-        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicAzureEyesRune(), this), 1,2));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicCrimsonEyesRune(), this),2, 0));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicAzureEyesRune(), this), 2,1));
+
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSmilingCatRune(), this), 2,3));
 
 
         for (int i = 0; i < relicButtonList.size(); i++)
@@ -102,13 +105,13 @@ public class SoulShopScreen {
     public void makeSoulShiftButtons()
     {
         soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftDrawRune(), this),0,0));
-        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftBlockRune(), this),1,0));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftBlockRune(), this),0,1));
 
-        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftEnergyRune(), this),3,0));
-        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftThornsRune(), this),4,0));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftEnergyRune(), this),0,3));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftThornsRune(), this),0,4));
 
-        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftSeekRune(), this),6,0));
-        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftUndyingRune(), this),7,0));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftSeekRune(), this),0,6));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftUndyingRune(), this),0,7));
 
 
         for (int i = 0; i < soulShiftButtonList.size(); i++)

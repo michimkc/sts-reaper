@@ -90,7 +90,10 @@ public abstract class AbstractSoulRelic extends CustomRelic {
         }
     }
 
-    public void onConsumeMarks(int totalHeal) {}
+    public void onConsumeMarks(AbstractMonster m, int totalHeal) {}
+
+    // when the marks power is removed from a monster
+    public void onRemoveMarks(AbstractMonster m, boolean expired) {}
 
     public void onSoulBind(AbstractMonster m, boolean bindEnemy) {}
 

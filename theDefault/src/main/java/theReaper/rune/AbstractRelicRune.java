@@ -22,8 +22,6 @@ public abstract class AbstractRelicRune extends AbstractRune {
     public String[] DESC;// = reaperString.DESCRIPTIONS;
     public String name;
 
-    public AbstractRelic relic;
-
     public AbstractRelicRune(AbstractRelic relic) {
         super();
         this.relic = relic;
