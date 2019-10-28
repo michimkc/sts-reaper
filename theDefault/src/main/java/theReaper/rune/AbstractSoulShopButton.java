@@ -29,20 +29,26 @@ public abstract class AbstractSoulShopButton {
     public float tY;
     public float cX = 0.0F;
     public float cY = 0.0F;
-    public static float textureWidth = 299F;
-    public static float textureHeight = 156F;
+    public static float textureWidth = 227F;
+    public static float textureHeight = 80F;
 
     public Hitbox hb;
 
-    public static final String imgURL = "theReaperResources/images/ui/greyrunebutton.png";
+    public static final String imgURL = "theReaperResources/images/ui/runebutton-off.png";
+    public static final String activatedImgURL = "theReaperResources/images/ui/runebutton-on.png";
     public boolean runeActivated = false;
+
+    public Texture activatedImg;
+    public Texture unactivatedImg;
 
     public AbstractRune rune;
     public boolean buttonEnabled = false;
     public SoulShopScreen parentScreen;
 
     public AbstractSoulShopButton(AbstractRune rune, SoulShopScreen scr) {
-        this.img = ImageMaster.loadImage(imgURL);
+        this.unactivatedImg = ImageMaster.loadImage(imgURL);
+        this.activatedImg = ImageMaster.loadImage(activatedImgURL);
+        this.img = unactivatedImg;
         this.ID = rune.getID();
         this.name = rune.getName();
         this.description = rune.getDescription();

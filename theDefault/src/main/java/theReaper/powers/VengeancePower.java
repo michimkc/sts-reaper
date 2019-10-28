@@ -1,15 +1,11 @@
 package theReaper.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 
@@ -17,9 +13,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
-import theReaper.util.TextureLoader;
-
-import static theReaper.DefaultMod.makePowerPath;
+import theReaper.relics.CrimsonEyesRelic;
 
 //When affected by vengeance, each damage taken adds a mark to the enemy that dealt it.
 //dealing damage to the enemy consumes a mark and heals 1 hp.
@@ -50,9 +44,15 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
         {
 
                 flash();
+                int totalAmount = damageAmount;
+                if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(CrimsonEyesRelic.name)))
+                {
+                    totalAmount += CrimsonEyesRelic.bonusMarks;
+                    AbstractDungeon.player.getRelic(DefaultMod.makeID(CrimsonEyesRelic.name)).flash();
+                }
                 // Add marks to the enemy.
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, owner,
-                    new MarkPower(info.owner, owner, damageAmount), damageAmount));
+                    new MarkPower(info.owner, owner, totalAmount), totalAmount));
                 AbstractDungeon.player.powers.forEach((p)-> powerOnApplyMarks(p,info.owner, owner,damageAmount));
 
         }

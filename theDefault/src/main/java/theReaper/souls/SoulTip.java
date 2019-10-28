@@ -1,32 +1,15 @@
 package theReaper.souls;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.TipHelper;
-import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
-import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
-import theReaper.actions.AbstractSoulOnAfterUseAction;
-import theReaper.cards.AbstractCustomCard;
-import theReaper.powers.AbstractCustomPower;
 import theReaper.rune.SoulShiftDrawRune;
 import theReaper.util.ReaperStrings;
-import theReaper.util.SoulManager;
-import theReaper.util.SoulSelectScreen;
 
 public class SoulTip {
 
@@ -68,15 +51,15 @@ public class SoulTip {
 
     public void LoadSoulShiftRune()
     {
-        if(DefaultMod.currentRune == null)
+        if(DefaultMod.currentShiftRune == null)
         {
-            DefaultMod.currentRune = new SoulShiftDrawRune(2);
-            currentRuneName = DefaultMod.currentRune.getName();
-            currentRuneDesc = DefaultMod.currentRune.getDescription();
+            DefaultMod.currentShiftRune = new SoulShiftDrawRune(2);
+            currentRuneName = DefaultMod.currentShiftRune.getName();
+            currentRuneDesc = DefaultMod.currentShiftRune.getDescription();
         } else
         {
-            currentRuneName = DefaultMod.currentRune.getName();
-            currentRuneDesc = DefaultMod.currentRune.getDescription();
+            currentRuneName = DefaultMod.currentShiftRune.getName();
+            currentRuneDesc = DefaultMod.currentShiftRune.getDescription();
         }
     }
 

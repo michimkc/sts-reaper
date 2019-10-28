@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
@@ -14,11 +13,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.actions.RemoveSoulAction;
-import theReaper.actions.SoulGemAction;
 import theReaper.characters.TheDefault;
-import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.AbstractPlayerSoulsPatch;
-import theReaper.relics.EggSlicerRelic;
+import theReaper.relics.SilverBeadsRelic;
+import theReaper.relics.SpiritChainsRelic;
 import theReaper.rune.AbstractSoulShiftRune;
 import theReaper.souls.*;
 
@@ -46,17 +44,62 @@ public class SoulManager implements CustomSavable<String> {
 
     public static void useSoul()
     {
-        DefaultMod.currentRune.onUse();
+        DefaultMod.currentShiftRune.onUse();
     }
 
     public static void addSoul(AbstractSoul soul)
     {
+        ArrayList<AbstractSoul> soulsList = AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player);
         // check if we've reached max number of souls
-        if (AbstractPlayerSoulsPatch.souls.get(AbstractDungeon.player).size() == TheDefault.SOUL_SLOTS)
+        if (soulsList.size() == TheDefault.SOUL_SLOTS)
         {
-            AbstractPlayer p = AbstractDungeon.player;
-            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, MSG[0], true));
-            return;
+            boolean removedLesserSoul = false;
+            if(soul instanceof KingSoul)
+            {
+                for(int i = 0; i<soulsList.size(); i++)
+                {
+                    if(soulsList.get(i) instanceof LostSoul)
+                    {
+                        soulsList.remove(i);
+                        removedLesserSoul = true;
+                        break;
+                    }
+                }
+
+                if (!removedLesserSoul)
+                {
+
+                    for(int i = 0; i<soulsList.size(); i++)
+                    {
+                        if(soulsList.get(i) instanceof HollowSoul)
+                        {
+                            RemoveSoul(soulsList.get(i),true);
+                            removedLesserSoul = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if(soul instanceof HollowSoul)
+            {
+                for(int i = 0; i<soulsList.size(); i++)
+                {
+                    if(soulsList.get(i) instanceof LostSoul)
+                    {
+                        RemoveSoul(soulsList.get(i), true);
+                        removedLesserSoul = true;
+                        break;
+                    }
+                }
+            }
+
+            if(!removedLesserSoul) {
+                AbstractPlayer p = AbstractDungeon.player;
+                AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, MSG[0], true));
+                return;
+            }
+
         }
 
         // add soul.
@@ -104,12 +147,13 @@ public class SoulManager implements CustomSavable<String> {
 
     public static void soulShift(AbstractSoulShiftRune rune)
     {
-        DefaultMod.currentRune = rune;
+        DefaultMod.currentShiftRune = rune;
         if (DefaultMod.soulTip == null)
         {
             DefaultMod.soulTip = new SoulTip();
         }
         DefaultMod.soulTip.LoadSoulShiftRune();
+
     }
 
 
@@ -152,6 +196,14 @@ public class SoulManager implements CustomSavable<String> {
         tips.clear();
 
         String tooltipString = SOULBIND_DESC[0] + soulBindAmount + SOULBIND_DESC[1];
+        if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(SpiritChainsRelic.name)))
+        {
+            tooltipString += SOULBIND_DESC[2] + SpiritChainsRelic.bonusWeak + SOULBIND_DESC[3];
+        }
+        if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(SilverBeadsRelic.name)))
+        {
+            tooltipString += SOULBIND_DESC[4] + SilverBeadsRelic.bonusVulnerable + SOULBIND_DESC[5];
+        }
 
         tips.add(new TooltipInfo(SOULBIND_NAME, tooltipString));
 

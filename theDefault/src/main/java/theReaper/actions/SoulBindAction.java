@@ -3,6 +3,7 @@ package theReaper.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
@@ -19,6 +20,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.orbs.Lightning;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.combat.EntangleEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -30,9 +34,14 @@ import theReaper.DefaultMod;
 import theReaper.characters.TheDefault;
 import theReaper.orbs.DefaultOrb;
 import theReaper.patches.AbstractPlayerSoulsPatch;
+import theReaper.relics.AbstractSoulRelic;
+import theReaper.relics.SilverBeadsRelic;
+import theReaper.relics.SpiritChainsRelic;
 import theReaper.souls.HollowSoul;
 import theReaper.souls.KingSoul;
 import theReaper.souls.LostSoul;
+
+import java.util.ArrayList;
 
 public class SoulBindAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("SoulBindAction");
@@ -69,9 +78,9 @@ public class SoulBindAction extends AbstractGameAction {
             this.target.damageFlashFrames = 4;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
 
-            if (this.target.currentHealth <= this.amount && !this.target.hasPower("Minion")) {
+            boolean bindSoul = true;
 
-                boolean bindSoul = true;
+            if (this.target.currentHealth <= this.amount && !this.target.hasPower("Minion")) {
 
                 if(this.target instanceof Darkling)
                 {
@@ -113,8 +122,19 @@ public class SoulBindAction extends AbstractGameAction {
                 // just kill the minion if we do enough damage.
                 AbstractDungeon.actionManager.addToBottom(new SuicideAction((AbstractMonster)this.target));
 
+            }  else
+            {
+                bindSoul = false;
             }
 
+            ArrayList<AbstractRelic> relicList = AbstractDungeon.player.relics;
+            if(relicList.size() > 0) {
+                for (int i = 0; i < relicList.size(); i++) {
+                    if (relicList.get(i) instanceof AbstractSoulRelic) {
+                        ((AbstractSoulRelic)relicList.get(i)).onSoulBind((AbstractMonster)this.target, bindSoul);
+                    }
+                }
+            }
         }
 
         tickDuration();

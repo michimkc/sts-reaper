@@ -1,4 +1,18 @@
 {
+  "theReaper:AzureEyesRelic": {
+    "NAME": "Azure Eyes",
+    "FLAVOR": "A cold icy gaze",
+    "DESCRIPTIONS": [
+      "Gain ", " Block each time you consume marks."
+    ]
+  },
+  "theReaper:CrimsonEyesRelic": {
+    "NAME": "Crimson Eyes",
+    "FLAVOR": "Burning and fierce",
+    "DESCRIPTIONS": [
+      "Each time you would apply marks, apply ", " additional marks."
+    ]
+  },
   "theReaper:EggSlicerRelic": {
     "NAME": "Egg Slicer",
     "FLAVOR": "Luxury breakfast at your fingertips",
@@ -18,6 +32,20 @@
     "FLAVOR": "The souls bend to her whims.",
     "DESCRIPTIONS": [
       "The essence of a soul can be changed during battle for #b1 energy."
+    ]
+  },
+  "theReaper:SilverBeadsRelic": {
+    "NAME": "Silver Beads",
+    "FLAVOR": "A string of pure silver blessed by the occult",
+    "DESCRIPTIONS": [
+      "SoulBind also applies ", " Vulnerable on creatures."
+    ]
+  },
+  "theReaper:SpiritChainsRelic": {
+    "NAME": "Spirit Chains",
+    "FLAVOR": "Shackles forged from iron mined in the abyss beneath the spire",
+    "DESCRIPTIONS": [
+      "SoulBind also applies ", " Weak on creatures."
     ]
   },
   "theReaper:PlaceholderRelic": {

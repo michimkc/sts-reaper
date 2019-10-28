@@ -13,6 +13,7 @@ theReaper\cards\AbstractNonLethalCard.class
 theReaper\cards\AbstractDefaultCard.class
 theReaper\powers\UndyingPower.class
 theReaper\actions\MoveCardToTopOfDeckAction.class
+theReaper\rune\SoulShiftUndyingRune.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\actions\BleedLoseHpAction.class
 theReaper\patches\TopPanelPatch$renderPatch.class
@@ -49,8 +50,11 @@ theReaper\powers\PaybackPower.class
 theReaper\rune\RelicEggSlicerRune.class
 theReaper\potions\PlaceholderPotion.class
 theReaper\cards\Moonflower.class
+theReaper\relics\AzureEyesRelic.class
+theReaper\util\SoulShopScreen$ButtonInfo.class
 theReaper\powers\HuntersTollPower.class
 theReaper\powers\MarkPower.class
+theReaper\rune\SoulShiftSeekRune.class
 theReaper\powers\MasochismPower.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch$UpdateLocator.class
 theReaper\cards\Hemorrhage.class
@@ -76,6 +80,7 @@ theReaper\powers\DeepCutsPower.class
 theReaper\cards\CrystalRose.class
 theReaper\patches\BootNonLethalPatch.class
 theReaper\cards\ChainStrike.class
+theReaper\relics\SilverBeadsRelic.class
 theReaper\cards\Safeguard.class
 theReaper\cards\SanguineArmour.class
 theReaper\rune\AbstractSoulShopButton.class
@@ -121,9 +126,11 @@ theReaper\powers\RiteoftheBladePower.class
 theReaper\rune\RelicBaseButton.class
 theReaper\cards\Frenzy.class
 theReaper\actions\ArcStrikeAction.class
+theReaper\relics\SpiritChainsRelic.class
 theReaper\cards\Vampirism.class
 theReaper\souls\HollowSoul.class
 theReaper\cards\SerratedKnife.class
+theReaper\rune\RelicSilverBeadsRune.class
 theReaper\actions\DrawNextPowerAction.class
 theReaper\cards\FeralInstincts.class
 theReaper\variables\SelfBleedNumberVariable.class
@@ -137,12 +144,14 @@ theReaper\powers\DevourPower.class
 theReaper\cards\Cleanse.class
 theReaper\cards\Lacerate.class
 theReaper\cards\MasterBall.class
+theReaper\rune\RelicCrimsonEyesRune.class
 theReaper\cards\SoulBlade.class
 theReaper\cards\ShadowStep.class
 theReaper\powers\CommonPower.class
 theReaper\cards\Bulwark.class
 theReaper\powers\LaceratePower.class
 theReaper\cards\HiddenTalent.class
+theReaper\rune\RelicSpiritChainsRune.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPreviousScreenPatch.class
 theReaper\cards\InsultToInjury.class
 theReaper\cards\Masochism.class
@@ -169,6 +178,7 @@ theReaper\patches\GameActionManagerPatch.class
 theReaper\patches\GameActionManagerPatch$getNextActionPatch.class
 theReaper\orbs\DefaultOrb.class
 theReaper\cards\Gluttony.class
+theReaper\relics\CrimsonEyesRelic.class
 theReaper\actions\FeverDreamAction.class
 theReaper\cards\Glowfly.class
 theReaper\powers\CustomTemplatePower.class
@@ -181,5 +191,6 @@ theReaper\cards\DeathsDance.class
 theReaper\relics\OldCharmRelic.class
 theReaper\actions\UncommonPowerAction.class
 theReaper\cards\EnduringSpirit.class
+theReaper\rune\RelicAzureEyesRune.class
 theReaper\cards\HoningSteel.class
 theReaper\relics\SoulShifterRelic.class

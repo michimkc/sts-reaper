@@ -86,7 +86,7 @@ public class DefaultMod implements
 
     // The Reaper:  Soul Manager
     public SoulManager soulManager;
-    public static AbstractSoulShiftRune currentRune = null;
+    public static AbstractSoulShiftRune currentShiftRune = null;
     public static SoulTip soulTip;
 
 
@@ -396,6 +396,10 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new OldCharmRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new EggSlicerRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SoulShifterRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new CrimsonEyesRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new AzureEyesRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new SpiritChainsRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new SilverBeadsRelic(), TheDefault.Enums.COLOR_GRAY);
 
 
         BaseMod.addRelicToCustomPool(new MagicFlower(), TheDefault.Enums.COLOR_GRAY);

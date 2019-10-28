@@ -36,24 +36,17 @@ public class SoulShiftBaseButton extends AbstractSoulShopButton {
 
     protected Color c = Settings.CREAM_COLOR.cpy();
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
-    protected Texture img = null;
-    public float tX;
-    public float tY;
-    public float cX = 0.0F;
-    public float cY = 0.0F;
-    public static float textureWidth = 299F;
-    public static float textureHeight = 156F;
 
     public Hitbox hb = new Hitbox(textureWidth * Settings.scale, textureHeight * Settings.scale);
 
-    public static final String imgURL = "theReaperResources/images/ui/greyrunebutton.png";
+    //public static final String imgURL = "theReaperResources/images/ui/runebutton-off.png";
     public boolean used = false;
 
     public AbstractSoulShiftRune rune;
 
     public SoulShiftBaseButton(AbstractSoulShiftRune rune, SoulShopScreen scr) {
         super(rune, scr);
-        this.img = ImageMaster.loadImage(imgURL);
+        //this.img = ImageMaster.loadImage(imgURL);
         this.ID = rune.getID();
         this.name = rune.getName();
         this.description = rune.getDescription();

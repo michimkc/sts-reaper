@@ -2,23 +2,17 @@ package theReaper.util;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputActionSet;
-import com.megacrit.cardcrawl.ui.buttons.CardSelectConfirmButton;
 import com.megacrit.cardcrawl.ui.buttons.ConfirmButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
-import theReaper.actions.CustomGameAction;
-import theReaper.patches.AbstractDungeonScreenPatch;
 import theReaper.patches.ReaperEnums;
 import theReaper.rune.*;
-import theReaper.souls.AbstractSoul;
 
 import java.util.ArrayList;
 
@@ -33,20 +27,33 @@ public class SoulShopScreen {
 
     public String message = "";
 
-
     public ConfirmButton confirmButton = new ConfirmButton();
 
     public boolean waitThenClose = false;
     public float waitToCloseTimer = 0.0F;
 
-    public ArrayList<SoulShiftBaseButton> soulShiftButtonList;
-    public ArrayList<RelicBaseButton> relicButtonList;
+    public ArrayList<ButtonInfo> soulShiftButtonList;
+    public ArrayList<ButtonInfo> relicButtonList;
 
 
     public static float defaultHeight = Settings.HEIGHT - (300.0F * Settings.scale);
     public static float heightSpacer =( SoulShiftBaseButton.textureHeight + 20F )* Settings.scale;
     public static float defaultWidth = 150*Settings.scale;
     public static float widthSpacer = (SoulShiftBaseButton.textureWidth + 20F ) * Settings.scale;
+
+    public class ButtonInfo
+    {
+        public AbstractSoulShopButton button;
+        public int column;
+        public int row;
+
+        public ButtonInfo(AbstractSoulShopButton b, int row, int column)
+        {
+            this.button = b;
+            this.row = row;
+            this.column = column;
+        }
+    }
 
     public SoulShopScreen()
     {
@@ -59,24 +66,34 @@ public class SoulShopScreen {
 
     public void activateAllSoulShiftButtons(boolean activate)
     {
-        soulShiftButtonList.forEach(s -> s.runeActivated = activate);
+        soulShiftButtonList.forEach(s -> s.button.runeActivated = activate);
     }
 
     public void enableAllSoulShiftButtons(boolean enable)
     {
-        soulShiftButtonList.forEach(s -> s.buttonEnabled = enable);
+        soulShiftButtonList.forEach(s -> s.button.buttonEnabled = enable);
     }
 
     public void makeRelicButtons()
     {
-        relicButtonList.add(new RelicBaseButton(new RelicSoulShiftRune(), this));
-        relicButtonList.add(new RelicBaseButton(new RelicEggSlicerRune(), this));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSoulShiftRune(), this),0, 1));
+
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicEggSlicerRune(), this),3, 1));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSpiritChainsRune(), this), 4,1));
+
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSilverBeadsRune(), this), 6,1));
+
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicCrimsonEyesRune(), this),0, 2));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicAzureEyesRune(), this), 1,2));
+
 
         for (int i = 0; i < relicButtonList.size(); i++)
         {
-            RelicBaseButton b = relicButtonList.get(i);
-            b.tX = defaultWidth + defaultWidth + widthSpacer;
-            b.tY = defaultHeight - heightSpacer*i;
+            RelicBaseButton b = (RelicBaseButton)relicButtonList.get(i).button;
+            int c = relicButtonList.get(i).column;
+
+            b.tX = defaultWidth + defaultWidth*c + widthSpacer*c;
+            b.tY = defaultHeight - heightSpacer*relicButtonList.get(i).row;
             b.buttonEnabled = true;
             logger.info("making button : " + b.name + " at coords ( " + b.tX + ", " + b.tY + " )");
         }
@@ -84,21 +101,25 @@ public class SoulShopScreen {
 
     public void makeSoulShiftButtons()
     {
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftDrawRune(), this));
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftEnergyRune(), this));
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftBlockRune(), this));
-        soulShiftButtonList.add(new SoulShiftBaseButton(new SoulShiftThornsRune(), this));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftDrawRune(), this),0,0));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftBlockRune(), this),1,0));
+
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftEnergyRune(), this),3,0));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftThornsRune(), this),4,0));
+
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftSeekRune(), this),6,0));
+        soulShiftButtonList.add(new ButtonInfo(new SoulShiftBaseButton(new SoulShiftUndyingRune(), this),7,0));
 
 
         for (int i = 0; i < soulShiftButtonList.size(); i++)
         {
-            SoulShiftBaseButton b = soulShiftButtonList.get(i);
+            SoulShiftBaseButton b = (SoulShiftBaseButton)soulShiftButtonList.get(i).button;
             b.tX = defaultWidth;
-            b.tY = defaultHeight - heightSpacer*i;
+            b.tY = defaultHeight - heightSpacer*soulShiftButtonList.get(i).row;
             b.buttonEnabled = true;
             logger.info("making button : " + b.name + " at coords ( " + b.tX + ", " + b.tY + " )");
         }
-        soulShiftButtonList.get(0).onUse();
+        soulShiftButtonList.get(0).button.onUse();
     }
 
     public void update(){
@@ -111,8 +132,8 @@ public class SoulShopScreen {
             }
         }
 
-        soulShiftButtonList.forEach(s -> s.update());
-        relicButtonList.forEach(s -> s.update());
+        soulShiftButtonList.forEach(s -> s.button.update());
+        relicButtonList.forEach(s -> s.button.update());
 
         this.confirmButton.update();
         if (this.confirmButton.hb.clicked || CInputActionSet.proceed.isJustPressed() || InputActionSet.confirm.isJustPressed()) {
@@ -175,11 +196,11 @@ public class SoulShopScreen {
 
         for (int i = 0; i < soulShiftButtonList.size(); i++)
         {
-            soulShiftButtonList.get(i).render(sb);
+            soulShiftButtonList.get(i).button.render(sb);
         }
         for( int i = 0; i < relicButtonList.size(); i++)
         {
-            relicButtonList.get(i).render(sb);
+            relicButtonList.get(i).button.render(sb);
         }
         this.confirmButton.render(sb);
 

@@ -3,6 +3,8 @@ package theReaper.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
@@ -88,6 +90,9 @@ public abstract class AbstractSoulRelic extends CustomRelic {
         }
     }
 
+    public void onConsumeMarks(int totalHeal) {}
+
+    public void onSoulBind(AbstractMonster m, boolean bindEnemy) {}
 
 
     // Description

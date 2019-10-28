@@ -73,9 +73,9 @@ public abstract class AbstractSoul {
 
     public void LoadSoulShiftRune()
     {
-        if(DefaultMod.currentRune == null)
+        if(DefaultMod.currentShiftRune == null)
         {
-            DefaultMod.currentRune = new SoulShiftDrawRune(2);
+            DefaultMod.currentShiftRune = new SoulShiftDrawRune(2);
         }
     }
 

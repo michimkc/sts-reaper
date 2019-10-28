@@ -13,10 +13,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.cards.AbstractCustomCard;
+import theReaper.relics.AbstractSoulRelic;
 import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
@@ -89,9 +91,18 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
             logger.info("total marks consumed this combat: " + totalMarksConsumedThisCombat);
             final int finalTotalHeal = totalHeal;
             AbstractDungeon.player.hand.group.forEach( c -> sendConsume(c,finalTotalHeal));
+            AbstractDungeon.player.relics.forEach( r -> sendRelicConsume(r, finalTotalHeal));
         }
 
         return damageAmount;
+    }
+
+    public void sendRelicConsume(AbstractRelic r, int totalHeal)
+    {
+        if(r instanceof AbstractSoulRelic)
+        {
+            ((AbstractSoulRelic)r).onConsumeMarks(totalHeal);
+        }
     }
 
     public void sendConsume(AbstractCard c,int totalHeal)

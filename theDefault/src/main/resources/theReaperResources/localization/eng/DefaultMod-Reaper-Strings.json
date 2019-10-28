@@ -3,7 +3,9 @@
     "NAME": "SoulBind",
     "DESCRIPTIONS": [
       "If the target's remaining health is equal to or less than #y",
-      ", this rips the soul from the creature and binds it into servitude."
+      ", this rips the soul from the creature and binds it into servitude.",
+      " Apply ", " Weak (Spirit Chains)",
+      " Apply ", " Vulnerable (Silver Beads"
     ]
   },
   "theReaper:PlaceholderSoul": {
@@ -42,18 +44,6 @@
       "The primal essence of a soul."
     ]
   },
-  "theReaper:RelicEggSlicerRune": {
-    "NAME": "Egg Slicer",
-    "DESCRIPTIONS": [
-      "In battle, using a King soul creates one Hollow Soul and one Lost Soul. Using a Hollow Soul creates two Lost Souls."
-    ]
-  },
-  "theReaper:RelicSoulShiftRune": {
-    "NAME": "Soul Shifter",
-    "DESCRIPTIONS": [
-      "The essence of your souls can be changed during battle for #b1 [E]."
-    ]
-  },
   "theReaper:SoulShiftBlockRune": {
     "NAME": "Guardian",
     "DESCRIPTIONS": [
@@ -75,11 +65,24 @@
       " Energy."
     ]
   },
+  "theReaper:SoulShiftSeekRune": {
+    "NAME": "Wit",
+    "DESCRIPTIONS": [
+      "Put one card from your draw pile into your hand."
+    ]
+  },
   "theReaper:SoulShiftThornsRune": {
     "NAME": "Spike",
     "DESCRIPTIONS": [
       "Gain ",
       " Thorns."
+    ]
+  },
+  "theReaper:SoulShiftUndyingRune": {
+    "NAME": "Resolve",
+    "DESCRIPTIONS": [
+      "Gain ",
+      " Undying."
     ]
   },
   "theReaper:SoulTip":

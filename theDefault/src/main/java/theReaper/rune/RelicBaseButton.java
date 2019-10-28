@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theReaper.DefaultMod;
 import theReaper.util.SoulManager;
 import theReaper.util.SoulShopScreen;
 
@@ -27,17 +28,11 @@ public class RelicBaseButton extends AbstractSoulShopButton {
 
     protected Color c = Settings.CREAM_COLOR.cpy();
     protected Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
-    protected Texture img = null;
-    public float tX;
-    public float tY;
-    public float cX = 0.0F;
-    public float cY = 0.0F;
-    public static float textureWidth = 299F;
-    public static float textureHeight = 156F;
+
 
     public Hitbox hb;
 
-    public static final String imgURL = "theReaperResources/images/ui/greyrunebutton.png";
+    //public static final String imgURL = "theReaperResources/images/ui/runebutton-off.png";
     public boolean used = false;
 
     public AbstractRune rune;
@@ -45,7 +40,7 @@ public class RelicBaseButton extends AbstractSoulShopButton {
 
     public RelicBaseButton(AbstractRelicRune rune, SoulShopScreen scr) {
         super(rune, scr);
-        this.img = ImageMaster.loadImage(imgURL);
+        //this.img = ImageMaster.loadImage(imgURL);
         this.ID = rune.getID();
         this.name = rune.getName();
         this.description = rune.getDescription();
@@ -67,7 +62,7 @@ public class RelicBaseButton extends AbstractSoulShopButton {
         this.hb.move(this.tX, this.tY);
         this.hb.update();
         if (this.hb.hovered) {
-            TipHelper.renderGenericTip((this.tX + 175.0F) * Settings.scale, (this.tY + 50.0F) * Settings.scale, this.name, this.description);
+            TipHelper.renderGenericTip((this.hb.x + 200.0F) * Settings.scale, (this.hb.y) * Settings.scale, this.name, this.description);
 
             if (InputHelper.justClickedLeft) {
                 InputHelper.justClickedLeft = false;
@@ -85,14 +80,42 @@ public class RelicBaseButton extends AbstractSoulShopButton {
     }
 
     public void render(SpriteBatch sb) {
-        sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
-        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, this.textureWidth, this.textureHeight, Settings.scale, Settings.scale, 0, 0, 0, (int)this.textureWidth, (int)this.textureHeight, false, false);
 
-        Color tmpColor = Settings.CREAM_COLOR;
+        Color tmpColor = Settings.SHADOW_COLOR;
         if(this.buttonEnabled)
         {
-            tmpColor = Settings.GOLD_COLOR;
+            tmpColor = Settings.HALF_TRANSPARENT_WHITE_COLOR;
         }
+
+        sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a * 0.8f));
+        if(this.rune != null)
+        {
+            if(this.rune instanceof AbstractRelicRune)
+            {
+                if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(this.rune.name)))
+                {
+                    this.img = this.activatedImg;
+                    tmpColor = Settings.GOLD_COLOR;
+                }
+            } else
+            {
+                this.img = this.unactivatedImg;
+            }
+            if(this.rune instanceof AbstractSoulShiftRune)
+            {
+                if(this.rune.name == DefaultMod.currentShiftRune.name)
+                {
+                    this.img = this.activatedImg;
+                    tmpColor = Settings.GOLD_COLOR;
+                } else
+                {
+                    this.img = this.unactivatedImg;
+                }
+            }
+        }
+        sb.draw(this.img, this.hb.x, this.hb.y, 0, 0, this.textureWidth, this.textureHeight, Settings.scale, Settings.scale, 0, 0, 0, (int)this.textureWidth, (int)this.textureHeight, false, false);
+
+
         FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, this.name, this.tX, this.tY, tmpColor);
         this.hb.render(sb);
     }
