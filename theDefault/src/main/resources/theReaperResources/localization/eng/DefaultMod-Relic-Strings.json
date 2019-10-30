@@ -20,6 +20,13 @@
       "In battle, using a King soul creates one Hollow Soul and one Lost Soul. Using a Hollow Soul creates two Lost Souls."
     ]
   },
+  "theReaper:FangsRelic": {
+    "NAME": "Fangs",
+    "FLAVOR": "They're growing in nicely. Don't mind the ache, they'll feel better after a drink.",
+    "DESCRIPTIONS": [
+      "Whenever you consume bleed on a creature, heal ", " health."
+    ]
+  },
   "theReaper:MandolinRelic": {
     "NAME": "Mandolin",
     "FLAVOR": "S-S-S-SHARP!!!",

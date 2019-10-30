@@ -398,11 +398,13 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new AzureEyesRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new CrimsonEyesRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new EggSlicerRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new FangsRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new MandolinRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SilverBeadsRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SmilingCatRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SoulShifterRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SpiritChainsRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ThermometerRelic(), TheDefault.Enums.COLOR_GRAY);
 
 
         BaseMod.addRelicToCustomPool(new MagicFlower(), TheDefault.Enums.COLOR_GRAY);

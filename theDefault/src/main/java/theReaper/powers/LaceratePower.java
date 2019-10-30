@@ -30,7 +30,7 @@ public class LaceratePower extends AbstractCustomPower implements CloneablePower
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if(info.type != DamageInfo.DamageType.HP_LOSS) {
+        if(info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new BleedPower(owner, source, amount), amount));
         }
