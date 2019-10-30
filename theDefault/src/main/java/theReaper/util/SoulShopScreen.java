@@ -89,6 +89,7 @@ public class SoulShopScreen {
 
         relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicSmilingCatRune(), this), 2,3));
 
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicThermometerRune(), this), 2,6));
 
         for (int i = 0; i < relicButtonList.size(); i++)
         {

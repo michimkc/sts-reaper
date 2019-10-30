@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.relics.CrimsonEyesRelic;
+import theReaper.relics.ThermometerRelic;
 
 //When affected by vengeance, each damage taken adds a mark to the enemy that dealt it.
 //dealing damage to the enemy consumes a mark and heals 1 hp.
@@ -34,6 +35,9 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
 
         super(owner,owner,amount,POWER_NAME,POWER_TYPE,POWER_ISTURNBASED);
 
+        if (AbstractDungeon.player.hasRelic(DefaultMod.makeID(ThermometerRelic.name))) {
+            AbstractDungeon.player.getRelic(DefaultMod.makeID(ThermometerRelic.name)).beginLongPulse();
+        }
     }
 
 
@@ -67,6 +71,26 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
         }
     }
 
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        float totalBonusAmount = 0;
+
+        if (AbstractDungeon.player.hasRelic(DefaultMod.makeID(ThermometerRelic.name))) {
+
+            ThermometerRelic r = (ThermometerRelic)AbstractDungeon.player.getRelic(DefaultMod.makeID(ThermometerRelic.name));
+
+
+            if (type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS && damage > 0) {
+
+                int numStacks = amount;
+                if (numStacks > 0) {
+                    totalBonusAmount = Math.max(1, (damage * numStacks * r.bonusPercent / 100));
+                }
+            }
+        }
+        return damage + totalBonusAmount;
+
+    }
+
     public void atStartOfTurn() {
 
         if (this.amount == 1) {
@@ -83,7 +107,11 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
 
         AbstractDungeon.player.powers.forEach((p)-> powerOnPowerRemoved(p));
 
-    }
+        if (AbstractDungeon.player.hasRelic(DefaultMod.makeID(ThermometerRelic.name))) {
+            AbstractDungeon.player.getRelic(DefaultMod.makeID(ThermometerRelic.name)).stopPulse();
+        }
+
+        }
     public void powerOnPowerRemoved(AbstractPower p) // for the Waning feature of Hunters Toll
     {
         if(p instanceof AbstractCustomPower)

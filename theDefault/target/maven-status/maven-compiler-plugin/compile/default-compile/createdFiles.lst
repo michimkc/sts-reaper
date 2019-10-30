@@ -20,9 +20,11 @@ theReaper\patches\TopPanelPatch$renderPatch.class
 theReaper\powers\ShadowStepPower.class
 theReaper\rune\RelicSmilingCatRune.class
 theReaper\powers\ContagionPower.class
+theReaper\rune\RelicThermometerRune.class
 theReaper\actions\SoulGemAction.class
 theReaper\powers\HemoplaguePower.class
 theReaper\patches\OnApplyPowerPatch.class
+theReaper\relics\ThermometerRelic.class
 theReaper\actions\InsultToInjuryAction.class
 theReaper\cards\AbstractCustomCard.class
 theReaper\cards\DeepCuts.class

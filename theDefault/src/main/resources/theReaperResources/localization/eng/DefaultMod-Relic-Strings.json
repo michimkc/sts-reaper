@@ -62,6 +62,13 @@
       "SoulBind also applies ", " Weak on creatures."
     ]
   },
+  "theReaper:ThermometerRelic": {
+    "NAME": "Thermometer",
+    "FLAVOR": "Curiously, temperature does not affect it. Emotions, on the other hand...",
+    "DESCRIPTIONS": [
+      "Attacks deal an extra ", " percent damage for each stack of Vengeance you have."
+    ]
+  },
   "theReaper:PlaceholderRelic": {
     "NAME": "Placeholder Energy Relic",
     "FLAVOR": "The snake is a friend.",
