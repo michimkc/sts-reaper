@@ -38,7 +38,7 @@ public class RelicFangsRune extends AbstractRelicRune{
     }
     public String getDescription()
     {
-        return DESC[0] + FangsRelic.bonusHealth + DESC[1];
+        return DESC[0];
     }
 
     public RelicFangsRune makeCopy()

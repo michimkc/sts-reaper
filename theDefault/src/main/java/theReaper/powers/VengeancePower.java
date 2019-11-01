@@ -44,31 +44,14 @@ public class VengeancePower extends AbstractCustomPower implements CloneablePowe
     public int onAttacked(DamageInfo info, int damageAmount)
     {
 
-        if(info.owner != null && info.owner != owner && damageAmount > 0) // if we were hit by something
+        if(info.owner != null && info.owner != owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) // if we were hit by something
         {
 
                 flash();
-                int totalAmount = damageAmount;
-                if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(CrimsonEyesRelic.name)))
-                {
-                    totalAmount += CrimsonEyesRelic.bonusMarks;
-                    AbstractDungeon.player.getRelic(DefaultMod.makeID(CrimsonEyesRelic.name)).flash();
-                }
-                // Add marks to the enemy.
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, owner,
-                    new MarkPower(info.owner, owner, totalAmount), totalAmount));
-                AbstractDungeon.player.powers.forEach((p)-> powerOnApplyMarks(p,info.owner, owner,damageAmount));
+                MarkPower.applyMarks(info.owner,this.owner,damageAmount);
 
         }
         return damageAmount;
-    }
-
-    public void powerOnApplyMarks(AbstractPower p, AbstractCreature target, AbstractCreature source, int amount)
-    {
-        if(p instanceof AbstractCustomPower)
-        {
-            ((AbstractCustomPower)p).onApplyMarks(target, source,amount);
-        }
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {

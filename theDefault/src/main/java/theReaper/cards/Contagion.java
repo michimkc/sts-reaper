@@ -18,7 +18,7 @@ public class Contagion extends AbstractCustomCard {
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 2;
 

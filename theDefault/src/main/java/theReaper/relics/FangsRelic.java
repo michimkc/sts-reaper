@@ -9,7 +9,6 @@ public class FangsRelic extends AbstractSoulRelic {
     // ID, images, text.
     public static final String name = "FangsRelic"; // set this.
 
-    public static int bonusHealth = 2;
     private static final Logger logger = LogManager.getLogger(FangsRelic.class.getName());
 
 
@@ -23,7 +22,7 @@ public class FangsRelic extends AbstractSoulRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + bonusHealth + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0];
     }
 
 }

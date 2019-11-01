@@ -5,18 +5,25 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.blue.Consume;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.powers.CommonPower;
 import theReaper.powers.DeepCutsPower;
+import theReaper.powers.MarkPower;
+import theReaper.relics.AnemoneRelic;
+import theReaper.relics.ClawsRelic;
 import theReaper.relics.FangsRelic;
 
 public class BleedLoseHpAction extends AbstractGameAction {
@@ -24,6 +31,8 @@ public class BleedLoseHpAction extends AbstractGameAction {
     private static final float PERCENTREDUCTION = 0.5f;
     public boolean consumePower = true; // do we consume the power upon dealing damage?
     public boolean nonLethal = true; // is the damage nonLethal?
+
+    private static final Logger logger = LogManager.getLogger(BleedLoseHpAction.class.getName());
 
     public BleedLoseHpAction(final AbstractCreature target, final AbstractCreature source,
                              final int amount, AbstractGameAction.AttackEffect effect, boolean consumePower, boolean nonLethal) {
@@ -54,10 +63,11 @@ public class BleedLoseHpAction extends AbstractGameAction {
         tickDuration();
 
         if (this.isDone) {
+            int finalAmount = 0;
             if (this.target.currentHealth > 0) {
                 this.target.tint.color = Color.CHARTREUSE.cpy();
                 this.target.tint.changeColor(Color.WHITE.cpy());
-                int finalAmount = this.amount;
+                finalAmount = this.amount;
                 if(this.amount >= this.target.currentHealth && this.nonLethal)
                 {
                     finalAmount = this.target.currentHealth - 1;
@@ -89,11 +99,29 @@ public class BleedLoseHpAction extends AbstractGameAction {
 
                         if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(FangsRelic.name)) && !this.target.isPlayer)
                         {
-                            AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player,
-                                    FangsRelic.bonusHealth));
+                            AbstractDungeon.actionManager.addToBottom(new ConsumeMarksAction(this.target,finalAmount));
                             AbstractDungeon.player.getRelic(DefaultMod.makeID(FangsRelic.name)).flash();
                             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player,
                                     AbstractDungeon.player.getRelic(DefaultMod.makeID(FangsRelic.name))));
+                        }
+
+                        if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(AnemoneRelic.name)) && !this.target.isPlayer)
+                        {
+
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, AbstractDungeon.player, new WeakPower(this.target, AnemoneRelic.weakAmount, false), AnemoneRelic.weakAmount));
+
+                            AbstractDungeon.player.getRelic(DefaultMod.makeID(AnemoneRelic.name)).flash();
+                            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player,
+                                    AbstractDungeon.player.getRelic(DefaultMod.makeID(AnemoneRelic.name))));
+                        }
+
+                        if(AbstractDungeon.player.hasRelic(DefaultMod.makeID(ClawsRelic.name)) && this.target.isPlayer)
+                        {
+                            logger.info("Has Claws relic, applying " + finalAmount + " marks to " + this.source);
+                            MarkPower.applyMarks(this.source,this.target,finalAmount);
+                            AbstractDungeon.player.getRelic(DefaultMod.makeID(ClawsRelic.name)).flash();
+                            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player,
+                                    AbstractDungeon.player.getRelic(DefaultMod.makeID(ClawsRelic.name))));
                         }
                     //}
 

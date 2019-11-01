@@ -1,4 +1,5 @@
 theReaper\cards\Papercut.class
+theReaper\relics\AnemoneRelic.class
 theReaper\actions\DeepCutsAction.class
 theReaper\actions\AegisAction.class
 theReaper\souls\AbstractSoul.class
@@ -14,6 +15,7 @@ theReaper\cards\AbstractDefaultCard.class
 theReaper\powers\UndyingPower.class
 theReaper\actions\MoveCardToTopOfDeckAction.class
 theReaper\rune\SoulShiftUndyingRune.class
+theReaper\relics\FangsRelic.class
 theReaper\patches\AbstractDungeonScreenPatch$CloseCurrentScreenPatch.class
 theReaper\actions\BleedLoseHpAction.class
 theReaper\patches\TopPanelPatch$renderPatch.class
@@ -59,6 +61,7 @@ theReaper\relics\AzureEyesRelic.class
 theReaper\util\SoulShopScreen$ButtonInfo.class
 theReaper\powers\HuntersTollPower.class
 theReaper\powers\MarkPower.class
+theReaper\rune\RelicClawsRune.class
 theReaper\rune\SoulShiftSeekRune.class
 theReaper\powers\MasochismPower.class
 theReaper\patches\AbstractDungeonScreenPatch$RenderInserterPatch$UpdateLocator.class
@@ -105,7 +108,9 @@ theReaper\patches\CardGroupOldCharmPatch.class
 theReaper\cards\NimbleStrike.class
 theReaper\powers\DeathsDancePower.class
 theReaper\rune\AbstractSoulShiftRune.class
+theReaper\rune\RelicFadedLocketRune.class
 theReaper\cards\Effigy.class
+theReaper\rune\RelicFangsRune.class
 theReaper\cards\Fracture.class
 theReaper\patches\ReaperEnums.class
 theReaper\cards\Regroup.class
@@ -116,6 +121,7 @@ theReaper\util\SoulShopScreen.class
 theReaper\cards\RiteoftheBlade.class
 theReaper\cards\Strike.class
 theReaper\powers\BleedPower.class
+theReaper\actions\ConsumeMarksAction.class
 theReaper\cards\Cyclone.class
 theReaper\cards\Invigorate.class
 theReaper\variables\DefaultCustomVariable.class
@@ -165,6 +171,7 @@ theReaper\cards\MaimingStrike.class
 theReaper\cards\Payback.class
 theReaper\util\ReaperStrings.class
 theReaper\variables\DefaultSecondMagicNumber.class
+theReaper\relics\ClawsRelic.class
 theReaper\actions\SetContagionEnabledAction.class
 theReaper\patches\AbstractDungeonScreenPatch$AbstractDungeonPostFixScreenUpdatePatch.class
 theReaper\relics\DefaultClickableRelic.class
@@ -172,11 +179,13 @@ theReaper\patches\AbstractPlayerSoulsPatch$AbstractPlayerRenderPatch.class
 theReaper\souls\SoulTip.class
 theReaper\actions\EffigyAction.class
 theReaper\relics\EggSlicerRelic.class
+theReaper\rune\RelicAnemoneRune.class
 theReaper\powers\GluttonyPower.class
 theReaper\actions\SetBootEnabledAction.class
 theReaper\cards\ShieldWard.class
 theReaper\actions\DevourAction.class
 theReaper\powers\AbstractCustomPower.class
+theReaper\relics\FadedLocketRelic.class
 theReaper\souls\LostSoul.class
 theReaper\actions\RemoveSoulAction.class
 theReaper\cards\DeathRattle.class

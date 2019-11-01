@@ -20,6 +20,7 @@ import org.apache.logging.log4j.Logger;
 import theReaper.DefaultMod;
 import theReaper.cards.AbstractCustomCard;
 import theReaper.relics.AbstractSoulRelic;
+import theReaper.relics.CrimsonEyesRelic;
 import theReaper.util.TextureLoader;
 
 import static theReaper.DefaultMod.makePowerPath;
@@ -76,29 +77,62 @@ public class MarkPower extends AbstractPower implements CloneablePowerInterface 
     public int onAttacked(DamageInfo info, int damageAmount)
     {
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
-
-            flash();
-
-            // the max that we can heal is the number of stacks of the mark
-            int totalHeal = Math.min(damageAmount, amount);
-            // but make sure we dont heal more than the creature's max hp
-            totalHeal = Math.min(totalHeal, owner.currentHealth);
-
-            // heal the player
-            info.owner.heal(totalHeal);
-
-            // reduce the number of marks
-            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
-            logger.info("Monster (" + owner.currentHealth + " current HP) attacked for " +damageAmount + ", healed for " + totalHeal);
-            DefaultMod.totalMarksConsumedThisCombat += totalHeal;
-
-            logger.info("total marks consumed this combat: " + totalMarksConsumedThisCombat);
-            final int finalTotalHeal = totalHeal;
-            AbstractDungeon.player.hand.group.forEach( c -> sendConsume(c,finalTotalHeal));
-            AbstractDungeon.player.relics.forEach( r -> sendRelicConsume(r,(AbstractMonster)this.owner, finalTotalHeal));
+            consumeMarks(damageAmount);
         }
 
         return damageAmount;
+    }
+
+    public static void applyMarks(AbstractCreature target, AbstractCreature source, int damageAmount)
+    {
+
+            applyMarks(target,source,damageAmount, true);
+
+    }
+
+    public static void applyMarks(AbstractCreature target, AbstractCreature source, int damageAmount, boolean triggerPowers) {
+
+        int totalAmount = damageAmount;
+        if (AbstractDungeon.player.hasRelic(DefaultMod.makeID(CrimsonEyesRelic.name))) {
+            totalAmount += CrimsonEyesRelic.bonusMarks;
+            AbstractDungeon.player.getRelic(DefaultMod.makeID(CrimsonEyesRelic.name)).flash();
+        }
+        // Add marks to the enemy.
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source,
+                new MarkPower(target, source, totalAmount), totalAmount));
+        if (triggerPowers) {
+            AbstractDungeon.player.powers.forEach((p) -> powerOnApplyMarks(p, target, source, damageAmount));
+        }
+    }
+
+    public static void powerOnApplyMarks(AbstractPower p, AbstractCreature target, AbstractCreature source, int amount)
+    {
+        if(p instanceof AbstractCustomPower)
+        {
+            ((AbstractCustomPower)p).onApplyMarks(target, source,amount);
+        }
+    }
+
+    public void consumeMarks(int consumeAmount)
+    {
+        flash();
+        // the max that we can heal is the number of stacks of the mark
+        int totalHeal = Math.min(consumeAmount, amount);
+        // but make sure we dont heal more than the creature's max hp
+        totalHeal = Math.min(totalHeal, owner.currentHealth);
+
+        // heal the player
+        AbstractDungeon.player.heal(totalHeal);
+
+        // reduce the number of marks
+        AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this, totalHeal));
+        logger.info("Monster (" + owner.currentHealth + " current HP) attacked for " +consumeAmount + ", healed for " + totalHeal);
+        DefaultMod.totalMarksConsumedThisCombat += totalHeal;
+
+        logger.info("total marks consumed this combat: " + totalMarksConsumedThisCombat);
+        final int finalTotalHeal = totalHeal;
+        AbstractDungeon.player.hand.group.forEach( c -> sendConsume(c,finalTotalHeal));
+        AbstractDungeon.player.relics.forEach( r -> sendRelicConsume(r,(AbstractMonster)this.owner, finalTotalHeal));
     }
 
     public void sendRelicConsume(AbstractRelic r, AbstractMonster m, int totalHeal)
@@ -176,13 +210,6 @@ logger.info("start of turn amount: " + amount + " , marks added this turn : " + 
         this.expired = false;
 
         logger.info("Stacking Power by: " + amount + " , marks added this turn : " + marksAddedThisTurn);
-    }
-
-    public static void applyMarks(AbstractCreature target, AbstractCreature source, int amount)
-    {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source,
-                new MarkPower(target, source, amount), amount));
-
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

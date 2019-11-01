@@ -1,9 +1,23 @@
 {
+  "theReaper:AnemoneRelic": {
+    "NAME": "Anemone",
+    "FLAVOR": "Soft and cute and fluffy...!",
+    "DESCRIPTIONS": [
+      "Consuming bleed on a creature also applies Weak."
+    ]
+  },
   "theReaper:AzureEyesRelic": {
     "NAME": "Azure Eyes",
     "FLAVOR": "A cold icy gaze",
     "DESCRIPTIONS": [
       "Gain ", " Block each time you consume marks."
+    ]
+  },
+  "theReaper:ClawsRelic": {
+    "NAME": "Claws",
+    "FLAVOR": "Wickedly sharp.",
+    "DESCRIPTIONS": [
+      "When you take self-bleed damage, apply marks to the creature that dealt the damage."
     ]
   },
   "theReaper:CrimsonEyesRelic": {
@@ -20,11 +34,18 @@
       "In battle, using a King soul creates one Hollow Soul and one Lost Soul. Using a Hollow Soul creates two Lost Souls."
     ]
   },
+  "theReaper:FadedLocketRelic": {
+    "NAME": "Faded Locket",
+    "FLAVOR": "It only opens in times of distress. Inside is a picture of a treasured memory.",
+    "DESCRIPTIONS": [
+      "Once per battle, if you drop below ", "% max health, gain ", " Undying."
+    ]
+  },
   "theReaper:FangsRelic": {
     "NAME": "Fangs",
     "FLAVOR": "They're growing in nicely. Don't mind the ache, they'll feel better after a drink.",
     "DESCRIPTIONS": [
-      "Whenever you consume bleed on a creature, heal ", " health."
+      "Damage dealt when consuming bleed also consumes marks."
     ]
   },
   "theReaper:MandolinRelic": {

@@ -33,7 +33,6 @@ public class Hack extends AbstractCustomCard {
 
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
-        magicNumberUp = 1;
         damage = baseDamage = 9;
         damageUp = 3;
 

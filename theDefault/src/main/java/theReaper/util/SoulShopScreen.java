@@ -91,7 +91,11 @@ public class SoulShopScreen {
 
         relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicThermometerRune(), this), 2,6));
 
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicClawsRune(), this), 3,0));
         relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicFangsRune(), this), 3,1));
+
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicAnemoneRune(), this), 3,3));
+        relicButtonList.add(new ButtonInfo(new RelicBaseButton(new RelicFadedLocketRune(), this), 3,4));
 
         for (int i = 0; i < relicButtonList.size(); i++)
         {

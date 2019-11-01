@@ -34,7 +34,7 @@ public class HuntersTollPower extends AbstractCustomPower implements CloneablePo
     public void onApplyMarks(AbstractCreature target, AbstractCreature source, int totalAmount)
     {
         flash();
-        MarkPower.applyMarks(target,source,this.amount);
+        MarkPower.applyMarks(target,source,this.amount, false);
     }
 
     public void onInitialApplication()

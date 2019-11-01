@@ -50,6 +50,11 @@
     "NAME": "Death's Dance",
     "DESCRIPTIONS": ["Reduce the cost of all [#FFBF00]Strikes[] by "]
   },
+  "theReaper:DevourPower": {
+    "NAME": "Devour",
+    "DESCRIPTIONS": ["If this creature dies this turn, heal 10% of your max HP."]
+  },
+
   "theReaper:LaceratePower": {
     "NAME": "Lacerate",
     "DESCRIPTIONS": ["Every time this creature is dealt damage by attacks this turn apply #b", " bleed."]

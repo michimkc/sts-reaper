@@ -9,7 +9,7 @@ public class CrimsonEyesRelic extends AbstractSoulRelic {
     // ID, images, text.
     public static final String name = "CrimsonEyesRelic"; // set this.
 
-    public static int bonusMarks = 2;
+    public static int bonusMarks = 1;
     private static final Logger logger = LogManager.getLogger(CrimsonEyesRelic.class.getName());
 
 

@@ -32,7 +32,7 @@ public class ChainStrike extends AbstractCustomCard {
     {
 
         super(ID, COST, TYPE, RARITY, TARGET);
-        damage = baseDamage = 5;
+        damage = baseDamage = 4;
         damageUp = 2;
 
         this.tags.add(CardTags.STRIKE);
